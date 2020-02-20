@@ -10,6 +10,7 @@ namespace BusinessEntites
     {
         public string Ort { get; set; }
         public string Anställning { get; set; }
+        public Program program { get; set; }
 
         //Kanske DateTime istället?
         public int ExamensÅr { get; set; }

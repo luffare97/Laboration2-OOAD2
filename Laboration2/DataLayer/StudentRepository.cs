@@ -22,10 +22,10 @@ namespace DataLayer
             databas.Studenter.Add(new Student()
             {
                 ID = 1,
-                AnvändarId = "S100",
-                ENamn = "Per",
-                EMail = "Snopp@hotmail.com",
-                FNamn = "Persson",
+                AnvändarId = "S20100",
+                FNamn = "Per",
+                ENamn = "Persson",
+                EMail = "PerPersson@student.hb.se",
                 TeleNr = 101010022,
             });
             databas.SaveChanges();

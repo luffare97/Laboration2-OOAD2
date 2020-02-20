@@ -23,10 +23,10 @@ namespace DataLayer
         }
 
         
-        public TEntity Get()
-        {
-           return Context.Set<TEntity>().Get();
-        }
+        //public TEntity Get()
+        //{
+        //   return Context.Set<TEntity>().Get();
+        //}
         
 
         public List<TEntity> GetAll()

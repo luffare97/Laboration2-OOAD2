@@ -10,8 +10,10 @@ namespace BusinessEntites
     {
         public List<Alumn> Alumner { get; set; }
         public List<Student> Studenter { get; set; }
-        public List<Aktivitet> Aktiviteter { get; set; }
         public string Information { get; set; }
+
+        public ICollection<Användare> Mottagare { get; set; }
+
 
         public UtskicksLista(List<Användare> folk, string Info)
         {

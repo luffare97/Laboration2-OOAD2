@@ -9,6 +9,8 @@ namespace BusinessEntites
     public class Student : Användare
     {
 
+        public Program program { get; set; }
+
         public Student()
         {
 
