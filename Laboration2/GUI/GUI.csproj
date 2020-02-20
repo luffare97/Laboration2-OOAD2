@@ -82,6 +82,12 @@
     <Compile Include="RedigeraProfilAnnan.Designer.cs">
       <DependentUpon>RedigeraProfilAnnan.cs</DependentUpon>
     </Compile>
+    <Compile Include="RedigeraProfilPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedigeraProfilPersonal.Designer.cs">
+      <DependentUpon>RedigeraProfilPersonal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoggIn.resx">
       <DependentUpon>LoggIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="RedigeraProfilAnnan.resx">
       <DependentUpon>RedigeraProfilAnnan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedigeraProfilPersonal.resx">
+      <DependentUpon>RedigeraProfilPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
