@@ -68,13 +68,28 @@
     <Compile Include="NyAktivitet.Designer.cs">
       <DependentUpon>NyAktivitet.cs</DependentUpon>
     </Compile>
+    <Compile Include="NyUtskicksLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NyUtskicksLista.Designer.cs">
+      <DependentUpon>NyUtskicksLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedigeraProfilAnnan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedigeraProfilAnnan.Designer.cs">
+      <DependentUpon>RedigeraProfilAnnan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoggIn.resx">
       <DependentUpon>LoggIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NyAktivitet.resx">
       <DependentUpon>NyAktivitet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NyUtskicksLista.resx">
+      <DependentUpon>NyUtskicksLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +100,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RedigeraProfilAnnan.resx">
+      <DependentUpon>RedigeraProfilAnnan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
