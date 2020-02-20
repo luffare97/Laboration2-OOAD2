@@ -58,9 +58,19 @@
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IAktivitetRepository.cs" />
     <Compile Include="IAlumnRepository.cs" />
+    <Compile Include="osu2014DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>osu2014DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PersonalRepository.cs" />
     <Compile Include="ProgramRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="StudentRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="UtskicksListaRepository.cs" />
@@ -73,7 +83,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="osu2014DataSet.xsc">
+      <DependentUpon>osu2014DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="osu2014DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>osu2014DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="osu2014DataSet.xss">
+      <DependentUpon>osu2014DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

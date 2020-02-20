@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataLayer;
 using BusinessEntites;
+using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace DataLayer
 {
     public class AppDbContext : DbContext
     {
+
+        public AppDbContext() : base("osu2014")
+        {
+            
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,11 +33,10 @@ namespace DataLayer
         public virtual DbSet<Aktivitet> Aktiviteter { get; set; }
         public virtual DbSet<Program> Programs { get; set; }
 
-
-        
-        public AppDbContext() : base("Databas")
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            base.OnModelCreating(modelBuilder);
         }
+
     }
 }

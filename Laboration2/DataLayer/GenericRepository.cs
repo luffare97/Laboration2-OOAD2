@@ -17,21 +17,26 @@ namespace DataLayer
 
         private AppDbContext Context { get; }
 
-        //public AddToRepo()
-        //{
+        public void AddToRepo()
+        {
 
-        //}
-        /*
+        }
+
+        
         public TEntity Get()
         {
            return Context.Set<TEntity>().Get();
         }
-        */
+        
 
-        //public GetAll()
-        //{
+        public List<TEntity> GetAll()
+        {
 
-        //}
+            List<TEntity> Saker = new List<TEntity>();
+
+
+            return Saker;
+        }
 
 
     }
