@@ -62,8 +62,20 @@
     <Compile Include="LoggIn.Designer.cs">
       <DependentUpon>LoggIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="NyAktivitet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NyAktivitet.Designer.cs">
+      <DependentUpon>NyAktivitet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LoggIn.resx">
+      <DependentUpon>LoggIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NyAktivitet.resx">
+      <DependentUpon>NyAktivitet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
