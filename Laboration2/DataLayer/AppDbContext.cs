@@ -17,11 +17,36 @@ namespace DataLayer
         {
             
         }
-
+            // Dendär som vi inte vet om vi ska ha
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer("data source=(localdb)\\mssqllocaldb;Initial Catalog=oosu2lab2;user id=;password=;");
         //    base.OnConfiguring(optionsBuilder);
+        //}
+
+            // Här är reset koden!
+
+        // Place in your own instance of DbContext
+        //public void Reset()
+        //{
+        //    using (SqlConnection conn = new SqlConnection(Database.Connection.ConnectionString))
+        //    using (SqlCommand cmd = new SqlCommand("EXEC sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT all'; EXEC sp_msforeachtable 'DROP TABLE ?'", conn))
+        //    {
+        //        conn.Open();
+        //        for (int i = 0; i < 5; i++)
+        //        {
+        //            try
+        //            {
+        //                cmd.ExecuteNonQuery();
+        //            }
+        //            catch (System.Exception)
+        //            {
+        //                // throw;
+        //            }
+        //        }
+        //        conn.Close();
+        //    }
+        //    Database.Initialize(true);
         //}
 
 
