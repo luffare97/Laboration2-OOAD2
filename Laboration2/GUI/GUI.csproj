@@ -88,6 +88,42 @@
     <Compile Include="RedigeraProfilPersonal.Designer.cs">
       <DependentUpon>RedigeraProfilPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeAktivitetAnnan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeAktivitetAnnan.Designer.cs">
+      <DependentUpon>SeAktivitetAnnan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeAktivitetPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeAktivitetPersonal.Designer.cs">
+      <DependentUpon>SeAktivitetPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeUtskicksListaAnnan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeUtskicksListaAnnan.Designer.cs">
+      <DependentUpon>SeUtskicksListaAnnan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeUtskicksListaPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeUtskicksListaPersonal.Designer.cs">
+      <DependentUpon>SeUtskicksListaPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartAnnan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartAnnan.Designer.cs">
+      <DependentUpon>StartAnnan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartPersonal.Designer.cs">
+      <DependentUpon>StartPersonal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoggIn.resx">
       <DependentUpon>LoggIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RedigeraProfilPersonal.resx">
       <DependentUpon>RedigeraProfilPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartAnnan.resx">
+      <DependentUpon>StartAnnan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartPersonal.resx">
+      <DependentUpon>StartPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
