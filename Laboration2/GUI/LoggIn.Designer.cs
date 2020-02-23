@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LoggaInBtn = new System.Windows.Forms.Button();
-            this.IDTxt = new System.Windows.Forms.TextBox();
             this.LösenordTxt = new System.Windows.Forms.TextBox();
+            this.IDTxt = new System.Windows.Forms.TextBox();
+            this.LoggaInBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.RegistreraBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,14 +55,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Logga in";
             // 
-            // label1
+            // LösenordTxt
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Användar ID:";
+            this.LösenordTxt.Location = new System.Drawing.Point(82, 45);
+            this.LösenordTxt.Name = "LösenordTxt";
+            this.LösenordTxt.Size = new System.Drawing.Size(193, 20);
+            this.LösenordTxt.TabIndex = 4;
+            // 
+            // IDTxt
+            // 
+            this.IDTxt.Location = new System.Drawing.Point(82, 19);
+            this.IDTxt.Name = "IDTxt";
+            this.IDTxt.Size = new System.Drawing.Size(193, 20);
+            this.IDTxt.TabIndex = 3;
+            // 
+            // LoggaInBtn
+            // 
+            this.LoggaInBtn.Location = new System.Drawing.Point(200, 71);
+            this.LoggaInBtn.Name = "LoggaInBtn";
+            this.LoggaInBtn.Size = new System.Drawing.Size(75, 23);
+            this.LoggaInBtn.TabIndex = 2;
+            this.LoggaInBtn.Text = "Logga in";
+            this.LoggaInBtn.UseVisualStyleBackColor = true;
+            this.LoggaInBtn.Click += new System.EventHandler(this.LoggaInBtn_Click);
             // 
             // label2
             // 
@@ -73,28 +88,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Lösenord:";
             // 
-            // LoggaInBtn
+            // label1
             // 
-            this.LoggaInBtn.Location = new System.Drawing.Point(200, 71);
-            this.LoggaInBtn.Name = "LoggaInBtn";
-            this.LoggaInBtn.Size = new System.Drawing.Size(75, 23);
-            this.LoggaInBtn.TabIndex = 2;
-            this.LoggaInBtn.Text = "Logga in";
-            this.LoggaInBtn.UseVisualStyleBackColor = true;
-            // 
-            // IDTxt
-            // 
-            this.IDTxt.Location = new System.Drawing.Point(82, 19);
-            this.IDTxt.Name = "IDTxt";
-            this.IDTxt.Size = new System.Drawing.Size(193, 20);
-            this.IDTxt.TabIndex = 3;
-            // 
-            // LösenordTxt
-            // 
-            this.LösenordTxt.Location = new System.Drawing.Point(82, 45);
-            this.LösenordTxt.Name = "LösenordTxt";
-            this.LösenordTxt.Size = new System.Drawing.Size(193, 20);
-            this.LösenordTxt.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Användar ID:";
             // 
             // groupBox2
             // 
@@ -106,15 +107,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Eller registrera dig här:";
-            // 
             // RegistreraBtn
             // 
             this.RegistreraBtn.Location = new System.Drawing.Point(200, 11);
@@ -123,6 +115,16 @@
             this.RegistreraBtn.TabIndex = 1;
             this.RegistreraBtn.Text = "Registrera dig";
             this.RegistreraBtn.UseVisualStyleBackColor = true;
+            this.RegistreraBtn.Click += new System.EventHandler(this.RegistreraBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Eller registrera dig här:";
             // 
             // LoggIn
             // 

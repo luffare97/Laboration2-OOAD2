@@ -20,19 +20,13 @@ namespace DataLayer
         public DbSet<Student> Studenter { get; set; }
         public virtual DbSet<UtskicksLista> UtskicksListor { get; set; }
         public DbSet<Aktivitet> Aktiviteter { get; set; }
+
         //public DbSet<Program> Programs { get; set; }
 
         public AppDbContext() : base("osu2014")
         {
             
         }
-
-        // Dendär som vi inte vet om vi ska ha
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("data source=(localdb)\\mssqllocaldb;Initial Catalog=oosu2lab2;user id=;password=;");
-        //    base.OnConfiguring(optionsBuilder);
-        //}
 
         // Här är reset koden!
 
@@ -65,7 +59,7 @@ namespace DataLayer
 
             
             Studenter.Add(new Student()
-             {
+            {
                 AnvändarId = "s10",
                 EMail = "Moa.Adolf@hotmail.com",
                 ENamn = "Moa",
@@ -73,7 +67,7 @@ namespace DataLayer
                 Lösenord = "LOL",
                 TeleNr = 010002203,
                 program = Program.Systemarkitekt
-             });
+            });
 
             Studenter.Add(new Student()
             {
@@ -81,7 +75,7 @@ namespace DataLayer
                 EMail = "Bosse.Bergman@hotmail.com",
                 ENamn = "Bergman",
                 FNamn = "Bosse",
-                Lösenord = "LOLZ",
+                Lösenord = "LOL",
                 TeleNr = 010002203,
                 program = Program.DataEkonom
             });
@@ -122,10 +116,7 @@ namespace DataLayer
                 Plats = "D433",
                 Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
             });
-
-            
-            
-
+                       
             
             SaveChanges();
             

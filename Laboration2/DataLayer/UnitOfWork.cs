@@ -10,16 +10,19 @@ namespace DataLayer
 {
     public class UnitOfWork
     {
-        public UnitOfWork(AppDbContext databas)
+        private readonly AppDbContext _context;
+
+        public UnitOfWork(AppDbContext context)
         {
-            Databas = databas;
+            _context = context;
 
             //ProgramRepository = new ProgramRepository(Databas);
-            UtskicksListaRepository = new UtskicksListaRepository(Databas);
-            StudentRepository = new StudentRepository(Databas);
-            PersonalRepository = new PersonalRepository(Databas);
-            AktivitetRepository = new AktivitetRepository(Databas);
-            AlumnRepository = new AlumnRepository(Databas);
+            AlumnRepository = new AlumnRepository(_context);
+            AktivitetRepository = new AktivitetRepository(_context);
+            StudentRepository = new StudentRepository(_context);
+            PersonalRepository = new PersonalRepository(_context);
+            UtskicksListaRepository = new UtskicksListaRepository(_context);
+            
         }
 
         public AlumnRepository AlumnRepository { get; set; }
@@ -29,6 +32,11 @@ namespace DataLayer
         public UtskicksListaRepository UtskicksListaRepository { get; set; }
         //public ProgramRepository ProgramRepository { get; set; }
 
-        public AppDbContext Databas { get; }
+        //public AppDbContext Databas { get; }
+
+        public int Complete()
+        {
+            return _context.SaveChanges();
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using DataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,15 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
+using BusinessEntites;
+using DataLayer;
 
 namespace GUI
 {
     public partial class LoggIn : Form
     {
-        public LoggIn()
+        public AppDbContext DB { get; }
+        public BusinessManager BusinessManager { get; }
+
+        public LoggIn(BusinessManager businessManager)
         {
             
             InitializeComponent();
+            BusinessManager = businessManager;
+        }
+
+        private void LoggaInBtn_Click(object sender, EventArgs e)
+        {
+                
+            var A = BusinessManager.AnvändarRepo.GetAnvändare(IDTxt.Text);
+
+            if (A)
+            {
+
+            }
+        }
+
+        private void RegistreraBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

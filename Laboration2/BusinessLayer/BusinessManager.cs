@@ -8,7 +8,17 @@ using BusinessEntites;
 
 namespace BusinessLayer
 {
+
     public class BusinessManager
     {
+
+        public AktivitetRepository AktivitetRepo { get; set; }
+        public AlumnRepository AlumnRepo { get; set; }
+        public AnvändareRepository AnvändarRepo { get; set; }
+        public PersonalRepository PersonalRepo { get; set; }
+        public StudentRepository StudentRepo { get; set; }
+        public UtskicksListaRepository ListRepo { get; set; }
     }
+
+
 }

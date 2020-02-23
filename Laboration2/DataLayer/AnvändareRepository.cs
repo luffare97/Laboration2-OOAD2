@@ -15,26 +15,22 @@ namespace DataLayer
             Context = context;
         }
 
+        public AppDbContext AppDbContext
+        {
+            get { return Context as AppDbContext;  }
+        }
+
         private AppDbContext Context { get; }
         public List<Användare> användares { get; set; }
 
-        public Användare Get(string ID)
+
+
+        public IEnumerable<Användare> GetAnvändare(string användarID)
         {
-            //Kanske?
-            var A = from Användare in användares
-                    where Användare.AnvändarId == ID
-                    select Användare;
 
-            //Eller?
-            return Context.Användares.Where(x => x.AnvändarId == ID);
-           
+            return Context.Användares.Where(x => x.AnvändarId == användarID);
+            
+
         }
-
-        //public IEnumerable<Användare> GetAnvändare(string användarID)
-        //{
-
-        //    return Context.Användares.Where(x => x.AnvändarId == användarID);
-
-        //}
     }
 }
