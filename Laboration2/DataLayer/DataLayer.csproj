@@ -142,12 +142,6 @@
     <Compile Include="UtskicksListaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessEntites\BusinessEntites.csproj">
-      <Project>{3b789e87-a67b-441a-b056-69b511251f95}</Project>
-      <Name>BusinessEntites</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

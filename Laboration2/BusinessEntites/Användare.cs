@@ -14,7 +14,11 @@ namespace BusinessEntites
         public string ENamn { get; set; }
         public string EMail { get; set; }
         public int TeleNr { get; set; }
-        
+
+        public Användare(DataLayer.AnvändareRepository)
+        {
+
+        }
 
     }
 }
