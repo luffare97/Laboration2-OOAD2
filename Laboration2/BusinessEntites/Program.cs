@@ -7,12 +7,28 @@ using System.Threading.Tasks;
 
 namespace BusinessEntites
 {
+    
+
     public class Program : Entity
     {
         
         public int ProgramId { get; set; }
         public int År { get; set; }
         public ICollection<Användare> Användares { get; set; }
+        public NamnPåProgram program { get; set; }
+
+        
+        
+        public enum NamnPåProgram
+        {
+            Systemvetare,
+            DataEkonom,
+            SystemArkitekt
+        }
+
+        
+
+
 
 
     }

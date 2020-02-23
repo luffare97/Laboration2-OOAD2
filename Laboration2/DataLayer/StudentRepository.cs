@@ -16,7 +16,7 @@ namespace DataLayer
         }
 
         private AppDbContext Context { get; set; }
-
+        /*
         public static void Läggtillstudent(AppDbContext databas)
         {
             databas.Studenter.Add(new Student()
@@ -30,6 +30,6 @@ namespace DataLayer
             });
             databas.SaveChanges();
         }
-
+        */
     }
 }

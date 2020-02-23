@@ -15,7 +15,9 @@ namespace GUI
         [STAThread]
         static void Main()
         {
+            
             new AppDbContext().Reset();
+           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoggIn());
