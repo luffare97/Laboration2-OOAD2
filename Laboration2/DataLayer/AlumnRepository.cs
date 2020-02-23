@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class AlumnRepository : GenericRepository<Alumn>, IAlumnRepository
+    public class AlumnRepository : GenericRepository<Alumn> //IAlumnRepository
     {
         public AlumnRepository(AppDbContext context) : base(context)
         {
@@ -17,10 +17,12 @@ namespace DataLayer
 
         private AppDbContext Context { get; }
 
+        /*
         public IEnumerable<Alumn> GetAllSystemvetare()
         {
             return Context.Alumner.Where(x => x.Program.Id == 1);
 
         }
+       */    
     }
 }

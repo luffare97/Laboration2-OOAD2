@@ -16,12 +16,12 @@ namespace DataLayer
         }
 
         private AppDbContext Context { get; }
-
+        /*
         public IEnumerable<Program> GetPrograms()
         {
             return Context.Programs.Where(x => x.Id > 0);
 
         }
-
+        */
     }
 }
