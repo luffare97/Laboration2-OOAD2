@@ -8,20 +8,20 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class ProgramRepository : GenericRepository<Program>
-    {
-        public ProgramRepository(AppDbContext context) : base(context)
-        {
-            Context = context;
-        }
+    //public class ProgramRepository : GenericRepository<Program>
+    //{
+    //    public ProgramRepository(AppDbContext context) : base(context)
+    //    {
+    //        Context = context;
+    //    }
 
-        private AppDbContext Context { get; }
-        /*
-        public IEnumerable<Program> GetPrograms()
-        {
-            return Context.Programs.Where(x => x.Id > 0);
+    //    private AppDbContext Context { get; }
+    //    /*
+    //    public IEnumerable<Program> GetPrograms()
+    //    {
+    //        return Context.Programs.Where(x => x.Id > 0);
 
-        }
-        */
-    }
+    //    }
+    //    */
+    //}
 }

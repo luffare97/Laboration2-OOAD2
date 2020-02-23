@@ -14,7 +14,7 @@ namespace DataLayer
         {
             Databas = databas;
 
-            ProgramRepository = new ProgramRepository(Databas);
+            //ProgramRepository = new ProgramRepository(Databas);
             UtskicksListaRepository = new UtskicksListaRepository(Databas);
             StudentRepository = new StudentRepository(Databas);
             PersonalRepository = new PersonalRepository(Databas);
@@ -27,7 +27,7 @@ namespace DataLayer
         public StudentRepository StudentRepository { get; set; }
         public PersonalRepository PersonalRepository { get; set; }
         public UtskicksListaRepository UtskicksListaRepository { get; set; }
-        public ProgramRepository ProgramRepository { get; set; }
+        //public ProgramRepository ProgramRepository { get; set; }
 
         public AppDbContext Databas { get; }
     }

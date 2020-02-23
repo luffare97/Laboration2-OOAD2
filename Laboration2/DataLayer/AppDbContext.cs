@@ -16,11 +16,11 @@ namespace DataLayer
     {
         public DbSet<Alumn> Alumner { get; set; }
         public DbSet<Personal> Personals { get; set; }
-        // public virtual DbSet<Användare> Användares { get; set; }
+        public virtual DbSet<Användare> Användares { get; set; }
         public DbSet<Student> Studenter { get; set; }
-        // public virtual DbSet<UtskicksLista> UtskicksListor { get; set; }
-        // public DbSet<Aktivitet> Aktiviteter { get; set; }
-        public DbSet<Program> Programs { get; set; }
+        public virtual DbSet<UtskicksLista> UtskicksListor { get; set; }
+        public DbSet<Aktivitet> Aktiviteter { get; set; }
+        //public DbSet<Program> Programs { get; set; }
 
         public AppDbContext() : base("osu2014")
         {
@@ -57,6 +57,7 @@ namespace DataLayer
                 conn.Close();
             }
             Database.Initialize(true);
+
             Seed();
         }
         public void Seed()
@@ -70,7 +71,8 @@ namespace DataLayer
                 ENamn = "Moa",
                 FNamn = "Adolfsson",
                 Lösenord = "LOL",
-                TeleNr = 010002203
+                TeleNr = 010002203,
+                program = Program.Systemarkitekt
              });
 
             Studenter.Add(new Student()
@@ -80,24 +82,49 @@ namespace DataLayer
                 ENamn = "Bergman",
                 FNamn = "Bosse",
                 Lösenord = "LOLZ",
-                TeleNr = 010002203
+                TeleNr = 010002203,
+                program = Program.DataEkonom
             });
 
             Personals.Add(new Personal()
             {
-                
-                Id=1,
-                Possition="Chef"
+                AnvändarId = "t15",
+                EMail = "DummaElever@skolan.se",
+                FNamn = "Lars-gunnar",
+                ENamn = "Lärarsson",
+                Lösenord = "LOL",
+                TeleNr = 0100555666,
+                Id = 1,
+                Possition = "Chef"
                 
             });
 
             Alumner.Add(new Alumn()
             {
+                AnvändarId = "s12",
+                EMail = "BjörnarSuger@hmu.plz",
+                FNamn = "Björn",
+                ENamn = "Jägare",
+                Lösenord = "LOL",
+                TeleNr = 0708555324,
                 Anställning = "Björn Jägare",
                 ExamensÅr = 2005,
                 Ort = "Mora",
-                NamnPåProgram
+                program = Program.Systemvetare
             });
+
+            Aktiviteter.Add(new Aktivitet()
+            {
+                AktivitetNamn = "Seminarium om stolar",
+                Start = new DateTime(2020, 04, 08),
+                Slut = new DateTime(2020, 04, 09),
+                AntalPlatser = 50,
+                Plats = "D433",
+                Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
+            });
+
+            
+            
 
             
             SaveChanges();

@@ -22,6 +22,11 @@ namespace DataLayer
 
         }
 
+        //public TEntity Get()
+        //{
+
+        //}
+
         
         //public TEntity Get()
         //{

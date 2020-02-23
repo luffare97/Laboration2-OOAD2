@@ -17,6 +17,15 @@ namespace DataLayer
 
         private AppDbContext Context { get; }
 
+        public Användare Get(string ID)
+        {
+
+            var A = from Användare in AppDbContext.Användares
+                    where Användare.AnvändarId == ID;
+
+            
+        }
+
         //public IEnumerable<Användare> GetAnvändare(string användarID)
         //{
 
