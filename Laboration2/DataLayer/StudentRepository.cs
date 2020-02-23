@@ -21,8 +21,8 @@ namespace DataLayer
         {
             databas.Studenter.Add(new Student()
             {
-                ID = 1,
-                AnvändarId = "S20100",
+                Id = 1,
+                //AnvändarId = "S20100",
                 FNamn = "Per",
                 ENamn = "Persson",
                 EMail = "PerPersson@student.hb.se",

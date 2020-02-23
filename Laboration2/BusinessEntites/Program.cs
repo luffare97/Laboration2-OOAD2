@@ -8,11 +8,9 @@ namespace BusinessEntites
 {
     public class Program : Entity
     {
-        public int ProgramId { get; set; }
+        //public int ProgramId { get; set; }
         public int År { get; set; }
-        public List<Alumn> Alumner { get; set; }
-        public List<Student> Studenter { get; set; }
-        public List<Personal> Anställda { get; set; }
+        public ICollection<Användare> Användares { get; set; }
 
 
     }

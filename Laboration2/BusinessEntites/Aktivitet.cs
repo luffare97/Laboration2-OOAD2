@@ -9,7 +9,7 @@ namespace BusinessEntites
     public class Aktivitet : Entity
     {
         public string AktivitetNamn { get; set; }
-        public int AktivitetId { get; set; }
+        //public int AktivitetId { get; set; }
         public DateTime Start { get; set; }
         public DateTime Slut { get; set; }
         public int AntalPlatser { get; set; }

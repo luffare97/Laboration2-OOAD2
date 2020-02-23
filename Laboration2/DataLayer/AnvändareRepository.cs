@@ -17,11 +17,11 @@ namespace DataLayer
 
         private AppDbContext Context { get; }
 
-        public IEnumerable<Användare> GetAnvändare(string användarID)
-        {
+        //public IEnumerable<Användare> GetAnvändare(string användarID)
+        //{
 
-            return Context.Användares.Where(x => x.AnvändarId == användarID);
+        //    return Context.Användares.Where(x => x.AnvändarId == användarID);
 
-        }
+        //}
     }
 }

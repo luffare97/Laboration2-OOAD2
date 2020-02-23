@@ -19,7 +19,7 @@ namespace DataLayer
 
         public IEnumerable<Alumn> GetAllSystemvetare()
         {
-            return Context.Alumner.Where(x => x.program.ID == 1);
+            return Context.Alumner.Where(x => x.Program.Id == 1);
 
         }
     }

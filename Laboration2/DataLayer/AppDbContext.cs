@@ -17,47 +17,46 @@ namespace DataLayer
         {
             
         }
-            // Dendär som vi inte vet om vi ska ha
+        // Dendär som vi inte vet om vi ska ha
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer("data source=(localdb)\\mssqllocaldb;Initial Catalog=oosu2lab2;user id=;password=;");
         //    base.OnConfiguring(optionsBuilder);
         //}
 
-            // Här är reset koden!
+        // Här är reset koden!
 
         // Place in your own instance of DbContext
-        //public void Reset()
-        //{
-        //    using (SqlConnection conn = new SqlConnection(Database.Connection.ConnectionString))
-        //    using (SqlCommand cmd = new SqlCommand("EXEC sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT all'; EXEC sp_msforeachtable 'DROP TABLE ?'", conn))
-        //    {
-        //        conn.Open();
-        //        for (int i = 0; i < 5; i++)
-        //        {
-        //            try
-        //            {
-        //                cmd.ExecuteNonQuery();
-        //            }
-        //            catch (System.Exception)
-        //            {
-        //                // throw;
-        //            }
-        //        }
-        //        conn.Close();
-        //    }
-        //    Database.Initialize(true);
-        //}
+        public void Reset()
+        {
+            using (SqlConnection conn = new SqlConnection(Database.Connection.ConnectionString))
+            using (SqlCommand cmd = new SqlCommand("EXEC sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT all'; EXEC sp_msforeachtable 'DROP TABLE ?'", conn))
+            {
+                conn.Open();
+                for (int i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (System.Exception)
+                    {
+                        // throw;
+                    }
+                }
+                conn.Close();
+            }
+            Database.Initialize(true);
+        }
 
 
-        public virtual DbSet<Alumn> Alumner { get; set; }
-        public virtual DbSet<Personal> Personals { get; set; }
-        public virtual DbSet<Användare> Användares { get; set; }
-        public virtual DbSet<Entity> Entiteter { get; set; }
-        public virtual DbSet<Student> Studenter { get; set; }
-        public virtual DbSet<UtskicksLista> UtskicksListor { get; set; }
-        public virtual DbSet<Aktivitet> Aktiviteter { get; set; }
-        public virtual DbSet<Program> Programs { get; set; }
+         public DbSet<Alumn> Alumner { get; set; }
+        // public DbSet<Personal> Personals { get; set; }
+        // public virtual DbSet<Användare> Användares { get; set; }
+        public DbSet<Student> Studenter { get; set; }
+        // public virtual DbSet<UtskicksLista> UtskicksListor { get; set; }
+        // public DbSet<Aktivitet> Aktiviteter { get; set; }
+        public DbSet<Program> Programs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

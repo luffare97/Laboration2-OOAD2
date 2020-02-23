@@ -8,12 +8,13 @@ namespace BusinessEntites
 {
     public class Användare : Entity
     {
-        public string AnvändarId { get; set; }
-        private string Lösenord { get; set; }
+        //public string AnvändarId { get; set; }
+        public string Lösenord { get; set; }
         public string FNamn { get; set; }
         public string ENamn { get; set; }
         public string EMail { get; set; }
         public int TeleNr { get; set; }
+        public Program Program { get; set; }
 
     }
 }

@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class AktivitetRepository : GenericRepository<Aktivitet>, IAktivitetRepository
+    public class AktivitetRepository : GenericRepository<Aktivitet>//, IAktivitetRepository
     {
         public AktivitetRepository(AppDbContext context) : base(context)
         {
@@ -17,9 +17,10 @@ namespace DataLayer
 
         private AppDbContext Context { get; }
 
-        public IEnumerable<Aktivitet> GetAllAktiviteter()
-        {
-            return Context.Aktiviteter.Where(x => x.AktivitetId == 1);
-        }
+        //public IEnumerable<Aktivitet> GetAllAktiviteter()
+        //{
+        //    int f = 0;
+        //    return f;//Context.Aktiviteter.Where(x => x.AktivitetId == 1);
+        //}
     }
 }

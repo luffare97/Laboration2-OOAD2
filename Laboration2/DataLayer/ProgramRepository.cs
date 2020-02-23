@@ -19,7 +19,7 @@ namespace DataLayer
 
         public IEnumerable<Program> GetPrograms()
         {
-            return Context.Programs.Where(x => x.ID > 0);
+            return Context.Programs.Where(x => x.Id > 0);
 
         }
 
