@@ -17,5 +17,10 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void VäljListaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

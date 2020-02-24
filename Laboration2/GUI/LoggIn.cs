@@ -40,6 +40,7 @@ namespace GUI
                 MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
                 StartAnnan startAnnan = new StartAnnan(BusinessManager);
                 startAnnan.ShowDialog();
+                this.Hide();
                 this.Close();
                 
             }

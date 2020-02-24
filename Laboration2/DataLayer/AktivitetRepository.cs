@@ -17,6 +17,14 @@ namespace DataLayer
 
         private AppDbContext Context { get; }
 
+        public List<Aktivitet> GetAllAktiviteter()
+        {
+            using (var db = new AppDbContext())
+            {
+                return db.Aktiviteter.ToList();
+            }
+        }
+
         //public IEnumerable<Aktivitet> GetAllAktiviteter()
         //{
         //    int f = 0;
