@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
 
 namespace GUI
 {
     public partial class RedigeraProfilAnnan : Form
     {
-        public RedigeraProfilAnnan()
+        public RedigeraProfilAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
         }

@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
 
 namespace GUI
 {
     public partial class SeUtskicksListaAnnan : Form
     {
-        public SeUtskicksListaAnnan()
+        public SeUtskicksListaAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
         }

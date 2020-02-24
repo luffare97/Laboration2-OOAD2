@@ -222,6 +222,7 @@
             this.SparaBtn.TabIndex = 20;
             this.SparaBtn.Text = "Spara";
             this.SparaBtn.UseVisualStyleBackColor = true;
+            this.SparaBtn.Click += new System.EventHandler(this.SparaBtn_Click);
             // 
             // TillbakaBtn
             // 

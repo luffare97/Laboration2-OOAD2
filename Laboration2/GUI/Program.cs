@@ -19,8 +19,10 @@ namespace GUI
         static void Main()
         {
             //Återställer databasen
-            new AppDbContext().Reset();
-            BusinessManager BM = new BusinessManager();
+            AppDbContext DB = new AppDbContext();
+            DB.Reset();
+
+            BusinessManager BM = new BusinessManager(new UnitOfWork(DB));
            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

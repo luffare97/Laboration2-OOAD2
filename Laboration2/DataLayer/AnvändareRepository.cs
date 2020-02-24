@@ -25,10 +25,10 @@ namespace DataLayer
 
 
 
-        public IEnumerable<Användare> GetAnvändare(string användarID)
+        public Användare GetAnvändare(string användarID)
         {
 
-            return Context.Användares.Where(x => x.AnvändarId == användarID);
+            return Context.Användares.Where(x => x.AnvändarId == användarID).FirstOrDefault();
             
 
         }

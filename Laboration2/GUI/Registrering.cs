@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
 
 namespace GUI
 {
     public partial class Registrering : Form
     {
-        public Registrering()
+        public Registrering(BusinessManager businessManager)
         {
             InitializeComponent();
+        }
+
+        private void SparaBtn_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
 
 namespace GUI
 {
     public partial class StartPersonal : Form
     {
-        public StartPersonal()
+        public StartPersonal(BusinessManager businessManager)
         {
             InitializeComponent();
         }

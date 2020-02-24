@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class LoggIn : Form
     {
-        public AppDbContext DB { get; }
+        
         public BusinessManager BusinessManager { get; }
 
         public LoggIn(BusinessManager businessManager)
@@ -28,17 +28,27 @@ namespace GUI
         private void LoggaInBtn_Click(object sender, EventArgs e)
         {
                 
-            var A = BusinessManager.AnvändarRepo.GetAnvändare(IDTxt.Text);
+            Användare A = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(IDTxt.Text);
 
-            if (A)
+            if (A == null)
             {
+                MessageBox.Show("AnvändarIDt eller lösenordet stämmer inte", "Error");
 
+            }
+            else if (A.Lösenord == LösenordTxt.Text)
+            {
+                MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
+                StartAnnan startAnnan = new StartAnnan(BusinessManager);
+                startAnnan.ShowDialog();
+                this.Close();
+                
             }
         }
 
         private void RegistreraBtn_Click(object sender, EventArgs e)
         {
-
+            Registrering registrering = new Registrering(BusinessManager);
+            registrering.ShowDialog();
         }
     }
 }
