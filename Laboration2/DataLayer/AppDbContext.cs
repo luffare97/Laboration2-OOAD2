@@ -56,8 +56,35 @@ namespace DataLayer
         }
         public void Seed()
         {
+            Student Olof = new Student()
+            {
+                AnvändarId = "s13",
+                EMail = "olof.pelle@hotmail.com",
+                ENamn = "Pellesson",
+                FNamn = "Olof",
+                Lösenord = "LOL",
+                TeleNr = 010555203,
+                program = Program.Systemarkitekt
+            };
+            Studenter.Add(Olof);
 
-            
+
+            Alumn Nisse = new Alumn()
+            {
+                AnvändarId = "s14",
+                EMail = "SniffarNisse@HAHA.lol",
+                FNamn = "Nisse",
+                ENamn = "Sniffe",
+                Lösenord = "LOL",
+                TeleNr = 0708555324,
+                Anställning = "Sniffare",
+                ExamensÅr = 2005,
+                Ort = "Göteborg",
+                program = Program.DataEkonom
+            };
+            Alumner.Add(Nisse);
+
+
             Studenter.Add(new Student()
             {
                 AnvändarId = "s10",
@@ -88,7 +115,6 @@ namespace DataLayer
                 ENamn = "Lärarsson",
                 Lösenord = "LOL",
                 TeleNr = 0100555666,
-                Id = 1,
                 Possition = "Chef"
                 
             });
@@ -116,6 +142,14 @@ namespace DataLayer
                 Plats = "D433",
                 Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
             });
+
+            List<Användare> A = new List<Användare>();
+            A.Add(Olof);
+            A.Add(Nisse);
+
+            string B = "Lista med information om vilka elever som suger";
+
+            UtskicksListor.Add(new UtskicksLista(A, B));
                        
             
             SaveChanges();

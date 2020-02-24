@@ -15,6 +15,14 @@ namespace DataLayer
             Context = context;
         }
 
+        public List<UtskicksLista> GetAllListor()
+        {
+            using (var db = new AppDbContext())
+            {
+                return db.UtskicksListor.ToList();
+            }
+        }
+
         private AppDbContext Context { get; }
     }
 }
