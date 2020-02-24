@@ -157,6 +157,18 @@
     <EmbeddedResource Include="Registrering.resx">
       <DependentUpon>Registrering.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SeAktivitetAnnan.resx">
+      <DependentUpon>SeAktivitetAnnan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeAktivitetPersonal.resx">
+      <DependentUpon>SeAktivitetPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeUtskicksListaAnnan.resx">
+      <DependentUpon>SeUtskicksListaAnnan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeUtskicksListaPersonal.resx">
+      <DependentUpon>SeUtskicksListaPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartAnnan.resx">
       <DependentUpon>StartAnnan.cs</DependentUpon>
     </EmbeddedResource>

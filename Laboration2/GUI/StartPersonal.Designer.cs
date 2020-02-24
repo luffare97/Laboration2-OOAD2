@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PositionLabel = new System.Windows.Forms.Label();
             this.LoggaUtBtn = new System.Windows.Forms.Button();
             this.RedigeraProfilBtn = new System.Windows.Forms.Button();
             this.InLoggadNamn = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.VäljaAktivitetBtn = new System.Windows.Forms.Button();
             this.SkapaAktivitetBtn = new System.Windows.Forms.Button();
             this.AktivitetDataGridView = new System.Windows.Forms.DataGridView();
-            this.PositionLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UtskicksListaDataGrid)).BeginInit();
@@ -56,25 +56,34 @@
             this.groupBox1.Controls.Add(this.InLoggadNamn);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(102, 163);
+            this.groupBox1.Size = new System.Drawing.Size(102, 144);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profil";
             // 
+            // PositionLabel
+            // 
+            this.PositionLabel.AutoSize = true;
+            this.PositionLabel.Location = new System.Drawing.Point(8, 53);
+            this.PositionLabel.Name = "PositionLabel";
+            this.PositionLabel.Size = new System.Drawing.Size(49, 13);
+            this.PositionLabel.TabIndex = 3;
+            this.PositionLabel.Text = "Possition";
+            // 
             // LoggaUtBtn
             // 
-            this.LoggaUtBtn.Location = new System.Drawing.Point(6, 134);
+            this.LoggaUtBtn.Location = new System.Drawing.Point(6, 112);
             this.LoggaUtBtn.Name = "LoggaUtBtn";
-            this.LoggaUtBtn.Size = new System.Drawing.Size(88, 23);
+            this.LoggaUtBtn.Size = new System.Drawing.Size(90, 23);
             this.LoggaUtBtn.TabIndex = 2;
             this.LoggaUtBtn.Text = "Logga ut";
             this.LoggaUtBtn.UseVisualStyleBackColor = true;
             // 
             // RedigeraProfilBtn
             // 
-            this.RedigeraProfilBtn.Location = new System.Drawing.Point(6, 105);
+            this.RedigeraProfilBtn.Location = new System.Drawing.Point(6, 83);
             this.RedigeraProfilBtn.Name = "RedigeraProfilBtn";
-            this.RedigeraProfilBtn.Size = new System.Drawing.Size(88, 23);
+            this.RedigeraProfilBtn.Size = new System.Drawing.Size(90, 23);
             this.RedigeraProfilBtn.TabIndex = 1;
             this.RedigeraProfilBtn.Text = "Redigera profil";
             this.RedigeraProfilBtn.UseVisualStyleBackColor = true;
@@ -82,7 +91,7 @@
             // InLoggadNamn
             // 
             this.InLoggadNamn.AutoSize = true;
-            this.InLoggadNamn.Location = new System.Drawing.Point(6, 22);
+            this.InLoggadNamn.Location = new System.Drawing.Point(8, 24);
             this.InLoggadNamn.Name = "InLoggadNamn";
             this.InLoggadNamn.Size = new System.Drawing.Size(88, 13);
             this.InLoggadNamn.TabIndex = 0;
@@ -164,15 +173,6 @@
             this.AktivitetDataGridView.Name = "AktivitetDataGridView";
             this.AktivitetDataGridView.Size = new System.Drawing.Size(384, 428);
             this.AktivitetDataGridView.TabIndex = 0;
-            // 
-            // PositionLabel
-            // 
-            this.PositionLabel.AutoSize = true;
-            this.PositionLabel.Location = new System.Drawing.Point(6, 51);
-            this.PositionLabel.Name = "PositionLabel";
-            this.PositionLabel.Size = new System.Drawing.Size(49, 13);
-            this.PositionLabel.TabIndex = 3;
-            this.PositionLabel.Text = "Possition";
             // 
             // StartPersonal
             // 
