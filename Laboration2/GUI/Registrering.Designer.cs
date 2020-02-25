@@ -34,11 +34,10 @@
             this.textBoxMail = new System.Windows.Forms.TextBox();
             this.textBoxTeleNr = new System.Windows.Forms.TextBox();
             this.textBoxOrt = new System.Windows.Forms.TextBox();
-            this.textBoxJobb = new System.Windows.Forms.TextBox();
+            this.textBoxJob = new System.Windows.Forms.TextBox();
             this.textBoxLösenord2 = new System.Windows.Forms.TextBox();
             this.textBoxLösenord1 = new System.Windows.Forms.TextBox();
             this.comboBoxProgram = new System.Windows.Forms.ComboBox();
-            this.comboBoxÅr = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.SparaBtn = new System.Windows.Forms.Button();
             this.TillbakaBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -96,12 +96,12 @@
             this.textBoxOrt.Size = new System.Drawing.Size(139, 20);
             this.textBoxOrt.TabIndex = 5;
             // 
-            // textBoxJobb
+            // textBoxJob
             // 
-            this.textBoxJobb.Location = new System.Drawing.Point(158, 142);
-            this.textBoxJobb.Name = "textBoxJobb";
-            this.textBoxJobb.Size = new System.Drawing.Size(139, 20);
-            this.textBoxJobb.TabIndex = 6;
+            this.textBoxJob.Location = new System.Drawing.Point(158, 142);
+            this.textBoxJob.Name = "textBoxJob";
+            this.textBoxJob.Size = new System.Drawing.Size(139, 20);
+            this.textBoxJob.TabIndex = 6;
             // 
             // textBoxLösenord2
             // 
@@ -126,14 +126,6 @@
             this.comboBoxProgram.Name = "comboBoxProgram";
             this.comboBoxProgram.Size = new System.Drawing.Size(139, 21);
             this.comboBoxProgram.TabIndex = 9;
-            // 
-            // comboBoxÅr
-            // 
-            this.comboBoxÅr.FormattingEnabled = true;
-            this.comboBoxÅr.Location = new System.Drawing.Point(158, 195);
-            this.comboBoxÅr.Name = "comboBoxÅr";
-            this.comboBoxÅr.Size = new System.Drawing.Size(139, 21);
-            this.comboBoxÅr.TabIndex = 10;
             // 
             // label2
             // 
@@ -236,11 +228,19 @@
             this.TillbakaBtn.UseVisualStyleBackColor = true;
             this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(158, 195);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(139, 20);
+            this.textBox1.TabIndex = 22;
+            // 
             // Registrering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 335);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TillbakaBtn);
             this.Controls.Add(this.SparaBtn);
             this.Controls.Add(this.label10);
@@ -252,11 +252,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxÅr);
             this.Controls.Add(this.comboBoxProgram);
             this.Controls.Add(this.textBoxLösenord1);
             this.Controls.Add(this.textBoxLösenord2);
-            this.Controls.Add(this.textBoxJobb);
+            this.Controls.Add(this.textBoxJob);
             this.Controls.Add(this.textBoxOrt);
             this.Controls.Add(this.textBoxTeleNr);
             this.Controls.Add(this.textBoxMail);
@@ -278,11 +277,10 @@
         private System.Windows.Forms.TextBox textBoxMail;
         private System.Windows.Forms.TextBox textBoxTeleNr;
         private System.Windows.Forms.TextBox textBoxOrt;
-        private System.Windows.Forms.TextBox textBoxJobb;
+        private System.Windows.Forms.TextBox textBoxJob;
         private System.Windows.Forms.TextBox textBoxLösenord2;
         private System.Windows.Forms.TextBox textBoxLösenord1;
         private System.Windows.Forms.ComboBox comboBoxProgram;
-        private System.Windows.Forms.ComboBox comboBoxÅr;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -294,5 +292,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button SparaBtn;
         private System.Windows.Forms.Button TillbakaBtn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

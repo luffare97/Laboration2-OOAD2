@@ -37,28 +37,35 @@ namespace DataLayer
                 alumn.TeleNr = tele;
                 alumn.Ort = Ort;
                 alumn.Anställning = Job;
+
             }
 
             Context.SaveChanges();
 
         }
 
-        public void CreateAlumn(string Fnamn, string Enamn, string EMail, string TeleNr, string Ort, string Job)
+        public void CreateAlumn(string Fnamn, string Enamn, string EMail, int tele, string Ort, string Job, string Lösenord, Utbildning utb, int år)
         {
 
-            int tele = int.Parse(TeleNr);
 
             Alumn A = new Alumn()
             {
+                AnvändarId = $"S{Context.Användares.Count()+1}",
                 FNamn = Fnamn,
                 ENamn = Enamn,
                 EMail = EMail,
                 TeleNr = tele,
                 Ort = Ort,
-                Anställning = Job
+                Anställning = Job,
+                Lösenord = Lösenord,
+                program = utb,
+                ExamensÅr = år
+                
             };
             
             Context.Alumner.Add(A);
+
+            Context.SaveChanges();
         }
 
 

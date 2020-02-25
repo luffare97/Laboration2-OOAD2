@@ -58,7 +58,7 @@ namespace DataLayer
         {
             Alumn Olof = new Alumn()
             {
-                AnvändarId = "s13",
+                AnvändarId = "s1",
                 EMail = "olof.pelle@hotmail.com",
                 ENamn = "Pellesson",
                 FNamn = "Olof",
@@ -74,7 +74,7 @@ namespace DataLayer
 
             Alumn Nisse = new Alumn()
             {
-                AnvändarId = "s14",
+                AnvändarId = "s2",
                 EMail = "SniffarNisse@HAHA.lol",
                 FNamn = "Nisse",
                 ENamn = "Sniffe",
@@ -90,7 +90,7 @@ namespace DataLayer
 
             Alumner.Add(new Alumn()
             {
-                AnvändarId = "s10",
+                AnvändarId = "s3",
                 EMail = "Moa.Adolf@hotmail.com",
                 ENamn = "Adolfsson",
                 FNamn = "Moa",
@@ -104,7 +104,7 @@ namespace DataLayer
 
             Alumner.Add(new Alumn()
             {
-                AnvändarId = "s11",
+                AnvändarId = "s4",
                 EMail = "Bosse.Bergman@hotmail.com",
                 ENamn = "Bergman",
                 FNamn = "Bosse",
@@ -118,7 +118,7 @@ namespace DataLayer
 
             Personals.Add(new Personal()
             {
-                AnvändarId = "t15",
+                AnvändarId = "t5",
                 EMail = "DummaElever@skolan.se",
                 FNamn = "Lars-gunnar",
                 ENamn = "Lärarsson",
@@ -130,7 +130,7 @@ namespace DataLayer
 
             Personals.Add(new Personal()
             {
-                AnvändarId = "t16",
+                AnvändarId = "t6",
                 EMail = "LasseSuger@berg.sten",
                 FNamn = "Sten-Stig",
                 ENamn = "Bumling",
@@ -142,7 +142,7 @@ namespace DataLayer
 
             Personals.Add(new Personal()
             {
-                AnvändarId = "t17",
+                AnvändarId = "t7",
                 EMail = "Smartare@an.dig",
                 FNamn = "Leonard",
                 ENamn = "McSmartis",
@@ -154,7 +154,7 @@ namespace DataLayer
 
             Alumner.Add(new Alumn()
             {
-                AnvändarId = "s12",
+                AnvändarId = "s8",
                 EMail = "BjörnarSuger@hmu.plz",
                 FNamn = "Björn",
                 ENamn = "Jägare",
