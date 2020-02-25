@@ -231,6 +231,7 @@
             // 
             this.UpprepaTxt.Location = new System.Drawing.Point(129, 71);
             this.UpprepaTxt.Name = "UpprepaTxt";
+            this.UpprepaTxt.PasswordChar = '*';
             this.UpprepaTxt.Size = new System.Drawing.Size(137, 20);
             this.UpprepaTxt.TabIndex = 3;
             // 
@@ -238,6 +239,7 @@
             // 
             this.NyttLösenordTxt.Location = new System.Drawing.Point(129, 45);
             this.NyttLösenordTxt.Name = "NyttLösenordTxt";
+            this.NyttLösenordTxt.PasswordChar = '*';
             this.NyttLösenordTxt.Size = new System.Drawing.Size(137, 20);
             this.NyttLösenordTxt.TabIndex = 2;
             // 
@@ -245,6 +247,7 @@
             // 
             this.GammaltLösenordTxt.Location = new System.Drawing.Point(129, 19);
             this.GammaltLösenordTxt.Name = "GammaltLösenordTxt";
+            this.GammaltLösenordTxt.PasswordChar = '*';
             this.GammaltLösenordTxt.Size = new System.Drawing.Size(137, 20);
             this.GammaltLösenordTxt.TabIndex = 1;
             // 

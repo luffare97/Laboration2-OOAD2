@@ -58,11 +58,13 @@ namespace GUI
 
         private void LoggaUtBtn_Click(object sender, EventArgs e)
         {
-            //Kolla på senare kanske annars bara this.Close();
+            //Kolla på senare kanske annars bara this.Close();//
+
             //BusinessManager.InloggadPersonal = null;
             //LoggIn InLogg = new LoggIn(BusinessManager);
             //this.Close();
             //InLogg.ShowDialog();
+
             this.Close();
 
         }

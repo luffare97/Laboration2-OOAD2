@@ -67,7 +67,7 @@ namespace DataLayer
                 Anställning = "",
                 ExamensÅr = 2022,
                 Ort = "Borås",
-                program = Program.Systemarkitekt
+                program = Utbildning.Systemarkitekt
             };
             Alumner.Add(Olof);
 
@@ -83,7 +83,7 @@ namespace DataLayer
                 Anställning = "Sniffare",
                 ExamensÅr = 2005,
                 Ort = "Göteborg",
-                program = Program.DataEkonom
+                program = Utbildning.DataEkonom
             };
             Alumner.Add(Nisse);
 
@@ -99,7 +99,7 @@ namespace DataLayer
                 Anställning = "Codare",
                 ExamensÅr = 2012,
                 Ort = "Huddinge",
-                program = Program.Systemarkitekt
+                program = Utbildning.Systemarkitekt
             });
 
             Alumner.Add(new Alumn()
@@ -113,7 +113,7 @@ namespace DataLayer
                 Anställning = "Bagare",
                 ExamensÅr = 2008,
                 Ort = "Frölunda",
-                program = Program.DataEkonom
+                program = Utbildning.DataEkonom
             });
 
             Personals.Add(new Personal()
@@ -163,7 +163,7 @@ namespace DataLayer
                 Anställning = "Björn Jägare",
                 ExamensÅr = 2005,
                 Ort = "Mora",
-                program = Program.Systemvetare
+                program = Utbildning.Systemvetare
             });
 
             Aktiviteter.Add(new Aktivitet()
