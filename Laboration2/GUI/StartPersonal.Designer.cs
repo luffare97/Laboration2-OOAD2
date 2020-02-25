@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.PositionLabel = new System.Windows.Forms.Label();
+            this.InLoggadPosition = new System.Windows.Forms.Label();
             this.LoggaUtBtn = new System.Windows.Forms.Button();
             this.RedigeraProfilBtn = new System.Windows.Forms.Button();
             this.InLoggadNamn = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.SkapaNyLista = new System.Windows.Forms.Button();
             this.VäljListaBtn = new System.Windows.Forms.Button();
-            this.UtskicksListaDataGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridListor = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.VäljaAktivitetBtn = new System.Windows.Forms.Button();
             this.SkapaAktivitetBtn = new System.Windows.Forms.Button();
-            this.AktivitetDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridAktiviteter = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UtskicksListaDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridListor)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AktivitetDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAktiviteter)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.PositionLabel);
+            this.groupBox1.Controls.Add(this.InLoggadPosition);
             this.groupBox1.Controls.Add(this.LoggaUtBtn);
             this.groupBox1.Controls.Add(this.RedigeraProfilBtn);
             this.groupBox1.Controls.Add(this.InLoggadNamn);
@@ -61,14 +61,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profil";
             // 
-            // PositionLabel
+            // InLoggadPosition
             // 
-            this.PositionLabel.AutoSize = true;
-            this.PositionLabel.Location = new System.Drawing.Point(8, 53);
-            this.PositionLabel.Name = "PositionLabel";
-            this.PositionLabel.Size = new System.Drawing.Size(49, 13);
-            this.PositionLabel.TabIndex = 3;
-            this.PositionLabel.Text = "Possition";
+            this.InLoggadPosition.AutoSize = true;
+            this.InLoggadPosition.Location = new System.Drawing.Point(8, 53);
+            this.InLoggadPosition.Name = "InLoggadPosition";
+            this.InLoggadPosition.Size = new System.Drawing.Size(49, 13);
+            this.InLoggadPosition.TabIndex = 3;
+            this.InLoggadPosition.Text = "Possition";
             // 
             // LoggaUtBtn
             // 
@@ -78,6 +78,7 @@
             this.LoggaUtBtn.TabIndex = 2;
             this.LoggaUtBtn.Text = "Logga ut";
             this.LoggaUtBtn.UseVisualStyleBackColor = true;
+            this.LoggaUtBtn.Click += new System.EventHandler(this.LoggaUtBtn_Click);
             // 
             // RedigeraProfilBtn
             // 
@@ -101,7 +102,7 @@
             // 
             this.groupBox2.Controls.Add(this.SkapaNyLista);
             this.groupBox2.Controls.Add(this.VäljListaBtn);
-            this.groupBox2.Controls.Add(this.UtskicksListaDataGrid);
+            this.groupBox2.Controls.Add(this.dataGridListor);
             this.groupBox2.Location = new System.Drawing.Point(120, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(396, 482);
@@ -128,19 +129,19 @@
             this.VäljListaBtn.UseVisualStyleBackColor = true;
             this.VäljListaBtn.Click += new System.EventHandler(this.VäljListaBtn_Click);
             // 
-            // UtskicksListaDataGrid
+            // dataGridListor
             // 
-            this.UtskicksListaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UtskicksListaDataGrid.Location = new System.Drawing.Point(6, 19);
-            this.UtskicksListaDataGrid.Name = "UtskicksListaDataGrid";
-            this.UtskicksListaDataGrid.Size = new System.Drawing.Size(384, 428);
-            this.UtskicksListaDataGrid.TabIndex = 0;
+            this.dataGridListor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridListor.Location = new System.Drawing.Point(6, 19);
+            this.dataGridListor.Name = "dataGridListor";
+            this.dataGridListor.Size = new System.Drawing.Size(384, 428);
+            this.dataGridListor.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.VäljaAktivitetBtn);
             this.groupBox3.Controls.Add(this.SkapaAktivitetBtn);
-            this.groupBox3.Controls.Add(this.AktivitetDataGridView);
+            this.groupBox3.Controls.Add(this.dataGridAktiviteter);
             this.groupBox3.Location = new System.Drawing.Point(522, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(396, 482);
@@ -166,13 +167,13 @@
             this.SkapaAktivitetBtn.Text = "Skapa aktivitet";
             this.SkapaAktivitetBtn.UseVisualStyleBackColor = true;
             // 
-            // AktivitetDataGridView
+            // dataGridAktiviteter
             // 
-            this.AktivitetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AktivitetDataGridView.Location = new System.Drawing.Point(6, 19);
-            this.AktivitetDataGridView.Name = "AktivitetDataGridView";
-            this.AktivitetDataGridView.Size = new System.Drawing.Size(384, 428);
-            this.AktivitetDataGridView.TabIndex = 0;
+            this.dataGridAktiviteter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAktiviteter.Location = new System.Drawing.Point(6, 19);
+            this.dataGridAktiviteter.Name = "dataGridAktiviteter";
+            this.dataGridAktiviteter.Size = new System.Drawing.Size(384, 428);
+            this.dataGridAktiviteter.TabIndex = 0;
             // 
             // StartPersonal
             // 
@@ -187,9 +188,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UtskicksListaDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridListor)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AktivitetDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAktiviteter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,13 +202,13 @@
         private System.Windows.Forms.Label InLoggadNamn;
         private System.Windows.Forms.Button LoggaUtBtn;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView UtskicksListaDataGrid;
+        private System.Windows.Forms.DataGridView dataGridListor;
         private System.Windows.Forms.Button VäljListaBtn;
         private System.Windows.Forms.Button SkapaNyLista;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView AktivitetDataGridView;
+        private System.Windows.Forms.DataGridView dataGridAktiviteter;
         private System.Windows.Forms.Button VäljaAktivitetBtn;
         private System.Windows.Forms.Button SkapaAktivitetBtn;
-        private System.Windows.Forms.Label PositionLabel;
+        private System.Windows.Forms.Label InLoggadPosition;
     }
 }

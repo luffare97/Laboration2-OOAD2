@@ -17,5 +17,10 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void TillbakaBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

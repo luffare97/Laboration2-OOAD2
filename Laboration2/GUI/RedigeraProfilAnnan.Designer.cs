@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FNamnTxt = new System.Windows.Forms.TextBox();
-            this.ENamnTxt = new System.Windows.Forms.TextBox();
-            this.EMailTxt = new System.Windows.Forms.TextBox();
-            this.TeleNrTxt = new System.Windows.Forms.TextBox();
-            this.OrtTxt = new System.Windows.Forms.TextBox();
-            this.AnställningTxt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.SparaInfoBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AnställningTxt = new System.Windows.Forms.TextBox();
+            this.OrtTxt = new System.Windows.Forms.TextBox();
+            this.TeleNrTxt = new System.Windows.Forms.TextBox();
+            this.EMailTxt = new System.Windows.Forms.TextBox();
+            this.ENamnTxt = new System.Windows.Forms.TextBox();
+            this.FNamnTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.GammaltLösenordTxt = new System.Windows.Forms.TextBox();
-            this.NyttLösenordTxt = new System.Windows.Forms.TextBox();
-            this.UpprepaTxt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.SparaLösenordBtn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.UpprepaTxt = new System.Windows.Forms.TextBox();
+            this.NyttLösenordTxt = new System.Windows.Forms.TextBox();
+            this.GammaltLösenordTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.TillbakaBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,92 +77,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personlig information";
             // 
-            // label1
+            // SparaInfoBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Förnamn:";
-            // 
-            // FNamnTxt
-            // 
-            this.FNamnTxt.Location = new System.Drawing.Point(129, 19);
-            this.FNamnTxt.Name = "FNamnTxt";
-            this.FNamnTxt.Size = new System.Drawing.Size(137, 20);
-            this.FNamnTxt.TabIndex = 1;
-            // 
-            // ENamnTxt
-            // 
-            this.ENamnTxt.Location = new System.Drawing.Point(129, 45);
-            this.ENamnTxt.Name = "ENamnTxt";
-            this.ENamnTxt.Size = new System.Drawing.Size(137, 20);
-            this.ENamnTxt.TabIndex = 2;
-            // 
-            // EMailTxt
-            // 
-            this.EMailTxt.Location = new System.Drawing.Point(129, 71);
-            this.EMailTxt.Name = "EMailTxt";
-            this.EMailTxt.Size = new System.Drawing.Size(137, 20);
-            this.EMailTxt.TabIndex = 3;
-            // 
-            // TeleNrTxt
-            // 
-            this.TeleNrTxt.Location = new System.Drawing.Point(129, 97);
-            this.TeleNrTxt.Name = "TeleNrTxt";
-            this.TeleNrTxt.Size = new System.Drawing.Size(137, 20);
-            this.TeleNrTxt.TabIndex = 4;
-            // 
-            // OrtTxt
-            // 
-            this.OrtTxt.Location = new System.Drawing.Point(129, 123);
-            this.OrtTxt.Name = "OrtTxt";
-            this.OrtTxt.Size = new System.Drawing.Size(137, 20);
-            this.OrtTxt.TabIndex = 5;
-            // 
-            // AnställningTxt
-            // 
-            this.AnställningTxt.Location = new System.Drawing.Point(129, 149);
-            this.AnställningTxt.Name = "AnställningTxt";
-            this.AnställningTxt.Size = new System.Drawing.Size(137, 20);
-            this.AnställningTxt.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Efternamn:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "E-Mailadress:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Telefonnummer:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Ort:";
+            this.SparaInfoBtn.Location = new System.Drawing.Point(191, 175);
+            this.SparaInfoBtn.Name = "SparaInfoBtn";
+            this.SparaInfoBtn.Size = new System.Drawing.Size(75, 23);
+            this.SparaInfoBtn.TabIndex = 12;
+            this.SparaInfoBtn.Text = "Spara";
+            this.SparaInfoBtn.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -173,14 +95,92 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Nuvarande Anställning:";
             // 
-            // SparaInfoBtn
+            // label5
             // 
-            this.SparaInfoBtn.Location = new System.Drawing.Point(191, 175);
-            this.SparaInfoBtn.Name = "SparaInfoBtn";
-            this.SparaInfoBtn.Size = new System.Drawing.Size(75, 23);
-            this.SparaInfoBtn.TabIndex = 12;
-            this.SparaInfoBtn.Text = "Spara";
-            this.SparaInfoBtn.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Ort:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Telefonnummer:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "E-Mailadress:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Efternamn:";
+            // 
+            // AnställningTxt
+            // 
+            this.AnställningTxt.Location = new System.Drawing.Point(129, 149);
+            this.AnställningTxt.Name = "AnställningTxt";
+            this.AnställningTxt.Size = new System.Drawing.Size(137, 20);
+            this.AnställningTxt.TabIndex = 6;
+            // 
+            // OrtTxt
+            // 
+            this.OrtTxt.Location = new System.Drawing.Point(129, 123);
+            this.OrtTxt.Name = "OrtTxt";
+            this.OrtTxt.Size = new System.Drawing.Size(137, 20);
+            this.OrtTxt.TabIndex = 5;
+            // 
+            // TeleNrTxt
+            // 
+            this.TeleNrTxt.Location = new System.Drawing.Point(129, 97);
+            this.TeleNrTxt.Name = "TeleNrTxt";
+            this.TeleNrTxt.Size = new System.Drawing.Size(137, 20);
+            this.TeleNrTxt.TabIndex = 4;
+            // 
+            // EMailTxt
+            // 
+            this.EMailTxt.Location = new System.Drawing.Point(129, 71);
+            this.EMailTxt.Name = "EMailTxt";
+            this.EMailTxt.Size = new System.Drawing.Size(137, 20);
+            this.EMailTxt.TabIndex = 3;
+            // 
+            // ENamnTxt
+            // 
+            this.ENamnTxt.Location = new System.Drawing.Point(129, 45);
+            this.ENamnTxt.Name = "ENamnTxt";
+            this.ENamnTxt.Size = new System.Drawing.Size(137, 20);
+            this.ENamnTxt.TabIndex = 2;
+            // 
+            // FNamnTxt
+            // 
+            this.FNamnTxt.Location = new System.Drawing.Point(129, 19);
+            this.FNamnTxt.Name = "FNamnTxt";
+            this.FNamnTxt.Size = new System.Drawing.Size(137, 20);
+            this.FNamnTxt.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Förnamn:";
             // 
             // groupBox2
             // 
@@ -198,44 +198,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lösenord";
             // 
-            // label7
+            // SparaLösenordBtn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Gammalt lösenord:";
-            // 
-            // GammaltLösenordTxt
-            // 
-            this.GammaltLösenordTxt.Location = new System.Drawing.Point(129, 19);
-            this.GammaltLösenordTxt.Name = "GammaltLösenordTxt";
-            this.GammaltLösenordTxt.Size = new System.Drawing.Size(137, 20);
-            this.GammaltLösenordTxt.TabIndex = 1;
-            // 
-            // NyttLösenordTxt
-            // 
-            this.NyttLösenordTxt.Location = new System.Drawing.Point(129, 45);
-            this.NyttLösenordTxt.Name = "NyttLösenordTxt";
-            this.NyttLösenordTxt.Size = new System.Drawing.Size(137, 20);
-            this.NyttLösenordTxt.TabIndex = 2;
-            // 
-            // UpprepaTxt
-            // 
-            this.UpprepaTxt.Location = new System.Drawing.Point(129, 71);
-            this.UpprepaTxt.Name = "UpprepaTxt";
-            this.UpprepaTxt.Size = new System.Drawing.Size(137, 20);
-            this.UpprepaTxt.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Nytt lösenord:";
+            this.SparaLösenordBtn.Location = new System.Drawing.Point(191, 97);
+            this.SparaLösenordBtn.Name = "SparaLösenordBtn";
+            this.SparaLösenordBtn.Size = new System.Drawing.Size(75, 23);
+            this.SparaLösenordBtn.TabIndex = 6;
+            this.SparaLösenordBtn.Text = "Spara";
+            this.SparaLösenordBtn.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -246,14 +216,44 @@
             this.label9.TabIndex = 5;
             this.label9.Text = "Upprepa nytt lösenord:";
             // 
-            // SparaLösenordBtn
+            // label8
             // 
-            this.SparaLösenordBtn.Location = new System.Drawing.Point(191, 97);
-            this.SparaLösenordBtn.Name = "SparaLösenordBtn";
-            this.SparaLösenordBtn.Size = new System.Drawing.Size(75, 23);
-            this.SparaLösenordBtn.TabIndex = 6;
-            this.SparaLösenordBtn.Text = "Spara";
-            this.SparaLösenordBtn.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Nytt lösenord:";
+            // 
+            // UpprepaTxt
+            // 
+            this.UpprepaTxt.Location = new System.Drawing.Point(129, 71);
+            this.UpprepaTxt.Name = "UpprepaTxt";
+            this.UpprepaTxt.Size = new System.Drawing.Size(137, 20);
+            this.UpprepaTxt.TabIndex = 3;
+            // 
+            // NyttLösenordTxt
+            // 
+            this.NyttLösenordTxt.Location = new System.Drawing.Point(129, 45);
+            this.NyttLösenordTxt.Name = "NyttLösenordTxt";
+            this.NyttLösenordTxt.Size = new System.Drawing.Size(137, 20);
+            this.NyttLösenordTxt.TabIndex = 2;
+            // 
+            // GammaltLösenordTxt
+            // 
+            this.GammaltLösenordTxt.Location = new System.Drawing.Point(129, 19);
+            this.GammaltLösenordTxt.Name = "GammaltLösenordTxt";
+            this.GammaltLösenordTxt.Size = new System.Drawing.Size(137, 20);
+            this.GammaltLösenordTxt.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Gammalt lösenord:";
             // 
             // TillbakaBtn
             // 
@@ -263,6 +263,7 @@
             this.TillbakaBtn.TabIndex = 2;
             this.TillbakaBtn.Text = "Tillbaka";
             this.TillbakaBtn.UseVisualStyleBackColor = true;
+            this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
             // RedigeraProfilAnnan
             // 

@@ -73,6 +73,7 @@
             this.LoggaUtBtn.TabIndex = 8;
             this.LoggaUtBtn.Text = "Logga ut";
             this.LoggaUtBtn.UseVisualStyleBackColor = true;
+            this.LoggaUtBtn.Click += new System.EventHandler(this.LoggaUtBtn_Click);
             // 
             // RedigeraBtn
             // 

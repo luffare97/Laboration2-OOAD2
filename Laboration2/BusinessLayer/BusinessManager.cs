@@ -19,7 +19,7 @@ namespace BusinessLayer
             UnitOfWork = unitOfWork;
         }
 
-        public Användare Inloggad { get; set; }
+        public Personal InloggadPersonal { get; set; }
         public Alumn InloggadAlumn { get; set; }
 
         //public AktivitetRepository AktivitetRepo { get; set; }

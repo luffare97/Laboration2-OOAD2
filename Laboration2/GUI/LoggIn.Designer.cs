@@ -59,6 +59,7 @@
             // 
             this.LösenordTxt.Location = new System.Drawing.Point(82, 45);
             this.LösenordTxt.Name = "LösenordTxt";
+            this.LösenordTxt.PasswordChar = '*';
             this.LösenordTxt.Size = new System.Drawing.Size(193, 20);
             this.LösenordTxt.TabIndex = 4;
             // 

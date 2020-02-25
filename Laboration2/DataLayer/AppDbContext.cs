@@ -56,7 +56,7 @@ namespace DataLayer
         }
         public void Seed()
         {
-            Student Olof = new Student()
+            Alumn Olof = new Alumn()
             {
                 AnvändarId = "s13",
                 EMail = "olof.pelle@hotmail.com",
@@ -64,9 +64,12 @@ namespace DataLayer
                 FNamn = "Olof",
                 Lösenord = "LOL",
                 TeleNr = 010555203,
+                Anställning = "",
+                ExamensÅr = 2022,
+                Ort = "Borås",
                 program = Program.Systemarkitekt
             };
-            Studenter.Add(Olof);
+            Alumner.Add(Olof);
 
 
             Alumn Nisse = new Alumn()
@@ -85,18 +88,21 @@ namespace DataLayer
             Alumner.Add(Nisse);
 
 
-            Studenter.Add(new Student()
+            Alumner.Add(new Alumn()
             {
                 AnvändarId = "s10",
                 EMail = "Moa.Adolf@hotmail.com",
-                ENamn = "Moa",
-                FNamn = "Adolfsson",
+                ENamn = "Adolfsson",
+                FNamn = "Moa",
                 Lösenord = "LOL",
                 TeleNr = 010002203,
+                Anställning = "Codare",
+                ExamensÅr = 2012,
+                Ort = "Huddinge",
                 program = Program.Systemarkitekt
             });
 
-            Studenter.Add(new Student()
+            Alumner.Add(new Alumn()
             {
                 AnvändarId = "s11",
                 EMail = "Bosse.Bergman@hotmail.com",
@@ -104,6 +110,9 @@ namespace DataLayer
                 FNamn = "Bosse",
                 Lösenord = "LOL",
                 TeleNr = 010002203,
+                Anställning = "Bagare",
+                ExamensÅr = 2008,
+                Ort = "Frölunda",
                 program = Program.DataEkonom
             });
 
@@ -115,8 +124,32 @@ namespace DataLayer
                 ENamn = "Lärarsson",
                 Lösenord = "LOL",
                 TeleNr = 0100555666,
-                Possition = "Chef"
+                Possition = "Föreläsare"
                 
+            });
+
+            Personals.Add(new Personal()
+            {
+                AnvändarId = "t16",
+                EMail = "LasseSuger@berg.sten",
+                FNamn = "Sten-Stig",
+                ENamn = "Bumling",
+                Lösenord = "LOL",
+                TeleNr = 5318008,
+                Possition = "Professor"
+                
+            });
+
+            Personals.Add(new Personal()
+            {
+                AnvändarId = "t17",
+                EMail = "Smartare@an.dig",
+                FNamn = "Leonard",
+                ENamn = "McSmartis",
+                Lösenord = "LOL",
+                TeleNr = 12345678,
+                Possition = "Programansvarig"
+
             });
 
             Alumner.Add(new Alumn()

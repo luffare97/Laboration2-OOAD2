@@ -16,7 +16,8 @@ namespace GUI
     {
         BindingSource BindingSourceAktivitet = new BindingSource();
         BindingSource BindingSourceLista = new BindingSource();
-        
+
+        public BusinessManager BusinessManager { get; }
         public void HideColumns()
         {
             //Saker som inte ska synas för Utskickslistor
@@ -29,23 +30,25 @@ namespace GUI
             //dataGridAktiviteter.Columns["Plats"].Visible = false;
             dataGridAktiviteter.Columns["ID"].Visible = false;
         }
-
+        
         public StartAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
 
-            if (businessManager.Inloggad as Alumn != null)
-            {
-                InLoggadJobb.Text = businessManager.InloggadAlumn.Anställning;
-                InLoggadExamensÅr.Text = businessManager.InloggadAlumn.ExamensÅr.ToString();
-                InLoggadOrt.Text = businessManager.InloggadAlumn.Ort;
-            }
+            BusinessManager = businessManager;
 
-            InLoggadNamn.Text = businessManager.Inloggad.FNamn + " " + businessManager.Inloggad.ENamn;
-            InLoggadProgram.Text = businessManager.Inloggad.program.ToString();
+            InLoggadJobb.Text = businessManager.InloggadAlumn.Anställning;
+             InLoggadExamensÅr.Text = businessManager.InloggadAlumn.ExamensÅr.ToString();
+             InLoggadOrt.Text = businessManager.InloggadAlumn.Ort;
+
+
+            InLoggadNamn.Text = businessManager.InloggadAlumn.FNamn + " " + businessManager.InloggadAlumn.ENamn;
+            InLoggadProgram.Text = businessManager.InloggadAlumn.program.ToString();
+
+
             //För att fylla List datagriden
-            //BindingSourceLista.DataSource = businessManager.UnitOfWork.UtskicksListaRepository.GetAllListor();
-            //dataGridListor.DataSource = BindingSourceLista.DataSource;
+            BindingSourceLista.DataSource = businessManager.UnitOfWork.UtskicksListaRepository.GetAllListor();
+            dataGridListor.DataSource = BindingSourceLista.DataSource;
 
             //För att fylla Aktivitet datagriden
             BindingSourceAktivitet.DataSource = businessManager.UnitOfWork.AktivitetRepository.GetAllAktiviteter();
@@ -61,6 +64,19 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoggaUtBtn_Click(object sender, EventArgs e)
+        {
+
+            //Kolla på senare kanske annars bara this.Close();
+            //BusinessManager.InloggadAlumn = null;
+            //LoggIn InLogg = new LoggIn(BusinessManager);
+            //this.Close();
+            //InLogg.ShowDialog();
+            this.Close();
+
+            
         }
     }
 }

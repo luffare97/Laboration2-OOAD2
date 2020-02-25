@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBoxFnamn = new System.Windows.Forms.TextBox();
+            this.textBoxEnamn = new System.Windows.Forms.TextBox();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.textBoxTeleNr = new System.Windows.Forms.TextBox();
+            this.textBoxOrt = new System.Windows.Forms.TextBox();
+            this.textBoxJobb = new System.Windows.Forms.TextBox();
+            this.textBoxLösenord2 = new System.Windows.Forms.TextBox();
+            this.textBoxLösenord1 = new System.Windows.Forms.TextBox();
+            this.comboBoxProgram = new System.Windows.Forms.ComboBox();
+            this.comboBoxÅr = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,77 +61,79 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Förnamn:";
             // 
-            // textBox1
+            // textBoxFnamn
             // 
-            this.textBox1.Location = new System.Drawing.Point(158, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxFnamn.Location = new System.Drawing.Point(158, 12);
+            this.textBoxFnamn.Name = "textBoxFnamn";
+            this.textBoxFnamn.Size = new System.Drawing.Size(139, 20);
+            this.textBoxFnamn.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxEnamn
             // 
-            this.textBox2.Location = new System.Drawing.Point(158, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBoxEnamn.Location = new System.Drawing.Point(158, 38);
+            this.textBoxEnamn.Name = "textBoxEnamn";
+            this.textBoxEnamn.Size = new System.Drawing.Size(139, 20);
+            this.textBoxEnamn.TabIndex = 2;
             // 
-            // textBox3
+            // textBoxMail
             // 
-            this.textBox3.Location = new System.Drawing.Point(158, 64);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 20);
-            this.textBox3.TabIndex = 3;
+            this.textBoxMail.Location = new System.Drawing.Point(158, 64);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.Size = new System.Drawing.Size(139, 20);
+            this.textBoxMail.TabIndex = 3;
             // 
-            // textBox4
+            // textBoxTeleNr
             // 
-            this.textBox4.Location = new System.Drawing.Point(158, 90);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(139, 20);
-            this.textBox4.TabIndex = 4;
+            this.textBoxTeleNr.Location = new System.Drawing.Point(158, 90);
+            this.textBoxTeleNr.Name = "textBoxTeleNr";
+            this.textBoxTeleNr.Size = new System.Drawing.Size(139, 20);
+            this.textBoxTeleNr.TabIndex = 4;
             // 
-            // textBox5
+            // textBoxOrt
             // 
-            this.textBox5.Location = new System.Drawing.Point(158, 116);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(139, 20);
-            this.textBox5.TabIndex = 5;
+            this.textBoxOrt.Location = new System.Drawing.Point(158, 116);
+            this.textBoxOrt.Name = "textBoxOrt";
+            this.textBoxOrt.Size = new System.Drawing.Size(139, 20);
+            this.textBoxOrt.TabIndex = 5;
             // 
-            // textBox6
+            // textBoxJobb
             // 
-            this.textBox6.Location = new System.Drawing.Point(158, 142);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(139, 20);
-            this.textBox6.TabIndex = 6;
+            this.textBoxJobb.Location = new System.Drawing.Point(158, 142);
+            this.textBoxJobb.Name = "textBoxJobb";
+            this.textBoxJobb.Size = new System.Drawing.Size(139, 20);
+            this.textBoxJobb.TabIndex = 6;
             // 
-            // textBox7
+            // textBoxLösenord2
             // 
-            this.textBox7.Location = new System.Drawing.Point(158, 274);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(139, 20);
-            this.textBox7.TabIndex = 7;
+            this.textBoxLösenord2.Location = new System.Drawing.Point(158, 274);
+            this.textBoxLösenord2.Name = "textBoxLösenord2";
+            this.textBoxLösenord2.PasswordChar = '*';
+            this.textBoxLösenord2.Size = new System.Drawing.Size(139, 20);
+            this.textBoxLösenord2.TabIndex = 7;
             // 
-            // textBox8
+            // textBoxLösenord1
             // 
-            this.textBox8.Location = new System.Drawing.Point(158, 248);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(139, 20);
-            this.textBox8.TabIndex = 8;
+            this.textBoxLösenord1.Location = new System.Drawing.Point(158, 248);
+            this.textBoxLösenord1.Name = "textBoxLösenord1";
+            this.textBoxLösenord1.PasswordChar = '*';
+            this.textBoxLösenord1.Size = new System.Drawing.Size(139, 20);
+            this.textBoxLösenord1.TabIndex = 8;
             // 
-            // comboBox1
+            // comboBoxProgram
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(158, 168);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 21);
-            this.comboBox1.TabIndex = 9;
+            this.comboBoxProgram.FormattingEnabled = true;
+            this.comboBoxProgram.Location = new System.Drawing.Point(158, 168);
+            this.comboBoxProgram.Name = "comboBoxProgram";
+            this.comboBoxProgram.Size = new System.Drawing.Size(139, 21);
+            this.comboBoxProgram.TabIndex = 9;
             // 
-            // comboBox2
+            // comboBoxÅr
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 195);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(139, 21);
-            this.comboBox2.TabIndex = 10;
+            this.comboBoxÅr.FormattingEnabled = true;
+            this.comboBoxÅr.Location = new System.Drawing.Point(158, 195);
+            this.comboBoxÅr.Name = "comboBoxÅr";
+            this.comboBoxÅr.Size = new System.Drawing.Size(139, 21);
+            this.comboBoxÅr.TabIndex = 10;
             // 
             // label2
             // 
@@ -232,6 +234,7 @@
             this.TillbakaBtn.TabIndex = 21;
             this.TillbakaBtn.Text = "Tillbaka";
             this.TillbakaBtn.UseVisualStyleBackColor = true;
+            this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
             // Registrering
             // 
@@ -249,16 +252,16 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxÅr);
+            this.Controls.Add(this.comboBoxProgram);
+            this.Controls.Add(this.textBoxLösenord1);
+            this.Controls.Add(this.textBoxLösenord2);
+            this.Controls.Add(this.textBoxJobb);
+            this.Controls.Add(this.textBoxOrt);
+            this.Controls.Add(this.textBoxTeleNr);
+            this.Controls.Add(this.textBoxMail);
+            this.Controls.Add(this.textBoxEnamn);
+            this.Controls.Add(this.textBoxFnamn);
             this.Controls.Add(this.label1);
             this.Name = "Registrering";
             this.Text = "Registrering";
@@ -270,16 +273,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBoxFnamn;
+        private System.Windows.Forms.TextBox textBoxEnamn;
+        private System.Windows.Forms.TextBox textBoxMail;
+        private System.Windows.Forms.TextBox textBoxTeleNr;
+        private System.Windows.Forms.TextBox textBoxOrt;
+        private System.Windows.Forms.TextBox textBoxJobb;
+        private System.Windows.Forms.TextBox textBoxLösenord2;
+        private System.Windows.Forms.TextBox textBoxLösenord1;
+        private System.Windows.Forms.ComboBox comboBoxProgram;
+        private System.Windows.Forms.ComboBox comboBoxÅr;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

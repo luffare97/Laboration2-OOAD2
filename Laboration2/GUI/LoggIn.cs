@@ -39,22 +39,26 @@ namespace GUI
             {
                 if ((A as Personal) != null)
                 {
-                    BusinessManager.Inloggad = A;
+                    BusinessManager.InloggadPersonal = A as Personal;
                     MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
                     StartPersonal startPersonal = new StartPersonal(BusinessManager);
-                    startPersonal.ShowDialog();
                     this.Hide();
+                    startPersonal.ShowDialog();
+                    
                     this.Close();
 
+
                 }
-                else
+                else if((A as Alumn) != null)
                 {
-                    BusinessManager.Inloggad = A;
+                    BusinessManager.InloggadAlumn = A as Alumn;
                     //MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
                     StartAnnan startAnnan = new StartAnnan(BusinessManager);
-                    startAnnan.ShowDialog();
                     this.Hide();
+                    startAnnan.ShowDialog();
+
                     this.Close();
+
 
                 }
 

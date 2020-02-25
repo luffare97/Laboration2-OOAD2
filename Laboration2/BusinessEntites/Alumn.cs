@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace BusinessEntites
 {
-    public class Alumn : Student
+    public class Alumn : Användare
     {
         public string Ort { get; set; }
         public string Anställning { get; set; }
-        
+        public Program program { get; set; }
+
 
         //Kanske DateTime istället?
         public int ExamensÅr { get; set; }

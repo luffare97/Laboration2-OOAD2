@@ -16,11 +16,18 @@ namespace GUI
         public Registrering(BusinessManager businessManager)
         {
             InitializeComponent();
+
+
         }
 
         private void SparaBtn_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void TillbakaBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

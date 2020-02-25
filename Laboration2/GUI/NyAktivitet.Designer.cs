@@ -107,6 +107,7 @@
             this.TillbakaBtn.TabIndex = 6;
             this.TillbakaBtn.Text = "Tillbaka";
             this.TillbakaBtn.UseVisualStyleBackColor = true;
+            this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
             // SparaBtn
             // 

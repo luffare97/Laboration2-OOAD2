@@ -14,6 +14,10 @@ namespace BusinessEntites
         public ICollection<Användare> Användares { get; set; }
         //public ICollection<Alumn> Alumner { get; set; }
         //public ICollection<Student> Studenter { get; set; }
+        public UtskicksLista()
+        {
+
+        }
 
         public UtskicksLista(List<Användare> folk, string Info)
         {
