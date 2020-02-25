@@ -88,6 +88,7 @@
             this.RedigeraProfilBtn.TabIndex = 1;
             this.RedigeraProfilBtn.Text = "Redigera profil";
             this.RedigeraProfilBtn.UseVisualStyleBackColor = true;
+            this.RedigeraProfilBtn.Click += new System.EventHandler(this.RedigeraProfilBtn_Click);
             // 
             // InLoggadNamn
             // 

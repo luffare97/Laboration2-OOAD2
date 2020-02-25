@@ -85,6 +85,7 @@
             this.SparaInfoBtn.TabIndex = 12;
             this.SparaInfoBtn.Text = "Spara";
             this.SparaInfoBtn.UseVisualStyleBackColor = true;
+            this.SparaInfoBtn.Click += new System.EventHandler(this.SparaInfoBtn_Click);
             // 
             // label6
             // 
@@ -206,6 +207,7 @@
             this.SparaLösenordBtn.TabIndex = 6;
             this.SparaLösenordBtn.Text = "Spara";
             this.SparaLösenordBtn.UseVisualStyleBackColor = true;
+            this.SparaLösenordBtn.Click += new System.EventHandler(this.SparaLösenordBtn_Click);
             // 
             // label9
             // 

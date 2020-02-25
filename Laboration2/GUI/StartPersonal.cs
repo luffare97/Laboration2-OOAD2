@@ -66,5 +66,11 @@ namespace GUI
             this.Close();
 
         }
+
+        private void RedigeraProfilBtn_Click(object sender, EventArgs e)
+        {
+            RedigeraProfilPersonal Redigera = new RedigeraProfilPersonal(BusinessManager);
+            Redigera.ShowDialog();
+        }
     }
 }

@@ -78,5 +78,11 @@ namespace GUI
 
             
         }
+
+        private void RedigeraBtn_Click(object sender, EventArgs e)
+        {
+            RedigeraProfilAnnan Redigera = new RedigeraProfilAnnan(BusinessManager);
+            Redigera.ShowDialog();
+        }
     }
 }

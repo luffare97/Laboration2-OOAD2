@@ -40,7 +40,7 @@ namespace GUI
                 if ((A as Personal) != null)
                 {
                     BusinessManager.InloggadPersonal = A as Personal;
-                    MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
+                    //MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
                     StartPersonal startPersonal = new StartPersonal(BusinessManager);
                     this.Hide();
                     startPersonal.ShowDialog();

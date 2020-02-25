@@ -16,11 +16,22 @@ namespace GUI
         public RedigeraProfilPersonal(BusinessManager businessManager)
         {
             InitializeComponent();
+            
         }
 
         private void TillbakaBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SparaInfoBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SparaLösenordBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
