@@ -37,12 +37,27 @@ namespace GUI
             }
             else if (A.Lösenord == LösenordTxt.Text)
             {
-                MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
-                StartAnnan startAnnan = new StartAnnan(BusinessManager);
-                startAnnan.ShowDialog();
-                this.Hide();
-                this.Close();
-                
+                if ((A as Personal) != null)
+                {
+                    BusinessManager.Inloggad = A;
+                    MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
+                    StartPersonal startPersonal = new StartPersonal(BusinessManager);
+                    startPersonal.ShowDialog();
+                    this.Hide();
+                    this.Close();
+
+                }
+                else
+                {
+                    BusinessManager.Inloggad = A;
+                    //MessageBox.Show($"Användare: {A.FNamn + " " + A.ENamn } \nLösenord: {A.Lösenord}");
+                    StartAnnan startAnnan = new StartAnnan(BusinessManager);
+                    startAnnan.ShowDialog();
+                    this.Hide();
+                    this.Close();
+
+                }
+
             }
         }
 

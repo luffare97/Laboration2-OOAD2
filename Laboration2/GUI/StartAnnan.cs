@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessEntites;
 using BusinessLayer;
 
 namespace GUI
@@ -32,6 +33,16 @@ namespace GUI
         public StartAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
+
+            if (businessManager.Inloggad as Alumn != null)
+            {
+                InLoggadJobb.Text = businessManager.InloggadAlumn.Anställning;
+                InLoggadExamensÅr.Text = businessManager.InloggadAlumn.ExamensÅr.ToString();
+                InLoggadOrt.Text = businessManager.InloggadAlumn.Ort;
+            }
+
+            InLoggadNamn.Text = businessManager.Inloggad.FNamn + " " + businessManager.Inloggad.ENamn;
+            InLoggadProgram.Text = businessManager.Inloggad.program.ToString();
             //För att fylla List datagriden
             //BindingSourceLista.DataSource = businessManager.UnitOfWork.UtskicksListaRepository.GetAllListor();
             //dataGridListor.DataSource = BindingSourceLista.DataSource;
