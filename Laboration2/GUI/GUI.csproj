@@ -76,6 +76,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedigeraAktivitet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedigeraAktivitet.Designer.cs">
+      <DependentUpon>RedigeraAktivitet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RedigeraLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedigeraLista.Designer.cs">
+      <DependentUpon>RedigeraLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="RedigeraProfilAnnan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RedigeraAktivitet.resx">
+      <DependentUpon>RedigeraAktivitet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedigeraLista.resx">
+      <DependentUpon>RedigeraLista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RedigeraProfilAnnan.resx">
       <DependentUpon>RedigeraProfilAnnan.cs</DependentUpon>
     </EmbeddedResource>
