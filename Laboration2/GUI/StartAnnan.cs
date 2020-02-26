@@ -18,18 +18,7 @@ namespace GUI
         BindingSource BindingSourceLista = new BindingSource();
 
         public BusinessManager BusinessManager { get; }
-        public void HideColumns()
-        {
-            //Saker som inte ska synas för Utskickslistor
-            //dataGridListor.Columns["Användares"].Visible = false;
 
-            //Saker som inte ska synas för Aktiviteter
-            dataGridAktiviteter.Columns["Start"].Visible = false;
-            dataGridAktiviteter.Columns["Slut"].Visible = false;
-            //dataGridAktiviteter.Columns["AntalPlatser"].Visible = false;
-            //dataGridAktiviteter.Columns["Plats"].Visible = false;
-            dataGridAktiviteter.Columns["ID"].Visible = false;
-        }
         
         public StartAnnan(BusinessManager businessManager)
         {
@@ -38,8 +27,8 @@ namespace GUI
             BusinessManager = businessManager;
 
             InLoggadJobb.Text = businessManager.InloggadAlumn.Anställning;
-             InLoggadExamensÅr.Text = businessManager.InloggadAlumn.ExamensÅr.ToString();
-             InLoggadOrt.Text = businessManager.InloggadAlumn.Ort;
+            InLoggadExamensÅr.Text = businessManager.InloggadAlumn.ExamensÅr.ToString();
+            InLoggadOrt.Text = businessManager.InloggadAlumn.Ort;
 
 
             InLoggadNamn.Text = businessManager.InloggadAlumn.FNamn + " " + businessManager.InloggadAlumn.ENamn;
@@ -47,13 +36,27 @@ namespace GUI
 
 
             //För att fylla List datagriden
-            BindingSourceLista.DataSource = businessManager.UnitOfWork.UtskicksListaRepository.GetAllListor();
+            BindingSourceLista.DataSource = businessManager.InloggadAlumn.Listor; //businessManager.UnitOfWork.UtskicksListaRepository.GetAllListor();
             dataGridListor.DataSource = BindingSourceLista.DataSource;
 
             //För att fylla Aktivitet datagriden
             BindingSourceAktivitet.DataSource = businessManager.UnitOfWork.AktivitetRepository.GetAllAktiviteter();
             dataGridAktiviteter.DataSource = BindingSourceAktivitet.DataSource;
             HideColumns();
+        }
+
+        public void HideColumns()
+        {
+            //Saker som inte ska synas för Utskickslistor
+            dataGridListor.Columns["Användares"].Visible = false;
+
+            //Saker som inte ska synas för Aktiviteter
+            dataGridAktiviteter.Columns["datum"].Visible = false;
+            dataGridAktiviteter.Columns["tid"].Visible = false;
+            dataGridAktiviteter.Columns["deltagare"].Visible = false;
+            //dataGridAktiviteter.Columns["AntalPlatser"].Visible = false;
+            //dataGridAktiviteter.Columns["Plats"].Visible = false;
+            dataGridAktiviteter.Columns["ID"].Visible = false;
         }
 
         private void StartAnnan_Load(object sender, EventArgs e)
@@ -63,6 +66,13 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Välj aktivitet
+            //int aktivitet = dataGridAktiviteter.d
+
+            Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.CurrentRow.DataBoundItem;
+            SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
+            seAktivitet.ShowDialog();
+
 
         }
 
@@ -87,6 +97,7 @@ namespace GUI
 
         private void VäljListaBtn_Click(object sender, EventArgs e)
         {
+            //Välj lista
 
         }
     }

@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using BusinessEntites;
 
 namespace GUI
 {
     public partial class SeUtskicksListaPersonal : Form
     {
-        public SeUtskicksListaPersonal(BusinessManager businessManager)
+        public SeUtskicksListaPersonal(BusinessManager businessManager, UtskicksLista lista)
         {
             InitializeComponent();
         }

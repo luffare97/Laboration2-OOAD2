@@ -20,6 +20,8 @@ namespace GUI
             InitializeComponent();
             BusinessManager = businessManager;
 
+            //Aktivitet aktivitet = businessManager.UnitOfWork.AktivitetRepository.GetAktivitet(id+1);
+
             IDTxt.Text = aktivitet.Id.ToString();
             TitelLabel.Text = aktivitet.AktivitetNamn;
             PlatserLabel.Text = aktivitet.AntalPlatser.ToString();
@@ -34,17 +36,26 @@ namespace GUI
         {
 
             int id = int.Parse(IDTxt.Text);
+            Aktivitet aktivitet = BusinessManager.UnitOfWork.AktivitetRepository.GetAktivitet(id);
+            int deltagare = aktivitet.deltagare.Count;
 
-            DialogResult Svar;
-            Svar = MessageBox.Show("vill du delta i denna aktivitet?","Är du säker?",MessageBoxButtons.YesNo);
-            if (Svar == DialogResult.No)
+            if (deltagare >= aktivitet.AntalPlatser)
             {
-                Close();
+                MessageBox.Show("Den här aktiviteten är fullbokad","Fullbokad");
             }
-            else if (Svar == DialogResult.Yes)
+            else
             {
-                BusinessManager.UnitOfWork.AktivitetRepository.DeltaAktivitet(id, BusinessManager.InloggadAlumn);
-                MessageBox.Show("Du kommer nu att delta den här aktivietetn","Grattis!");
+                DialogResult Svar;
+                Svar = MessageBox.Show("vill du delta i denna aktivitet?", "Är du säker?", MessageBoxButtons.YesNo);
+                if (Svar == DialogResult.No)
+                {
+                    Close();
+                }
+                else if (Svar == DialogResult.Yes)
+                {
+                    BusinessManager.UnitOfWork.AktivitetRepository.DeltaAktivitet(id, BusinessManager.InloggadAlumn);
+                    MessageBox.Show("Du kommer nu att delta den här aktivietetn", "Grattis!");
+                }
             }
             
         }

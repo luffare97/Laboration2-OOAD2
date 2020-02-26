@@ -42,6 +42,10 @@ namespace DataLayer
             Context.SaveChanges();
         }
 
+        //public Aktivitet GetAktivitetIndex(int id)
+        //{
+        //    return (Aktivitet)Context.Aktiviteter.Where(id == index)
+        //}
 
         public Aktivitet GetAktivitet(int ID)
         {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using BusinessEntites;
 
 namespace GUI
 {
@@ -41,11 +42,11 @@ namespace GUI
         public void HideColumns()
         {
             //Saker som inte ska synas för Utskickslistor
-            //dataGridListor.Columns["Användares"].Visible = false;
+            dataGridListor.Columns["Användares"].Visible = false;
 
             //Saker som inte ska synas för Aktiviteter
-            dataGridAktiviteter.Columns["Start"].Visible = false;
-            dataGridAktiviteter.Columns["Slut"].Visible = false;
+            dataGridAktiviteter.Columns["datum"].Visible = false;
+            dataGridAktiviteter.Columns["tid"].Visible = false;
             //dataGridAktiviteter.Columns["AntalPlatser"].Visible = false;
             //dataGridAktiviteter.Columns["Plats"].Visible = false;
             dataGridAktiviteter.Columns["ID"].Visible = false;
@@ -53,7 +54,9 @@ namespace GUI
 
         private void VäljListaBtn_Click(object sender, EventArgs e)
         {
-
+            UtskicksLista lista = (UtskicksLista)dataGridAktiviteter.CurrentRow.DataBoundItem;
+            SeUtskicksListaPersonal seLista = new SeUtskicksListaPersonal(BusinessManager, lista);
+            seLista.ShowDialog();
         }
 
         private void LoggaUtBtn_Click(object sender, EventArgs e)
@@ -77,7 +80,9 @@ namespace GUI
 
         private void VäljaAktivitetBtn_Click(object sender, EventArgs e)
         {
-
+            Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.CurrentRow.DataBoundItem;
+            SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, aktivitet);
+            seAktivitet.ShowDialog();
         }
 
         private void SkapaAktivitetBtn_Click(object sender, EventArgs e)

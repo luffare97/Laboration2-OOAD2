@@ -23,7 +23,15 @@ namespace GUI
             DB.Reset();
 
             BusinessManager BM = new BusinessManager(new UnitOfWork(DB));
-           
+            Alumn A = BM.UnitOfWork.AlumnRepository.GetAlumn("s1");
+            Alumn B = BM.UnitOfWork.AlumnRepository.GetAlumn("s2");
+
+            BM.UnitOfWork.AktivitetRepository.DeltaAktivitet(1, A);
+            BM.UnitOfWork.AktivitetRepository.DeltaAktivitet(1, B);
+
+            BM.UnitOfWork.UtskicksListaRepository.AddMottagare(0, A);
+            BM.UnitOfWork.UtskicksListaRepository.AddMottagare(0, B);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoggIn(BM));

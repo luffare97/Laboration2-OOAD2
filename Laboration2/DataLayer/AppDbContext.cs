@@ -31,10 +31,11 @@ namespace DataLayer
         // Här är reset koden!
 
         // Place in your own instance of DbContext
+        // Place in your own instance of DbContext
         public void Reset()
         {
             using (SqlConnection conn = new SqlConnection(Database.Connection.ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("EXEC sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT all'; EXEC sp_msforeachtable 'DROP TABLE ?'", conn))
+            using (SqlCommand cmd = new SqlCommand("DECLARE @SQL VARCHAR(MAX)='' SELECT @SQL = @SQL + 'ALTER TABLE ' + QUOTENAME(FK.TABLE_SCHEMA) + '.' + QUOTENAME(FK.TABLE_NAME) + ' DROP CONSTRAINT [' + RTRIM(C.CONSTRAINT_NAME) +'];' + CHAR(13) FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS C INNER JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS FK ON C.CONSTRAINT_NAME = FK.CONSTRAINT_NAME INNER JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS PK ON C.UNIQUE_CONSTRAINT_NAME = PK.CONSTRAINT_NAME INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE CU ON C.CONSTRAINT_NAME = CU.CONSTRAINT_NAME INNER JOIN (SELECT i1.TABLE_NAME, i2.COLUMN_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS i1 INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE i2 ON i1.CONSTRAINT_NAME = i2.CONSTRAINT_NAME WHERE i1.CONSTRAINT_TYPE = 'PRIMARY KEY') PT ON PT.TABLE_NAME = PK.TABLE_NAME EXEC (@SQL);EXEC sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT all'; EXEC sp_msforeachtable 'DROP TABLE ?'", conn))
             {
                 conn.Open();
                 for (int i = 0; i < 5; i++)
@@ -172,27 +173,34 @@ namespace DataLayer
                 AktivitetNamn = "Seminarium om stolar",
                 Datum = new DateTime(2020, 04, 08),
                 Tid = "00:00 - 00:00",
-                AntalPlatser = 50,
+                AntalPlatser = 5,
                 Plats = "D433",
                 Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
             });
 
-            List<Alumn> A = new List<Alumn>
-            {
-                Olof,
-                Nisse
-            };
+            //List<Alumn> A = new List<Alumn>
+            //{
+            //    Olof,
+            //    Nisse
+            //};
 
             string B = "Lista med information om vilka elever som suger 5.Nisse 4.Klas 3.Lisa 2.Nisse igen 1.Roger";
 
             string C = "officiell tierlist";
 
-            UtskicksListor.Add(new UtskicksLista()
+            UtskicksLista L = new UtskicksLista()
             {
-                Användares = A,
+                Användares = new List<Alumn>(),
                 Information = B,
                 Titel = C
-            });
+            };
+
+            UtskicksListor.Add(L);
+
+            
+
+            //Olof.Listor.Add(L);
+            //Nisse.Listor.Add(L);
                        
             
             SaveChanges();

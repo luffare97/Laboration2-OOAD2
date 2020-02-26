@@ -15,14 +15,14 @@ namespace BusinessEntites
 
         public UtskicksLista()
         {
-
+            Användares = new List<Alumn>();
         }
 
         public UtskicksLista(string Info, string titel, List<Alumn> folk)
         {
             this.Information = Info;
             this.Titel = titel;
-            //this.Användares = folk;
+            this.Användares = folk;
         }
     }
 }
