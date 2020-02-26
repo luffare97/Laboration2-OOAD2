@@ -22,12 +22,7 @@ namespace BusinessLayer
         public Personal InloggadPersonal { get; set; }
         public Alumn InloggadAlumn { get; set; }
 
-        //public AktivitetRepository AktivitetRepo { get; set; }
-        //public AlumnRepository AlumnRepo { get; set; }
-        //public AnvändareRepository AnvändarRepo { get; set; }
-        //public PersonalRepository PersonalRepo { get; set; }
-        //public StudentRepository StudentRepo { get; set; }
-        //public UtskicksListaRepository ListRepo { get; set; }
+
     }
 
 

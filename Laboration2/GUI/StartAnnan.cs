@@ -84,5 +84,10 @@ namespace GUI
             RedigeraProfilAnnan Redigera = new RedigeraProfilAnnan(BusinessManager);
             Redigera.ShowDialog();
         }
+
+        private void VäljListaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,9 +39,9 @@
             this.TitelTxt = new System.Windows.Forms.TextBox();
             this.PlatserField = new System.Windows.Forms.NumericUpDown();
             this.StartDateTime = new System.Windows.Forms.DateTimePicker();
-            this.SlutDateTime = new System.Windows.Forms.DateTimePicker();
             this.PlatsTxt = new System.Windows.Forms.TextBox();
             this.BeskrivningTxt = new System.Windows.Forms.RichTextBox();
+            this.TidTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PlatserField)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,18 +68,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Start tid:";
+            this.label3.Text = "Datum:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Slut tid:";
+            this.label4.Text = "Tidsram:";
             // 
             // label5
             // 
@@ -139,13 +139,6 @@
             this.StartDateTime.Size = new System.Drawing.Size(200, 20);
             this.StartDateTime.TabIndex = 10;
             // 
-            // SlutDateTime
-            // 
-            this.SlutDateTime.Location = new System.Drawing.Point(125, 90);
-            this.SlutDateTime.Name = "SlutDateTime";
-            this.SlutDateTime.Size = new System.Drawing.Size(200, 20);
-            this.SlutDateTime.TabIndex = 11;
-            // 
             // PlatsTxt
             // 
             this.PlatsTxt.Location = new System.Drawing.Point(125, 116);
@@ -161,14 +154,21 @@
             this.BeskrivningTxt.TabIndex = 13;
             this.BeskrivningTxt.Text = "";
             // 
+            // TidTxt
+            // 
+            this.TidTxt.Location = new System.Drawing.Point(125, 90);
+            this.TidTxt.Name = "TidTxt";
+            this.TidTxt.Size = new System.Drawing.Size(200, 20);
+            this.TidTxt.TabIndex = 14;
+            // 
             // NyAktivitet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 336);
+            this.ClientSize = new System.Drawing.Size(342, 331);
+            this.Controls.Add(this.TidTxt);
             this.Controls.Add(this.BeskrivningTxt);
             this.Controls.Add(this.PlatsTxt);
-            this.Controls.Add(this.SlutDateTime);
             this.Controls.Add(this.StartDateTime);
             this.Controls.Add(this.PlatserField);
             this.Controls.Add(this.TitelTxt);
@@ -201,8 +201,8 @@
         private System.Windows.Forms.TextBox TitelTxt;
         private System.Windows.Forms.NumericUpDown PlatserField;
         private System.Windows.Forms.DateTimePicker StartDateTime;
-        private System.Windows.Forms.DateTimePicker SlutDateTime;
         private System.Windows.Forms.TextBox PlatsTxt;
         private System.Windows.Forms.RichTextBox BeskrivningTxt;
+        private System.Windows.Forms.TextBox TidTxt;
     }
 }

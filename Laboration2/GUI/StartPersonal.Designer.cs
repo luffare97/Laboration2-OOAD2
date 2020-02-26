@@ -119,6 +119,7 @@
             this.SkapaNyLista.TabIndex = 2;
             this.SkapaNyLista.Text = "Skapa lista";
             this.SkapaNyLista.UseVisualStyleBackColor = true;
+            this.SkapaNyLista.Click += new System.EventHandler(this.SkapaNyLista_Click);
             // 
             // VäljListaBtn
             // 
@@ -158,6 +159,7 @@
             this.VäljaAktivitetBtn.TabIndex = 2;
             this.VäljaAktivitetBtn.Text = "Välj aktivitet";
             this.VäljaAktivitetBtn.UseVisualStyleBackColor = true;
+            this.VäljaAktivitetBtn.Click += new System.EventHandler(this.VäljaAktivitetBtn_Click);
             // 
             // SkapaAktivitetBtn
             // 
@@ -167,6 +169,7 @@
             this.SkapaAktivitetBtn.TabIndex = 1;
             this.SkapaAktivitetBtn.Text = "Skapa aktivitet";
             this.SkapaAktivitetBtn.UseVisualStyleBackColor = true;
+            this.SkapaAktivitetBtn.Click += new System.EventHandler(this.SkapaAktivitetBtn_Click);
             // 
             // dataGridAktiviteter
             // 

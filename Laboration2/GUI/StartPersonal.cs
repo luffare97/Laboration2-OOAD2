@@ -74,5 +74,20 @@ namespace GUI
             RedigeraProfilPersonal Redigera = new RedigeraProfilPersonal(BusinessManager);
             Redigera.ShowDialog();
         }
+
+        private void VäljaAktivitetBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SkapaAktivitetBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SkapaNyLista_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

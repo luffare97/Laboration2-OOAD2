@@ -15,6 +15,11 @@ namespace DataLayer
             Context = context;
         }
 
+        public void RedigeraPersonal()
+        {
+
+        }
+
         private AppDbContext Context { get; }
 
 

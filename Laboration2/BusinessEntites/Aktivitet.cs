@@ -10,8 +10,8 @@ namespace BusinessEntites
     {
         public string AktivitetNamn { get; set; }
         //public int AktivitetId { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime Slut { get; set; }
+        public DateTime Datum { get; set; }
+        public string Tid { get; set; }
         public int AntalPlatser { get; set; }
         public string Plats { get; set; }
         public string Beskrivning { get; set; }

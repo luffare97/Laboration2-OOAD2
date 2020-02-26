@@ -17,9 +17,9 @@ namespace DataLayer
         public DbSet<Alumn> Alumner { get; set; }
         public DbSet<Personal> Personals { get; set; }
         public virtual DbSet<Användare> Användares { get; set; }
-        public DbSet<Student> Studenter { get; set; }
+        //public DbSet<Student> Studenter { get; set; }
         public virtual DbSet<UtskicksLista> UtskicksListor { get; set; }
-        public DbSet<Aktivitet> Aktiviteter { get; set; }
+        public virtual DbSet<Aktivitet> Aktiviteter { get; set; }
 
         //public DbSet<Program> Programs { get; set; }
 
@@ -54,6 +54,7 @@ namespace DataLayer
 
             Seed();
         }
+
         public void Seed()
         {
             Alumn Olof = new Alumn()
@@ -64,7 +65,7 @@ namespace DataLayer
                 FNamn = "Olof",
                 Lösenord = "LOL",
                 TeleNr = 010555203,
-                Anställning = "",
+                Anställning = "Arbetslös",
                 ExamensÅr = 2022,
                 Ort = "Borås",
                 program = Utbildning.Systemarkitekt
@@ -169,20 +170,29 @@ namespace DataLayer
             Aktiviteter.Add(new Aktivitet()
             {
                 AktivitetNamn = "Seminarium om stolar",
-                Start = new DateTime(2020, 04, 08),
-                Slut = new DateTime(2020, 04, 09),
+                Datum = new DateTime(2020, 04, 08),
+                Tid = "00:00 - 00:00",
                 AntalPlatser = 50,
                 Plats = "D433",
                 Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
             });
 
-            List<Användare> A = new List<Användare>();
-            A.Add(Olof);
-            A.Add(Nisse);
+            List<Användare> A = new List<Användare>
+            {
+                Olof,
+                Nisse
+            };
 
-            string B = "Lista med information om vilka elever som suger";
+            string B = "Lista med information om vilka elever som suger 5.Nisse 4.Klas 3.Lisa 2.Nisse igen 1.Roger";
 
-            UtskicksListor.Add(new UtskicksLista(A, B));
+            string C = "officiell tierlist";
+
+            UtskicksListor.Add(new UtskicksLista()
+            {
+                Användares = A,
+                Information = B,
+                Titel = C
+            });
                        
             
             SaveChanges();
@@ -196,6 +206,7 @@ namespace DataLayer
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
         }
 
     }

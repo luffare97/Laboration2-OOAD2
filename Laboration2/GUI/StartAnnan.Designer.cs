@@ -149,6 +149,7 @@
             this.VäljListaBtn.TabIndex = 1;
             this.VäljListaBtn.Text = "Välj lista";
             this.VäljListaBtn.UseVisualStyleBackColor = true;
+            this.VäljListaBtn.Click += new System.EventHandler(this.VäljListaBtn_Click);
             // 
             // dataGridListor
             // 

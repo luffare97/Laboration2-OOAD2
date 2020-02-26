@@ -30,15 +30,15 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.PossitionTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TeleNrTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.EMailTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ENamnTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FNamnTxt = new System.Windows.Forms.TextBox();
             this.SparaInfoBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,15 +56,15 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.PossitionTxt);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.TeleNrTxt);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.EMailTxt);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.ENamnTxt);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.FNamnTxt);
             this.groupBox1.Controls.Add(this.SparaInfoBtn);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -82,12 +82,12 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Possition:";
             // 
-            // textBox5
+            // PossitionTxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(127, 123);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(142, 20);
-            this.textBox5.TabIndex = 10;
+            this.PossitionTxt.Location = new System.Drawing.Point(127, 123);
+            this.PossitionTxt.Name = "PossitionTxt";
+            this.PossitionTxt.Size = new System.Drawing.Size(142, 20);
+            this.PossitionTxt.TabIndex = 10;
             // 
             // label7
             // 
@@ -98,12 +98,12 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Telefonnummer:";
             // 
-            // textBox4
+            // TeleNrTxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(127, 97);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(142, 20);
-            this.textBox4.TabIndex = 8;
+            this.TeleNrTxt.Location = new System.Drawing.Point(127, 97);
+            this.TeleNrTxt.Name = "TeleNrTxt";
+            this.TeleNrTxt.Size = new System.Drawing.Size(142, 20);
+            this.TeleNrTxt.TabIndex = 8;
             // 
             // label6
             // 
@@ -114,12 +114,12 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Mailadress:";
             // 
-            // textBox3
+            // EMailTxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(127, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 20);
-            this.textBox3.TabIndex = 6;
+            this.EMailTxt.Location = new System.Drawing.Point(127, 71);
+            this.EMailTxt.Name = "EMailTxt";
+            this.EMailTxt.Size = new System.Drawing.Size(142, 20);
+            this.EMailTxt.TabIndex = 6;
             // 
             // label5
             // 
@@ -130,12 +130,12 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Efternamn:";
             // 
-            // textBox2
+            // ENamnTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 20);
-            this.textBox2.TabIndex = 4;
+            this.ENamnTxt.Location = new System.Drawing.Point(127, 45);
+            this.ENamnTxt.Name = "ENamnTxt";
+            this.ENamnTxt.Size = new System.Drawing.Size(142, 20);
+            this.ENamnTxt.TabIndex = 4;
             // 
             // label1
             // 
@@ -146,12 +146,12 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Förnamn:";
             // 
-            // textBox1
+            // FNamnTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 20);
-            this.textBox1.TabIndex = 2;
+            this.FNamnTxt.Location = new System.Drawing.Point(127, 19);
+            this.FNamnTxt.Name = "FNamnTxt";
+            this.FNamnTxt.Size = new System.Drawing.Size(142, 20);
+            this.FNamnTxt.TabIndex = 2;
             // 
             // SparaInfoBtn
             // 
@@ -279,14 +279,14 @@
         private System.Windows.Forms.TextBox GammaltLösenordTxt;
         private System.Windows.Forms.Button TillbakaBtn;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox PossitionTxt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TeleNrTxt;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox EMailTxt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ENamnTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox FNamnTxt;
     }
 }

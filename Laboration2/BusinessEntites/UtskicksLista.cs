@@ -10,7 +10,7 @@ namespace BusinessEntites
     {
 
         public string Information { get; set; }
-
+        public string Titel { get; set; }
         public ICollection<Användare> Användares { get; set; }
         //public ICollection<Alumn> Alumner { get; set; }
         //public ICollection<Student> Studenter { get; set; }
@@ -19,9 +19,11 @@ namespace BusinessEntites
 
         }
 
-        public UtskicksLista(List<Användare> folk, string Info)
+        public UtskicksLista(List<Användare> folk, string Info, string titel)
         {
             this.Information = Info;
+            this.Titel = titel;
+            this.Användares = folk;
         }
     }
 }
