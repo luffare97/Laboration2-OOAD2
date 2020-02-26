@@ -42,6 +42,7 @@ namespace DataLayer
             return L;
         }
 
+        //Verkar inte funka just nu?
         public void AddMottagare(int id, Alumn A)
         {
             

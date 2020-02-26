@@ -22,8 +22,8 @@ namespace GUI
             InitializeComponent();
 
             BusinessManager = businessManager;
-            List<Alumn> folk = BusinessManager.UnitOfWork.AlumnRepository.GetAll();
-            MottagareLB.DataSource = folk;
+            
+            MottagareLB.DataSource = businessManager.UnitOfWork.AlumnRepository.GetAllAlumn();
             MottagareLB.SelectionMode = SelectionMode.MultiExtended;
 
         }
@@ -34,10 +34,11 @@ namespace GUI
         }
 
         private void SparaBtn_Click(object sender, EventArgs e)
+            //FUNKAR INTE JUST NU
         {
             List<Alumn> A = new List<Alumn>();
 
-            for (int i = 0; i < MottagareLB.Items.Count; i++)
+            for (int i = 0; i < MottagareLB.SelectedItems.Count; i++)
             {
                 Alumn a = (Alumn)MottagareLB.Items[i];
                 A.Add(a);
@@ -45,12 +46,18 @@ namespace GUI
 
             UtskicksLista L = BusinessManager.UnitOfWork.UtskicksListaRepository.CreateLista(TitelTxt.Text, InfoTxt.Text, A);
 
-            foreach (Alumn a in L.Användares)
+            for (int u = 0; u < L.Användares.Count; u++)
             {
-                Alumn mottagare = BusinessManager.UnitOfWork.AlumnRepository.GetAlumn(a.AnvändarId);
-                mottagare.Listor.Add(L);
-
+                BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, A[u]);
             }
+            
+
+            //foreach (Alumn a in L.Användares)
+            //{
+            //    Alumn mottagare = BusinessManager.UnitOfWork.AlumnRepository.GetAlumn(a.AnvändarId);
+            //    mottagare.Listor.Add(L);
+
+            //}
             BusinessManager.UnitOfWork.Save();
         }
     }

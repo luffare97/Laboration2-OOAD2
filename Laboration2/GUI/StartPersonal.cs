@@ -87,12 +87,16 @@ namespace GUI
 
         private void SkapaAktivitetBtn_Click(object sender, EventArgs e)
         {
+            
+            NyAktivitet nyAktivitet = new NyAktivitet(BusinessManager);
+            nyAktivitet.ShowDialog();
 
         }
 
         private void SkapaNyLista_Click(object sender, EventArgs e)
         {
-
+            NyUtskicksLista nyLista = new NyUtskicksLista(BusinessManager);
+            nyLista.ShowDialog();
         }
     }
 }

@@ -75,6 +75,14 @@ namespace DataLayer
             return (Alumn)Context.Användares.Where(x => x.AnvändarId == ID).FirstOrDefault();
         }
 
+        public List<Alumn> GetAllAlumn() 
+        {
+            using (var db = new AppDbContext())
+            {
+                return db.Alumner.ToList();
+            }
+        }
+
         /*
         public IEnumerable<Alumn> GetAllSystemvetare()
         {

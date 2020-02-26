@@ -14,14 +14,16 @@ namespace BusinessEntites
         public Utbildning program { get; set; }
         public ICollection<UtskicksLista> Listor { get; set; }
         public ICollection<Aktivitet> Aktiviteter { get; set; }
-
-        //Kanske DateTime istället?
         public int ExamensÅr { get; set; }
 
         public Alumn()
         {
             Listor = new List<UtskicksLista>();
             Aktiviteter = new List<Aktivitet>();
+        }
+        public override string ToString()
+        {
+            return AnvändarId + " " + FNamn + " " + ENamn;
         }
 
     }

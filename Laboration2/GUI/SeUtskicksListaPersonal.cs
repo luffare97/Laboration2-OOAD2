@@ -14,9 +14,20 @@ namespace GUI
 {
     public partial class SeUtskicksListaPersonal : Form
     {
+        public BusinessManager BusinessManager { get; }
         public SeUtskicksListaPersonal(BusinessManager businessManager, UtskicksLista lista)
         {
             InitializeComponent();
+
+            BusinessManager = businessManager;
+
+            //IDLabel.Text = aktivitet.Id.ToString();
+            //TitelLabel.Text = aktivitet.AktivitetNamn;
+            //PlatserLabel.Text = aktivitet.AntalPlatser.ToString();
+            //DatumLabel.Text = aktivitet.Datum.ToString();
+            //TidLabel.Text = aktivitet.Tid;
+            //PlatsLabel.Text = aktivitet.Plats;
+            //BeskrivningBox.Text = aktivitet.Beskrivning;
         }
     }
 }
