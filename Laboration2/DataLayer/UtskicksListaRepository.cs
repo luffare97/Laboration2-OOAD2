@@ -23,6 +23,15 @@ namespace DataLayer
             }
         }
 
+        public void CreateLista(string titel, string info, List<Användare> mottagare)
+        {
+            UtskicksLista L = new UtskicksLista(mottagare, info, titel);
+
+            Context.UtskicksListor.Add(L);
+
+            Context.SaveChanges();
+        }
+
         private AppDbContext Context { get; }
     }
 }

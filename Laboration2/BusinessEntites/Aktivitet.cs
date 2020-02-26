@@ -15,10 +15,11 @@ namespace BusinessEntites
         public int AntalPlatser { get; set; }
         public string Plats { get; set; }
         public string Beskrivning { get; set; }
+        public ICollection<Användare> deltagare { get; set; }
 
         public Aktivitet()
         {
-
+            deltagare = new List<Användare>();
         }
     }
 }

@@ -25,6 +25,30 @@ namespace DataLayer
             }
         }
 
+        public void CreateAktivitet(string titel, int platser, DateTime datum, string tid, string plats, string beskrivning)
+        {
+            Aktivitet A = new Aktivitet()
+            {
+                AktivitetNamn = titel,
+                AntalPlatser = platser,
+                Datum = datum,
+                Tid = tid,
+                Plats = plats,
+                Beskrivning = beskrivning
+                
+            };
+
+            Context.Aktiviteter.Add(A);
+            Context.SaveChanges();
+        }
+
+
+        public Aktivitet GetAktivitet(int ID)
+        {
+            return (Aktivitet)Context.Aktiviteter.Where(x => x.Id == ID).FirstOrDefault();
+        }
+
+
         //public IEnumerable<Aktivitet> GetAllAktiviteter()
         //{
         //    int f = 0;

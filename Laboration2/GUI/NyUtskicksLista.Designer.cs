@@ -30,10 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TitelTxt = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.InfoTxt = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SparaBtn = new System.Windows.Forms.Button();
             this.TillbakaBtn = new System.Windows.Forms.Button();
+            this.MottagareLB = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -52,13 +54,13 @@
             this.TitelTxt.Size = new System.Drawing.Size(328, 20);
             this.TitelTxt.TabIndex = 1;
             // 
-            // richTextBox1
+            // InfoTxt
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(107, 38);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(328, 253);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.InfoTxt.Location = new System.Drawing.Point(107, 38);
+            this.InfoTxt.Name = "InfoTxt";
+            this.InfoTxt.Size = new System.Drawing.Size(328, 253);
+            this.InfoTxt.TabIndex = 2;
+            this.InfoTxt.Text = "";
             // 
             // label2
             // 
@@ -71,16 +73,17 @@
             // 
             // SparaBtn
             // 
-            this.SparaBtn.Location = new System.Drawing.Point(360, 297);
+            this.SparaBtn.Location = new System.Drawing.Point(615, 299);
             this.SparaBtn.Name = "SparaBtn";
             this.SparaBtn.Size = new System.Drawing.Size(75, 23);
             this.SparaBtn.TabIndex = 4;
             this.SparaBtn.Text = "Spara";
             this.SparaBtn.UseVisualStyleBackColor = true;
+            this.SparaBtn.Click += new System.EventHandler(this.SparaBtn_Click);
             // 
             // TillbakaBtn
             // 
-            this.TillbakaBtn.Location = new System.Drawing.Point(15, 297);
+            this.TillbakaBtn.Location = new System.Drawing.Point(12, 299);
             this.TillbakaBtn.Name = "TillbakaBtn";
             this.TillbakaBtn.Size = new System.Drawing.Size(75, 23);
             this.TillbakaBtn.TabIndex = 5;
@@ -88,15 +91,34 @@
             this.TillbakaBtn.UseVisualStyleBackColor = true;
             this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
+            // MottagareLB
+            // 
+            this.MottagareLB.FormattingEnabled = true;
+            this.MottagareLB.Location = new System.Drawing.Point(461, 38);
+            this.MottagareLB.Name = "MottagareLB";
+            this.MottagareLB.Size = new System.Drawing.Size(229, 251);
+            this.MottagareLB.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(458, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Mottagare:";
+            // 
             // NyUtskicksLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 334);
+            this.ClientSize = new System.Drawing.Size(702, 334);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.MottagareLB);
             this.Controls.Add(this.TillbakaBtn);
             this.Controls.Add(this.SparaBtn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.InfoTxt);
             this.Controls.Add(this.TitelTxt);
             this.Controls.Add(this.label1);
             this.Name = "NyUtskicksLista";
@@ -110,9 +132,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TitelTxt;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox InfoTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button SparaBtn;
         private System.Windows.Forms.Button TillbakaBtn;
+        private System.Windows.Forms.ListBox MottagareLB;
+        private System.Windows.Forms.Label label3;
     }
 }

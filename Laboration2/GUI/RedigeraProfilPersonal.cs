@@ -46,7 +46,26 @@ namespace GUI
 
         private void SparaLösenordBtn_Click(object sender, EventArgs e)
         {
-
+            if (BusinessManager.InloggadPersonal.Lösenord == GammaltLösenordTxt.Text)
+            {
+                if (NyttLösenordTxt.Text == UpprepaTxt.Text)
+                {
+                    string nytt = NyttLösenordTxt.Text;
+                    BusinessManager.UnitOfWork.AnvändareRepository.RedigeraLösenord(BusinessManager.InloggadPersonal.AnvändarId, nytt);
+                    MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
+                    GammaltLösenordTxt.Clear();
+                    NyttLösenordTxt.Clear();
+                    UpprepaTxt.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Nya lösenord stämmer inte överrens", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Fel gammalt lösenord", "Error");
+            }
         }
     }
 }
