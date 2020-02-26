@@ -44,7 +44,7 @@ namespace GUI
             else if (Svar == DialogResult.Yes)
             {
                 BusinessManager.UnitOfWork.AktivitetRepository.DeltaAktivitet(id, BusinessManager.InloggadAlumn);
-                MessageBox.Show("Du kommer nu att delta i eventet","Grattis!");
+                MessageBox.Show("Du kommer nu att delta den här aktivietetn","Grattis!");
             }
             
         }
