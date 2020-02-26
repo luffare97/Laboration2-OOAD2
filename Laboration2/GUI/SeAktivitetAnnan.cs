@@ -8,14 +8,50 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using BusinessEntites;
 
 namespace GUI
 {
     public partial class SeAktivitetAnnan : Form
     {
-        public SeAktivitetAnnan(BusinessManager businessManager)
+        BusinessManager BusinessManager { get; }
+        public SeAktivitetAnnan(BusinessManager businessManager, Aktivitet aktivitet)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
+
+            IDTxt.Text = aktivitet.Id.ToString();
+            TitelLabel.Text = aktivitet.AktivitetNamn;
+            PlatserLabel.Text = aktivitet.AntalPlatser.ToString();
+            DatumLabel.Text = aktivitet.Datum.ToString();
+            TidLabel.Text = aktivitet.Tid;
+            PlatsLabel.Text = aktivitet.Plats;
+            BeskrivningBox.Text = aktivitet.Beskrivning;
+
+        }
+
+        private void DeltaBtn_Click(object sender, EventArgs e)
+        {
+
+            int id = int.Parse(IDTxt.Text);
+
+            DialogResult Svar;
+            Svar = MessageBox.Show("vill du delta i denna aktivitet?","Är du säker?",MessageBoxButtons.YesNo);
+            if (Svar == DialogResult.No)
+            {
+                Close();
+            }
+            else if (Svar == DialogResult.Yes)
+            {
+                BusinessManager.UnitOfWork.AktivitetRepository.DeltaAktivitet(id, BusinessManager.InloggadAlumn);
+                MessageBox.Show("Du kommer nu att delta i eventet","Grattis!");
+            }
+            
+        }
+
+        private void TillbakaBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

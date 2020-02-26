@@ -48,6 +48,55 @@ namespace DataLayer
             return (Aktivitet)Context.Aktiviteter.Where(x => x.Id == ID).FirstOrDefault();
         }
 
+        public void DeltaAktivitet(int ID, Alumn A)
+        {
+            var query =
+                from aktivitet in Context.Aktiviteter
+                where aktivitet.Id == ID
+                select aktivitet;
+
+            foreach (Aktivitet aktivitet in query)
+            {
+                aktivitet.deltagare.Add(A);
+
+                var query2 =
+                    from alumn in Context.Alumner
+                    where alumn.AnvändarId == A.AnvändarId
+                    select alumn;
+
+                foreach (Alumn alumn in query2)
+                {
+                    alumn.Aktiviteter.Add(aktivitet);
+                }
+                
+                
+            }
+
+            Context.SaveChanges();
+
+        }
+
+        public void RedigeraAktivitet(int ID, string titel, int platser, DateTime datum, string tid, string plats, string beskrivning)
+        {
+            var query =
+                from aktivitet in Context.Aktiviteter
+                where aktivitet.Id == ID
+                select aktivitet;
+
+            foreach (Aktivitet aktivitet in query)
+            {
+                aktivitet.AktivitetNamn = titel;
+                aktivitet.AntalPlatser = platser;
+                aktivitet.Datum = datum;
+                aktivitet.Tid = tid;
+                aktivitet.Plats = plats;
+                aktivitet.Beskrivning = beskrivning;
+
+            }
+
+            Context.SaveChanges();
+        }
+
 
         //public IEnumerable<Aktivitet> GetAllAktiviteter()
         //{

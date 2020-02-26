@@ -177,7 +177,7 @@ namespace DataLayer
                 Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
             });
 
-            List<Användare> A = new List<Användare>
+            List<Alumn> A = new List<Alumn>
             {
                 Olof,
                 Nisse
