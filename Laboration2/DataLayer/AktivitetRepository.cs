@@ -80,6 +80,7 @@ namespace DataLayer
 
         }
 
+        //Redigera aktivitet verkar inte funka?
         public void RedigeraAktivitet(int ID, string titel, int platser, DateTime datum, string tid, string plats, string beskrivning)
         {
             var query =

@@ -16,5 +16,15 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void TillbakaBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void SparaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

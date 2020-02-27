@@ -52,7 +52,8 @@ namespace GUI
             {
                 Close();
             }
-            
+
+            Close();
         }
 
         private void TillbakaBtn_Click(object sender, EventArgs e)

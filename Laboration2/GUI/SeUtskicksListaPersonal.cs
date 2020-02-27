@@ -29,5 +29,15 @@ namespace GUI
             //PlatsLabel.Text = aktivitet.Plats;
             //BeskrivningBox.Text = aktivitet.Beskrivning;
         }
+
+        private void TillbakaBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void RedigeraBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
