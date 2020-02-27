@@ -67,7 +67,7 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             //Välj aktivitet
-            //int aktivitet = dataGridAktiviteter.d
+            
 
             Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.CurrentRow.DataBoundItem;
             SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
@@ -98,7 +98,9 @@ namespace GUI
         private void VäljListaBtn_Click(object sender, EventArgs e)
         {
             //Välj lista
-
+            UtskicksLista lista = (UtskicksLista)dataGridListor.CurrentRow.DataBoundItem;
+            SeUtskicksListaAnnan SeLista = new SeUtskicksListaAnnan(BusinessManager, lista);
+            SeLista.ShowDialog();
         }
     }
 }

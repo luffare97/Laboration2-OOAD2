@@ -36,20 +36,31 @@ namespace GUI
         private void SparaBtn_Click(object sender, EventArgs e)
             //FUNKAR INTE JUST NU
         {
-            List<Alumn> A = new List<Alumn>();
+            DialogResult Svar;
+            Svar = MessageBox.Show("Vill du spara den här utskickslistan?", "Spara?", MessageBoxButtons.YesNo);
 
-            for (int i = 0; i < MottagareLB.SelectedItems.Count; i++)
+            if (Svar == DialogResult.Yes)
             {
-                Alumn a = (Alumn)MottagareLB.Items[i];
-                A.Add(a);
+                List<Alumn> A = new List<Alumn>();
+
+                for (int i = 0; i < MottagareLB.SelectedItems.Count; i++)
+                {
+                    Alumn a = (Alumn)MottagareLB.Items[i];
+                    A.Add(a);
+                }
+
+                UtskicksLista L = BusinessManager.UnitOfWork.UtskicksListaRepository.CreateLista(TitelTxt.Text, InfoTxt.Text, A);
+
+                for (int u = 0; u < L.Användares.Count; u++)
+                {
+                    BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, A[u]);
+                }
+            }
+            else if (Svar == DialogResult.No)
+            {
+                Close();
             }
 
-            UtskicksLista L = BusinessManager.UnitOfWork.UtskicksListaRepository.CreateLista(TitelTxt.Text, InfoTxt.Text, A);
-
-            for (int u = 0; u < L.Användares.Count; u++)
-            {
-                BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, A[u]);
-            }
             
 
             //foreach (Alumn a in L.Användares)

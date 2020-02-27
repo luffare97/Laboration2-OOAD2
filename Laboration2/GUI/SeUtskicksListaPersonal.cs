@@ -21,13 +21,12 @@ namespace GUI
 
             BusinessManager = businessManager;
 
-            //IDLabel.Text = aktivitet.Id.ToString();
-            //TitelLabel.Text = aktivitet.AktivitetNamn;
-            //PlatserLabel.Text = aktivitet.AntalPlatser.ToString();
-            //DatumLabel.Text = aktivitet.Datum.ToString();
-            //TidLabel.Text = aktivitet.Tid;
-            //PlatsLabel.Text = aktivitet.Plats;
-            //BeskrivningBox.Text = aktivitet.Beskrivning;
+            IDTxt.Text = lista.Id.ToString();
+            TitelTxt.Text = lista.Titel;
+            MeddelandeBox.Text = lista.Information;
+
+
+
         }
 
         private void TillbakaBtn_Click(object sender, EventArgs e)
@@ -37,7 +36,10 @@ namespace GUI
 
         private void RedigeraBtn_Click(object sender, EventArgs e)
         {
-
+            int id = int.Parse(IDTxt.Text);
+            UtskicksLista lista = BusinessManager.UnitOfWork.UtskicksListaRepository.GetLista(id);
+            RedigeraLista Redigera = new RedigeraLista(BusinessManager, lista);
+            Redigera.ShowDialog();
         }
     }
 }

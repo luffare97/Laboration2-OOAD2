@@ -55,6 +55,7 @@
             this.TillbakaBtn.TabIndex = 1;
             this.TillbakaBtn.Text = "Tillbaka";
             this.TillbakaBtn.UseVisualStyleBackColor = true;
+            this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
             // SlutaFölja
             // 
@@ -64,6 +65,7 @@
             this.SlutaFölja.TabIndex = 2;
             this.SlutaFölja.Text = "Sluta följa";
             this.SlutaFölja.UseVisualStyleBackColor = true;
+            this.SlutaFölja.Click += new System.EventHandler(this.SlutaFölja_Click);
             // 
             // Titel
             // 
@@ -105,6 +107,7 @@
             // 
             this.MeddelandBox.Location = new System.Drawing.Point(101, 72);
             this.MeddelandBox.Name = "MeddelandBox";
+            this.MeddelandBox.ReadOnly = true;
             this.MeddelandBox.Size = new System.Drawing.Size(245, 247);
             this.MeddelandBox.TabIndex = 7;
             this.MeddelandBox.Text = "";

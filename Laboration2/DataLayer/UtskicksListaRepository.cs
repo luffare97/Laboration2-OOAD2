@@ -42,6 +42,41 @@ namespace DataLayer
             return L;
         }
 
+        public void RemoveMottagare(int ID, Alumn A)
+        {
+            var query =
+                from lista in Context.UtskicksListor
+                where lista.Id == ID
+                select lista;
+            
+            foreach (UtskicksLista lista in query)
+            {
+                lista.Användares.Remove(A);
+                A.Listor.Remove(lista);
+            }
+
+            Context.SaveChanges();
+        }
+
+        public void RedigeraLista(int id, string titel, string info)
+        {
+
+            var query =
+                from lista in Context.UtskicksListor
+                where lista.Id == id
+                select lista;
+
+            foreach (UtskicksLista lista in query)
+            {
+                lista.Titel = titel;
+                lista.Information = info;
+
+            }
+
+            Context.SaveChanges();
+
+        }
+
         //Verkar inte funka just nu?
         public void AddMottagare(int id, Alumn A)
         {
