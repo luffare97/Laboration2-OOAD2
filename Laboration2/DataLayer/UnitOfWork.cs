@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
 
@@ -20,15 +20,15 @@ namespace DataLayer
             AnvändareRepository = new AnvändareRepository(_context);
             AlumnRepository = new AlumnRepository(_context);
             AktivitetRepository = new AktivitetRepository(_context);
-            StudentRepository = new StudentRepository(_context);
+
             PersonalRepository = new PersonalRepository(_context);
             UtskicksListaRepository = new UtskicksListaRepository(_context);
-            
+
         }
         public AnvändareRepository AnvändareRepository { get; set; }
         public AlumnRepository AlumnRepository { get; set; }
         public AktivitetRepository AktivitetRepository { get; set; }
-        public StudentRepository StudentRepository { get; set; }
+
         public PersonalRepository PersonalRepository { get; set; }
         public UtskicksListaRepository UtskicksListaRepository { get; set; }
 

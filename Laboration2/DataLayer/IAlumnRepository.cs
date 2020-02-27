@@ -1,15 +1,13 @@
-﻿using System;
+﻿using BusinessEntites;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataLayer;
-using BusinessEntites;
 
 namespace DataLayer
 {
     public interface IAlumnRepository
     {
-        IEnumerable<Alumn> GetAllSystemvetare();
+        void CreateAlumn(string Fnamn, string Enamn, string EMail, int tele, string Ort, string Job, string Lösenord, Utbildning utb, int år);
+        List<Alumn> GetAllAlumn();
+        Alumn GetAlumn(string ID);
+        void RedigeraAlumn(string ID, string Fnamn, string Enamn, string EMail, string TeleNr, string Ort, string Job);
     }
 }

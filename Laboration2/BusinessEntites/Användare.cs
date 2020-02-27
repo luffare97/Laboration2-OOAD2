@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessEntites
 {
-    public class Användare : Entity
+    public class Användare : Entity, IAnvändare
     {
         public string AnvändarId { get; set; }
         public string Lösenord { get; set; }

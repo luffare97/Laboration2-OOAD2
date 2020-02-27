@@ -10,9 +10,9 @@ using System.Data.SqlClient;
 
 namespace DataLayer
 {
-   
 
-    public class AppDbContext : DbContext
+
+    public class AppDbContext : DbContext, IAppDbContext
     {
         public DbSet<Alumn> Alumner { get; set; }
         public DbSet<Personal> Personals { get; set; }
@@ -25,7 +25,7 @@ namespace DataLayer
 
         public AppDbContext() : base("osu2014")
         {
-            
+
         }
 
         // Här är reset koden!
@@ -127,7 +127,7 @@ namespace DataLayer
                 Lösenord = "LOL",
                 TeleNr = 0100555666,
                 Possition = "Föreläsare"
-                
+
             });
 
             Personals.Add(new Personal()
@@ -139,7 +139,7 @@ namespace DataLayer
                 Lösenord = "LOL",
                 TeleNr = 5318008,
                 Possition = "Professor"
-                
+
             });
 
             Personals.Add(new Personal()
@@ -197,24 +197,24 @@ namespace DataLayer
 
             UtskicksListor.Add(L);
 
-            
+
 
             //Olof.Listor.Add(L);
             //Nisse.Listor.Add(L);
-                       
-            
+
+
             SaveChanges();
-            
+
         }
 
-         
-        
+
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
         }
 
     }

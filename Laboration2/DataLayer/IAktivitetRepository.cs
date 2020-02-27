@@ -1,15 +1,15 @@
-﻿using System;
+﻿using BusinessEntites;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataLayer;
-using BusinessEntites;
 
 namespace DataLayer
 {
     public interface IAktivitetRepository
     {
-        IEnumerable<Aktivitet> GetAllAktiviteter();
+        void CreateAktivitet(string titel, int platser, DateTime datum, string tid, string plats, string beskrivning);
+        void DeltaAktivitet(int ID, Alumn A);
+        Aktivitet GetAktivitet(int ID);
+        List<Aktivitet> GetAllAktiviteter();
+        void RedigeraAktivitet(int ID, string titel, int platser, DateTime datum, string tid, string plats, string beskrivning);
     }
 }

@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class GenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         public GenericRepository(AppDbContext context)
         {
@@ -27,12 +27,12 @@ namespace DataLayer
 
         //}
 
-        
+
         //public TEntity Get()
         //{
         //   return Context.Set<TEntity>().Get();
         //}
-        
+
 
         public List<TEntity> GetAll()
         {

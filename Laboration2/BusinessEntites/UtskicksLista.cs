@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessEntites
 {
-    public class UtskicksLista : Entity
+    public class UtskicksLista : Entity, IUtskicksLista
     {
 
         public string Information { get; set; }

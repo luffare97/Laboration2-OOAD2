@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class AlumnRepository : GenericRepository<Alumn> //IAlumnRepository
+    public class AlumnRepository : GenericRepository<Alumn>, IAlumnRepository
     {
         public AlumnRepository(AppDbContext context) : base(context)
         {
@@ -50,7 +50,7 @@ namespace DataLayer
 
             Alumn A = new Alumn()
             {
-                AnvändarId = $"S{Context.Användares.Count()+1}",
+                AnvändarId = $"S{Context.Användares.Count() + 1}",
                 FNamn = Fnamn,
                 ENamn = Enamn,
                 EMail = EMail,
@@ -60,9 +60,9 @@ namespace DataLayer
                 Lösenord = Lösenord,
                 program = utb,
                 ExamensÅr = år
-                
+
             };
-            
+
             Context.Alumner.Add(A);
 
             Context.SaveChanges();
@@ -75,7 +75,7 @@ namespace DataLayer
             return (Alumn)Context.Användares.Where(x => x.AnvändarId == ID).FirstOrDefault();
         }
 
-        public List<Alumn> GetAllAlumn() 
+        public List<Alumn> GetAllAlumn()
         {
             using (var db = new AppDbContext())
             {

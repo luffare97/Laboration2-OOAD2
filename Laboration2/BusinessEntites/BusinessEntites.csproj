@@ -55,10 +55,15 @@
     <Compile Include="Alumn.cs" />
     <Compile Include="Användare.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="IAktivitet.cs" />
+    <Compile Include="IAlumn.cs" />
+    <Compile Include="IAnvändare.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IPersonal.cs" />
+    <Compile Include="IUtskicksLista.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Utbildning.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
     <Compile Include="UtskicksLista.cs" />
   </ItemGroup>
   <ItemGroup>

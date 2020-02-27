@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class AnvändareRepository : GenericRepository<Användare>
+    public class AnvändareRepository : GenericRepository<Användare>, IAnvändareRepository
     {
         public AnvändareRepository(AppDbContext context) : base(context)
         {
@@ -17,7 +17,7 @@ namespace DataLayer
 
         public AppDbContext AppDbContext
         {
-            get { return Context as AppDbContext;  }
+            get { return Context as AppDbContext; }
         }
 
         private AppDbContext Context { get; }
@@ -29,7 +29,7 @@ namespace DataLayer
         {
 
             return Context.Användares.Where(x => x.AnvändarId == användarID).FirstOrDefault();
-            
+
 
         }
 

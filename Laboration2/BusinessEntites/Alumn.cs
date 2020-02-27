@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessEntites
 {
-    public class Alumn : Användare
+    public class Alumn : Användare, IAlumn
     {
         public string Ort { get; set; }
         public string Anställning { get; set; }

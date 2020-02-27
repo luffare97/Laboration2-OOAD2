@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class AktivitetRepository : GenericRepository<Aktivitet>//, IAktivitetRepository
+    public class AktivitetRepository : GenericRepository<Aktivitet>, IAktivitetRepository
     {
         public AktivitetRepository(AppDbContext context) : base(context)
         {
@@ -35,7 +35,7 @@ namespace DataLayer
                 Tid = tid,
                 Plats = plats,
                 Beskrivning = beskrivning
-                
+
             };
 
             Context.Aktiviteter.Add(A);
@@ -72,8 +72,8 @@ namespace DataLayer
                 {
                     alumn.Aktiviteter.Add(aktivitet);
                 }
-                
-                
+
+
             }
 
             Context.SaveChanges();

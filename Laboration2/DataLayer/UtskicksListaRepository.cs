@@ -9,7 +9,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class UtskicksListaRepository : GenericRepository<UtskicksLista>
+    public class UtskicksListaRepository : GenericRepository<UtskicksLista>, IUtskicksListaRepository
     {
 
         private AppDbContext Context { get; }
@@ -48,7 +48,7 @@ namespace DataLayer
                 from lista in Context.UtskicksListor
                 where lista.Id == ID
                 select lista;
-            
+
             foreach (UtskicksLista lista in query)
             {
                 lista.Användares.Remove(A);
@@ -80,7 +80,7 @@ namespace DataLayer
         //Verkar inte funka just nu?
         public void AddMottagare(int id, Alumn A)
         {
-            
+
             var query =
                 from lista in Context.UtskicksListor
                 where lista.Id == id
