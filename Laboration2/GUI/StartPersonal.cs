@@ -54,9 +54,18 @@ namespace GUI
 
         private void VäljListaBtn_Click(object sender, EventArgs e)
         {
-            UtskicksLista lista = (UtskicksLista)dataGridAktiviteter.CurrentRow.DataBoundItem;
-            SeUtskicksListaPersonal seLista = new SeUtskicksListaPersonal(BusinessManager, lista);
-            seLista.ShowDialog();
+            UtskicksLista lista = (UtskicksLista)dataGridListor.CurrentRow.DataBoundItem;
+
+            if (lista == null)
+            {
+                MessageBox.Show("Du har inte valt en aktivitet", "Error");
+            }
+            else
+            {
+                SeUtskicksListaPersonal seLista = new SeUtskicksListaPersonal(BusinessManager, lista);
+                seLista.ShowDialog();
+            }
+            
         }
 
         private void LoggaUtBtn_Click(object sender, EventArgs e)
@@ -81,8 +90,18 @@ namespace GUI
         private void VäljaAktivitetBtn_Click(object sender, EventArgs e)
         {
             Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.CurrentRow.DataBoundItem;
-            SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, aktivitet);
-            seAktivitet.ShowDialog();
+
+
+            if (aktivitet == null)
+            {
+                MessageBox.Show("Du har inte valt en aktivitet", "Error");
+            }
+            else
+            {
+                SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, aktivitet);
+                seAktivitet.ShowDialog();
+            }
+            
         }
 
         private void SkapaAktivitetBtn_Click(object sender, EventArgs e)

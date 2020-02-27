@@ -70,8 +70,17 @@ namespace GUI
             
 
             Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.CurrentRow.DataBoundItem;
-            SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
-            seAktivitet.ShowDialog();
+
+            if (aktivitet == null)
+            {
+                MessageBox.Show("Du har inte valt en aktivitet", "Error");
+            }
+            else
+            {
+                SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
+                seAktivitet.ShowDialog();
+            }
+            
 
 
         }
@@ -99,8 +108,17 @@ namespace GUI
         {
             //Välj lista
             UtskicksLista lista = (UtskicksLista)dataGridListor.CurrentRow.DataBoundItem;
-            SeUtskicksListaAnnan SeLista = new SeUtskicksListaAnnan(BusinessManager, lista);
-            SeLista.ShowDialog();
+            
+            if (lista == null)
+            {
+                MessageBox.Show("Du har inte valt en lista","Error");
+            }
+            else
+            {
+                SeUtskicksListaAnnan SeLista = new SeUtskicksListaAnnan(BusinessManager, lista);
+                SeLista.ShowDialog();
+            }
+            
         }
     }
 }
