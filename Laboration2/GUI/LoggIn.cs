@@ -32,8 +32,12 @@ namespace GUI
 
             if (A == null)
             {
-                MessageBox.Show("AnvändarIDt eller lösenordet stämmer inte", "Error");
+                MessageBox.Show("AnvändarIDt existerar inte inte", "Error");
 
+            }
+            else if (A.Lösenord != LösenordTxt.Text)
+            {
+                MessageBox.Show("Lösenordet stämmer inte", "Error");
             }
             else if (A.Lösenord == LösenordTxt.Text)
             {
@@ -61,7 +65,6 @@ namespace GUI
 
 
                 }
-
             }
         }
 
