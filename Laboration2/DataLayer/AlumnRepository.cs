@@ -19,9 +19,9 @@ namespace DataLayer
 
 
         //Metod för att redigera en alumn
-        public void RedigeraAlumn(string ID, string Fnamn, string Enamn, string EMail, string TeleNr, string Ort, string Job)
+        public void RedigeraAlumn(string ID, string Fnamn, string Enamn, string EMail, string TeleNr, string Ort, string Job, string ÅR, Utbildning utbildning)
         {
-
+            int år = int.Parse(ÅR);
             int tele = int.Parse(TeleNr);
 
             var query =
@@ -37,6 +37,8 @@ namespace DataLayer
                 alumn.TeleNr = tele;
                 alumn.Ort = Ort;
                 alumn.Anställning = Job;
+                alumn.ExamensÅr = år;
+                alumn.program = utbildning;
 
             }
 

@@ -28,6 +28,8 @@ namespace GUI
             TeleNrTxt.Text = BusinessManager.InloggadAlumn.TeleNr.ToString();
             OrtTxt.Text = BusinessManager.InloggadAlumn.Ort;
             AnställningTxt.Text = BusinessManager.InloggadAlumn.Anställning;
+            ExamensårTxt.Text = BusinessManager.InloggadAlumn.ExamensÅr.ToString();
+            comboBoxProgram.DataSource = Enum.GetValues(typeof(Utbildning));
         }
 
         private void TillbakaBtn_Click(object sender, EventArgs e)
@@ -61,19 +63,40 @@ namespace GUI
 
         private void SparaInfoBtn_Click(object sender, EventArgs e)
         {
-            DialogResult Svar;
-            Svar = MessageBox.Show("Är du säker på att du vill spara ändringarna?","Spara dessa ändringar?", MessageBoxButtons.YesNo);
-            if (Svar == DialogResult.No)
+            bool OK = int.TryParse(TeleNrTxt.Text.ToString(), out int tele);
+            bool ÅR = int.TryParse(ExamensårTxt.Text.ToString(), out int år);
+            if (OK == true)
             {
-                Close();
+                if (ÅR == true)
+                {
+                    DialogResult Svar;
+                    Svar = MessageBox.Show("Är du säker på att du vill spara ändringarna?", "Spara dessa ändringar?", MessageBoxButtons.YesNo);
+                    if (Svar == DialogResult.No)
+                    {
+                        Close();
+                    }
+                    else if (Svar == DialogResult.Yes)
+                    {
+                        string ID = BusinessManager.InloggadAlumn.AnvändarId;
+                        Utbildning utbildning = (Utbildning)comboBoxProgram.SelectedItem;
+
+                        BusinessManager.UnitOfWork.AlumnRepository.RedigeraAlumn(ID, FNamnTxt.Text, ENamnTxt.Text, EMailTxt.Text, TeleNrTxt.Text, OrtTxt.Text, AnställningTxt.Text, ExamensårTxt.Text, utbildning);
+                        BusinessManager.InloggadAlumn = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(BusinessManager.InloggadAlumn.AnvändarId) as Alumn;
+                        this.Close();
+                    }
+                }
+                else if (ÅR == false)
+                {
+                    MessageBox.Show("Examens år får endast bestå av siffror","Error");
+                }
+
             }
-            else if (Svar == DialogResult.Yes)
+            else if (OK == false)
             {
-                string ID = BusinessManager.InloggadAlumn.AnvändarId;
-                BusinessManager.UnitOfWork.AlumnRepository.RedigeraAlumn(ID, FNamnTxt.Text, ENamnTxt.Text, EMailTxt.Text, TeleNrTxt.Text, OrtTxt.Text, AnställningTxt.Text);
-                BusinessManager.InloggadAlumn = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(BusinessManager.InloggadAlumn.AnvändarId) as Alumn;
-                this.Close();
+                MessageBox.Show("Telefonnummer måste bestå av endast siffror","Error");
             }
+
+
         }
     }
 }

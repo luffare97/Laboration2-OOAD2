@@ -120,5 +120,11 @@ namespace GUI
             }
             
         }
+
+        private void UppdateraBtn_Click(object sender, EventArgs e)
+        {
+            //Funkar inte
+            this.Refresh();
+        }
     }
 }

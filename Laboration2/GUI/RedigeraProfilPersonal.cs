@@ -19,6 +19,12 @@ namespace GUI
         {
             InitializeComponent();
             BusinessManager = businessManager;
+
+            FNamnTxt.Text = businessManager.InloggadPersonal.FNamn;
+            ENamnTxt.Text = businessManager.InloggadPersonal.ENamn;
+            EMailTxt.Text = businessManager.InloggadPersonal.EMail;
+            TeleNrTxt.Text = businessManager.InloggadPersonal.TeleNr.ToString();
+            PossitionTxt.Text = businessManager.InloggadPersonal.Possition;
             
         }
 
@@ -39,7 +45,8 @@ namespace GUI
             {
                 string ID = BusinessManager.InloggadPersonal.AnvändarId;
                 BusinessManager.UnitOfWork.PersonalRepository.RedigeraPersonal(ID, FNamnTxt.Text, ENamnTxt.Text, EMailTxt.Text, TeleNrTxt.Text, PossitionTxt.Text);
-                BusinessManager.InloggadPersonal = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(BusinessManager.InloggadAlumn.AnvändarId) as Personal;
+                BusinessManager.InloggadPersonal = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(BusinessManager.InloggadPersonal.AnvändarId) as Personal;
+                
                 this.Close();
             }
         }

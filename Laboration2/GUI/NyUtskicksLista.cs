@@ -49,12 +49,17 @@ namespace GUI
                     A.Add(a);
                 }
 
-                UtskicksLista L = BusinessManager.UnitOfWork.UtskicksListaRepository.CreateLista(TitelTxt.Text, InfoTxt.Text, A);
+                //UtskicksLista L = BusinessManager.UnitOfWork.UtskicksListaRepository.CreateLista(TitelTxt.Text, InfoTxt.Text, A);
 
-                for (int u = 0; u < L.Användares.Count; u++)
-                {
-                    BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, A[u]);
-                }
+                //foreach (Alumn alumn in L.Användares)
+                //{
+                //    BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, alumn);
+                //}
+
+                //for (int u = 0; u < L.Användares.Count; u++)
+                //{
+                //    BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, A[u]);
+                //}
             }
             else if (Svar == DialogResult.No)
             {

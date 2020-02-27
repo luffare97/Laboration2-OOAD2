@@ -51,12 +51,20 @@
             this.GammaltLösenordTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TillbakaBtn = new System.Windows.Forms.Button();
+            this.ExamensårTxt = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxProgram = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.comboBoxProgram);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.ExamensårTxt);
             this.groupBox1.Controls.Add(this.SparaInfoBtn);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -72,14 +80,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 212);
+            this.groupBox1.Size = new System.Drawing.Size(279, 263);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personlig information";
             // 
             // SparaInfoBtn
             // 
-            this.SparaInfoBtn.Location = new System.Drawing.Point(191, 175);
+            this.SparaInfoBtn.Location = new System.Drawing.Point(191, 234);
             this.SparaInfoBtn.Name = "SparaInfoBtn";
             this.SparaInfoBtn.Size = new System.Drawing.Size(75, 23);
             this.SparaInfoBtn.TabIndex = 12;
@@ -192,7 +200,7 @@
             this.groupBox2.Controls.Add(this.NyttLösenordTxt);
             this.groupBox2.Controls.Add(this.GammaltLösenordTxt);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(12, 230);
+            this.groupBox2.Location = new System.Drawing.Point(11, 281);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(279, 134);
             this.groupBox2.TabIndex = 1;
@@ -262,7 +270,7 @@
             // 
             // TillbakaBtn
             // 
-            this.TillbakaBtn.Location = new System.Drawing.Point(21, 370);
+            this.TillbakaBtn.Location = new System.Drawing.Point(21, 421);
             this.TillbakaBtn.Name = "TillbakaBtn";
             this.TillbakaBtn.Size = new System.Drawing.Size(75, 23);
             this.TillbakaBtn.TabIndex = 2;
@@ -270,11 +278,44 @@
             this.TillbakaBtn.UseVisualStyleBackColor = true;
             this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
+            // ExamensårTxt
+            // 
+            this.ExamensårTxt.Location = new System.Drawing.Point(129, 175);
+            this.ExamensårTxt.Name = "ExamensårTxt";
+            this.ExamensårTxt.Size = new System.Drawing.Size(137, 20);
+            this.ExamensårTxt.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 178);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Examens år:";
+            // 
+            // comboBoxProgram
+            // 
+            this.comboBoxProgram.FormattingEnabled = true;
+            this.comboBoxProgram.Location = new System.Drawing.Point(128, 201);
+            this.comboBoxProgram.Name = "comboBoxProgram";
+            this.comboBoxProgram.Size = new System.Drawing.Size(137, 21);
+            this.comboBoxProgram.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 204);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Utbildning: ";
+            // 
             // RedigeraProfilAnnan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 404);
+            this.ClientSize = new System.Drawing.Size(302, 456);
             this.Controls.Add(this.TillbakaBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -313,5 +354,9 @@
         private System.Windows.Forms.TextBox GammaltLösenordTxt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button TillbakaBtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox ExamensårTxt;
+        private System.Windows.Forms.ComboBox comboBoxProgram;
+        private System.Windows.Forms.Label label11;
     }
 }

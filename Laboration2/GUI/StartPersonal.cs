@@ -117,5 +117,14 @@ namespace GUI
             NyUtskicksLista nyLista = new NyUtskicksLista(BusinessManager);
             nyLista.ShowDialog();
         }
+
+        private void UppdateraBtn_Click(object sender, EventArgs e)
+        {
+
+            //Funkar inte
+
+            this.Refresh();
+            Application.DoEvents();
+        }
     }
 }

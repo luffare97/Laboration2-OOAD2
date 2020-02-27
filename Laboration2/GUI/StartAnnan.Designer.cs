@@ -42,6 +42,7 @@
             this.Aktiviteter = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridAktiviteter = new System.Windows.Forms.DataGridView();
+            this.UppdateraBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListor)).BeginInit();
@@ -188,11 +189,22 @@
             this.dataGridAktiviteter.Size = new System.Drawing.Size(395, 429);
             this.dataGridAktiviteter.TabIndex = 0;
             // 
+            // UppdateraBtn
+            // 
+            this.UppdateraBtn.Location = new System.Drawing.Point(18, 228);
+            this.UppdateraBtn.Name = "UppdateraBtn";
+            this.UppdateraBtn.Size = new System.Drawing.Size(88, 23);
+            this.UppdateraBtn.TabIndex = 3;
+            this.UppdateraBtn.Text = "Uppdatera";
+            this.UppdateraBtn.UseVisualStyleBackColor = true;
+            this.UppdateraBtn.Click += new System.EventHandler(this.UppdateraBtn_Click);
+            // 
             // StartAnnan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 510);
+            this.Controls.Add(this.UppdateraBtn);
             this.Controls.Add(this.Aktiviteter);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -225,5 +237,6 @@
         private System.Windows.Forms.GroupBox Aktiviteter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridAktiviteter;
+        private System.Windows.Forms.Button UppdateraBtn;
     }
 }

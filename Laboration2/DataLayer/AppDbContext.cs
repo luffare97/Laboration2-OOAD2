@@ -178,11 +178,11 @@ namespace DataLayer
                 Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
             });
 
-            //List<Alumn> A = new List<Alumn>
-            //{
-            //    Olof,
-            //    Nisse
-            //};
+            List<Alumn> A = new List<Alumn>
+            {
+                Olof,
+                Nisse
+            };
 
             string B = "Lista med information om vilka elever som suger 5.Nisse 4.Klas 3.Lisa 2.Nisse igen 1.Roger";
 
@@ -190,13 +190,12 @@ namespace DataLayer
 
             UtskicksLista L = new UtskicksLista()
             {
-                Användares = new List<Alumn>(),
+                Användares = A,
                 Information = B,
                 Titel = C
             };
 
             UtskicksListor.Add(L);
-
 
 
             //Olof.Listor.Add(L);
