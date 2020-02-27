@@ -41,7 +41,10 @@ namespace GUI
 
         private void RedigeraBtn_Click(object sender, EventArgs e)
         {
-
+            int id = int.Parse(IDLabel.Text);
+            Aktivitet aktivitet = BusinessManager.UnitOfWork.AktivitetRepository.GetAktivitet(id);
+            RedigeraAktivitet Redigera = new RedigeraAktivitet(BusinessManager, aktivitet);
+            Redigera.ShowDialog();
         }
     }
 }
