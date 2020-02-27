@@ -54,7 +54,7 @@ namespace GUI
 
         private void VäljListaBtn_Click(object sender, EventArgs e)
         {
-            UtskicksLista lista = (UtskicksLista)dataGridAktiviteter.CurrentRow.DataBoundItem;
+            UtskicksLista lista = (UtskicksLista)dataGridListor.CurrentRow.DataBoundItem;
             SeUtskicksListaPersonal seLista = new SeUtskicksListaPersonal(BusinessManager, lista);
             seLista.ShowDialog();
         }

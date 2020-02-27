@@ -55,6 +55,9 @@ namespace GUI
                 {
                     BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, A[u]);
                 }
+
+                MessageBox.Show("Den nya utskickslistan har nu blivit sparad","Sparad");
+                Close();
             }
             else if (Svar == DialogResult.No)
             {
