@@ -8,7 +8,7 @@ using BusinessEntites;
 
 namespace DataLayer
 {
-    public class PersonalRepository : GenericRepository<Personal>
+    public class PersonalRepository : GenericRepository<Personal>, IPersonalRepository
     {
         public PersonalRepository(AppDbContext context) : base(context)
         {

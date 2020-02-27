@@ -9,7 +9,7 @@ using BusinessEntites;
 namespace BusinessLayer
 {
 
-    public class BusinessManager
+    public class BusinessManager : IBusinessManager
     {
 
         public UnitOfWork UnitOfWork { get; set; }

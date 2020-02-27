@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessEntites
 {
-    public class Alumn : Användare, IObserver
+    public class Alumn : Användare, IObserver, IAlumn
     {
         public string Ort { get; set; }
         public string Anställning { get; set; }
@@ -32,7 +32,7 @@ namespace BusinessEntites
             listGrabber.register(this);
         }
 
-        
+
 
         public override string ToString()
         {
