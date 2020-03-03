@@ -23,6 +23,7 @@ namespace DataLayer
             UtskicksListaRepository = new UtskicksListaRepository(_context);
 
         }
+
         public AnvändareRepository AnvändareRepository { get; set; }
         public AlumnRepository AlumnRepository { get; set; }
         public AktivitetRepository AktivitetRepository { get; set; }

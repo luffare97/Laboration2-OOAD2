@@ -51,6 +51,13 @@ namespace GUI
                         }
                         else if (Svar == DialogResult.Yes)
                         {
+                            GDPR gdpr = new GDPR(BusinessManager);
+                            bool godkännt = gdpr.ShowDialog();
+                            if ()
+                            {
+
+                            }
+
                             BusinessManager.UnitOfWork.AlumnRepository.CreateAlumn(textBoxFnamn.Text, textBoxEnamn.Text, textBoxMail.Text, tele, textBoxOrt.Text, textBoxJob.Text, textBoxLösenord1.Text, utbildning, År);
                             MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: s{BusinessManager.UnitOfWork.AnvändareRepository.AppDbContext.Användares.Count()}", "Sparad");
                             Close();

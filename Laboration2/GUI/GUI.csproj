@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GDPR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GDPR.Designer.cs">
+      <DependentUpon>GDPR.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoggIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <Compile Include="StartPersonal.Designer.cs">
       <DependentUpon>StartPersonal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GDPR.resx">
+      <DependentUpon>GDPR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoggIn.resx">
       <DependentUpon>LoggIn.cs</DependentUpon>
     </EmbeddedResource>

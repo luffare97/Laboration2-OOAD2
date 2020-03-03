@@ -37,6 +37,7 @@ namespace DataLayer
         public void RedigeraLösenord(string ID, string nytt)
         {
             GetAnvändare(ID).Lösenord = nytt;
+
             Context.SaveChanges();
 
         }
