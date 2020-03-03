@@ -4,7 +4,13 @@ namespace DataLayer
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {
-        void AddToRepo();
-        List<TEntity> GetAll();
+        void Create(TEntity entity);
+        void Uppdate(TEntity entity);
+        void Remove(TEntity entity);
+        void RemoveRange(ICollection<TEntity> entities);
+        void Add(TEntity entity);
+        void AddRange(ICollection<TEntity> entities);
+        TEntity Get(int id);
+        ICollection<TEntity> GetAll();
     }
 }

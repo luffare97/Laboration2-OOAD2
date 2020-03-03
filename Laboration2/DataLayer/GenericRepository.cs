@@ -17,30 +17,53 @@ namespace DataLayer
 
         private AppDbContext Context { get; }
 
-        public void AddToRepo()
+
+        public void Create(TEntity entity)
+        {
+            
+        }
+
+        public void Uppdate(TEntity entity)
         {
 
         }
 
-        //public TEntity Get()
-        //{
+        public void Remove(TEntity entity)
+        {
+            Context.Set<TEntity>().Remove(entity);
+        }
 
-        //}
+        public void RemoveRange(ICollection<TEntity> entities)
+        {
+            Context.Set<TEntity>().RemoveRange(entities);
+        }
 
+        public void Add(TEntity entity)
+        {
+            Context.Set<TEntity>().Add(entity);
+        }
 
-        //public TEntity Get()
-        //{
-        //   return Context.Set<TEntity>().Get();
-        //}
+        public void AddRange(ICollection<TEntity> entities)
+        {
+            Context.Set<TEntity>().AddRange(entities);
+        }
 
+        public TEntity Get(int id)
+        {
+            return Context.Set<TEntity>().Find(id);
+            //return (TEntity)Context.Where(x => x.Id == id).FirstOrDefault();
+            
+        }
 
-        public List<TEntity> GetAll()
+        public ICollection<TEntity> GetAll()
         {
 
-            List<TEntity> Saker = new List<TEntity>();
+            return Context.Set<TEntity>().ToList();
+
+            //List<TEntity> Saker = new List<TEntity>();
 
 
-            return Saker;
+            //return Saker;
         }
 
 

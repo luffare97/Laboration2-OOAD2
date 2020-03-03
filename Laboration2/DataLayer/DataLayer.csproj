@@ -125,7 +125,6 @@
     <Compile Include="AlumnRepository.cs" />
     <Compile Include="AnvändareRepository.cs" />
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="DataManager.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IAktivitetRepository.cs" />
     <Compile Include="IAlumnRepository.cs" />
