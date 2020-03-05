@@ -15,7 +15,7 @@ namespace GUI
         public bool godkännd { get; set; }
         
 
-        public GDPR()
+        public GDPR( )
         {
             InitializeComponent();
         }

@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Logga in" Height="350" Width="600">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" Margin="40">
+
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Label Width="100">Användar ID:</Label>
+                    <TextBox Name="IDTxt" Width="200"></TextBox>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Label Width="100">Lösenord: </Label>
+                    <TextBox Name="LösenordTxt" Width="200"></TextBox>
+                </StackPanel>
+
+                <Button Width="100" Height="30" HorizontalAlignment="Right" Margin=" 10">Logga in</Button>
+            
+            </StackPanel>
+
+            <StackPanel Margin="20" Orientation="Horizontal">
+            
+                <Label Width="200">Eller registrera dig här: </Label>
+                <Button Width="100" Height="30" HorizontalAlignment="Right">Registrering</Button>
+            
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
