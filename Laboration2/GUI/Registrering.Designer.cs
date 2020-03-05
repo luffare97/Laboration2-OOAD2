@@ -49,7 +49,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.SparaBtn = new System.Windows.Forms.Button();
             this.TillbakaBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxÅr = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -228,19 +228,19 @@
             this.TillbakaBtn.UseVisualStyleBackColor = true;
             this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
-            // textBox1
+            // textBoxÅr
             // 
-            this.textBox1.Location = new System.Drawing.Point(158, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 22;
+            this.textBoxÅr.Location = new System.Drawing.Point(158, 195);
+            this.textBoxÅr.Name = "textBoxÅr";
+            this.textBoxÅr.Size = new System.Drawing.Size(139, 20);
+            this.textBoxÅr.TabIndex = 22;
             // 
             // Registrering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 335);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxÅr);
             this.Controls.Add(this.TillbakaBtn);
             this.Controls.Add(this.SparaBtn);
             this.Controls.Add(this.label10);
@@ -292,6 +292,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button SparaBtn;
         private System.Windows.Forms.Button TillbakaBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxÅr;
     }
 }

@@ -1,0 +1,78 @@
+﻿<Window x:Class="WPF_GUI.Registrering"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_GUI"
+        mc:Ignorable="d"
+        Title="Registrering" Height="630" Width="420">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="13">
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">Förnamn:</Label>
+                <TextBox x:Name="textBoxFnamn" Margin="0" Height="30" Width="200"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">Efternamn:</Label>
+                <TextBox x:Name="textBoxEnamn" Margin="0" Height="30" Width="200"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">E-Mailadress:</Label>
+                <TextBox x:Name="textBoxMail" Margin="0" Height="30" Width="200"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">Telefonnummer:</Label>
+                <TextBox x:Name="textBoxTeleNr" Margin="0" Height="30" Width="200"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">Levnads ort:</Label>
+                <TextBox x:Name="textBoxOrt" Margin="0" Height="30" Width="200"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">Nuvarande anställning:</Label>
+                <TextBox x:Name="textBoxJob" Margin="0" Height="30" Width="200"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">Program:</Label>
+                <ComboBox x:Name="comboBoxProgram" Margin="0" Height="30" Width="200"></ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Margin="0" Height="30" Width="150">Examens år:</Label>
+                <TextBox x:Name="textBoxÅr" Margin="0" Height="30" Width="200"></TextBox>
+            </StackPanel>
+
+            <StackPanel Margin="0 30">
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Margin="0" Height="30" Width="150">Lösenord:</Label>
+                    <TextBox x:Name="textBoxLösenord1" Margin="0" Height="30" Width="200"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Margin="0" Height="30" Width="150">Upprepa lösenord:</Label>
+                    <TextBox x:Name="textBoxLösenord2" Margin="0" Height="30" Width="200"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Button x:Name="TillbakaBtn" Width="70" Height="30">Tillbaka</Button>
+                    <Button x:Name="SparaBtn" Width="70" Height="30" Margin="210 0">Spara</Button>
+                </StackPanel>
+
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>

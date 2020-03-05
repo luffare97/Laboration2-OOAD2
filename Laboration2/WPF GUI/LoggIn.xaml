@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
         mc:Ignorable="d"
-        Title="Logga in" Height="350" Width="600">
+        Title="Logga in" Height="270" Width="400">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Vertical" Margin="40">
+            <StackPanel Orientation="Vertical" Margin="0">
 
-                <StackPanel Orientation="Horizontal" Margin="20">
-                    <Label Width="100">Användar ID:</Label>
+                <StackPanel Orientation="Horizontal" Margin="10 20">
+                    <Label Width="150">Användar ID:</Label>
                     <TextBox Name="IDTxt" Width="200"></TextBox>
                 </StackPanel>
                 
-                <StackPanel Orientation="Horizontal" Margin="20">
-                    <Label Width="100">Lösenord: </Label>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Width="150">Lösenord: </Label>
                     <TextBox Name="LösenordTxt" Width="200"></TextBox>
                 </StackPanel>
 
-                <Button Width="100" Height="30" HorizontalAlignment="Right" Margin=" 10">Logga in</Button>
+                <Button Width="100" Height="30" HorizontalAlignment="Right" Margin="10 5 33 20">Logga in</Button>
             
             </StackPanel>
 
-            <StackPanel Margin="20" Orientation="Horizontal">
+            <StackPanel Margin="0" Orientation="Horizontal">
             
-                <Label Width="200">Eller registrera dig här: </Label>
-                <Button Width="100" Height="30" HorizontalAlignment="Right">Registrering</Button>
+                <Label Width="200" Margin="10 10">Eller registrera dig här: </Label>
+                <Button Width="100" Height="30" HorizontalAlignment="Right" Margin="40 10 23 20">Registrering</Button>
             
             </StackPanel>
         </StackPanel>

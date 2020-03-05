@@ -33,7 +33,7 @@ namespace GUI
             {
 
                 bool OK = int.TryParse(textBoxTeleNr.Text.ToString(), out int tele);
-                bool ÅR = int.TryParse(textBoxTeleNr.Text.ToString(), out int År);
+                bool ÅR = int.TryParse(textBoxÅr.Text.ToString(), out int År);
 
                 if (ÅR == true)
                 {
@@ -51,12 +51,14 @@ namespace GUI
                         }
                         else if (Svar == DialogResult.Yes)
                         {
-                            GDPR gdpr = new GDPR(BusinessManager);
-                            bool godkännt = gdpr.ShowDialog();
-                            if ()
-                            {
+                            //Här är Ska vi visa GDPR grejen och sen ta tillbaks en bool som säger ifall det är godkännt eller inte och sen antingen göra ett inlogg eller inte
+                            
+                            //GDPR gdpr = new GDPR(BusinessManager);
+                            //bool godkännt = gdpr.ShowDialog();
+                            //if ()
+                            //{
 
-                            }
+                            //}
 
                             BusinessManager.UnitOfWork.AlumnRepository.CreateAlumn(textBoxFnamn.Text, textBoxEnamn.Text, textBoxMail.Text, tele, textBoxOrt.Text, textBoxJob.Text, textBoxLösenord1.Text, utbildning, År);
                             MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: s{BusinessManager.UnitOfWork.AnvändareRepository.AppDbContext.Användares.Count()}", "Sparad");
