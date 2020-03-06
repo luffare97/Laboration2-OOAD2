@@ -31,25 +31,25 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="1" Grid.Row="1" Margin="10">ID: </Label>
-        <Label Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">ID</Label>
+        <Label x:Name="IdTxt" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">ID</Label>
 
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Titel: </Label>
-        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="TitelTxt" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="3" Margin="10">Antal platser: </Label>
-        <TextBox Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="PlatserTxt" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="4" Margin="10">Datum: </Label>
-        <DatePicker Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"></DatePicker>
+        <DatePicker x:Name="DatumBox" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"></DatePicker>
 
         <Label Grid.Column="1" Grid.Row="5" Margin="10">Tidsram: </Label>
-        <TextBox Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="TidTxt" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="6" Margin="10">Plats: </Label>
-        <TextBox Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="PlatsTxt" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="7" Margin="10">Beskrivning: </Label>
-        <RichTextBox Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Height="200" Margin="10"></RichTextBox>
+        <RichTextBox x:Name="BeskrivningTxt" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Height="200" Margin="10"></RichTextBox>
 
         <Button x:Name="TillbakaBtn" Grid.Column="1" Grid.Row="9" Height="28" Width="100" Margin="10">Tillbaka</Button>
         <Button x:Name="SparaBtn" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10" HorizontalAlignment="Right">Spara</Button>
