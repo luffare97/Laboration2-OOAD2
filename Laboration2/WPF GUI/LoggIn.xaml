@@ -5,9 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
         mc:Ignorable="d"
-        Title="Logga in" Height="270" Width="400">
+        Title="Logga in" Height="250" Width="400">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="1" Grid.Row="1" Margin="10">Användar ID: </Label>
+        <TextBox Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="10"></TextBox>
+
+        <Label Grid.Column="1" Grid.Row="2" Margin="10">Lösenord: </Label>
+        <PasswordBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"></PasswordBox>
+
+        <Button Grid.Column="3" Grid.Row="3" Margin="10" Width="70">Logga in</Button>
+        
+        
+        <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="10">Eller registrera dig här: </Label>
+        <Button Grid.Column="3" Grid.Row="4" Margin="10" Width="100">Registrering</Button>
+        
+        <!--<StackPanel Orientation="Vertical">
             <StackPanel Orientation="Vertical" Margin="0">
 
                 <StackPanel Orientation="Horizontal" Margin="10 20">
@@ -30,6 +61,6 @@
                 <Button Width="100" Height="30" HorizontalAlignment="Right" Margin="40 10 23 20">Registrering</Button>
             
             </StackPanel>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Window>

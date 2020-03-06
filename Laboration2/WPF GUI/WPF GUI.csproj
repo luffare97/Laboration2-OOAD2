@@ -58,8 +58,44 @@
     <Compile Include="GDPR.xaml.cs">
       <DependentUpon>GDPR.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NyAktivitet.xaml.cs">
+      <DependentUpon>NyAktivitet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NyUtskicksLista.xaml.cs">
+      <DependentUpon>NyUtskicksLista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RedigeraAktivitet.xaml.cs">
+      <DependentUpon>RedigeraAktivitet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RedigeraLista.xaml.cs">
+      <DependentUpon>RedigeraLista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RedigeraProfilAnnan.xaml.cs">
+      <DependentUpon>RedigeraProfilAnnan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RedigeraProfilPersonal.xaml.cs">
+      <DependentUpon>RedigeraProfilPersonal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registrering.xaml.cs">
       <DependentUpon>Registrering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeAktivitetAnnan.xaml.cs">
+      <DependentUpon>SeAktivitetAnnan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeAktivitetPersonal.xaml.cs">
+      <DependentUpon>SeAktivitetPersonal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeUtskicksListaAnnan.xaml.cs">
+      <DependentUpon>SeUtskicksListaAnnan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeUtskicksListaPersonal.xaml.cs">
+      <DependentUpon>SeUtskicksListaPersonal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartAnnan.xaml.cs">
+      <DependentUpon>StartAnnan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartPersonal.xaml.cs">
+      <DependentUpon>StartPersonal.xaml</DependentUpon>
     </Compile>
     <Page Include="GDPR.xaml">
       <SubType>Designer</SubType>
@@ -77,7 +113,55 @@
       <DependentUpon>LoggIn.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NyAktivitet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NyUtskicksLista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RedigeraAktivitet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RedigeraLista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RedigeraProfilAnnan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RedigeraProfilPersonal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Registrering.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeAktivitetAnnan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeAktivitetPersonal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeUtskicksListaAnnan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeUtskicksListaPersonal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartAnnan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartPersonal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
