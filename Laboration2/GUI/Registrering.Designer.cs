@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxFnamn = new System.Windows.Forms.TextBox();
-            this.textBoxEnamn = new System.Windows.Forms.TextBox();
-            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.FNamnTxt = new System.Windows.Forms.TextBox();
+            this.ENamnTxt = new System.Windows.Forms.TextBox();
+            this.EMailTxt = new System.Windows.Forms.TextBox();
             this.textBoxTeleNr = new System.Windows.Forms.TextBox();
-            this.textBoxOrt = new System.Windows.Forms.TextBox();
-            this.textBoxJob = new System.Windows.Forms.TextBox();
+            this.OrtTxt = new System.Windows.Forms.TextBox();
+            this.AnställningTxt = new System.Windows.Forms.TextBox();
             this.textBoxLösenord2 = new System.Windows.Forms.TextBox();
             this.textBoxLösenord1 = new System.Windows.Forms.TextBox();
             this.comboBoxProgram = new System.Windows.Forms.ComboBox();
@@ -61,26 +61,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Förnamn:";
             // 
-            // textBoxFnamn
+            // FNamnTxt
             // 
-            this.textBoxFnamn.Location = new System.Drawing.Point(158, 12);
-            this.textBoxFnamn.Name = "textBoxFnamn";
-            this.textBoxFnamn.Size = new System.Drawing.Size(139, 20);
-            this.textBoxFnamn.TabIndex = 1;
+            this.FNamnTxt.Location = new System.Drawing.Point(158, 12);
+            this.FNamnTxt.Name = "FNamnTxt";
+            this.FNamnTxt.Size = new System.Drawing.Size(139, 20);
+            this.FNamnTxt.TabIndex = 1;
             // 
-            // textBoxEnamn
+            // ENamnTxt
             // 
-            this.textBoxEnamn.Location = new System.Drawing.Point(158, 38);
-            this.textBoxEnamn.Name = "textBoxEnamn";
-            this.textBoxEnamn.Size = new System.Drawing.Size(139, 20);
-            this.textBoxEnamn.TabIndex = 2;
+            this.ENamnTxt.Location = new System.Drawing.Point(158, 38);
+            this.ENamnTxt.Name = "ENamnTxt";
+            this.ENamnTxt.Size = new System.Drawing.Size(139, 20);
+            this.ENamnTxt.TabIndex = 2;
             // 
-            // textBoxMail
+            // EMailTxt
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(158, 64);
-            this.textBoxMail.Name = "textBoxMail";
-            this.textBoxMail.Size = new System.Drawing.Size(139, 20);
-            this.textBoxMail.TabIndex = 3;
+            this.EMailTxt.Location = new System.Drawing.Point(158, 64);
+            this.EMailTxt.Name = "EMailTxt";
+            this.EMailTxt.Size = new System.Drawing.Size(139, 20);
+            this.EMailTxt.TabIndex = 3;
             // 
             // textBoxTeleNr
             // 
@@ -89,19 +89,19 @@
             this.textBoxTeleNr.Size = new System.Drawing.Size(139, 20);
             this.textBoxTeleNr.TabIndex = 4;
             // 
-            // textBoxOrt
+            // OrtTxt
             // 
-            this.textBoxOrt.Location = new System.Drawing.Point(158, 116);
-            this.textBoxOrt.Name = "textBoxOrt";
-            this.textBoxOrt.Size = new System.Drawing.Size(139, 20);
-            this.textBoxOrt.TabIndex = 5;
+            this.OrtTxt.Location = new System.Drawing.Point(158, 116);
+            this.OrtTxt.Name = "OrtTxt";
+            this.OrtTxt.Size = new System.Drawing.Size(139, 20);
+            this.OrtTxt.TabIndex = 5;
             // 
-            // textBoxJob
+            // AnställningTxt
             // 
-            this.textBoxJob.Location = new System.Drawing.Point(158, 142);
-            this.textBoxJob.Name = "textBoxJob";
-            this.textBoxJob.Size = new System.Drawing.Size(139, 20);
-            this.textBoxJob.TabIndex = 6;
+            this.AnställningTxt.Location = new System.Drawing.Point(158, 142);
+            this.AnställningTxt.Name = "AnställningTxt";
+            this.AnställningTxt.Size = new System.Drawing.Size(139, 20);
+            this.AnställningTxt.TabIndex = 6;
             // 
             // textBoxLösenord2
             // 
@@ -255,12 +255,12 @@
             this.Controls.Add(this.comboBoxProgram);
             this.Controls.Add(this.textBoxLösenord1);
             this.Controls.Add(this.textBoxLösenord2);
-            this.Controls.Add(this.textBoxJob);
-            this.Controls.Add(this.textBoxOrt);
+            this.Controls.Add(this.AnställningTxt);
+            this.Controls.Add(this.OrtTxt);
             this.Controls.Add(this.textBoxTeleNr);
-            this.Controls.Add(this.textBoxMail);
-            this.Controls.Add(this.textBoxEnamn);
-            this.Controls.Add(this.textBoxFnamn);
+            this.Controls.Add(this.EMailTxt);
+            this.Controls.Add(this.ENamnTxt);
+            this.Controls.Add(this.FNamnTxt);
             this.Controls.Add(this.label1);
             this.Name = "Registrering";
             this.Text = "Registrering";
@@ -272,12 +272,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxFnamn;
-        private System.Windows.Forms.TextBox textBoxEnamn;
-        private System.Windows.Forms.TextBox textBoxMail;
+        private System.Windows.Forms.TextBox FNamnTxt;
+        private System.Windows.Forms.TextBox ENamnTxt;
+        private System.Windows.Forms.TextBox EMailTxt;
         private System.Windows.Forms.TextBox textBoxTeleNr;
-        private System.Windows.Forms.TextBox textBoxOrt;
-        private System.Windows.Forms.TextBox textBoxJob;
+        private System.Windows.Forms.TextBox OrtTxt;
+        private System.Windows.Forms.TextBox AnställningTxt;
         private System.Windows.Forms.TextBox textBoxLösenord2;
         private System.Windows.Forms.TextBox textBoxLösenord1;
         private System.Windows.Forms.ComboBox comboBoxProgram;

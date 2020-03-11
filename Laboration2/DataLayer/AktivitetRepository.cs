@@ -16,7 +16,7 @@ namespace DataLayer
         }
 
         private AppDbContext Context { get; }
-
+        
         public List<Aktivitet> GetAllAktiviteter()
         {
             using (var db = new AppDbContext())
@@ -25,27 +25,22 @@ namespace DataLayer
             }
         }
 
-        public void CreateAktivitet(string titel, int platser, DateTime datum, string tid, string plats, string beskrivning)
+        public void CreateAktivitet(Aktivitet A)
         {
-            Aktivitet A = new Aktivitet()
-            {
-                AktivitetNamn = titel,
-                AntalPlatser = platser,
-                Datum = datum,
-                Tid = tid,
-                Plats = plats,
-                Beskrivning = beskrivning
+            //Aktivitet A = new Aktivitet()
+            //{
+            //    AktivitetNamn = titel,
+            //    AntalPlatser = platser,
+            //    Datum = datum,
+            //    Tid = tid,
+            //    Plats = plats,
+            //    Beskrivning = beskrivning
 
-            };
+            //};
 
             Context.Aktiviteter.Add(A);
             Context.SaveChanges();
         }
-
-        //public Aktivitet GetAktivitetIndex(int id)
-        //{
-        //    return (Aktivitet)Context.Aktiviteter.Where(id == index)
-        //}
 
         public Aktivitet GetAktivitet(int ID)
         {
@@ -81,7 +76,7 @@ namespace DataLayer
         }
 
         //Redigera aktivitet verkar inte funka?
-        public void RedigeraAktivitet(int ID, string titel, int platser, DateTime datum, string tid, string plats, string beskrivning)
+        public void RedigeraAktivitet(int ID, Aktivitet A)
         {
             var query =
                 from aktivitet in Context.Aktiviteter
@@ -90,23 +85,17 @@ namespace DataLayer
 
             foreach (Aktivitet aktivitet in query)
             {
-                aktivitet.AktivitetNamn = titel;
-                aktivitet.AntalPlatser = platser;
-                aktivitet.Datum = datum;
-                aktivitet.Tid = tid;
-                aktivitet.Plats = plats;
-                aktivitet.Beskrivning = beskrivning;
+                aktivitet.AktivitetNamn = A.AktivitetNamn;
+                aktivitet.AntalPlatser = A.AntalPlatser;
+                aktivitet.Datum = A.Datum;
+                aktivitet.Tid = A.Tid;
+                aktivitet.Plats = A.Plats;
+                aktivitet.Beskrivning = A.Beskrivning;
 
             }
 
             Context.SaveChanges();
         }
 
-
-        //public IEnumerable<Aktivitet> GetAllAktiviteter()
-        //{
-        //    int f = 0;
-        //    return f;//Context.Aktiviteter.Where(x => x.AktivitetId == 1);
-        //}
     }
 }

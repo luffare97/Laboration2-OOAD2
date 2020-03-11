@@ -34,20 +34,23 @@ namespace GUI
         }
 
         private void SparaBtn_Click(object sender, EventArgs e)
-            //FUNKAR INTE JUST NU
         {
+            //FUNKAR INTE JUST NU
+
             DialogResult Svar;
             Svar = MessageBox.Show("Vill du spara den här utskickslistan?", "Spara?", MessageBoxButtons.YesNo);
 
             if (Svar == DialogResult.Yes)
             {
                 List<Alumn> A = new List<Alumn>();
-
-                for (int i = 0; i < MottagareLB.SelectedItems.Count; i++)
+                foreach (Alumn a in MottagareLB.SelectedItems)
                 {
-                    Alumn a = (Alumn)MottagareLB.Items[i];
                     A.Add(a);
                 }
+
+                UtskicksLista L = new UtskicksLista(InfoTxt.Text, TitelTxt.Text, A);
+
+                BusinessManager.CreateList(L);
 
                 //UtskicksLista L = BusinessManager.UnitOfWork.UtskicksListaRepository.CreateLista(TitelTxt.Text, InfoTxt.Text, A);
 

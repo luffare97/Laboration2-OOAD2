@@ -44,7 +44,7 @@ namespace GUI
                 if (NyttLösenordTxt.Text == UpprepaTxt.Text)
                 {
                     string nytt = NyttLösenordTxt.Text;
-                    BusinessManager.UnitOfWork.AnvändareRepository.RedigeraLösenord(BusinessManager.InloggadAlumn.AnvändarId, nytt);
+                    BusinessManager.RedigeraLösenord(BusinessManager.InloggadAlumn.AnvändarId, nytt);
                     MessageBox.Show("Ditt nya löseord har nu sparats","Sparat");
                     GammaltLösenordTxt.Clear();
                     NyttLösenordTxt.Clear();
@@ -78,10 +78,25 @@ namespace GUI
                     else if (Svar == DialogResult.Yes)
                     {
                         string ID = BusinessManager.InloggadAlumn.AnvändarId;
+                        
                         Utbildning utbildning = (Utbildning)comboBoxProgram.SelectedItem;
 
-                        BusinessManager.UnitOfWork.AlumnRepository.RedigeraAlumn(ID, FNamnTxt.Text, ENamnTxt.Text, EMailTxt.Text, TeleNrTxt.Text, OrtTxt.Text, AnställningTxt.Text, ExamensårTxt.Text, utbildning);
-                        BusinessManager.InloggadAlumn = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(BusinessManager.InloggadAlumn.AnvändarId) as Alumn;
+                        Alumn A = new Alumn()
+                        {
+                            AnvändarId = BusinessManager.InloggadAlumn.AnvändarId,
+                            FNamn = FNamnTxt.Text,
+                            ENamn = ENamnTxt.Text,
+                            EMail = EMailTxt.Text,
+                            TeleNr = tele,
+                            Ort = OrtTxt.Text,
+                            Anställning = AnställningTxt.Text,
+                            ExamensÅr = år,
+                            program = utbildning
+
+                        };
+
+                        BusinessManager.RedigeraAlumn(A);
+                        BusinessManager.InloggadAlumn = BusinessManager.GetAnvändare(BusinessManager.InloggadAlumn.AnvändarId) as Alumn;
                         this.Close();
                     }
                 }

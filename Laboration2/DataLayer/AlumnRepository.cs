@@ -19,26 +19,24 @@ namespace DataLayer
 
 
         //Metod för att redigera en alumn
-        public void RedigeraAlumn(string ID, string Fnamn, string Enamn, string EMail, string TeleNr, string Ort, string Job, string ÅR, Utbildning utbildning)
+        public void RedigeraAlumn(Alumn A)
         {
-            int år = int.Parse(ÅR);
-            int tele = int.Parse(TeleNr);
 
             var query =
                 from alumn in Context.Användares
-                where alumn.AnvändarId == ID
+                where alumn.AnvändarId == A.AnvändarId
                 select alumn;
 
             foreach (Alumn alumn in query)
             {
-                alumn.FNamn = Fnamn;
-                alumn.ENamn = Enamn;
-                alumn.EMail = EMail;
-                alumn.TeleNr = tele;
-                alumn.Ort = Ort;
-                alumn.Anställning = Job;
-                alumn.ExamensÅr = år;
-                alumn.program = utbildning;
+                alumn.FNamn = A.FNamn;
+                alumn.ENamn = A.ENamn;
+                alumn.EMail = A.EMail;
+                alumn.TeleNr = A.TeleNr;
+                alumn.Ort = A.Ort;
+                alumn.Anställning = A.Anställning;
+                alumn.ExamensÅr = A.ExamensÅr;
+                alumn.program = A.program;
 
             }
 
@@ -46,24 +44,24 @@ namespace DataLayer
 
         }
 
-        public void CreateAlumn(string Fnamn, string Enamn, string EMail, int tele, string Ort, string Job, string Lösenord, Utbildning utb, int år)
+        public void CreateAlumn(Alumn A)
         {
+            A.AnvändarId = $"s{Context.Användares.Count() + 1}";
 
+            //Alumn A = new Alumn()
+            //{
+            //    AnvändarId = $"S{Context.Användares.Count() + 1}",
+            //    FNamn = Fnamn,
+            //    ENamn = Enamn,
+            //    EMail = EMail,
+            //    TeleNr = tele,
+            //    Ort = Ort,
+            //    Anställning = Job,
+            //    Lösenord = Lösenord,
+            //    program = utb,
+            //    ExamensÅr = år
 
-            Alumn A = new Alumn()
-            {
-                AnvändarId = $"S{Context.Användares.Count() + 1}",
-                FNamn = Fnamn,
-                ENamn = Enamn,
-                EMail = EMail,
-                TeleNr = tele,
-                Ort = Ort,
-                Anställning = Job,
-                Lösenord = Lösenord,
-                program = utb,
-                ExamensÅr = år
-
-            };
+            //};
 
             Context.Alumner.Add(A);
 

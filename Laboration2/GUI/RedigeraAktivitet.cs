@@ -17,6 +17,8 @@ namespace GUI
     {
 
         public BusinessManager BusinessManager { get; }
+
+
         public RedigeraAktivitet(BusinessManager businessManager, Aktivitet aktivitet)
         {
             InitializeComponent();
@@ -38,22 +40,44 @@ namespace GUI
             DialogResult Svar;
             Svar = MessageBox.Show("Vill du spara de här ändringarna?","Spara?");
 
-            if (Svar == DialogResult.Yes)
-            {
-                int id = int.Parse(IDLabel.Text);
-                int platser = Convert.ToInt32(Math.Round(PlatserField.Value, 0));
-                DateTime datum = this.DatumDateTime.Value.Date;
+            bool OK = int.TryParse(PlatserField.Text.ToString(), out int platser);
 
-                BusinessManager.UnitOfWork.AktivitetRepository.RedigeraAktivitet(id, TitelTxt.Text, platser, datum, TidTxt.Text, PlatsTxt.Text, BeskrivningBox.Text);
-                MessageBox.Show("Ändringarna har sparats","Sparat") ;
-                Close();
-            }
-            else if (Svar == DialogResult.No)
+            if (OK == true)
             {
-                Close();
+
+                if (Svar == DialogResult.Yes)
+                {
+                    int id = int.Parse(IDLabel.Text);
+
+                    DateTime datum = this.DatumDateTime.Value.Date;
+
+                    Aktivitet A = new Aktivitet()
+                    {
+
+                        AktivitetNamn = TitelTxt.Text,
+                        AntalPlatser = platser,
+                        Datum = datum,
+                        Tid = TidTxt.Text,
+                        Plats = PlatsTxt.Text,
+                        Beskrivning = BeskrivningBox.Text
+
+                    };
+
+                    BusinessManager.RedigeraAktivitet(id, A);
+
+                    MessageBox.Show("Ändringarna har sparats", "Sparat");
+                    Close();
+                }
+                else if (Svar == DialogResult.No)
+                {
+                    Close();
+                }
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Platser kan bara anges i siffror", "Error");
             }
 
-            Close();
         }
 
         private void TillbakaBtn_Click(object sender, EventArgs e)

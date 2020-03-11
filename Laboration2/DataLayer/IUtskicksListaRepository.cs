@@ -6,7 +6,7 @@ namespace DataLayer
     public interface IUtskicksListaRepository
     {
         void AddMottagare(int id, Alumn A);
-        void CreateLista(string titel, string info, List<Alumn> mottagare);
+        void CreateLista(UtskicksLista L);
         List<UtskicksLista> GetAllListor();
         UtskicksLista GetLista(int id);
         void RedigeraLista(int id, string titel, string info);

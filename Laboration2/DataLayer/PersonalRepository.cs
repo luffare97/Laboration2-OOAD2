@@ -15,23 +15,21 @@ namespace DataLayer
             Context = context;
         }
 
-        public void RedigeraPersonal(string ID, string Fnamn, string Enamn, string Email, string TeleNr, string possition)
+        public void RedigeraPersonal(Personal P)
         {
-
-            int tele = int.Parse(TeleNr);
 
             var query =
                 from personal in Context.Användares
-                where personal.AnvändarId == ID
+                where personal.AnvändarId == P.AnvändarId
                 select personal;
 
             foreach (Personal personal in query)
             {
-                personal.FNamn = Fnamn;
-                personal.ENamn = Enamn;
-                personal.EMail = Email;
-                personal.TeleNr = tele;
-                personal.Possition = possition;
+                personal.FNamn = P.FNamn;
+                personal.ENamn = P.ENamn;
+                personal.EMail = P.EMail;
+                personal.TeleNr = P.TeleNr;
+                personal.Possition = P.Possition;
 
             }
 

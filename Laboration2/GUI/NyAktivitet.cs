@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using BusinessEntites;
 
 namespace GUI
 {
@@ -29,20 +30,41 @@ namespace GUI
         private void SparaBtn_Click(object sender, EventArgs e)
         {
             DialogResult Svar;
+            bool OK = int.TryParse(PlatserField.Text.ToString(), out int platser);
 
-            Svar = MessageBox.Show("Vill du spara den här aktiviteten?", "Vill du spara detta?", MessageBoxButtons.YesNo);
-            if (Svar == DialogResult.No)
+            if (OK == true)
             {
-                Close();
+
+
+                Svar = MessageBox.Show("Vill du spara den här aktiviteten?", "Vill du spara detta?", MessageBoxButtons.YesNo);
+                if (Svar == DialogResult.No)
+                {
+                    Close();
+                }
+                else if (Svar == DialogResult.Yes)
+                {
+                    
+                    DateTime datum = this.StartDateTime.Value.Date;
+
+                    Aktivitet A = new Aktivitet()
+                    {
+                        AktivitetNamn = TitelTxt.Text,
+                        AntalPlatser = platser,
+                        Datum = datum,
+                        Tid = TidTxt.Text,
+                        Plats = PlatsTxt.Text,
+                        Beskrivning = BeskrivningTxt.Text
+
+                    };
+
+                    BusinessManager.CreateAktivitet(A);
+                    MessageBox.Show("Aktiviteten har blivit sparad", "Sparad");
+                    Close();
+                }
             }
-            else if (Svar == DialogResult.Yes)
+            else if (OK == false)
             {
-                int platser = Convert.ToInt32(Math.Round(PlatserField.Value, 0));
-                DateTime datum = this.StartDateTime.Value.Date;
-                
-                BusinessManager.UnitOfWork.AktivitetRepository.CreateAktivitet(TitelTxt.Text, platser, datum, TidTxt.Text, PlatsTxt.Text, BeskrivningTxt.Text);
-                MessageBox.Show("Aktiviteten har blivit sparad", "Sparad");
-                Close();
+                MessageBox.Show("Platser kan bara anges i form av sifror", "Error");
             }
         }
     }

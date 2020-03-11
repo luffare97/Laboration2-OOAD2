@@ -51,7 +51,7 @@ namespace DataLayer
         public TEntity Get(int id)
         {
             return Context.Set<TEntity>().Find(id);
-            //return (TEntity)Context.Where(x => x.Id == id).FirstOrDefault();
+            
             
         }
 
@@ -60,10 +60,6 @@ namespace DataLayer
 
             return Context.Set<TEntity>().ToList();
 
-            //List<TEntity> Saker = new List<TEntity>();
-
-
-            //return Saker;
         }
 
 

@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
+using BusinessEntites;
 
 namespace GUI
 {
     public partial class GDPR : Form
     {
-        public bool godkännd { get; set; }
         
-
-        public GDPR( )
+        public BusinessManager BusinessManager { get; }
+        public GDPR(BusinessManager businessManager)
         {
             InitializeComponent();
+
+            BusinessManager = businessManager;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -27,11 +30,12 @@ namespace GUI
 
         private void JaBtn_Click(object sender, EventArgs e)
         {
-            godkännd = false;
+            this.DialogResult = DialogResult.No;
 
             if (GodkännBox.Checked == true)
             {
-                godkännd = true;
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
             }
             else
             {
@@ -41,8 +45,8 @@ namespace GUI
 
         private void NejBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Om du inte godkänner villkåren kan inte ett konto skapas","Konto skapas inte");
-            godkännd = false;
+
+            this.DialogResult = DialogResult.No;
             Close();
         }
     }

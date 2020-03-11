@@ -32,11 +32,10 @@ namespace DataLayer
             return (UtskicksLista)Context.UtskicksListor.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public void CreateLista(string titel, string info, List<Alumn> mottagare)
+        public void CreateLista(UtskicksLista L)
         {
-            UtskicksLista L = new UtskicksLista(info, titel);
-
-            foreach (Alumn alumn in mottagare)
+            
+            foreach (Alumn alumn in L.Användares)
             {
                 AddMottagare(L.Id, alumn);
             }

@@ -34,7 +34,7 @@ namespace GUI
             if (Svar == DialogResult.Yes)
             {
                 int id = int.Parse(IDTxt.Text);
-                BusinessManager.UnitOfWork.UtskicksListaRepository.RemoveMottagare(id, BusinessManager.InloggadAlumn);
+                BusinessManager.RemoveMottagare(id, BusinessManager.InloggadAlumn);
 
             }
             else if (Svar == DialogResult.No)

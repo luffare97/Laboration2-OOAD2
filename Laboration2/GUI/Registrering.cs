@@ -14,7 +14,6 @@ namespace GUI
 {
     public partial class Registrering : Form
     {
-
         public BusinessManager BusinessManager { get; }
 
         public Registrering(BusinessManager businessManager)
@@ -33,7 +32,7 @@ namespace GUI
             {
 
                 bool OK = int.TryParse(textBoxTeleNr.Text.ToString(), out int tele);
-                bool ÅR = int.TryParse(textBoxÅr.Text.ToString(), out int År);
+                bool ÅR = int.TryParse(textBoxÅr.Text.ToString(), out int år);
 
                 if (ÅR == true)
                 {
@@ -52,17 +51,41 @@ namespace GUI
                         else if (Svar == DialogResult.Yes)
                         {
                             //Här är Ska vi visa GDPR grejen och sen ta tillbaks en bool som säger ifall det är godkännt eller inte och sen antingen göra ett inlogg eller inte
-                            
-                            //GDPR gdpr = new GDPR(BusinessManager);
-                            //bool godkännt = gdpr.ShowDialog();
-                            //if ()
-                            //{
 
-                            //}
 
-                            BusinessManager.UnitOfWork.AlumnRepository.CreateAlumn(textBoxFnamn.Text, textBoxEnamn.Text, textBoxMail.Text, tele, textBoxOrt.Text, textBoxJob.Text, textBoxLösenord1.Text, utbildning, År);
-                            MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: s{BusinessManager.UnitOfWork.AnvändareRepository.AppDbContext.Användares.Count()}", "Sparad");
-                            Close();
+                            DialogResult Gkänd;
+
+                            GDPR gdpr = new GDPR(BusinessManager);
+                            Gkänd = gdpr.ShowDialog();
+
+                            if (Gkänd == DialogResult.Yes)
+                            {
+
+
+                                Alumn A = new Alumn()
+                                {
+                                    FNamn = FNamnTxt.Text,
+                                    ENamn = ENamnTxt.Text,
+                                    EMail = EMailTxt.Text,
+                                    TeleNr = tele,
+                                    Ort = OrtTxt.Text,
+                                    Anställning = AnställningTxt.Text,
+                                    ExamensÅr = år,
+                                    program = utbildning,
+                                    Lösenord = textBoxLösenord1.Text
+
+                                };
+
+                                BusinessManager.CreateAlumn(A);
+                                MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: s{BusinessManager.UnitOfWork.AnvändareRepository.AppDbContext.Användares.Count()}", "Sparad");
+                                
+                                Close();
+                            }
+                            else if (Gkänd == DialogResult.No)
+                            {
+                                MessageBox.Show("Du måste godkänna vilkåren för att få lov att skapa ett konto","Error");
+                            }
+
                         }
                     }
                     else if (OK == false)

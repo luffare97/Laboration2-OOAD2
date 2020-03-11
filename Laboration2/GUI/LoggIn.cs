@@ -18,6 +18,7 @@ namespace GUI
         
         public BusinessManager BusinessManager { get; }
 
+
         public LoggIn(BusinessManager businessManager)
         {
             
@@ -28,7 +29,7 @@ namespace GUI
         private void LoggaInBtn_Click(object sender, EventArgs e)
         {
                 
-            Användare A = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(IDTxt.Text);
+            Användare A = BusinessManager.GetAnvändare(IDTxt.Text);
 
             if (A == null)
             {
@@ -48,8 +49,12 @@ namespace GUI
                     StartPersonal startPersonal = new StartPersonal(BusinessManager);
                     this.Hide();
                     startPersonal.ShowDialog();
+
+                    BusinessManager.InloggadPersonal = null;
+                    IDTxt.Clear();
+                    LösenordTxt.Clear();
                     
-                    this.Close();
+
 
 
                 }
@@ -61,7 +66,10 @@ namespace GUI
                     this.Hide();
                     startAnnan.ShowDialog();
 
-                    this.Close();
+                    BusinessManager.InloggadAlumn = null;
+                    IDTxt.Clear();
+                    LösenordTxt.Clear();
+
 
 
                 }

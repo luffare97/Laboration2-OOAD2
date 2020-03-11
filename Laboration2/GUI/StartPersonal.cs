@@ -19,24 +19,32 @@ namespace GUI
 
         public BusinessManager BusinessManager { get; }
 
+        public void UpdatePerson()
+        {
+            InLoggadNamn.Text = BusinessManager.InloggadPersonal.FNamn + " " + BusinessManager.InloggadPersonal.ENamn;
+            InLoggadPosition.Text = BusinessManager.InloggadPersonal.Possition;
+        }
+
+        public void UpdateGrid()
+        {
+            //För att fylla List datagriden
+            BindingSourceLista.DataSource = BusinessManager.GetAllListor();
+            dataGridListor.DataSource = BindingSourceLista.DataSource;
+
+            //För att fylla Aktivitet datagriden
+            BindingSourceAktivitet.DataSource = BusinessManager.GetAllAktiviteter();
+            dataGridAktiviteter.DataSource = BindingSourceAktivitet.DataSource;
+            HideColumns();
+        }
+
         public StartPersonal(BusinessManager businessManager)
         {
             InitializeComponent();
 
             BusinessManager = businessManager;
 
-            InLoggadNamn.Text = businessManager.InloggadPersonal.FNamn + " " + businessManager.InloggadPersonal.ENamn;
-            InLoggadPosition.Text = businessManager.InloggadPersonal.Possition;
-
-
-            //För att fylla List datagriden
-            BindingSourceLista.DataSource = businessManager.UnitOfWork.UtskicksListaRepository.GetAllListor();
-            dataGridListor.DataSource = BindingSourceLista.DataSource;
-
-            //För att fylla Aktivitet datagriden
-            BindingSourceAktivitet.DataSource = businessManager.UnitOfWork.AktivitetRepository.GetAllAktiviteter();
-            dataGridAktiviteter.DataSource = BindingSourceAktivitet.DataSource;
-            HideColumns();
+            UpdatePerson();
+            UpdateGrid();
         }
 
         public void HideColumns()
@@ -64,18 +72,20 @@ namespace GUI
             {
                 SeUtskicksListaPersonal seLista = new SeUtskicksListaPersonal(BusinessManager, lista);
                 seLista.ShowDialog();
+                UpdateGrid();
             }
             
         }
 
         private void LoggaUtBtn_Click(object sender, EventArgs e)
         {
-            //Kolla på senare kanske annars bara this.Close();//
-
-            //BusinessManager.InloggadPersonal = null;
-            //LoggIn InLogg = new LoggIn(BusinessManager);
-            //this.Close();
-            //InLogg.ShowDialog();
+            
+            var formToShow = Application.OpenForms.Cast<Form>()
+            .FirstOrDefault(c => c is LoggIn);
+            if (formToShow != null)
+            {
+                formToShow.Show();
+            }
 
             this.Close();
 
@@ -85,6 +95,7 @@ namespace GUI
         {
             RedigeraProfilPersonal Redigera = new RedigeraProfilPersonal(BusinessManager);
             Redigera.ShowDialog();
+            UpdatePerson();
         }
 
         private void VäljaAktivitetBtn_Click(object sender, EventArgs e)
@@ -100,6 +111,7 @@ namespace GUI
             {
                 SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, aktivitet);
                 seAktivitet.ShowDialog();
+                UpdateGrid();
             }
             
         }
@@ -109,6 +121,7 @@ namespace GUI
             
             NyAktivitet nyAktivitet = new NyAktivitet(BusinessManager);
             nyAktivitet.ShowDialog();
+            UpdateGrid();
 
         }
 
@@ -116,15 +129,8 @@ namespace GUI
         {
             NyUtskicksLista nyLista = new NyUtskicksLista(BusinessManager);
             nyLista.ShowDialog();
+            UpdateGrid();
         }
 
-        private void UppdateraBtn_Click(object sender, EventArgs e)
-        {
-
-            //Funkar inte
-
-            this.Refresh();
-            Application.DoEvents();
-        }
     }
 }

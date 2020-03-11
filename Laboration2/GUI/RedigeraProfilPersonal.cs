@@ -20,11 +20,11 @@ namespace GUI
             InitializeComponent();
             BusinessManager = businessManager;
 
-            FNamnTxt.Text = businessManager.InloggadPersonal.FNamn;
-            ENamnTxt.Text = businessManager.InloggadPersonal.ENamn;
-            EMailTxt.Text = businessManager.InloggadPersonal.EMail;
-            TeleNrTxt.Text = businessManager.InloggadPersonal.TeleNr.ToString();
-            PossitionTxt.Text = businessManager.InloggadPersonal.Possition;
+            FNamnTxt.Text = BusinessManager.InloggadPersonal.FNamn;
+            ENamnTxt.Text = BusinessManager.InloggadPersonal.ENamn;
+            EMailTxt.Text = BusinessManager.InloggadPersonal.EMail;
+            TeleNrTxt.Text = BusinessManager.InloggadPersonal.TeleNr.ToString();
+            PossitionTxt.Text = BusinessManager.InloggadPersonal.Possition;
             
         }
 
@@ -35,19 +35,44 @@ namespace GUI
 
         private void SparaInfoBtn_Click(object sender, EventArgs e)
         {
-            DialogResult Svar;
-            Svar = MessageBox.Show("Är du säker på att du vill spara ändringarna?", "Spara dessa ändringar?", MessageBoxButtons.YesNo);
-            if (Svar == DialogResult.No)
+
+            bool OK = int.TryParse(TeleNrTxt.Text.ToString(), out int tele);
+
+            if (OK == true)
             {
-                Close();
+
+                DialogResult Svar;
+                Svar = MessageBox.Show("Är du säker på att du vill spara ändringarna?", "Spara dessa ändringar?", MessageBoxButtons.YesNo);
+                if (Svar == DialogResult.No)
+                {
+                    Close();
+                }
+                else if (Svar == DialogResult.Yes)
+                {
+                    string ID = BusinessManager.InloggadPersonal.AnvändarId;
+
+
+
+                    Personal P = new Personal()
+                    {
+                        AnvändarId = BusinessManager.InloggadPersonal.AnvändarId,
+                        FNamn = FNamnTxt.Text,
+                        ENamn = ENamnTxt.Text,
+                        EMail = EMailTxt.Text,
+                        TeleNr = tele,
+                        Possition = PossitionTxt.Text
+
+                    };
+    
+                    BusinessManager.RedigeraPersonal(P);
+                    BusinessManager.InloggadPersonal = P;
+
+                    this.Close();
+                }
             }
-            else if (Svar == DialogResult.Yes)
+            else if (OK == false)
             {
-                string ID = BusinessManager.InloggadPersonal.AnvändarId;
-                BusinessManager.UnitOfWork.PersonalRepository.RedigeraPersonal(ID, FNamnTxt.Text, ENamnTxt.Text, EMailTxt.Text, TeleNrTxt.Text, PossitionTxt.Text);
-                BusinessManager.InloggadPersonal = BusinessManager.UnitOfWork.AnvändareRepository.GetAnvändare(BusinessManager.InloggadPersonal.AnvändarId) as Personal;
-                
-                this.Close();
+                MessageBox.Show("Telefonnummer kan bara bestå av siffror", "Error");
             }
         }
 
@@ -58,7 +83,7 @@ namespace GUI
                 if (NyttLösenordTxt.Text == UpprepaTxt.Text)
                 {
                     string nytt = NyttLösenordTxt.Text;
-                    BusinessManager.UnitOfWork.AnvändareRepository.RedigeraLösenord(BusinessManager.InloggadPersonal.AnvändarId, nytt);
+                    BusinessManager.RedigeraLösenord(BusinessManager.InloggadPersonal.AnvändarId, nytt);
                     MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
                     GammaltLösenordTxt.Clear();
                     NyttLösenordTxt.Clear();

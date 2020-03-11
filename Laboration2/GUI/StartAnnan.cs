@@ -19,6 +19,28 @@ namespace GUI
 
         public BusinessManager BusinessManager { get; }
 
+        public void UpdatePerson()
+        {
+            InLoggadJobb.Text = BusinessManager.InloggadAlumn.Anställning;
+            InLoggadExamensÅr.Text = BusinessManager.InloggadAlumn.ExamensÅr.ToString();
+            InLoggadOrt.Text = BusinessManager.InloggadAlumn.Ort;
+
+
+            InLoggadNamn.Text = BusinessManager.InloggadAlumn.FNamn + " " + BusinessManager.InloggadAlumn.ENamn;
+            InLoggadProgram.Text = BusinessManager.InloggadAlumn.program.ToString();
+        }
+
+        public void UpdateGrid()
+        {
+            //För att fylla List datagriden
+            BindingSourceLista.DataSource = BusinessManager.InloggadAlumn.Listor;
+            dataGridListor.DataSource = BindingSourceLista.DataSource;
+
+            //För att fylla Aktivitet datagriden
+            BindingSourceAktivitet.DataSource = BusinessManager.GetAllAktiviteter();
+            dataGridAktiviteter.DataSource = BindingSourceAktivitet.DataSource;
+            HideColumns();
+        }
         
         public StartAnnan(BusinessManager businessManager)
         {
@@ -26,23 +48,10 @@ namespace GUI
 
             BusinessManager = businessManager;
 
-            InLoggadJobb.Text = businessManager.InloggadAlumn.Anställning;
-            InLoggadExamensÅr.Text = businessManager.InloggadAlumn.ExamensÅr.ToString();
-            InLoggadOrt.Text = businessManager.InloggadAlumn.Ort;
+            UpdatePerson();
 
+            UpdateGrid();
 
-            InLoggadNamn.Text = businessManager.InloggadAlumn.FNamn + " " + businessManager.InloggadAlumn.ENamn;
-            InLoggadProgram.Text = businessManager.InloggadAlumn.program.ToString();
-
-
-            //För att fylla List datagriden
-            BindingSourceLista.DataSource = businessManager.InloggadAlumn.Listor; //businessManager.UnitOfWork.UtskicksListaRepository.GetAllListor();
-            dataGridListor.DataSource = BindingSourceLista.DataSource;
-
-            //För att fylla Aktivitet datagriden
-            BindingSourceAktivitet.DataSource = businessManager.UnitOfWork.AktivitetRepository.GetAllAktiviteter();
-            dataGridAktiviteter.DataSource = BindingSourceAktivitet.DataSource;
-            HideColumns();
         }
 
         public void HideColumns()
@@ -79,6 +88,7 @@ namespace GUI
             {
                 SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
                 seAktivitet.ShowDialog();
+                UpdateGrid();
             }
             
 
@@ -88,11 +98,13 @@ namespace GUI
         private void LoggaUtBtn_Click(object sender, EventArgs e)
         {
 
-            //Kolla på senare kanske annars bara this.Close();
-            //BusinessManager.InloggadAlumn = null;
-            //LoggIn InLogg = new LoggIn(BusinessManager);
-            //this.Close();
-            //InLogg.ShowDialog();
+            var formToShow = Application.OpenForms.Cast<Form>()
+            .FirstOrDefault(c => c is LoggIn);
+            if (formToShow != null)
+            {
+                formToShow.Show();
+            }
+
             this.Close();
 
             
@@ -102,6 +114,10 @@ namespace GUI
         {
             RedigeraProfilAnnan Redigera = new RedigeraProfilAnnan(BusinessManager);
             Redigera.ShowDialog();
+
+            UpdatePerson();
+
+
         }
 
         private void VäljListaBtn_Click(object sender, EventArgs e)
@@ -117,14 +133,11 @@ namespace GUI
             {
                 SeUtskicksListaAnnan SeLista = new SeUtskicksListaAnnan(BusinessManager, lista);
                 SeLista.ShowDialog();
+
+                UpdateGrid();
             }
             
         }
 
-        private void UppdateraBtn_Click(object sender, EventArgs e)
-        {
-            //Funkar inte
-            this.Refresh();
-        }
     }
 }

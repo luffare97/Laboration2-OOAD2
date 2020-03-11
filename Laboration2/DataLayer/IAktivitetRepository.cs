@@ -6,10 +6,10 @@ namespace DataLayer
 {
     public interface IAktivitetRepository
     {
-        void CreateAktivitet(string titel, int platser, DateTime datum, string tid, string plats, string beskrivning);
+        void CreateAktivitet(Aktivitet A);
         void DeltaAktivitet(int ID, Alumn A);
         Aktivitet GetAktivitet(int ID);
         List<Aktivitet> GetAllAktiviteter();
-        void RedigeraAktivitet(int ID, string titel, int platser, DateTime datum, string tid, string plats, string beskrivning);
+        void RedigeraAktivitet(int ID, Aktivitet A);
     }
 }

@@ -41,6 +41,11 @@ namespace GUI
             if (Svar == DialogResult.Yes)
             {
                 int id = int.Parse(IDTxt.Text);
+                UtskicksLista L = new UtskicksLista()
+                {
+
+                };
+
                 BusinessManager.UnitOfWork.UtskicksListaRepository.RedigeraLista(id, TitelTxt.Text, MeddelandeBox.Text);
                 MessageBox.Show("Ändringarna har sparats","Sparat");
                 Close();
