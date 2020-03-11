@@ -61,6 +61,8 @@
     <Compile Include="IEntity.cs" />
     <Compile Include="IPersonal.cs" />
     <Compile Include="IUtskicksLista.cs" />
+    <Compile Include="Observatorypattern\Observer.cs" />
+    <Compile Include="Observatorypattern\Subject.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Utbildning.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
