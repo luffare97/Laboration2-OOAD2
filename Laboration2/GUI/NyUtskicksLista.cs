@@ -48,9 +48,9 @@ namespace GUI
                     A.Add(a);
                 }
 
-                UtskicksLista L = new UtskicksLista(InfoTxt.Text, TitelTxt.Text, A);
+                UtskicksLista L = new UtskicksLista(InfoTxt.Text, TitelTxt.Text, new List<Alumn>());
 
-                BusinessManager.CreateList(L);
+                BusinessManager.CreateList(L, A);
                 Close();
 
             }

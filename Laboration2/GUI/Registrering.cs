@@ -62,7 +62,7 @@ namespace GUI
                             {
 
 
-                                Alumn A = new Alumn()
+                                IAlumn A = new Alumn()
                                 {
                                     FNamn = FNamnTxt.Text,
                                     ENamn = ENamnTxt.Text,

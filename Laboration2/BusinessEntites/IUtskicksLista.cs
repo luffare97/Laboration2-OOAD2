@@ -4,7 +4,7 @@ namespace BusinessEntites
 {
     public interface IUtskicksLista
     {
-        ICollection<Alumn> Användares { get; set; }
+        ICollection<Alumn> Mottagare { get; set; }
         string Information { get; set; }
         string Titel { get; set; }
     }

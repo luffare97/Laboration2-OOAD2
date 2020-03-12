@@ -57,7 +57,7 @@ namespace GUI
         public void HideColumns()
         {
             //Saker som inte ska synas för Utskickslistor
-            dataGridListor.Columns["Användares"].Visible = false;
+            dataGridListor.Columns["Mottagare"].Visible = false;
 
             //Saker som inte ska synas för Aktiviteter
             dataGridAktiviteter.Columns["datum"].Visible = false;

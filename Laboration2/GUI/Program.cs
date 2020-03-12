@@ -29,8 +29,8 @@ namespace GUI
             BM.DeltaAktivitet(1, A);
             BM.DeltaAktivitet(1, B);
 
-            BM.AddMottagare(0, A);
-            BM.AddMottagare(0, B);
+            //BM.AddMottagare(0, A);
+            //BM.AddMottagare(0, B);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

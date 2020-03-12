@@ -2,7 +2,7 @@
 
 namespace BusinessEntites
 {
-    public interface IAlumn
+    public interface IAlumn : IAnvändare
     {
         ICollection<Aktivitet> Aktiviteter { get; set; }
         string Anställning { get; set; }

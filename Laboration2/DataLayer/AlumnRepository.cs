@@ -83,12 +83,5 @@ namespace DataLayer
             }
         }
 
-        /*
-        public IEnumerable<Alumn> GetAllSystemvetare()
-        {
-            return Context.Alumner.Where(x => x.Program.Id == 1);
-
-        }
-       */
     }
 }

@@ -190,7 +190,7 @@ namespace DataLayer
 
             UtskicksLista L = new UtskicksLista()
             {
-                Användares = A,
+                Mottagare = A,
                 Information = B,
                 Titel = C
             };

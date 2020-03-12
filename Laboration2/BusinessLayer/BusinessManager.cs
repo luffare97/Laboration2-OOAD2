@@ -128,15 +128,15 @@ namespace BusinessLayer
             return UnitOfWork.UtskicksListaRepository.GetLista(ID);
         }
 
-        public void CreateList(UtskicksLista L)
+        public void CreateList(UtskicksLista L, List<Alumn> mottagare)
         {
-            UnitOfWork.UtskicksListaRepository.CreateLista(L);
+            UnitOfWork.UtskicksListaRepository.CreateLista(L, mottagare);
         }
 
         //Får kolla på om vi implementerar
-        public void AddMottagare(int ID, Alumn A)
+        public void AddMottagare(Alumn A, UtskicksLista L)
         {
-            UnitOfWork.UtskicksListaRepository.AddMottagare(ID, A);
+            UnitOfWork.UtskicksListaRepository.AddMottagare(A, L);
         }
 
         public void RemoveMottagare(int ID, Alumn A)

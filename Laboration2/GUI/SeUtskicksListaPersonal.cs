@@ -26,7 +26,7 @@ namespace GUI
             TitelTxt.Text = lista.Titel;
             MeddelandeBox.Text = lista.Information;
 
-            foreach (Alumn a in lista.Användares)
+            foreach (Alumn a in lista.Mottagare)
             {
                 MottagareLB.Items.Add(a);
             }
@@ -44,7 +44,7 @@ namespace GUI
             TitelTxt.Text = lista.Titel;
             MeddelandeBox.Text = lista.Information;
 
-            foreach (Alumn a in lista.Användares)
+            foreach (Alumn a in lista.Mottagare)
             {
                 MottagareLB.Items.Add(a);
             }

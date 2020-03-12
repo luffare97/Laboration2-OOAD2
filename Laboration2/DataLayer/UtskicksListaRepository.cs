@@ -32,13 +32,18 @@ namespace DataLayer
             return (UtskicksLista)Context.UtskicksListor.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public void CreateLista(UtskicksLista L)
+        public void CreateLista(UtskicksLista L, List<Alumn> mottagare)
         {
-            
-            foreach (Alumn alumn in L.Användares)
+
+            foreach (Alumn A in mottagare)
             {
-                AddMottagare(L.Id, alumn);
+                AddMottagare(A, L);
             }
+
+            //foreach (Alumn alumn in L.Användares)
+            //{
+            //    AddMottagare(L.Id, alumn);
+            //}
             
             Context.UtskicksListor.Add(L);
 
@@ -46,21 +51,24 @@ namespace DataLayer
             
         }
 
-        public void AddMottagare(int id, Alumn A)
+        public void AddMottagare(Alumn A, UtskicksLista L)
         {
 
-            var query =
-                from lista in Context.UtskicksListor
-                where lista.Id == id
-                select lista;
+            A.Listor.Add(L);
+            L.Mottagare.Add(A);
 
-            foreach (UtskicksLista lista in query)
-            {
-                lista.Användares.Add(A);
-                A.Listor.Add(lista);
-            }
+            //var query =
+            //    from lista in Context.UtskicksListor
+            //    where lista.Id == id
+            //    select lista;
 
-            Context.SaveChanges();
+            //foreach (UtskicksLista lista in query)
+            //{
+            //    //lista.Användares.Add(A);
+            //    A.Listor.Add(lista);
+            //}
+
+            //Context.SaveChanges();
 
         }
 
@@ -73,7 +81,7 @@ namespace DataLayer
 
             foreach (UtskicksLista lista in query)
             {
-                lista.Användares.Remove(A);
+                lista.Mottagare.Remove(A);
                 A.Listor.Remove(lista);
             }
 

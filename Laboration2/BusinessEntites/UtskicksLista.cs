@@ -11,18 +11,18 @@ namespace BusinessEntites
 
         public string Information { get; set; }
         public string Titel { get; set; }
-        public ICollection<Alumn> Användares { get; set; }
+        public ICollection<Alumn> Mottagare { get; set; }
 
         public UtskicksLista()
         {
-            Användares = new List<Alumn>();
+            Mottagare = new List<Alumn>();
         }
 
         public UtskicksLista(string Info, string titel, List<Alumn> mottagare)
         {
             this.Information = Info;
             this.Titel = titel;
-            this.Användares = mottagare;
+            this.Mottagare = mottagare;
         }
     }
 }
