@@ -199,6 +199,7 @@
             this.DeltagareLB.FormattingEnabled = true;
             this.DeltagareLB.Location = new System.Drawing.Point(335, 38);
             this.DeltagareLB.Name = "DeltagareLB";
+            this.DeltagareLB.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.DeltagareLB.Size = new System.Drawing.Size(220, 381);
             this.DeltagareLB.TabIndex = 17;
             this.DeltagareLB.SelectedIndexChanged += new System.EventHandler(this.MottagareLB_SelectedIndexChanged);

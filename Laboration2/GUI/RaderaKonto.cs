@@ -34,24 +34,49 @@ namespace GUI
             {
                 if (Lösen1.Text == Lösen2.Text)
                 {
-                    if (Lösen1.Text == BusinessManager.InloggadAlumn.Lösenord)
+                    if (BusinessManager.InloggadAlumn != null)
                     {
-                        BusinessManager.DeleteAlumn(BusinessManager.InloggadAlumn.AnvändarId);
-                        MessageBox.Show("Kontot har nu blivit raderat och du kommer flyttas tillbaka till inloggningsskärmen","Raderat");
-                        this.DialogResult = DialogResult.Yes;
-                        Close();
+                        if (Lösen1.Text == BusinessManager.InloggadAlumn.Lösenord)
+                        {
+                            BusinessManager.DeleteAlumn(BusinessManager.InloggadAlumn.AnvändarId);
+                            MessageBox.Show("Kontot har nu blivit raderat och du kommer flyttas tillbaka till inloggningsskärmen", "Raderat");
+                            this.DialogResult = DialogResult.Yes;
+                            Close();
+                        }
                     }
-                    else if (Lösen1.Text == BusinessManager.InloggadPersonal.Lösenord)
+                    else if (BusinessManager.InloggadPersonal != null)
                     {
-                        BusinessManager.DeletePersonal(BusinessManager.InloggadPersonal.AnvändarId);
-                        MessageBox.Show("Kontot har nu blivit raderat och du kommer flyttas tillbaka till inloggningsskärmen", "Raderat");
-                        this.DialogResult = DialogResult.Yes;
-                        Close();
+                        if (Lösen1.Text == BusinessManager.InloggadPersonal.Lösenord)
+                        {
+                            BusinessManager.DeletePersonal(BusinessManager.InloggadPersonal.AnvändarId);
+                            MessageBox.Show("Kontot har nu blivit raderat och du kommer flyttas tillbaka till inloggningsskärmen", "Raderat");
+                            this.DialogResult = DialogResult.Yes;
+                            Close();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Lösenordet stämmer inte","Error");
+                        MessageBox.Show("Lösenordet stämmer inte", "Error");
                     }
+
+                    //if (Lösen1.Text == BusinessManager.InloggadAlumn.Lösenord)
+                    //{
+                    //    BusinessManager.DeleteAlumn(BusinessManager.InloggadAlumn.AnvändarId);
+                    //    MessageBox.Show("Kontot har nu blivit raderat och du kommer flyttas tillbaka till inloggningsskärmen","Raderat");
+                    //    this.DialogResult = DialogResult.Yes;
+                    //    Close();
+                    //}
+                    //else if (Lösen1.Text == BusinessManager.InloggadPersonal.Lösenord)
+                    //{
+                    //    BusinessManager.DeletePersonal(BusinessManager.InloggadPersonal.AnvändarId);
+                    //    MessageBox.Show("Kontot har nu blivit raderat och du kommer flyttas tillbaka till inloggningsskärmen", "Raderat");
+                    //    this.DialogResult = DialogResult.Yes;
+                    //    Close();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Lösenordet stämmer inte","Error");
+                    //}
                 }
                 else if (Lösen1.Text != Lösen2.Text)
                 {

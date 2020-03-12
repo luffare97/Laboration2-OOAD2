@@ -33,7 +33,6 @@ namespace GUI
         public void UpdateGrid()
         {
             //För att fylla List datagriden
-
             BindingSourceLista.DataSource = BusinessManager.InloggadAlumn.Listor;
             dataGridListor.DataSource = BindingSourceLista.DataSource;
 

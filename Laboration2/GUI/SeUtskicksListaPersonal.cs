@@ -80,5 +80,10 @@ namespace GUI
                 UpdateLista();
             }
         }
+
+        private void SeUtskicksListaPersonal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
