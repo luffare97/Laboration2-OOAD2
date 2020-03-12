@@ -10,6 +10,10 @@ namespace DataLayer
 {
     public class PersonalRepository : GenericRepository<Personal>, IPersonalRepository
     {
+
+        private AppDbContext Context { get; }
+
+
         public PersonalRepository(AppDbContext context) : base(context)
         {
             Context = context;
@@ -37,7 +41,12 @@ namespace DataLayer
 
         }
 
-        private AppDbContext Context { get; }
+        public Personal GetPersonal(string ID)
+        {
+            return (Personal)Context.Användares.Where(x => x.AnvändarId == ID).FirstOrDefault();
+        }
+
+
 
 
     }

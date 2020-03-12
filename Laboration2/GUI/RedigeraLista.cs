@@ -55,5 +55,22 @@ namespace GUI
                 Close();
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult Svar;
+            Svar = MessageBox.Show("Är du säker på att du vill ta bort den här Utskickslistan?", "Är du säker?", MessageBoxButtons.YesNo);
+
+            if (Svar == DialogResult.Yes)
+            {
+                int ID = int.Parse(IDLabel.Text);
+                BusinessManager.DeleteLista(ID);
+                MessageBox.Show("Utskickslistan har nu blivit raderad", "Raderad");
+            }
+            else if (Svar == DialogResult.No)
+            {
+
+            }
+        }
     }
 }

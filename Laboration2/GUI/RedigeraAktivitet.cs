@@ -38,7 +38,7 @@ namespace GUI
         private void SparaBtn_Click(object sender, EventArgs e)
         {
             DialogResult Svar;
-            Svar = MessageBox.Show("Vill du spara de här ändringarna?","Spara?");
+            Svar = MessageBox.Show("Vill du spara de här ändringarna?","Spara?", MessageBoxButtons.YesNo);
 
             bool OK = int.TryParse(PlatserField.Text.ToString(), out int platser);
 
@@ -83,6 +83,25 @@ namespace GUI
         private void TillbakaBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult Svar;
+            Svar = MessageBox.Show("Är du säker på att du vill ta bort den här aktiviteten?","Är du säker?", MessageBoxButtons.YesNo);
+
+            if (Svar == DialogResult.Yes)
+            {
+                int ID = int.Parse(IDLabel.Text);
+                BusinessManager.DeleteAktivitet(ID);
+                MessageBox.Show("Aktiviteten har nu blivit raderad","Raderad");
+            }
+            else if (Svar == DialogResult.No)
+            {
+
+            }
+        
+        
         }
     }
 }

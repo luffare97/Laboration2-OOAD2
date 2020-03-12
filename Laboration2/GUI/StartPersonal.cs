@@ -93,9 +93,26 @@ namespace GUI
 
         private void RedigeraProfilBtn_Click(object sender, EventArgs e)
         {
+            DialogResult Delete;
+
             RedigeraProfilPersonal Redigera = new RedigeraProfilPersonal(BusinessManager);
-            Redigera.ShowDialog();
-            UpdatePerson();
+            Delete = Redigera.ShowDialog();
+
+            if (Delete == DialogResult.Yes)
+            {
+                var formToShow = Application.OpenForms.Cast<Form>()
+                .FirstOrDefault(c => c is LoggIn);
+                if (formToShow != null)
+                {
+                    formToShow.Show();
+                }
+
+                this.Close();
+            }
+            else if (Delete == DialogResult.No)
+            {
+                UpdatePerson();
+            }
         }
 
         private void VäljaAktivitetBtn_Click(object sender, EventArgs e)

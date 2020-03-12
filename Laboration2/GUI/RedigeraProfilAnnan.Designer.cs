@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxProgram = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ExamensårTxt = new System.Windows.Forms.TextBox();
             this.SparaInfoBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,10 +55,7 @@
             this.GammaltLösenordTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TillbakaBtn = new System.Windows.Forms.Button();
-            this.ExamensårTxt = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBoxProgram = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +85,39 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personlig information";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 204);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Utbildning: ";
+            // 
+            // comboBoxProgram
+            // 
+            this.comboBoxProgram.FormattingEnabled = true;
+            this.comboBoxProgram.Location = new System.Drawing.Point(128, 201);
+            this.comboBoxProgram.Name = "comboBoxProgram";
+            this.comboBoxProgram.Size = new System.Drawing.Size(137, 21);
+            this.comboBoxProgram.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 178);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Examens år:";
+            // 
+            // ExamensårTxt
+            // 
+            this.ExamensårTxt.Location = new System.Drawing.Point(129, 175);
+            this.ExamensårTxt.Name = "ExamensårTxt";
+            this.ExamensårTxt.Size = new System.Drawing.Size(137, 20);
+            this.ExamensårTxt.TabIndex = 3;
             // 
             // SparaInfoBtn
             // 
@@ -206,6 +240,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lösenord";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // SparaLösenordBtn
             // 
@@ -270,7 +305,7 @@
             // 
             // TillbakaBtn
             // 
-            this.TillbakaBtn.Location = new System.Drawing.Point(21, 421);
+            this.TillbakaBtn.Location = new System.Drawing.Point(12, 421);
             this.TillbakaBtn.Name = "TillbakaBtn";
             this.TillbakaBtn.Size = new System.Drawing.Size(75, 23);
             this.TillbakaBtn.TabIndex = 2;
@@ -278,44 +313,22 @@
             this.TillbakaBtn.UseVisualStyleBackColor = true;
             this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
-            // ExamensårTxt
+            // DeleteBtn
             // 
-            this.ExamensårTxt.Location = new System.Drawing.Point(129, 175);
-            this.ExamensårTxt.Name = "ExamensårTxt";
-            this.ExamensårTxt.Size = new System.Drawing.Size(137, 20);
-            this.ExamensårTxt.TabIndex = 3;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 178);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Examens år:";
-            // 
-            // comboBoxProgram
-            // 
-            this.comboBoxProgram.FormattingEnabled = true;
-            this.comboBoxProgram.Location = new System.Drawing.Point(128, 201);
-            this.comboBoxProgram.Name = "comboBoxProgram";
-            this.comboBoxProgram.Size = new System.Drawing.Size(137, 21);
-            this.comboBoxProgram.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 204);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Utbildning: ";
+            this.DeleteBtn.Location = new System.Drawing.Point(191, 421);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(87, 23);
+            this.DeleteBtn.TabIndex = 3;
+            this.DeleteBtn.Text = "Radera kontot";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // RedigeraProfilAnnan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 456);
+            this.ClientSize = new System.Drawing.Size(303, 456);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.TillbakaBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -358,5 +371,6 @@
         private System.Windows.Forms.TextBox ExamensårTxt;
         private System.Windows.Forms.ComboBox comboBoxProgram;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }

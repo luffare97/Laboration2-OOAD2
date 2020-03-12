@@ -44,6 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.IDLabel = new System.Windows.Forms.Label();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlatserField)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,11 +183,22 @@
             this.IDLabel.TabIndex = 15;
             this.IDLabel.Text = "ID";
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Location = new System.Drawing.Point(12, 238);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteBtn.TabIndex = 16;
+            this.DeleteBtn.Text = "Radera";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
             // RedigeraAktivitet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 375);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -229,5 +241,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label IDLabel;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }

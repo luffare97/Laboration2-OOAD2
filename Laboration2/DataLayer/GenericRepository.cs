@@ -31,28 +31,31 @@ namespace DataLayer
         public void Remove(TEntity entity)
         {
             Context.Set<TEntity>().Remove(entity);
+            Context.SaveChanges();
         }
 
         public void RemoveRange(ICollection<TEntity> entities)
         {
             Context.Set<TEntity>().RemoveRange(entities);
+            Context.SaveChanges();
         }
 
         public void Add(TEntity entity)
         {
             Context.Set<TEntity>().Add(entity);
+            Context.SaveChanges();
         }
 
         public void AddRange(ICollection<TEntity> entities)
         {
             Context.Set<TEntity>().AddRange(entities);
+            Context.SaveChanges();
         }
 
         public TEntity Get(int id)
         {
             return Context.Set<TEntity>().Find(id);
-            
-            
+                       
         }
 
         public ICollection<TEntity> GetAll()

@@ -49,6 +49,7 @@
             this.NyttLösenordTxt = new System.Windows.Forms.TextBox();
             this.GammaltLösenordTxt = new System.Windows.Forms.TextBox();
             this.TillbakaBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -239,7 +240,7 @@
             // 
             // TillbakaBtn
             // 
-            this.TillbakaBtn.Location = new System.Drawing.Point(206, 335);
+            this.TillbakaBtn.Location = new System.Drawing.Point(12, 335);
             this.TillbakaBtn.Name = "TillbakaBtn";
             this.TillbakaBtn.Size = new System.Drawing.Size(75, 23);
             this.TillbakaBtn.TabIndex = 2;
@@ -247,11 +248,22 @@
             this.TillbakaBtn.UseVisualStyleBackColor = true;
             this.TillbakaBtn.Click += new System.EventHandler(this.TillbakaBtn_Click);
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Location = new System.Drawing.Point(197, 335);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(89, 23);
+            this.DeleteBtn.TabIndex = 3;
+            this.DeleteBtn.Text = "Radera kontot";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
             // RedigeraProfilPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 369);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.TillbakaBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -288,5 +300,6 @@
         private System.Windows.Forms.TextBox ENamnTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox FNamnTxt;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }

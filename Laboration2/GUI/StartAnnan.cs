@@ -112,10 +112,27 @@ namespace GUI
 
         private void RedigeraBtn_Click(object sender, EventArgs e)
         {
-            RedigeraProfilAnnan Redigera = new RedigeraProfilAnnan(BusinessManager);
-            Redigera.ShowDialog();
 
-            UpdatePerson();
+            DialogResult Delete;
+
+            RedigeraProfilAnnan Redigera = new RedigeraProfilAnnan(BusinessManager);
+            Delete = Redigera.ShowDialog();
+
+            if (Delete == DialogResult.Yes)
+            {
+                var formToShow = Application.OpenForms.Cast<Form>()
+                .FirstOrDefault(c => c is LoggIn);
+                if (formToShow != null)
+                {
+                    formToShow.Show();
+                }
+
+                this.Close();
+            }
+            else if (Delete == DialogResult.No)
+            {
+                UpdatePerson();
+            }
 
 
         }

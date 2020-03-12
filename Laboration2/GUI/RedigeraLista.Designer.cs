@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TitelTxt = new System.Windows.Forms.TextBox();
             this.MeddelandeBox = new System.Windows.Forms.RichTextBox();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TillbakaBtn
@@ -109,11 +110,22 @@
             this.MeddelandeBox.TabIndex = 7;
             this.MeddelandeBox.Text = "";
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Location = new System.Drawing.Point(12, 169);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteBtn.TabIndex = 8;
+            this.DeleteBtn.Text = "Radera";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
             // RedigeraLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 331);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.MeddelandeBox);
             this.Controls.Add(this.TitelTxt);
             this.Controls.Add(this.label2);
@@ -139,5 +151,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TitelTxt;
         private System.Windows.Forms.RichTextBox MeddelandeBox;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }

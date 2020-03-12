@@ -22,6 +22,8 @@ namespace BusinessLayer
         public Personal InloggadPersonal { get; set; }
         public Alumn InloggadAlumn { get; set; }
 
+
+
         //calling repos
 
             //AnvändarRepo
@@ -64,6 +66,12 @@ namespace BusinessLayer
             UnitOfWork.AktivitetRepository.RedigeraAktivitet(ID, A);
         }
 
+        public void DeleteAktivitet(int id)
+        {
+            Aktivitet A = UnitOfWork.AktivitetRepository.GetAktivitet(id);
+            UnitOfWork.AktivitetRepository.Remove(A);
+        }
+
 
 
             //AlumnRepo
@@ -87,17 +95,29 @@ namespace BusinessLayer
             return UnitOfWork.AlumnRepository.GetAllAlumn();
         }
 
+        public void DeleteAlumn(string id)
+        {
+            Alumn A = UnitOfWork.AlumnRepository.GetAlumn(id);
+            UnitOfWork.AlumnRepository.Remove(A);
+        }
 
 
-            //PersonaRepo
+
+        //PersonaRepo
         public void RedigeraPersonal(Personal P)
         {
             UnitOfWork.PersonalRepository.RedigeraPersonal(P);
         }
 
+        public void DeletePersonal(string id)
+        {
+            Personal P = UnitOfWork.PersonalRepository.GetPersonal(id);
+            UnitOfWork.PersonalRepository.Remove(P);
+        }
 
 
-            //ListRepo
+
+        //ListRepo
         public List<UtskicksLista> GetAllListor()
         {
             return UnitOfWork.UtskicksListaRepository.GetAllListor();
@@ -129,6 +149,14 @@ namespace BusinessLayer
         {
             UnitOfWork.UtskicksListaRepository.RedigeraLista(id, titel, info);
         }
+
+        public void DeleteLista(int id)
+        {
+            UtskicksLista L = UnitOfWork.UtskicksListaRepository.GetLista(id);
+            UnitOfWork.UtskicksListaRepository.Remove(L);
+        }
+
+
 
 
 

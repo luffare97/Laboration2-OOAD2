@@ -20,6 +20,8 @@ namespace GUI
         {
             InitializeComponent();
 
+            this.DialogResult = DialogResult.No;
+
             BusinessManager = businessManager;
 
             FNamnTxt.Text = BusinessManager.InloggadAlumn.FNamn;
@@ -112,6 +114,29 @@ namespace GUI
             }
 
 
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult Delete;
+
+            RaderaKonto raderaKonto = new RaderaKonto(BusinessManager);
+            Delete = raderaKonto.ShowDialog();
+
+            if(Delete == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.Yes;
+                Close();
+            }
+            else if (Delete == DialogResult.No)
+            {
+                this.DialogResult = DialogResult.No;
+            }
         }
     }
 }
