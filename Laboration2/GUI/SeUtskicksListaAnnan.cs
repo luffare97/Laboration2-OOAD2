@@ -35,6 +35,7 @@ namespace GUI
             {
                 int id = int.Parse(IDTxt.Text);
                 BusinessManager.RemoveMottagare(id, BusinessManager.InloggadAlumn);
+                Close();
 
             }
             else if (Svar == DialogResult.No)
