@@ -59,12 +59,26 @@ namespace GUI
 
         private void RedigeraBtn_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(IDTxt.Text);
-            UtskicksLista lista = BusinessManager.UnitOfWork.UtskicksListaRepository.GetLista(id);
-            RedigeraLista Redigera = new RedigeraLista(BusinessManager, lista);
-            Redigera.ShowDialog();
 
-            UpdateLista();
+
+            DialogResult Delete;
+            int id = int.Parse(IDTxt.Text);
+            UtskicksLista L = BusinessManager.GetUtskicksLista(id);
+
+            RedigeraLista redigeraLista = new RedigeraLista(BusinessManager, L);
+            Delete = redigeraLista.ShowDialog();
+
+            if (Delete == DialogResult.Yes)
+            {
+                
+                Close();
+            }
+            else if (Delete == DialogResult.No)
+            {
+                
+
+                UpdateLista();
+            }
         }
     }
 }

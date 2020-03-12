@@ -20,6 +20,8 @@ namespace GUI
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            this.DialogResult = DialogResult.No;
+
 
             IDTxt.Text = lista.Id.ToString();
             TitelTxt.Text = lista.Titel;
@@ -63,13 +65,14 @@ namespace GUI
 
             if (Svar == DialogResult.Yes)
             {
-                int ID = int.Parse(IDLabel.Text);
+                int ID = int.Parse(IDTxt.Text);
                 BusinessManager.DeleteLista(ID);
                 MessageBox.Show("Utskickslistan har nu blivit raderad", "Raderad");
+                this.DialogResult = DialogResult.Yes;
             }
             else if (Svar == DialogResult.No)
             {
-
+                this.DialogResult = DialogResult.No;
             }
         }
     }

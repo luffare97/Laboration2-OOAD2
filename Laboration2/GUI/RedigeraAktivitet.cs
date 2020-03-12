@@ -24,6 +24,8 @@ namespace GUI
             InitializeComponent();
             BusinessManager = businessManager;
 
+            this.DialogResult = DialogResult.No;
+
             IDLabel.Text = aktivitet.Id.ToString();
             TitelTxt.Text = aktivitet.AktivitetNamn;
             PlatserField.Text = aktivitet.AntalPlatser.ToString();
@@ -95,10 +97,11 @@ namespace GUI
                 int ID = int.Parse(IDLabel.Text);
                 BusinessManager.DeleteAktivitet(ID);
                 MessageBox.Show("Aktiviteten har nu blivit raderad","Raderad");
+                this.DialogResult = DialogResult.Yes;
             }
             else if (Svar == DialogResult.No)
             {
-
+                this.DialogResult = DialogResult.No;
             }
         
         

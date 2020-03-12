@@ -47,6 +47,12 @@ namespace GUI
             TidLabel.Text = aktivitet.Tid;
             PlatsLabel.Text = aktivitet.Plats;
             BeskrivningBox.Text = aktivitet.Beskrivning;
+
+
+            foreach (Alumn a in aktivitet.deltagare)
+            {
+                DeltagareLB.Items.Add(a);
+            }
         }
 
         private void SeAktivitetPersonal_Load(object sender, EventArgs e)
@@ -61,12 +67,28 @@ namespace GUI
 
         private void RedigeraBtn_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(IDLabel.Text);
-            Aktivitet aktivitet = BusinessManager.GetAktivitet(id);
-            RedigeraAktivitet Redigera = new RedigeraAktivitet(BusinessManager, aktivitet);
-            Redigera.ShowDialog();
+            
 
-            UpdateAktivitet();
+            DialogResult Delete;
+            int id = int.Parse(IDLabel.Text);
+            Aktivitet a = BusinessManager.GetAktivitet(id);
+
+            RedigeraAktivitet redigeraAktivitet = new RedigeraAktivitet(BusinessManager, a);
+            Delete = redigeraAktivitet.ShowDialog();
+
+            if (Delete == DialogResult.Yes)
+            {
+               
+                Close();
+            }
+            else if (Delete == DialogResult.No)
+            {
+                
+
+                UpdateAktivitet();
+            }
+
+            
 
 
         }

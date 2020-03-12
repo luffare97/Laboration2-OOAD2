@@ -35,7 +35,7 @@ namespace GUI
 
         private void SparaBtn_Click(object sender, EventArgs e)
         {
-            //FUNKAR INTE JUST NU
+            
 
             DialogResult Svar;
             Svar = MessageBox.Show("Vill du spara den här utskickslistan?", "Spara?", MessageBoxButtons.YesNo);
@@ -51,32 +51,15 @@ namespace GUI
                 UtskicksLista L = new UtskicksLista(InfoTxt.Text, TitelTxt.Text, A);
 
                 BusinessManager.CreateList(L);
+                Close();
 
-                //UtskicksLista L = BusinessManager.UnitOfWork.UtskicksListaRepository.CreateLista(TitelTxt.Text, InfoTxt.Text, A);
-
-                //foreach (Alumn alumn in L.Användares)
-                //{
-                //    BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, alumn);
-                //}
-
-                //for (int u = 0; u < L.Användares.Count; u++)
-                //{
-                //    BusinessManager.UnitOfWork.UtskicksListaRepository.AddMottagare(L.Id, A[u]);
-                //}
             }
             else if (Svar == DialogResult.No)
             {
                 Close();
             }
 
-            
-
-            //foreach (Alumn a in L.Användares)
-            //{
-            //    Alumn mottagare = BusinessManager.UnitOfWork.AlumnRepository.GetAlumn(a.AnvändarId);
-            //    mottagare.Listor.Add(L);
-
-            //}
+          
             BusinessManager.UnitOfWork.Save();
         }
     }
