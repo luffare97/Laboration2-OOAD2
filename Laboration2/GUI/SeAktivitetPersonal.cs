@@ -28,6 +28,11 @@ namespace GUI
             TidLabel.Text = A.Tid;
             PlatsLabel.Text = A.Plats;
             BeskrivningBox.Text = A.Beskrivning;
+
+            foreach (Alumn a in A.deltagare)
+            {
+                DeltagareLB.Items.Add(a);
+            }
         }
 
         public SeAktivitetPersonal(BusinessManager businessManager, Aktivitet aktivitet)
@@ -63,6 +68,11 @@ namespace GUI
 
             UpdateAktivitet();
 
+
+        }
+
+        private void MottagareLB_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

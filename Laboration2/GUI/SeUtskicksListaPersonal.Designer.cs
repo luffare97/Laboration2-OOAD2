@@ -36,6 +36,8 @@
             this.TitelTxt = new System.Windows.Forms.Label();
             this.MeddelandeBox = new System.Windows.Forms.RichTextBox();
             this.RedigeraBtn = new System.Windows.Forms.Button();
+            this.MottagareLB = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -112,11 +114,30 @@
             this.RedigeraBtn.UseVisualStyleBackColor = true;
             this.RedigeraBtn.Click += new System.EventHandler(this.RedigeraBtn_Click);
             // 
+            // MottagareLB
+            // 
+            this.MottagareLB.FormattingEnabled = true;
+            this.MottagareLB.Location = new System.Drawing.Point(357, 41);
+            this.MottagareLB.Name = "MottagareLB";
+            this.MottagareLB.Size = new System.Drawing.Size(210, 277);
+            this.MottagareLB.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(354, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Mottagare: ";
+            // 
             // SeUtskicksListaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 359);
+            this.ClientSize = new System.Drawing.Size(583, 359);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.MottagareLB);
             this.Controls.Add(this.RedigeraBtn);
             this.Controls.Add(this.MeddelandeBox);
             this.Controls.Add(this.TitelTxt);
@@ -142,5 +163,7 @@
         private System.Windows.Forms.Label TitelTxt;
         private System.Windows.Forms.RichTextBox MeddelandeBox;
         private System.Windows.Forms.Button RedigeraBtn;
+        private System.Windows.Forms.ListBox MottagareLB;
+        private System.Windows.Forms.Label label3;
     }
 }

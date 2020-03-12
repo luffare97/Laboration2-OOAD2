@@ -44,6 +44,8 @@
             this.PlatsLabel = new System.Windows.Forms.Label();
             this.BeskrivningBox = new System.Windows.Forms.RichTextBox();
             this.RedigeraBtn = new System.Windows.Forms.Button();
+            this.DeltagareLB = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TillbakaBtn
@@ -177,6 +179,7 @@
             // 
             this.BeskrivningBox.Location = new System.Drawing.Point(102, 191);
             this.BeskrivningBox.Name = "BeskrivningBox";
+            this.BeskrivningBox.ReadOnly = true;
             this.BeskrivningBox.Size = new System.Drawing.Size(227, 228);
             this.BeskrivningBox.TabIndex = 15;
             this.BeskrivningBox.Text = "";
@@ -191,11 +194,31 @@
             this.RedigeraBtn.UseVisualStyleBackColor = true;
             this.RedigeraBtn.Click += new System.EventHandler(this.RedigeraBtn_Click);
             // 
+            // DeltagareLB
+            // 
+            this.DeltagareLB.FormattingEnabled = true;
+            this.DeltagareLB.Location = new System.Drawing.Point(335, 38);
+            this.DeltagareLB.Name = "DeltagareLB";
+            this.DeltagareLB.Size = new System.Drawing.Size(220, 381);
+            this.DeltagareLB.TabIndex = 17;
+            this.DeltagareLB.SelectedIndexChanged += new System.EventHandler(this.MottagareLB_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(332, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Deltagare: ";
+            // 
             // SeAktivitetPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 462);
+            this.ClientSize = new System.Drawing.Size(568, 462);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.DeltagareLB);
             this.Controls.Add(this.RedigeraBtn);
             this.Controls.Add(this.BeskrivningBox);
             this.Controls.Add(this.PlatsLabel);
@@ -238,5 +261,7 @@
         private System.Windows.Forms.Label PlatsLabel;
         private System.Windows.Forms.RichTextBox BeskrivningBox;
         private System.Windows.Forms.Button RedigeraBtn;
+        private System.Windows.Forms.ListBox DeltagareLB;
+        private System.Windows.Forms.Label label2;
     }
 }
