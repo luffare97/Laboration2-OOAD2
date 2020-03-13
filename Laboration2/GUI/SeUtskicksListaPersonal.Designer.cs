@@ -122,6 +122,7 @@
             this.MottagareLB.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.MottagareLB.Size = new System.Drawing.Size(210, 277);
             this.MottagareLB.TabIndex = 9;
+            this.MottagareLB.SelectedIndexChanged += new System.EventHandler(this.MottagareLB_SelectedIndexChanged);
             // 
             // label3
             // 

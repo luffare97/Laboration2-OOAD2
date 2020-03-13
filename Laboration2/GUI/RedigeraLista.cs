@@ -50,6 +50,9 @@ namespace GUI
 
                 BusinessManager.UnitOfWork.UtskicksListaRepository.RedigeraLista(id, TitelTxt.Text, MeddelandeBox.Text);
                 MessageBox.Show("Ändringarna har sparats","Sparat");
+                
+                this.DialogResult = DialogResult.No;
+
                 Close();
             }
             else if (Svar == DialogResult.No)

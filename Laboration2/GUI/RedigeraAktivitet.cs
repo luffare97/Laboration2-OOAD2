@@ -68,6 +68,9 @@ namespace GUI
                     BusinessManager.RedigeraAktivitet(id, A);
 
                     MessageBox.Show("Ändringarna har sparats", "Sparat");
+
+                    this.DialogResult = DialogResult.No;
+                    
                     Close();
                 }
                 else if (Svar == DialogResult.No)

@@ -19,6 +19,9 @@ namespace GUI
         public void UpdateAktivitet()
         {
             int ID = int.Parse(IDLabel.Text);
+
+            DeltagareLB.Items.Clear();
+
             Aktivitet A = BusinessManager.GetAktivitet(ID);
 
             IDLabel.Text = A.Id.ToString();

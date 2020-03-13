@@ -20,6 +20,8 @@ namespace GUI
         {
             int ID = int.Parse(IDTxt.Text);
 
+            MottagareLB.Items.Clear();
+
             UtskicksLista lista = BusinessManager.GetUtskicksLista(ID);
 
             IDTxt.Text = lista.Id.ToString();
@@ -31,8 +33,9 @@ namespace GUI
                 MottagareLB.Items.Add(a);
             }
 
-
         }
+
+
         public SeUtskicksListaPersonal(BusinessManager businessManager, UtskicksLista lista)
         {
             InitializeComponent();
@@ -48,7 +51,6 @@ namespace GUI
             {
                 MottagareLB.Items.Add(a);
             }
-
 
         }
 
@@ -75,13 +77,17 @@ namespace GUI
             }
             else if (Delete == DialogResult.No)
             {
-                
-
+               
                 UpdateLista();
             }
         }
 
         private void SeUtskicksListaPersonal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MottagareLB_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
