@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataLayer
 {
-    public interface IUtskicksListaRepository
+    public interface IUtskicksListaRepository : IGenericRepository<UtskicksLista>
     {
         void AddMottagare(int id, Alumn A);
         void CreateLista(UtskicksLista L);

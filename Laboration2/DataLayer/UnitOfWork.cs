@@ -24,11 +24,11 @@ namespace DataLayer
 
         }
 
-        public AnvändareRepository AnvändareRepository { get; set; }
-        public AlumnRepository AlumnRepository { get; set; }
-        public AktivitetRepository AktivitetRepository { get; set; }
-        public PersonalRepository PersonalRepository { get; set; }
-        public UtskicksListaRepository UtskicksListaRepository { get; set; }
+        public IAnvändareRepository AnvändareRepository { get; set; }
+        public IAlumnRepository AlumnRepository { get; set; }
+        public IAktivitetRepository AktivitetRepository { get; set; }
+        public IPersonalRepository PersonalRepository { get; set; }
+        public IUtskicksListaRepository UtskicksListaRepository { get; set; }
 
         public int Save()
         {

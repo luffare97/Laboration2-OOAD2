@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DataLayer
 {
-    public interface IAktivitetRepository
+    public interface IAktivitetRepository : IGenericRepository<Aktivitet>
     {
         void CreateAktivitet(Aktivitet A);
         void DeltaAktivitet(int ID, Alumn A);
