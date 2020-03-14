@@ -76,7 +76,6 @@ namespace DataLayer
                         alumn.Listor.Add(lista);
                     }
 
-
                 }
 
                 Context.SaveChanges();
