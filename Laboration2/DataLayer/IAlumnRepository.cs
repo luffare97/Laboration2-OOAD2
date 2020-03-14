@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataLayer
 {
-    public interface IAlumnRepository
+    public interface IAlumnRepository : IGenericRepository<Alumn>
     {
         void CreateAlumn(Alumn A);
         List<Alumn> GetAllAlumn();

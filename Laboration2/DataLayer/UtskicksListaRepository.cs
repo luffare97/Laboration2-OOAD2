@@ -12,12 +12,12 @@ namespace DataLayer
     public class UtskicksListaRepository : GenericRepository<UtskicksLista>, IUtskicksListaRepository
     {
 
-        private AppDbContext Context { get; }
-
         public UtskicksListaRepository(AppDbContext context) : base(context)
         {
             Context = context;
         }
+
+        private AppDbContext Context { get; }
 
         public List<UtskicksLista> GetAllListor()
         {
@@ -36,6 +36,7 @@ namespace DataLayer
         {
 
             Context.UtskicksListor.Add(L);
+            Context.SaveChanges();
 
             foreach (Alumn A in M)
             {
@@ -66,15 +67,15 @@ namespace DataLayer
                 {
                     lista.Mottagare.Add(A);
 
-                    var query2 =
-                        from alumn in Context.Alumner
-                        where alumn.AnvändarId == A.AnvändarId
-                        select alumn;
+                    //var query2 =
+                    //    from alumn in Context.Alumner
+                    //    where alumn.AnvändarId == A.AnvändarId
+                    //    select alumn;
 
-                    foreach (Alumn alumn in query2)
-                    {
-                        alumn.Listor.Add(lista);
-                    }
+                    //foreach (Alumn alumn in query2)
+                    //{
+                    //    alumn.Listor.Add(lista);
+                    //}
 
                 }
 

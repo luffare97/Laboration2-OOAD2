@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataLayer
 {
-    public interface IAnvändareRepository
+    public interface IAnvändareRepository : IGenericRepository<Användare>
     {
         List<Användare> användares { get; set; }
         AppDbContext AppDbContext { get; }

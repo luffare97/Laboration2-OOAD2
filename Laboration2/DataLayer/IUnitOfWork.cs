@@ -2,11 +2,11 @@
 {
     public interface IUnitOfWork
     {
-        AktivitetRepository AktivitetRepository { get; set; }
-        AlumnRepository AlumnRepository { get; set; }
-        AnvändareRepository AnvändareRepository { get; set; }
-        PersonalRepository PersonalRepository { get; set; }
-        UtskicksListaRepository UtskicksListaRepository { get; set; }
+        IAktivitetRepository AktivitetRepository { get; set; }
+        IAlumnRepository AlumnRepository { get; set; }
+        IAnvändareRepository AnvändareRepository { get; set; }
+        IPersonalRepository PersonalRepository { get; set; }
+        IUtskicksListaRepository UtskicksListaRepository { get; set; }
 
         int Save();
     }
