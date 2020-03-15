@@ -45,12 +45,18 @@ namespace GUI
                 List<Alumn> A = new List<Alumn>();
                 foreach (Alumn a in MottagareLB.SelectedItems)
                 {
-                    A.Add(a);
+                    Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);
+                    A.Add(alumn);
                 }
 
-                UtskicksLista L = new UtskicksLista(InfoTxt.Text, TitelTxt.Text, new List<Alumn>());
+                UtskicksLista L = new UtskicksLista() 
+                { 
+                    Information = InfoTxt.Text,
+                    Titel = TitelTxt.Text,
+                    Mottagare = A
+                };
 
-                BusinessManager.CreateList(L, A);
+                BusinessManager.CreateList(L);
                 Close();
 
             }

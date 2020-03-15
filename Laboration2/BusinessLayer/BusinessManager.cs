@@ -128,9 +128,9 @@ namespace BusinessLayer
             return UnitOfWork.UtskicksListaRepository.GetLista(ID);
         }
 
-        public void CreateList(UtskicksLista L, List<Alumn> A)
+        public void CreateList(UtskicksLista L)
         {
-            UnitOfWork.UtskicksListaRepository.CreateLista(L, A);
+            UnitOfWork.UtskicksListaRepository.CreateLista(L);
         }
 
         //Får kolla på om vi implementerar

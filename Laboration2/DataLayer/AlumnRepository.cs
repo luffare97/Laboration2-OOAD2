@@ -46,7 +46,9 @@ namespace DataLayer
 
         public void CreateAlumn(Alumn A)
         {
-            A.AnvändarId = $"s{Context.Användares.Count() + 1}";
+            //A.AnvändarId = $"s{Context.Användares.Count() + 1}";
+
+
 
             //Alumn A = new Alumn()
             //{
@@ -64,6 +66,9 @@ namespace DataLayer
             //};
 
             Context.Alumner.Add(A);
+
+            A.AnvändarId = $"s{A.Id}";
+
 
             Context.SaveChanges();
         }

@@ -32,23 +32,23 @@ namespace DataLayer
             return (UtskicksLista)Context.UtskicksListor.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public void CreateLista(UtskicksLista L, List<Alumn> M)
+        public void CreateLista(UtskicksLista L)
         {
 
             Context.UtskicksListor.Add(L);
-            Context.SaveChanges();
 
-            foreach (Alumn A in M)
-            {
-                //A.Listor.Add(L);
-                AddMottagare(A, L);
-            }
+
+            //foreach (Alumn A in L.Mottagare)
+            //{
+            //    A.Listor.Add(L);
+            //    //AddMottagare(A, L);
+            //}
 
             //foreach (Alumn alumn in L.Användares)
             //{
             //    AddMottagare(L.Id, alumn);
             //}
-            
+
             //Context.UtskicksListor.Add(L);
 
             Context.SaveChanges();
@@ -65,7 +65,7 @@ namespace DataLayer
 
                 foreach (UtskicksLista lista in query)
                 {
-                    lista.Mottagare.Add(A);
+                    A.Listor.Add(lista);
 
                     //var query2 =
                     //    from alumn in Context.Alumner

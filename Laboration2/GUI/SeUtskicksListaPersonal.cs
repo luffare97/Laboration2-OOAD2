@@ -43,11 +43,13 @@ namespace GUI
 
             BusinessManager = businessManager;
 
-            IDTxt.Text = lista.Id.ToString();
-            TitelTxt.Text = lista.Titel;
-            MeddelandeBox.Text = lista.Information;
+            UtskicksLista L = BusinessManager.GetUtskicksLista(lista.Id);
 
-            foreach (Alumn a in lista.Mottagare)
+            IDTxt.Text = L.Id.ToString();
+            TitelTxt.Text = L.Titel;
+            MeddelandeBox.Text = L.Information;
+
+            foreach (Alumn a in L.Mottagare)
             {
                 MottagareLB.Items.Add(a);
             }
