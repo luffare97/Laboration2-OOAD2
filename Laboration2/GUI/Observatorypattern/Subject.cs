@@ -9,21 +9,21 @@ namespace GUI.Observatorypattern
     public class Subject : ISubject
     {
 
-        public List<IObserver1> ObserverCollection { get; set; } = new List<IObserver1>();
+        public List<IObserver> ObserverCollection { get; set; } = new List<IObserver>();
 
-        public void RegisterObserver(IObserver1 O)
+        public void RegisterObserver(IObserver O)
         {
-            ObserverCollection.Add(O);
+            this.ObserverCollection.Add(O);
         }
 
-        public void UnregisterObserver(IObserver1 O)
+        public void UnregisterObserver(IObserver O)
         {
-            ObserverCollection.Remove(O);
+            this.ObserverCollection.Remove(O);
         }
 
         public void Notify()
         {
-            foreach (IObserver1 O in ObserverCollection)
+            foreach (IObserver O in ObserverCollection)
             {
                 O.Uppdate(this);
             }

@@ -30,9 +30,9 @@
         {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.GodkännBox = new System.Windows.Forms.CheckBox();
             this.NejBtn = new System.Windows.Forms.Button();
             this.JaBtn = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -55,17 +55,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "För att skapa ett konto måste du läsa och godkänna nedanstående:";
             // 
-            // GodkännBox
-            // 
-            this.GodkännBox.AutoSize = true;
-            this.GodkännBox.Location = new System.Drawing.Point(12, 367);
-            this.GodkännBox.Name = "GodkännBox";
-            this.GodkännBox.Size = new System.Drawing.Size(133, 17);
-            this.GodkännBox.TabIndex = 2;
-            this.GodkännBox.Text = "Jag har läst och förstår";
-            this.GodkännBox.UseVisualStyleBackColor = true;
-            this.GodkännBox.CheckedChanged += new System.EventHandler(this.GodkännBox_CheckedChanged);
-            // 
             // NejBtn
             // 
             this.NejBtn.Location = new System.Drawing.Point(12, 390);
@@ -86,14 +75,25 @@
             this.JaBtn.UseVisualStyleBackColor = true;
             this.JaBtn.Click += new System.EventHandler(this.JaBtn_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(12, 367);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(195, 17);
+            this.radioButton1.TabIndex = 5;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Ja, jag har läst och godkänner detta";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // GDPR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 423);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.JaBtn);
             this.Controls.Add(this.NejBtn);
-            this.Controls.Add(this.GodkännBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Name = "GDPR";
@@ -107,8 +107,8 @@
 
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox GodkännBox;
         private System.Windows.Forms.Button NejBtn;
         private System.Windows.Forms.Button JaBtn;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

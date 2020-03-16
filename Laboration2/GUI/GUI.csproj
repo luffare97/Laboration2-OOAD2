@@ -80,8 +80,10 @@
     <Compile Include="NyUtskicksLista.Designer.cs">
       <DependentUpon>NyUtskicksLista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Observatorypattern\Checkboxen.cs" />
-    <Compile Include="Observatorypattern\IObserver1.cs" />
+    <Compile Include="Observatorypattern\ObserverRadio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Observatorypattern\IObserver.cs" />
     <Compile Include="Observatorypattern\ISubject.cs" />
     <Compile Include="Observatorypattern\Jaknapp.cs">
       <SubType>Component</SubType>

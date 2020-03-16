@@ -4,10 +4,10 @@ namespace GUI.Observatorypattern
 {
     public interface ISubject
     {
-        List<IObserver1> ObserverCollection { get; set; }
+        List<IObserver> ObserverCollection { get; set; }
 
         void Notify();
-        void RegisterObserver(IObserver1 O);
-        void UnregisterObserver(IObserver1 O);
+        void RegisterObserver(IObserver O);
+        void UnregisterObserver(IObserver O);
     }
 }

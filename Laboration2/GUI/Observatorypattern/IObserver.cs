@@ -1,6 +1,6 @@
 ﻿namespace GUI.Observatorypattern
 {
-    public interface IObserver1
+    public interface IObserver
     {
         void Uppdate(ISubject subject);
     

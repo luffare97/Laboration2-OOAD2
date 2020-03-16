@@ -18,7 +18,7 @@ namespace GUI
         
         public BusinessManager BusinessManager { get; }
 
-        //Checkboxen checkBoxen { get; set; } = new Checkboxen();
+        ObserverRadioBtn observerRadioBtn { get; set; } = new ObserverRadioBtn();       
 
         Jaknapp Jaknapp { get; set; } = new Jaknapp();
 
@@ -26,17 +26,37 @@ namespace GUI
         public GDPR(BusinessManager businessManager)
         {
             InitializeComponent();
-            //this.Controls.Add(checkboxen);
+
+
+            this.Controls.Add(observerRadioBtn);
+
+            observerRadioBtn.Location = radioButton1.Location;
+            observerRadioBtn.Text = radioButton1.Text;
+            observerRadioBtn.Width = radioButton1.Width;
+            radioButton1.Hide();
+
+            observerRadioBtn.CheckedChanged += radioButton1_CheckChanged;
+
+            
+
             this.Controls.Add(Jaknapp);
+
+            Jaknapp.Location = JaBtn.Location;
+            Jaknapp.Text = JaBtn.Text;
+            JaBtn.Hide();
+
+            Jaknapp.Click += JaBtn_Click;
+
+            Jaknapp.Subject.RegisterObserver(observerRadioBtn);
 
             BusinessManager = businessManager;
 
 
-            Jaknapp.Location = JaBtn.Location;
-            Jaknapp.Text = JaBtn.Text;
+        }
 
-
-
+        private void radioButton1_CheckChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -46,9 +66,12 @@ namespace GUI
 
         private void JaBtn_Click(object sender, EventArgs e)
         {
+
+            Jaknapp.Subject.Notify();
+
             this.DialogResult = DialogResult.No;
 
-            if (GodkännBox.Checked == true)
+            if (observerRadioBtn.Checked == true)
             {
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
