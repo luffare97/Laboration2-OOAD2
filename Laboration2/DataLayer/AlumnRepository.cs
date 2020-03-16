@@ -67,8 +67,6 @@ namespace DataLayer
 
             Context.Alumner.Add(A);
 
-            A.AnvändarId = $"s{A.Id}";
-
 
             Context.SaveChanges();
         }

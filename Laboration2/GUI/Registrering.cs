@@ -30,6 +30,8 @@ namespace GUI
 
             if (textBoxLösenord1.Text == textBoxLösenord2.Text)
             {
+                bool ID = int.TryParse(AnvändarIdTxt.Text.ToString(), out int id);
+
 
                 bool OK = int.TryParse(textBoxTeleNr.Text.ToString(), out int tele);
                 bool ÅR = int.TryParse(textBoxÅr.Text.ToString(), out int år);
@@ -39,54 +41,78 @@ namespace GUI
 
                     if (OK == true)
                     {
-                        Utbildning utbildning = (Utbildning)comboBoxProgram.SelectedItem;
-
-                        DialogResult Svar;
-
-                        Svar = MessageBox.Show("Vill du spara den här användaren?", "Vill du spara detta?", MessageBoxButtons.YesNo);
-                        if (Svar == DialogResult.No)
+                        if (ID == true)
                         {
-                            Close();
-                        }
-                        else if (Svar == DialogResult.Yes)
-                        {
-                            //Här är Ska vi visa GDPR grejen och sen ta tillbaks en bool som säger ifall det är godkännt eller inte och sen antingen göra ett inlogg eller inte
 
+                            string användarid = $"s{int.Parse(AnvändarIdTxt.Text.ToString())}";
 
-                            DialogResult Gkänd;
+                            Användare A = BusinessManager.GetAlumn(användarid);
 
-                            GDPR gdpr = new GDPR(BusinessManager);
-                            Gkänd = gdpr.ShowDialog();
-
-                            if (Gkänd == DialogResult.Yes)
+                            if (A == null)
                             {
 
 
-                                Alumn A = new Alumn()
+                                Utbildning utbildning = (Utbildning)comboBoxProgram.SelectedItem;
+
+                                DialogResult Svar;
+
+                                Svar = MessageBox.Show("Vill du spara den här användaren?", "Vill du spara detta?", MessageBoxButtons.YesNo);
+                                if (Svar == DialogResult.No)
                                 {
-                                    FNamn = FNamnTxt.Text,
-                                    ENamn = ENamnTxt.Text,
-                                    EMail = EMailTxt.Text,
-                                    TeleNr = tele,
-                                    Ort = OrtTxt.Text,
-                                    Anställning = AnställningTxt.Text,
-                                    ExamensÅr = år,
-                                    program = utbildning,
-                                    Lösenord = textBoxLösenord1.Text
+                                    Close();
+                                }
+                                else if (Svar == DialogResult.Yes)
+                                {
+                                    //Här är Ska vi visa GDPR grejen och sen ta tillbaks en bool som säger ifall det är godkännt eller inte och sen antingen göra ett inlogg eller inte
 
-                                };
 
-                                BusinessManager.CreateAlumn(A);
-                                MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: s{BusinessManager.UnitOfWork.AnvändareRepository.AppDbContext.Användares.Count()}", "Sparad");
-                                
-                                Close();
+                                    DialogResult Gkänd;
+
+                                    GDPR gdpr = new GDPR(BusinessManager);
+                                    Gkänd = gdpr.ShowDialog();
+
+                                    if (Gkänd == DialogResult.Yes)
+                                    {
+
+
+                                        Alumn a = new Alumn()
+                                        {
+                                            AnvändarId = användarid,
+                                            FNamn = FNamnTxt.Text,
+                                            ENamn = ENamnTxt.Text,
+                                            EMail = EMailTxt.Text,
+                                            TeleNr = tele,
+                                            Ort = OrtTxt.Text,
+                                            Anställning = AnställningTxt.Text,
+                                            ExamensÅr = år,
+                                            program = utbildning,
+                                            Lösenord = textBoxLösenord1.Text
+
+                                        };
+
+                                        BusinessManager.CreateAlumn(a);
+                                        MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: {användarid}", "Sparad");
+
+                                        Close();
+                                    }
+                                    else if (Gkänd == DialogResult.No)
+                                    {
+                                        MessageBox.Show("Du måste godkänna vilkåren för att få lov att skapa ett konto", "Error");
+                                    }
+
+                                }
+
                             }
-                            else if (Gkänd == DialogResult.No)
+                            else if (A != null)
                             {
-                                MessageBox.Show("Du måste godkänna vilkåren för att få lov att skapa ett konto","Error");
+                                MessageBox.Show("AnvändarIDt används redan vänligen välj ett annat", "Error");
                             }
-
                         }
+                        else if (ID == false)
+                        {
+                            MessageBox.Show("AnvändarIDt kan bara bestå av sifforor","Error");
+                        }
+
                     }
                     else if (OK == false)
                     {
@@ -110,6 +136,11 @@ namespace GUI
         private void TillbakaBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Registrering_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

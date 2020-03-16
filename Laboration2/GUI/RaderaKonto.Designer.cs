@@ -69,6 +69,7 @@
             // 
             this.Lösen1.Location = new System.Drawing.Point(138, 41);
             this.Lösen1.Name = "Lösen1";
+            this.Lösen1.PasswordChar = '*';
             this.Lösen1.Size = new System.Drawing.Size(207, 20);
             this.Lösen1.TabIndex = 3;
             // 
@@ -76,6 +77,7 @@
             // 
             this.Lösen2.Location = new System.Drawing.Point(138, 67);
             this.Lösen2.Name = "Lösen2";
+            this.Lösen2.PasswordChar = '*';
             this.Lösen2.Size = new System.Drawing.Size(207, 20);
             this.Lösen2.TabIndex = 4;
             // 

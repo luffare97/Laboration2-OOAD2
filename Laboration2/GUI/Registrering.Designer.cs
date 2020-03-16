@@ -50,12 +50,14 @@
             this.SparaBtn = new System.Windows.Forms.Button();
             this.TillbakaBtn = new System.Windows.Forms.Button();
             this.textBoxÅr = new System.Windows.Forms.TextBox();
+            this.AnvändarIdTxt = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(10, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
@@ -63,49 +65,49 @@
             // 
             // FNamnTxt
             // 
-            this.FNamnTxt.Location = new System.Drawing.Point(158, 12);
+            this.FNamnTxt.Location = new System.Drawing.Point(156, 41);
             this.FNamnTxt.Name = "FNamnTxt";
             this.FNamnTxt.Size = new System.Drawing.Size(139, 20);
             this.FNamnTxt.TabIndex = 1;
             // 
             // ENamnTxt
             // 
-            this.ENamnTxt.Location = new System.Drawing.Point(158, 38);
+            this.ENamnTxt.Location = new System.Drawing.Point(156, 67);
             this.ENamnTxt.Name = "ENamnTxt";
             this.ENamnTxt.Size = new System.Drawing.Size(139, 20);
             this.ENamnTxt.TabIndex = 2;
             // 
             // EMailTxt
             // 
-            this.EMailTxt.Location = new System.Drawing.Point(158, 64);
+            this.EMailTxt.Location = new System.Drawing.Point(156, 93);
             this.EMailTxt.Name = "EMailTxt";
             this.EMailTxt.Size = new System.Drawing.Size(139, 20);
             this.EMailTxt.TabIndex = 3;
             // 
             // textBoxTeleNr
             // 
-            this.textBoxTeleNr.Location = new System.Drawing.Point(158, 90);
+            this.textBoxTeleNr.Location = new System.Drawing.Point(156, 119);
             this.textBoxTeleNr.Name = "textBoxTeleNr";
             this.textBoxTeleNr.Size = new System.Drawing.Size(139, 20);
             this.textBoxTeleNr.TabIndex = 4;
             // 
             // OrtTxt
             // 
-            this.OrtTxt.Location = new System.Drawing.Point(158, 116);
+            this.OrtTxt.Location = new System.Drawing.Point(156, 145);
             this.OrtTxt.Name = "OrtTxt";
             this.OrtTxt.Size = new System.Drawing.Size(139, 20);
             this.OrtTxt.TabIndex = 5;
             // 
             // AnställningTxt
             // 
-            this.AnställningTxt.Location = new System.Drawing.Point(158, 142);
+            this.AnställningTxt.Location = new System.Drawing.Point(156, 171);
             this.AnställningTxt.Name = "AnställningTxt";
             this.AnställningTxt.Size = new System.Drawing.Size(139, 20);
             this.AnställningTxt.TabIndex = 6;
             // 
             // textBoxLösenord2
             // 
-            this.textBoxLösenord2.Location = new System.Drawing.Point(158, 274);
+            this.textBoxLösenord2.Location = new System.Drawing.Point(156, 303);
             this.textBoxLösenord2.Name = "textBoxLösenord2";
             this.textBoxLösenord2.PasswordChar = '*';
             this.textBoxLösenord2.Size = new System.Drawing.Size(139, 20);
@@ -113,7 +115,7 @@
             // 
             // textBoxLösenord1
             // 
-            this.textBoxLösenord1.Location = new System.Drawing.Point(158, 248);
+            this.textBoxLösenord1.Location = new System.Drawing.Point(156, 277);
             this.textBoxLösenord1.Name = "textBoxLösenord1";
             this.textBoxLösenord1.PasswordChar = '*';
             this.textBoxLösenord1.Size = new System.Drawing.Size(139, 20);
@@ -122,7 +124,7 @@
             // comboBoxProgram
             // 
             this.comboBoxProgram.FormattingEnabled = true;
-            this.comboBoxProgram.Location = new System.Drawing.Point(158, 168);
+            this.comboBoxProgram.Location = new System.Drawing.Point(156, 197);
             this.comboBoxProgram.Name = "comboBoxProgram";
             this.comboBoxProgram.Size = new System.Drawing.Size(139, 21);
             this.comboBoxProgram.TabIndex = 9;
@@ -130,7 +132,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 41);
+            this.label2.Location = new System.Drawing.Point(10, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 11;
@@ -139,7 +141,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 67);
+            this.label3.Location = new System.Drawing.Point(10, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 12;
@@ -148,7 +150,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 93);
+            this.label4.Location = new System.Drawing.Point(10, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 13;
@@ -157,7 +159,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 119);
+            this.label5.Location = new System.Drawing.Point(10, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 14;
@@ -166,7 +168,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 145);
+            this.label6.Location = new System.Drawing.Point(10, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 13);
             this.label6.TabIndex = 15;
@@ -175,7 +177,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 171);
+            this.label7.Location = new System.Drawing.Point(10, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 16;
@@ -184,7 +186,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 198);
+            this.label8.Location = new System.Drawing.Point(10, 227);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 17;
@@ -193,7 +195,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 251);
+            this.label9.Location = new System.Drawing.Point(10, 280);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 18;
@@ -202,7 +204,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 277);
+            this.label10.Location = new System.Drawing.Point(10, 306);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 13);
             this.label10.TabIndex = 19;
@@ -210,7 +212,7 @@
             // 
             // SparaBtn
             // 
-            this.SparaBtn.Location = new System.Drawing.Point(222, 300);
+            this.SparaBtn.Location = new System.Drawing.Point(220, 329);
             this.SparaBtn.Name = "SparaBtn";
             this.SparaBtn.Size = new System.Drawing.Size(75, 23);
             this.SparaBtn.TabIndex = 20;
@@ -220,7 +222,7 @@
             // 
             // TillbakaBtn
             // 
-            this.TillbakaBtn.Location = new System.Drawing.Point(12, 300);
+            this.TillbakaBtn.Location = new System.Drawing.Point(10, 329);
             this.TillbakaBtn.Name = "TillbakaBtn";
             this.TillbakaBtn.Size = new System.Drawing.Size(75, 23);
             this.TillbakaBtn.TabIndex = 21;
@@ -230,16 +232,34 @@
             // 
             // textBoxÅr
             // 
-            this.textBoxÅr.Location = new System.Drawing.Point(158, 195);
+            this.textBoxÅr.Location = new System.Drawing.Point(156, 224);
             this.textBoxÅr.Name = "textBoxÅr";
             this.textBoxÅr.Size = new System.Drawing.Size(139, 20);
             this.textBoxÅr.TabIndex = 22;
+            // 
+            // AnvändarIdTxt
+            // 
+            this.AnvändarIdTxt.Location = new System.Drawing.Point(156, 12);
+            this.AnvändarIdTxt.Name = "AnvändarIdTxt";
+            this.AnvändarIdTxt.Size = new System.Drawing.Size(139, 20);
+            this.AnvändarIdTxt.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(10, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "AnvändarID: ";
             // 
             // Registrering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 335);
+            this.ClientSize = new System.Drawing.Size(316, 367);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.AnvändarIdTxt);
             this.Controls.Add(this.textBoxÅr);
             this.Controls.Add(this.TillbakaBtn);
             this.Controls.Add(this.SparaBtn);
@@ -264,6 +284,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Registrering";
             this.Text = "Registrering";
+            this.Load += new System.EventHandler(this.Registrering_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +314,7 @@
         private System.Windows.Forms.Button SparaBtn;
         private System.Windows.Forms.Button TillbakaBtn;
         private System.Windows.Forms.TextBox textBoxÅr;
+        private System.Windows.Forms.TextBox AnvändarIdTxt;
+        private System.Windows.Forms.Label label11;
     }
 }
