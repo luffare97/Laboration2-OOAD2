@@ -80,6 +80,16 @@
     <Compile Include="NyUtskicksLista.Designer.cs">
       <DependentUpon>NyUtskicksLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="Observatorypattern\Checkboxen.cs" />
+    <Compile Include="Observatorypattern\IObserver1.cs" />
+    <Compile Include="Observatorypattern\ISubject.cs" />
+    <Compile Include="Observatorypattern\Jaknapp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Observatorypattern\Observer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Observatorypattern\Subject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaderaKonto.cs">

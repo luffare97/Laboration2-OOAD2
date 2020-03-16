@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
 using BusinessEntites;
+using GUI.Observatorypattern;
 
 namespace GUI
 {
@@ -16,11 +17,26 @@ namespace GUI
     {
         
         public BusinessManager BusinessManager { get; }
+
+        //Checkboxen checkBoxen { get; set; } = new Checkboxen();
+
+        Jaknapp Jaknapp { get; set; } = new Jaknapp();
+
+
         public GDPR(BusinessManager businessManager)
         {
             InitializeComponent();
+            //this.Controls.Add(checkboxen);
+            this.Controls.Add(Jaknapp);
 
             BusinessManager = businessManager;
+
+
+            Jaknapp.Location = JaBtn.Location;
+            Jaknapp.Text = JaBtn.Text;
+
+
+
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -49,5 +65,17 @@ namespace GUI
             this.DialogResult = DialogResult.No;
             Close();
         }
+
+        //public class GodkännBoxen
+        //{
+            void GodkännBox_CheckedChanged(object sender, EventArgs e)
+           {
+               
+
+          }
+        //}
+        
+
+        
     }
 }

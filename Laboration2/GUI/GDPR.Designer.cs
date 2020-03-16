@@ -64,6 +64,7 @@
             this.GodkännBox.TabIndex = 2;
             this.GodkännBox.Text = "Jag har läst och förstår";
             this.GodkännBox.UseVisualStyleBackColor = true;
+            this.GodkännBox.CheckedChanged += new System.EventHandler(this.GodkännBox_CheckedChanged);
             // 
             // NejBtn
             // 
