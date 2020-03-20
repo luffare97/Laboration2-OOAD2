@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
         mc:Ignorable="d"
-        Title="StartAnnan" Height="450" Width="800">
+        Title="StartAnnan" Height="500" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
@@ -16,9 +22,35 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" Margin="10">Profil: </Label>
+        <Label x:Name="InLoggadNamn" Grid.Column="1" Grid.Row="2" Margin="10">FNamn + Enamn</Label>
+        <Label x:Name="InLoggadProgram" Grid.Column="1" Grid.Row="3" Margin="10">Program</Label>
+        <Label x:Name="InLoggadJobb" Grid.Column="1" Grid.Row="4" Margin="10">Jobb</Label>
+        <Label x:Name="InLoggadExamensÅr" Grid.Column="1" Grid.Row="5" Margin="10">ExamensÅr</Label>
+        <Label x:Name="InLoggadOrt" Grid.Column="1" Grid.Row="6" Margin="10">Ort</Label>
+        <Button x:Name="RedigeraBtn" Grid.Column="1" Grid.Row="7" Height="28" Width="100" Margin="10">Redigera profil</Button>
+        <Button x:Name="LoggaUtBtn" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Logga ut</Button>
+
+        <Label Grid.Column="2" Grid.Row="1" Margin="10">Mina Utskickslistor</Label>
+        <DataGrid x:Name="dataGridListor" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"></DataGrid>
+        <Button x:Name="VäljListaBtn" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
+
+        <Label Grid.Column="5" Grid.Row="1" Margin="10">Aktiviteter</Label>
+        <DataGrid x:Name="dataGridAktiviteter" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"></DataGrid>
+        <Button x:Name="VäljAktivitetBtn" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
 
     </Grid>
 </Window>

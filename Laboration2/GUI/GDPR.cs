@@ -78,7 +78,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Kontot kan inte skapas ifall du inte läst och godkännt villkåren","Error");
+                MessageBox.Show("Kontot kan inte skapas ifall du inte läst och godkännt vilkåren","Error");
             }
         }
 
