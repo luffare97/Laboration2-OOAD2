@@ -64,6 +64,18 @@
     <Compile Include="NyUtskicksLista.xaml.cs">
       <DependentUpon>NyUtskicksLista.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Observatorypattern\IObserver.cs" />
+    <Compile Include="Observatorypattern\ISubject.cs" />
+    <Compile Include="Observatorypattern\Jaknapp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Observatorypattern\Observer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Observatorypattern\ObserverRadio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Observatorypattern\Subject.cs" />
     <Compile Include="RedigeraAktivitet.xaml.cs">
       <DependentUpon>RedigeraAktivitet.xaml</DependentUpon>
     </Compile>
@@ -201,6 +213,11 @@
       <Project>{c496eb7e-ef58-4ae6-9c14-b1a5abb1ed1c}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
