@@ -98,7 +98,21 @@
     <Compile Include="StartPersonal.xaml.cs">
       <DependentUpon>StartPersonal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\GDPRViewModel.cs" />
     <Compile Include="ViewModel\LoggInViewModel.cs" />
+    <Compile Include="ViewModel\NyAktivitetViewModel.cs" />
+    <Compile Include="ViewModel\NyUtskicksListaViewModel.cs" />
+    <Compile Include="ViewModel\RedigeraAktivitetViewModel.cs" />
+    <Compile Include="ViewModel\RedigeraListaViewModel.cs" />
+    <Compile Include="ViewModel\RedigeraProfilAnnanViewModel.cs" />
+    <Compile Include="ViewModel\RedigeraProfilPersonalViewModel.cs" />
+    <Compile Include="ViewModel\RegistreringViewModel.cs" />
+    <Compile Include="ViewModel\SeAktivitetAnnanViewModel.cs" />
+    <Compile Include="ViewModel\SeAktivitetPersonalViewModel.cs" />
+    <Compile Include="ViewModel\SeUtskicksListaAnnanViewModel.cs" />
+    <Compile Include="ViewModel\SeUtskicksListaPersonal.cs" />
+    <Compile Include="ViewModel\StartAnnanViewModel.cs" />
+    <Compile Include="ViewModel\StartPersonalViewModel.cs" />
     <Page Include="GDPR.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
