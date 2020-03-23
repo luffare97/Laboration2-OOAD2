@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BusinessEntites;
+using BusinessLayer;
 
 namespace WPF_GUI
 {
@@ -19,7 +21,7 @@ namespace WPF_GUI
     /// </summary>
     public partial class StartPersonal : Window
     {
-        public StartPersonal()
+        public StartPersonal(Busines)
         {
             InitializeComponent();
         }

@@ -33,6 +33,22 @@ namespace DataLayer
 
         }
 
+        public Användare LoggaIn(string ID, string Lösen)
+        {
+
+            Användare A = GetAnvändare(ID);
+
+            if (A.Lösenord == Lösen)
+            {
+                return A;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
 
         public void RedigeraLösenord(string ID, string nytt)
         {

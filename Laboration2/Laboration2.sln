@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessEntites", "BusinessEntites\BusinessEntites.csproj", "{3B789E87-A67B-441A-B056-69B511251F95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF GUI", "WPF GUI\WPF GUI.csproj", "{2D9E249A-2F73-41F6-8DCF-50D092DEE522}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFGUI", "WPF GUI\WPFGUI.csproj", "{2D9E249A-2F73-41F6-8DCF-50D092DEE522}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,18 +65,6 @@
     <Compile Include="NyUtskicksLista.xaml.cs">
       <DependentUpon>NyUtskicksLista.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Observatorypattern\IObserver.cs" />
-    <Compile Include="Observatorypattern\ISubject.cs" />
-    <Compile Include="Observatorypattern\Jaknapp.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Observatorypattern\Observer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Observatorypattern\ObserverRadio.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Observatorypattern\Subject.cs" />
     <Compile Include="RedigeraAktivitet.xaml.cs">
       <DependentUpon>RedigeraAktivitet.xaml</DependentUpon>
     </Compile>
@@ -109,6 +98,7 @@
     <Compile Include="StartPersonal.xaml.cs">
       <DependentUpon>StartPersonal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\LoggInViewModel.cs" />
     <Page Include="GDPR.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,7 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

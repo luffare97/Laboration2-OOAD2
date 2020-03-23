@@ -10,5 +10,6 @@ namespace DataLayer
 
         Användare GetAnvändare(string användarID);
         void RedigeraLösenord(string ID, string nytt);
+        Användare LoggaIn(string ID, string Lösen);
     }
 }

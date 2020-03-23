@@ -26,12 +26,17 @@ namespace BusinessLayer
 
         //calling repos
 
-            //AnvändarRepo
+        //AnvändarRepo
         public Användare GetAnvändare(string id)
         {
             return UnitOfWork.AnvändareRepository.GetAnvändare(id);
         }
-        
+
+        public Användare LoggaIn(string ID, string Lösen)
+        {
+            return UnitOfWork.AnvändareRepository.LoggaIn(ID, Lösen);
+        }
+
         public void RedigeraLösenord(string ID, string nytt)
         {
             UnitOfWork.AnvändareRepository.RedigeraLösenord(ID, nytt);
@@ -39,7 +44,7 @@ namespace BusinessLayer
 
 
 
-            //AktivitetRepo
+        //AktivitetRepo
         public List<Aktivitet> GetAllAktiviteter()
         {
             return UnitOfWork.AktivitetRepository.GetAll().ToList();
@@ -74,7 +79,7 @@ namespace BusinessLayer
 
 
 
-            //AlumnRepo
+        //AlumnRepo
         public void RedigeraAlumn(Alumn A)
         {
             UnitOfWork.AlumnRepository.RedigeraAlumn(A);
