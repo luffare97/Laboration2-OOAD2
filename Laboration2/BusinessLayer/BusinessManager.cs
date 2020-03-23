@@ -14,9 +14,9 @@ namespace BusinessLayer
 
         public UnitOfWork UnitOfWork { get; set; }
 
-        public BusinessManager(UnitOfWork unitOfWork)
+        public BusinessManager()
         {
-            UnitOfWork = unitOfWork;
+            UnitOfWork = new UnitOfWork(new AppDbContext());
         }
 
         public Personal InloggadPersonal { get; set; }

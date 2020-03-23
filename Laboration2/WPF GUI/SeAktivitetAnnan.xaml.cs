@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class SeAktivitetAnnan : Window
     {
-        public SeAktivitetAnnan()
+        public BusinessManager BusinessManager { get; }
+        public SeAktivitetAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

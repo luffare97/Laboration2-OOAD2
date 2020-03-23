@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class Registrering : Window
     {
-        public Registrering()
+        public BusinessManager BusinessManager { get; }
+        public Registrering(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

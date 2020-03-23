@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class RedigeraAktivitet : Window
     {
-        public RedigeraAktivitet()
+        public BusinessManager BusinessManager { get; }
+        public RedigeraAktivitet(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

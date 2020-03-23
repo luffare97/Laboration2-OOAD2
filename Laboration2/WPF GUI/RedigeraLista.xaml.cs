@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class RedigeraLista : Window
     {
-        public RedigeraLista()
+        public BusinessManager BusinessManager { get; }
+        public RedigeraLista(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

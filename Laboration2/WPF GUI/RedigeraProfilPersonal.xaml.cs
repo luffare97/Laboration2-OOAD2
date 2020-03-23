@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class RedigeraProfilPersonal : Window
     {
-        public RedigeraProfilPersonal()
+        public BusinessManager BusinessManager { get; }
+        public RedigeraProfilPersonal(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace GUI
             AppDbContext DB = new AppDbContext();
             DB.Reset();
 
-            BusinessManager BM = new BusinessManager(new UnitOfWork(DB));
+            BusinessManager BM = new BusinessManager();
             Alumn A = BM.GetAlumn("s1");
             Alumn B = BM.GetAlumn("s2");
 

@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class GDPR : Window
     {
-        public GDPR()
+        public BusinessManager BusinessManager { get; }
+        public GDPR(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

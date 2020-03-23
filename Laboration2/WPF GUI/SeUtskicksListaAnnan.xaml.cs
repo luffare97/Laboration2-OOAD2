@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class SeUtskicksListaAnnan : Window
     {
-        public SeUtskicksListaAnnan()
+        public BusinessManager BusinessManager { get; }
+        public SeUtskicksListaAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

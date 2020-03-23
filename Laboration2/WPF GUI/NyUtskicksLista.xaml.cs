@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class NyUtskicksLista : Window
     {
-        public NyUtskicksLista()
+        public BusinessManager BusinessManager { get; }
+        public NyUtskicksLista(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

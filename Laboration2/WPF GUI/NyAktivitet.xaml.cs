@@ -21,9 +21,11 @@ namespace WPF_GUI
     /// </summary>
     public partial class NyAktivitet : Window
     {
-        public NyAktivitet()
+        public BusinessManager BusinessManager { get; }
+        public NyAktivitet(BusinessManager businessManager)
         {
             InitializeComponent();
+            BusinessManager = businessManager;
         }
     }
 }

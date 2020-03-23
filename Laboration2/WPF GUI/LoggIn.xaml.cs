@@ -54,9 +54,21 @@ namespace WPF_GUI
                 }
                 else if (businessManager.InloggadAlumn != null)
                 {
-                    
+                    StartAnnan startAnnan = new StartAnnan(businessManager);
+                    this.Hide();
+                    startAnnan.ShowDialog();
+
+                    businessManager.InloggadAlumn = null;
+                    AnvändarIDTxt.Clear();
+                    LösenordTxt.Clear();
                 }
             }
+        }
+
+        private void Registrering(object sender, RoutedEventArgs e)
+        {
+            Registrering registrering = new Registrering(businessManager);
+            registrering.ShowDialog();
         }
     }
 }
