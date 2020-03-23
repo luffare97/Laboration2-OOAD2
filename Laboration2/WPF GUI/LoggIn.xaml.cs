@@ -38,11 +38,11 @@ namespace WPF_GUI
 
             if (A == null)
             {
-                MessageBox.Show("AnvändarIDt och lösenordet matchar inte","Error");
+                MessageBox.Show("AnvändarIDt och lösenorder matchar inte","Error");
             }
-            else
+            else if(A.Lösenord == LösenordTxt.Password)
             {
-                if (businessManager.InloggadPersonal != null)
+                if ((A as Personal) != null)
                 {
                     StartPersonal startPersonal = new StartPersonal(businessManager);
                     this.Hide();
@@ -52,7 +52,7 @@ namespace WPF_GUI
                     AnvändarIDTxt.Clear();
                     LösenordTxt.Clear();
                 }
-                else if (businessManager.InloggadAlumn != null)
+                else if ((A as Alumn) != null)
                 {
                     StartAnnan startAnnan = new StartAnnan(businessManager);
                     this.Hide();

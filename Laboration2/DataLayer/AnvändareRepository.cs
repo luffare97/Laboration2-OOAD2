@@ -37,15 +37,22 @@ namespace DataLayer
         {
 
             Användare A = GetAnvändare(ID);
-
-            if (A.Lösenord == Lösen)
-            {
-                return A;
-            }
-            else
+            if (A == null)
             {
                 return null;
             }
+            else
+            {
+                if (A.Lösenord != Lösen)
+                {
+                    return null;
+                }
+                else
+                {
+                    return A;
+                }
+            }
+
 
         }
 
