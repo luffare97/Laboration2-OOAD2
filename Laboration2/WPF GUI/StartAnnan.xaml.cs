@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BusinessEntites;
 using BusinessLayer;
+using WPF_GUI.ViewModel;
+
 
 namespace WPF_GUI
 {
@@ -21,11 +23,23 @@ namespace WPF_GUI
     /// </summary>
     public partial class StartAnnan : Window
     {
+        StartAnnanViewModel vm = new StartAnnanViewModel();
+
         public BusinessManager BusinessManager { get; }
+
+
+
         public StartAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
             BusinessManager = businessManager;
         }
+
+        private void LoggaUtBtn()
+        {
+            
+            this.Close();
+        }
+
     }
 }
