@@ -41,16 +41,16 @@
         <Label x:Name="InLoggadJobb" Grid.Column="1" Grid.Row="4" Margin="10">Jobb</Label>
         <Label x:Name="InLoggadExamensÅr" Grid.Column="1" Grid.Row="5" Margin="10">ExamensÅr</Label>
         <Label x:Name="InLoggadOrt" Grid.Column="1" Grid.Row="6" Margin="10">Ort</Label>
-        <Button x:Name="RedigeraBtn" Grid.Column="1" Grid.Row="7" Height="28" Width="100" Margin="10">Redigera profil</Button>
-        <Button x:Name="LoggaUtBtn" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Logga ut</Button>
+        <Button x:Name="RedigeraBtn" Click="RedigeraProfil" Grid.Column="1" Grid.Row="7" Height="28" Width="100" Margin="10">Redigera profil</Button>
+        <Button x:Name="LoggaUtBtn" Click="LoggaUt" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Logga ut</Button>
 
         <Label Grid.Column="2" Grid.Row="1" Margin="10">Mina Utskickslistor</Label>
         <DataGrid x:Name="dataGridListor" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"></DataGrid>
-        <Button x:Name="VäljListaBtn" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
+        <Button x:Name="VäljListaBtn" Click="VäljLista" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
 
         <Label Grid.Column="5" Grid.Row="1" Margin="10">Aktiviteter</Label>
         <DataGrid x:Name="dataGridAktiviteter" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"></DataGrid>
-        <Button x:Name="VäljAktivitetBtn" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
+        <Button x:Name="VäljAktivitetBtn" Click="VäljAktivitet" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
 
     </Grid>
 </Window>

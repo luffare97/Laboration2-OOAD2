@@ -12,14 +12,14 @@ namespace WPF_GUI.ViewModel
 {
     public class LoggInViewModel : INotifyPropertyChanged
     {
-        
+        public BusinessManager businessManager { get; }
 
         public LoggInViewModel()
         {
             //Update();
+            businessManager = new BusinessManager();
         }
 
-        BusinessManager businessManager = new BusinessManager();
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void Changed([CallerMemberName] String propertyName = "")

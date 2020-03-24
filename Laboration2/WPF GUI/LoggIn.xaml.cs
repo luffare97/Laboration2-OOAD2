@@ -29,6 +29,7 @@ namespace WPF_GUI
         public MainWindow()
         {
             InitializeComponent();
+            businessManager = vm.businessManager;
             DataContext = vm;
         }
 
@@ -44,23 +45,25 @@ namespace WPF_GUI
             {
                 if ((A as Personal) != null)
                 {
+                    businessManager.InloggadPersonal = A as Personal;
                     StartPersonal startPersonal = new StartPersonal(businessManager);
-                    this.Hide();
+                    this.Close();
                     startPersonal.ShowDialog();
 
-                    businessManager.InloggadPersonal = null;
-                    AnvändarIDTxt.Clear();
-                    LösenordTxt.Clear();
+                    //businessManager.InloggadPersonal = null;
+                    //AnvändarIDTxt.Clear();
+                    //LösenordTxt.Clear();
                 }
                 else if ((A as Alumn) != null)
                 {
+                    businessManager.InloggadAlumn = A as Alumn;
                     StartAnnan startAnnan = new StartAnnan(businessManager);
-                    this.Hide();
+                    this.Close();
                     startAnnan.ShowDialog();
 
-                    businessManager.InloggadAlumn = null;
-                    AnvändarIDTxt.Clear();
-                    LösenordTxt.Clear();
+                    //businessManager.InloggadAlumn = null;
+                    //AnvändarIDTxt.Clear();
+                    //LösenordTxt.Clear();
                 }
             }
         }
