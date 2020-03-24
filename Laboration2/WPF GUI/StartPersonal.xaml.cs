@@ -59,7 +59,8 @@ namespace WPF_GUI
 
         private void VäljLista(object sender, RoutedEventArgs e)
         {
-            SeUtskicksListaPersonal seUtskicksLista = new SeUtskicksListaPersonal(BusinessManager);
+            UtskicksLista Lista = new UtskicksLista();
+            SeUtskicksListaPersonal seUtskicksLista = new SeUtskicksListaPersonal(BusinessManager, Lista);
             this.Close();
             seUtskicksLista.ShowDialog();
         }
@@ -73,7 +74,8 @@ namespace WPF_GUI
 
         private void VäljAktivitet(object sender, RoutedEventArgs e)
         {
-            SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager);
+            Aktivitet Aktivitet = new Aktivitet();
+            SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, Aktivitet);
             this.Close();
             seAktivitet.ShowDialog();
         }

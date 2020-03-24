@@ -24,15 +24,17 @@ namespace WPF_GUI
     {
         public BusinessManager BusinessManager { get; }
         public SeUtskicksListaPersonalViewModel vm { get; }
-        public SeUtskicksListaPersonal(BusinessManager businessManager)
+        public SeUtskicksListaPersonal(BusinessManager businessManager, UtskicksLista utskicksLista)
         {
             InitializeComponent();
             BusinessManager = businessManager;
-            vm = new SeUtskicksListaPersonalViewModel(BusinessManager);
+            vm = new SeUtskicksListaPersonalViewModel(BusinessManager, utskicksLista);
             DataContext = vm;
         }
 
-        private void Redigera()
+
+
+        private void Redigera(object sender, RoutedEventHandler e)
         {
             RedigeraLista redigera = new RedigeraLista(BusinessManager, vm.Lista);
             redigera.ShowDialog();

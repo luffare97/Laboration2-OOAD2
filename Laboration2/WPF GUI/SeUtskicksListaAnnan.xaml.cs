@@ -23,10 +23,32 @@ namespace WPF_GUI
     public partial class SeUtskicksListaAnnan : Window
     {
         public BusinessManager BusinessManager { get; }
-        public SeUtskicksListaAnnan(BusinessManager businessManager)
+        public SeUtskicksListaAnnanViewModel vm { get; set; }
+        public SeUtskicksListaAnnan(BusinessManager businessManager, UtskicksLista L)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new SeUtskicksListaAnnanViewModel(BusinessManager, L);
+        }
+
+        private void SlutaFölja(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Vill du sluta följa listan?", "Är du säker?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.SlutaFölja();
+                this.Close();
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void Tillbaka(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

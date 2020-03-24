@@ -23,10 +23,50 @@ namespace WPF_GUI
     public partial class RedigeraAktivitet : Window
     {
         public BusinessManager BusinessManager { get; }
-        public RedigeraAktivitet(BusinessManager businessManager)
+        public RedigeraAktivitetViewModel vm { get; }
+        public RedigeraAktivitet(BusinessManager businessManager, Aktivitet A)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new RedigeraAktivitetViewModel(BusinessManager, A);
+            DataContext = vm;
+        }
+
+        private void Spara(Object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara ändringarna?", "Är du säker?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.Spara();
+                this.DialogResult = false;
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                this.DialogResult = false;
+            }
+            
+        }
+
+        private void Radera(Object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera den här aktiviteten?","Är du säker?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.Radera();
+                this.DialogResult = true;
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                this.DialogResult = false;
+            }
+            
+
+        }
+
+        private void Tillbaka(Object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

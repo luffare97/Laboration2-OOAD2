@@ -60,14 +60,16 @@ namespace WPF_GUI
 
         private void VäljLista(object sender, RoutedEventArgs e)
         {
-            SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager);
+            UtskicksLista Lista = new UtskicksLista();
+            SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager, Lista);
             
             seUtskicksLista.ShowDialog();
         }
 
         private void VäljAktivitet(object sender, RoutedEventArgs e)
         {
-            SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager);
+            Aktivitet aktivitet = new Aktivitet();
+            SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
             
             seAktivitet.ShowDialog();
         }

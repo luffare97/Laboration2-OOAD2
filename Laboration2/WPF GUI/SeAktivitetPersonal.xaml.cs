@@ -23,10 +23,42 @@ namespace WPF_GUI
     public partial class SeAktivitetPersonal : Window
     {
         public BusinessManager BusinessManager { get; }
-        public SeAktivitetPersonal(BusinessManager businessManager)
+        public SeAktivitetPersonalViewModel vm { get; set; }
+        public SeAktivitetPersonal(BusinessManager businessManager, Aktivitet A)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new SeAktivitetPersonalViewModel(BusinessManager, A);
+        }
+
+        private Aktivitet aktivitet = new Aktivitet();
+        public Aktivitet Aktivitet
+        {
+            get { return aktivitet; }
+            set
+            {
+                aktivitet = value;
+            }
+        }
+
+        private void Redigera(object sender, RoutedEventHandler e)
+        {
+            RedigeraAktivitet redigera = new RedigeraAktivitet(BusinessManager, Aktivitet);
+            redigera.ShowDialog();
+
+            if (redigera.DialogResult == true)
+            {
+                this.Close();
+            }
+            else if (redigera.DialogResult == false)
+            {
+
+            }
+        }
+
+        private void Tillbaka(object sender, RoutedEventHandler e)
+        {
+            this.Close();
         }
     }
 }

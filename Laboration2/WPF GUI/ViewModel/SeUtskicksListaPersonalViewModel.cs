@@ -13,10 +13,13 @@ namespace WPF_GUI.ViewModel
     public class SeUtskicksListaPersonalViewModel : INotifyPropertyChanged
     {
         public BusinessManager BusinessManager { get; }
-        public SeUtskicksListaPersonalViewModel(BusinessManager businessManager)
+        public SeUtskicksListaPersonalViewModel(BusinessManager businessManager, UtskicksLista utskicksLista)
         {
             BusinessManager = businessManager;
+            lista = utskicksLista;
         }
+
+
         private UtskicksLista lista = new UtskicksLista();
         public UtskicksLista Lista
         {

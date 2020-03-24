@@ -23,10 +23,34 @@ namespace WPF_GUI
     public partial class SeAktivitetAnnan : Window
     {
         public BusinessManager BusinessManager { get; }
-        public SeAktivitetAnnan(BusinessManager businessManager)
+        public SeAktivitetAnnanViewModel vm { get; }
+        public SeAktivitetAnnan(BusinessManager businessManager, Aktivitet A)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new SeAktivitetAnnanViewModel(BusinessManager, A);
+            DataContext = vm;
         }
+
+        private void SlutaFölja(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Vill du Delta i den här listan?","Är du säker?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.Delta();
+                this.Close();
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void Tillbaka(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
