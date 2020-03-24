@@ -69,8 +69,25 @@ namespace WPF_GUI
             
         }
 
+        private void Radera(object sender, RoutedEventArgs e)
+        {
+            RaderaKonto radera = new RaderaKonto(BusinessManager);
+            radera.ShowDialog();
+            if (radera.DialogResult == true)
+            {
+                this.DialogResult = true;
+                this.Close();
+            }
+            else if (radera.DialogResult == false)
+            {
+                this.DialogResult = false;
+            }
+        }
+
+
         private void TillbakaBtn(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             vm.Tillbaka();
             this.Close();
         }

@@ -38,12 +38,23 @@ namespace WPF_GUI
         {
             RedigeraProfilAnnan RedigeraProfil = new RedigeraProfilAnnan(BusinessManager);
             RedigeraProfil.ShowDialog();
+            
+            if (RedigeraProfil.DialogResult == true)
+            {
+                MainWindow loggIn = new MainWindow();
+                this.Close();
+                loggIn.ShowDialog();
+            }
+            else if (RedigeraProfil.DialogResult == false)
+            {
+
+            }
         }
 
         private void LoggaUt(object sender, RoutedEventArgs e)
         {
             MainWindow loggIn = new MainWindow();
-            
+            this.Close();
             loggIn.ShowDialog();
         }
 

@@ -78,6 +78,7 @@
         <Button x:Name="SparaLösenBtn" Click="RedigeraLösen" Grid.Column="4" Grid.Row="15" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Spara</Button>
 
         <Button x:Name="Tillbaka" Click="TillbakaBtn" Grid.Column="1" Grid.Row="16" Margin="10" Width="100" Height="28">Tillbaka</Button>
+        <Button x:Name="RaderaKonto" Click="Radera" Grid.Column="4" Grid.Row="16" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Radera kontot</Button>
 
     </Grid>
 </Window>
