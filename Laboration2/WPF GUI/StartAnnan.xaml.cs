@@ -23,7 +23,6 @@ namespace WPF_GUI
     /// </summary>
     public partial class StartAnnan : Window
     {
-        StartAnnanViewModel vm = new StartAnnanViewModel();
 
         public BusinessManager BusinessManager { get; }
 
@@ -31,34 +30,34 @@ namespace WPF_GUI
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            StartAnnanViewModel vm = new StartAnnanViewModel(BusinessManager);
             DataContext = vm;
         }
 
         private void RedigeraProfil(object sender, RoutedEventArgs e)
         {
             RedigeraProfilAnnan RedigeraProfil = new RedigeraProfilAnnan(BusinessManager);
-            this.Close();
             RedigeraProfil.ShowDialog();
         }
 
         private void LoggaUt(object sender, RoutedEventArgs e)
         {
             MainWindow loggIn = new MainWindow();
-            this.Close();
+            
             loggIn.ShowDialog();
         }
 
         private void VäljLista(object sender, RoutedEventArgs e)
         {
             SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager);
-            this.Close();
+            
             seUtskicksLista.ShowDialog();
         }
 
         private void VäljAktivitet(object sender, RoutedEventArgs e)
         {
             SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager);
-            this.Close();
+            
             seAktivitet.ShowDialog();
         }
 

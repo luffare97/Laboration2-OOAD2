@@ -22,11 +22,33 @@ namespace WPF_GUI
     /// </summary>
     public partial class GDPR : Window
     {
+        public GDPRViewModel vm { get; set; }
         public BusinessManager BusinessManager { get; }
         public GDPR(BusinessManager businessManager)
         {
             InitializeComponent();
+            vm = new GDPRViewModel();
             BusinessManager = businessManager;
+        }
+
+        private void Godkänner(object sender, RoutedEventArgs e)
+        {
+            if (GodkäntBox.IsChecked == true)
+            {
+                this.DialogResult = true;
+                this.Close();
+            }
+            else
+            {
+                this.DialogResult = false;
+                MessageBox.Show("Du måste godkänna villkoren för att kunna skapa ett konto","Fel");
+            }
+        }
+
+        private void GodkännerInte(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

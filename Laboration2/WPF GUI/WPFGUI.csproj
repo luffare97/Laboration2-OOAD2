@@ -75,6 +75,9 @@
     <Compile Include="NyUtskicksLista.xaml.cs">
       <DependentUpon>NyUtskicksLista.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RaderaKonto.xaml.cs">
+      <DependentUpon>RaderaKonto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RedigeraAktivitet.xaml.cs">
       <DependentUpon>RedigeraAktivitet.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,7 @@
     <Compile Include="ViewModel\LoggInViewModel.cs" />
     <Compile Include="ViewModel\NyAktivitetViewModel.cs" />
     <Compile Include="ViewModel\NyUtskicksListaViewModel.cs" />
+    <Compile Include="ViewModel\RaderaKontoViewModel.cs" />
     <Compile Include="ViewModel\RedigeraAktivitetViewModel.cs" />
     <Compile Include="ViewModel\RedigeraListaViewModel.cs" />
     <Compile Include="ViewModel\RedigeraProfilAnnanViewModel.cs" />
@@ -144,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NyUtskicksLista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RaderaKonto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

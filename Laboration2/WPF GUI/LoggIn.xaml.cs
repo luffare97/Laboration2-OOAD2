@@ -24,12 +24,12 @@ namespace WPF_GUI
     public partial class MainWindow : Window
     {
         LoggInViewModel vm = new LoggInViewModel();
-        public BusinessManager businessManager { get; }
+        public BusinessManager BusinessManager { get; }
 
         public MainWindow()
         {
             InitializeComponent();
-            businessManager = vm.businessManager;
+            BusinessManager = new BusinessManager();
             DataContext = vm;
         }
 
@@ -45,8 +45,8 @@ namespace WPF_GUI
             {
                 if ((A as Personal) != null)
                 {
-                    businessManager.InloggadPersonal = A as Personal;
-                    StartPersonal startPersonal = new StartPersonal(businessManager);
+                    BusinessManager.InloggadPersonal = A as Personal;
+                    StartPersonal startPersonal = new StartPersonal(BusinessManager);
                     this.Close();
                     startPersonal.ShowDialog();
 
@@ -56,8 +56,8 @@ namespace WPF_GUI
                 }
                 else if ((A as Alumn) != null)
                 {
-                    businessManager.InloggadAlumn = A as Alumn;
-                    StartAnnan startAnnan = new StartAnnan(businessManager);
+                    BusinessManager.InloggadAlumn = A as Alumn;
+                    StartAnnan startAnnan = new StartAnnan(BusinessManager);
                     this.Close();
                     startAnnan.ShowDialog();
 
@@ -70,7 +70,7 @@ namespace WPF_GUI
 
         private void Registrering(object sender, RoutedEventArgs e)
         {
-            Registrering registrering = new Registrering(businessManager);
+            Registrering registrering = new Registrering(BusinessManager);
             registrering.ShowDialog();
         }
     }

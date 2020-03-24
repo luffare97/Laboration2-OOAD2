@@ -38,10 +38,7 @@ namespace WPF_GUI.ViewModel
             }
         }
 
-        public void LoggaUt()
-        {
-            
-        }
+
 
 
 

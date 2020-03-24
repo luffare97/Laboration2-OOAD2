@@ -22,11 +22,58 @@ namespace WPF_GUI
     /// </summary>
     public partial class RedigeraProfilAnnan : Window
     {
+
+        
         public BusinessManager BusinessManager { get; }
+        public RedigeraProfilAnnanViewModel vm { get; set; }
         public RedigeraProfilAnnan(BusinessManager businessManager)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new RedigeraProfilAnnanViewModel(BusinessManager);
+            DataContext = vm;
         }
+
+
+
+        private void RedigeraInfo(object sender, RoutedEventArgs e)
+        {
+
+            vm.SparaInfo();
+            MessageBox.Show("Informationen har nu uppdaterats","Sparat");
+        }
+
+        private void RedigeraLösen(object sender, RoutedEventArgs e)
+        {
+
+            if (BusinessManager.InloggadAlumn.Lösenord == GammaltLösen.Text)
+            {
+                if (NyttLösen.Text == UpprepaLösen.Text)
+                {
+                    string nytt = NyttLösen.Text;
+                    vm.SparaLösen(nytt);
+                    MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
+                    GammaltLösen.Clear();
+                    NyttLösen.Clear();
+                    UpprepaLösen.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Nya lösenord stämmer inte överrens", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Fel gammalt lösenord", "Error");
+            }
+            
+        }
+
+        private void TillbakaBtn(object sender, RoutedEventArgs e)
+        {
+            vm.Tillbaka();
+            this.Close();
+        }
+
     }
 }
