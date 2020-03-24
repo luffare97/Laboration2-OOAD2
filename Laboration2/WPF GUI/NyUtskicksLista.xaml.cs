@@ -23,10 +23,33 @@ namespace WPF_GUI
     public partial class NyUtskicksLista : Window
     {
         public BusinessManager BusinessManager { get; }
+        public NyUtskicksListaViewModel vm { get; set; }
         public NyUtskicksLista(BusinessManager businessManager)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new NyUtskicksListaViewModel(BusinessManager);
+            DataContext = vm;
+        }
+
+        private void Spara(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Vill du spara Utskickslistan såhär?", "Spara?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.Spara();
+                this.Close();
+            }
+            else
+            {
+
+            }
+        }
+
+
+        private void Tillbaka(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

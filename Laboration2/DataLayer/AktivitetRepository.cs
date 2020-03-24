@@ -27,16 +27,6 @@ namespace DataLayer
 
         public void CreateAktivitet(Aktivitet A)
         {
-            //Aktivitet A = new Aktivitet()
-            //{
-            //    AktivitetNamn = titel,
-            //    AntalPlatser = platser,
-            //    Datum = datum,
-            //    Tid = tid,
-            //    Plats = plats,
-            //    Beskrivning = beskrivning
-
-            //};
 
             Context.Aktiviteter.Add(A);
             Context.SaveChanges();

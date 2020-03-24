@@ -23,10 +23,33 @@ namespace WPF_GUI
     public partial class NyAktivitet : Window
     {
         public BusinessManager BusinessManager { get; }
+        public NyAktivitetViewModel vm { get; set; }
         public NyAktivitet(BusinessManager businessManager)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new NyAktivitetViewModel(BusinessManager);
+            DataContext = vm;
+        }
+
+        private void Spara(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Vill du spara aktiviteten såhär?","Spara?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.Spara();
+                this.Close();
+            }
+            else
+            {
+
+            }
+            
+        }
+
+        private void Tillbaka(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
