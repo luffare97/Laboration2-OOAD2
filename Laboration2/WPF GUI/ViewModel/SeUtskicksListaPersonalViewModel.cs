@@ -10,16 +10,13 @@ using BusinessLayer;
 
 namespace WPF_GUI.ViewModel
 {
-    public class RedigeraListaViewModel : INotifyPropertyChanged
+    public class SeUtskicksListaPersonalViewModel : INotifyPropertyChanged
     {
         public BusinessManager BusinessManager { get; }
-        public RedigeraListaViewModel(BusinessManager businessManager, UtskicksLista utskicksLista)
+        public SeUtskicksListaPersonalViewModel(BusinessManager businessManager)
         {
             BusinessManager = businessManager;
-            lista = utskicksLista;
-
         }
-
         private UtskicksLista lista = new UtskicksLista();
         public UtskicksLista Lista
         {
@@ -31,23 +28,14 @@ namespace WPF_GUI.ViewModel
             }
         }
 
-        public void Radera()
-        {
-            BusinessManager.DeleteLista(lista.Id);
-        }
 
-        public void Spara()
-        {
-            BusinessManager.RedigeraLista(lista.Id, lista.Titel, lista.Information);
-        }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void Changed([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        
-
     }
 }

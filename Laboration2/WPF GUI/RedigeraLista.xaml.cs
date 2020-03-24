@@ -23,10 +23,50 @@ namespace WPF_GUI
     public partial class RedigeraLista : Window
     {
         public BusinessManager BusinessManager { get; }
-        public RedigeraLista(BusinessManager businessManager)
+        public RedigeraListaViewModel vm { get; set; }
+        public RedigeraLista(BusinessManager businessManager, UtskicksLista utskicksLista)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new RedigeraListaViewModel(BusinessManager, utskicksLista);
+            DataContext = vm;
         }
+
+        private void Radera(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera den här listan?", "Radera?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.Radera();
+                MessageBox.Show("Ändringara har blivit Raderad", "Raderad");
+                this.Close();
+            }
+            else if (result == MessageBoxResult.No)
+            {
+
+            }
+        }
+
+        private void Spara(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara ändringarna?","Spara?",MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.Spara();
+                MessageBox.Show("Ändringara har blivit sparade","Sparat");
+            }
+            else if (result == MessageBoxResult.No)
+            {
+
+            }
+            
+        
+        }
+
+        private void Tillbaka(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

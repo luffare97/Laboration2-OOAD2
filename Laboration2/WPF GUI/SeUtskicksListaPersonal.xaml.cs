@@ -23,10 +23,33 @@ namespace WPF_GUI
     public partial class SeUtskicksListaPersonal : Window
     {
         public BusinessManager BusinessManager { get; }
+        public SeUtskicksListaPersonalViewModel vm { get; }
         public SeUtskicksListaPersonal(BusinessManager businessManager)
         {
             InitializeComponent();
             BusinessManager = businessManager;
+            vm = new SeUtskicksListaPersonalViewModel(BusinessManager);
+            DataContext = vm;
+        }
+
+        private void Redigera()
+        {
+            RedigeraLista redigera = new RedigeraLista(BusinessManager, vm.Lista);
+            redigera.ShowDialog();
+            
+            if (redigera.DialogResult == true)
+            {
+                this.Close();
+            }
+            else if (redigera.DialogResult == false)
+            {
+
+            }
+        }
+
+        private void Tillbaka(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
