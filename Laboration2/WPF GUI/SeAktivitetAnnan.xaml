@@ -51,7 +51,7 @@
         <Label x:Name="PlatsTxt" Content="{Binding Mode=OneWay, Path=Aktivitet.Plats}" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="7" Margin="10">Beskrivning:</Label>
-        <TextBox x:Name="BeskrivningTxt" Text="{Binding Mode=OneWay, Path=Aktivitet.Besktivning}" 
+        <TextBox x:Name="BeskrivningTxt" Text="{Binding Mode=OneWay, Path=Aktivitet.Beskrivning}" 
                  Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Height="300" Margin="10" 
                  TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
                  IsReadOnly="True"/>

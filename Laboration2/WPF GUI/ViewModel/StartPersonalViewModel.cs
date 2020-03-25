@@ -25,7 +25,6 @@ namespace WPF_GUI.ViewModel
             personal = BusinessManager.InloggadPersonal;
 
             
-
             FyllGrids();
 
             
@@ -84,19 +83,6 @@ namespace WPF_GUI.ViewModel
             }
         }
 
-
-
-
-
-        //public void FillGrids()
-        //{
-
-        //}
-
-        //public void Update()
-        //{
-        //    FillGrids();
-        //}
 
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -16,7 +16,7 @@ namespace WPF_GUI.ViewModel
         public SeAktivitetPersonalViewModel(BusinessManager businessManager, Aktivitet A)
         {
             BusinessManager = businessManager;
-            aktivitet = A;
+            Aktivitet = A;
 
         }
 

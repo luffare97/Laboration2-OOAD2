@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="1" Grid.Row="1" Margin="10">ID:</Label>
-        <Label x:Name="IDTxt" Content="{Binding Mode=OneWay, Path=Lista.id}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10"/>
+        <Label x:Name="IDTxt" Content="{Binding Mode=OneWay, Path=Lista.Id}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Titel:</Label>
         <Label x:Name="TitelTxt" Content="{Binding Mode=OneWay, Path=Lista.Titel}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"/>

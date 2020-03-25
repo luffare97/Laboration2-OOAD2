@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,21 +30,33 @@ namespace WPF_GUI
             InitializeComponent();
             BusinessManager = businessManager;
             vm = new SeAktivitetPersonalViewModel(BusinessManager, A);
+            DataContext = vm;
+            FyllLB(A);
+            
         }
-
-        private Aktivitet aktivitet = new Aktivitet();
-        public Aktivitet Aktivitet
+        public void FyllLB(Aktivitet A)
         {
-            get { return aktivitet; }
-            set
+            foreach (Alumn a in A.deltagare)
             {
-                aktivitet = value;
+                Alumner.Add(a);
             }
         }
 
+        public ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
+        private ObservableCollection<Alumn> Alumner
+        {
+            get { return alumner; }
+            set
+            {
+                alumner = value;
+                
+            }
+        }
+
+
         private void Redigera(object sender, RoutedEventArgs e)
         {
-            RedigeraAktivitet redigera = new RedigeraAktivitet(BusinessManager, Aktivitet);
+            RedigeraAktivitet redigera = new RedigeraAktivitet(BusinessManager, vm.Aktivitet);
             redigera.ShowDialog();
 
             if (redigera.DialogResult == true)

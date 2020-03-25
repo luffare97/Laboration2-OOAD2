@@ -36,7 +36,7 @@
                  Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" Height="300"/>
 
         <Label Grid.Column="4" Grid.Row="1" Margin="10">Mottagare: </Label>
-        <ListBox x:Name="MottagareBox" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Width="250" Height="300" Margin="10"></ListBox>
+        <ListBox x:Name="MottagareBox" ItemsSource="{Binding Mode=TwoWay, Path=Alumner}" SelectionMode="Multiple" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Width="250" Height="300" Margin="10"></ListBox>
 
         <Button x:Name="TillbakaBtn" Click="Tillbaka" Grid.Column="1" Grid.Row="4" Width="80" Height="28" Margin="10">Tillbaka</Button>
         <Button x:Name="SparaBtn" Click="Spara" Grid.Column="5" Grid.Row="4" Width="80" Height="28" Margin="10" HorizontalAlignment="Right">Spara</Button>

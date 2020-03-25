@@ -31,7 +31,8 @@ namespace WPF_GUI.ViewModel
 
         public void Delta()
         {
-            BusinessManager.DeleteAktivitet(aktivitet.Id);
+            Alumn A = BusinessManager.GetAlumn(BusinessManager.InloggadAlumn.AnvändarId);
+            BusinessManager.DeltaAktivitet(aktivitet.Id, A);
         }
 
 

@@ -40,7 +40,7 @@ namespace WPF_GUI
         private void RedigeraProfil(object sender, RoutedEventArgs e)
         {
             RedigeraProfilPersonal RedigeraProfil = new RedigeraProfilPersonal(BusinessManager);
-            this.Close();
+
             RedigeraProfil.ShowDialog();
         }
 
@@ -61,7 +61,8 @@ namespace WPF_GUI
 
         private void VäljLista(object sender, RoutedEventArgs e)
         {
-            UtskicksLista Lista = new UtskicksLista();
+            UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
+            
             SeUtskicksListaPersonal seUtskicksLista = new SeUtskicksListaPersonal(BusinessManager, Lista);
             this.Close();
             seUtskicksLista.ShowDialog();
@@ -76,7 +77,8 @@ namespace WPF_GUI
 
         private void VäljAktivitet(object sender, RoutedEventArgs e)
         {
-            Aktivitet Aktivitet = new Aktivitet();
+            Aktivitet Aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
+
             SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, Aktivitet);
             this.Close();
             seAktivitet.ShowDialog();

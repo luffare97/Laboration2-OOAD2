@@ -17,7 +17,7 @@ namespace WPF_GUI.ViewModel
         {
             BusinessManager = businessManager;
 
-            personal = BusinessManager.InloggadPersonal;
+            Personal = BusinessManager.InloggadPersonal;
             gammal = BusinessManager.InloggadPersonal;
 
 

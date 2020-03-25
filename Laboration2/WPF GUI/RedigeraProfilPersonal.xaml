@@ -37,19 +37,19 @@
         <Label Grid.Column="1" Grid.Row="1" Margin="10 10 10 0">Personlig information</Label>
 
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Förnamn: </Label>
-        <TextBox x:Name="FNamnTxt" Text="{Binding Mode=TwoWay, Path=Alumn.FNamn}" Grid.Column="2" Grid.Row="2" Margin="10" Grid.ColumnSpan="3"></TextBox>
+        <TextBox x:Name="FNamnTxt" Text="{Binding Mode=TwoWay, Path=Personal.FNamn}" Grid.Column="2" Grid.Row="2" Margin="10" Grid.ColumnSpan="3"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="3" Margin="10">Efternamn: </Label>
-        <TextBox x:Name="ENamnTxt" Text="{Binding Mode=TwoWay, Path=Alumn.ENamn}" Grid.Column="2" Grid.Row="3" Margin="10" Grid.ColumnSpan="3"></TextBox>
+        <TextBox x:Name="ENamnTxt" Text="{Binding Mode=TwoWay, Path=Personal.ENamn}" Grid.Column="2" Grid.Row="3" Margin="10" Grid.ColumnSpan="3"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="4" Margin="10">E-Mailadress: </Label>
-        <TextBox x:Name="EmailTxt" Text="{Binding Mode=TwoWay, Path=Alumn.EMail}" Grid.Column="2" Grid.Row="4" Margin="10" Grid.ColumnSpan="3"></TextBox>
+        <TextBox x:Name="EmailTxt" Text="{Binding Mode=TwoWay, Path=Personal.EMail}" Grid.Column="2" Grid.Row="4" Margin="10" Grid.ColumnSpan="3"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="5" Margin="10">Telefonnummer: </Label>
-        <TextBox x:Name="TeleNrTxt" Text="{Binding Mode=TwoWay, Path=Alumn.TeleNr}" Grid.Column="2" Grid.Row="5" Margin="10" Grid.ColumnSpan="3"></TextBox>
+        <TextBox x:Name="TeleNrTxt" Text="{Binding Mode=TwoWay, Path=Personal.TeleNr}" Grid.Column="2" Grid.Row="5" Margin="10" Grid.ColumnSpan="3"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="6" Margin="10">Possision:</Label>
-        <TextBox x:Name="PossitionTxt" Text="{Binding Mode=TwoWay, Path=Alumn.Possition}" Grid.Column="2" Grid.Row="6" Margin="10" Grid.ColumnSpan="3"></TextBox>
+        <TextBox x:Name="PossitionTxt" Text="{Binding Mode=TwoWay, Path=Personal.Possition}" Grid.Column="2" Grid.Row="6" Margin="10" Grid.ColumnSpan="3"></TextBox>
 
         <Button x:Name="SparaInfoBtn" Click="RedigeraInfo" Grid.Column="4" Grid.Row="7" Margin="10" Height="28" Width="100" HorizontalAlignment="Right">Spara</Button>
 

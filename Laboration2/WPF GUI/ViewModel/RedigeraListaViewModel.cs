@@ -38,7 +38,7 @@ namespace WPF_GUI.ViewModel
 
         public void Spara()
         {
-            BusinessManager.RedigeraLista(lista.Id, lista.Titel, lista.Information);
+            BusinessManager.RedigeraLista(Lista.Id, Lista.Titel, Lista.Information);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

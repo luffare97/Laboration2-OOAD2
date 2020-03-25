@@ -86,6 +86,7 @@ namespace WPF_GUI
             this.DialogResult = false;
             vm.Tillbaka();
             this.Close();
+            
         }
 
     }

@@ -51,7 +51,7 @@
         <Label Grid.Column="1" Grid.Row="7" Margin="10">Beskrivning: </Label>
         <TextBox x:Name="BeskrivningTxt" Text="{Binding Mode=TwoWay, Path=Aktivitet.Beskrivning}" 
                  Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="2" Height="200" 
-                 Margin="10"/>
+                 Margin="10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
 
         <Button x:Name="RaderaBtn" Click="Radera" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Radera aktivitet</Button>
         <Button x:Name="TillbakaBtn" Click="Tillbaka" Grid.Column="1" Grid.Row="9" Height="28" Width="100" Margin="10">Tillbaka</Button>

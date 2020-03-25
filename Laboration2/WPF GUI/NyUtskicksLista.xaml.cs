@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,15 @@ namespace WPF_GUI
             MessageBoxResult result = MessageBox.Show("Vill du spara Utskickslistan såhär?", "Spara?", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
+                ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
+
+                foreach (Alumn a in MottagareBox.SelectedItems)
+                {
+                    Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);
+                    A.Add(alumn);
+                }
+
+                vm.Alumner = A;
                 vm.Spara();
                 StartPersonal start = new StartPersonal(BusinessManager);
                 this.Close();

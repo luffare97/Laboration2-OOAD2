@@ -31,6 +31,8 @@ namespace WPF_GUI
             InitializeComponent();
             BusinessManager = businessManager;
             StartAnnanViewModel vm = new StartAnnanViewModel(BusinessManager);
+            dataGridAktiviteter.ItemsSource = vm.Aktiviteter;
+            dataGridListor.ItemsSource = vm.Listor;
             DataContext = vm;
         }
 
@@ -60,16 +62,17 @@ namespace WPF_GUI
 
         private void VäljLista(object sender, RoutedEventArgs e)
         {
-            UtskicksLista Lista = new UtskicksLista();
+            UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
             SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager, Lista);
-            
+            this.Close();
             seUtskicksLista.ShowDialog();
         }
 
         private void VäljAktivitet(object sender, RoutedEventArgs e)
         {
-            Aktivitet aktivitet = new Aktivitet();
+            Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
             SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
+            this.Close();
             
             seAktivitet.ShowDialog();
         }

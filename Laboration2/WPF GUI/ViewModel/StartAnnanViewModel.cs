@@ -14,21 +14,7 @@ namespace WPF_GUI.ViewModel
     
     public class StartAnnanViewModel : INotifyPropertyChanged
     {
-        public void UpdateGrids()
-        {
 
-            //ICollection<UtskicksLista> L = BusinessManager.InloggadAlumn.Listor;
-            //foreach (UtskicksLista l in L)
-            //{
-            //    listor.Add(l);
-            //}
-
-            //ICollection<Aktivitet> A = BusinessManager.InloggadAlumn.Aktiviteter;
-            //foreach (Aktivitet a in A)
-            //{
-            //    aktiviteter.Add(a);
-            //}
-        }
 
         public BusinessManager BusinessManager { get; }
         public StartAnnanViewModel(BusinessManager businessManager)
@@ -41,6 +27,23 @@ namespace WPF_GUI.ViewModel
             
 
         }
+
+        public void UpdateGrids()
+        {
+            foreach (UtskicksLista u in BusinessManager.InloggadAlumn.Listor)
+            {
+                UtskicksLista l = BusinessManager.GetUtskicksLista(u.Id);
+                listor.Add(l);
+            
+            }
+            foreach (Aktivitet a in BusinessManager.GetAllAktiviteter())
+            {
+                aktiviteter.Add(a);
+
+            }
+
+        }
+
 
 
         private Alumn alumn = new Alumn();
@@ -55,7 +58,9 @@ namespace WPF_GUI.ViewModel
             }
         }
 
-        private ObservableCollection<Aktivitet> aktiviteter;
+
+
+        private ObservableCollection<Aktivitet> aktiviteter = new ObservableCollection<Aktivitet>();
         public ObservableCollection<Aktivitet> Aktiviteter
         {
             get { return aktiviteter; }
@@ -67,7 +72,7 @@ namespace WPF_GUI.ViewModel
         }
 
 
-        private ObservableCollection<UtskicksLista> listor;
+        private ObservableCollection<UtskicksLista> listor = new ObservableCollection<UtskicksLista>();
         public ObservableCollection<UtskicksLista> Listor
         {
             get { return listor; }

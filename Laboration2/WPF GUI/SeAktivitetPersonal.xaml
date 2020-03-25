@@ -34,31 +34,31 @@
 
 
         <Label Grid.Column="1" Grid.Row="1" Margin="10">Aktivitets ID:</Label>
-        <Label x:Name="IDTxt" Content="{Binding Aktivitet.Id}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10"/>
+        <Label x:Name="IDTxt" Content="{Binding Mode=OneWay, Path=Aktivitet.Id}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Titel:</Label>
-        <Label x:Name="TitelTxt" Content="{Binding Aktivitet.AktivitetNamn}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"/>
+        <Label x:Name="TitelTxt" Content="{Binding Mode=OneWay, Path=Aktivitet.AktivitetNamn}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="3" Margin="10">Antal platser:</Label>
-        <Label x:Name="PlatserTxt" Content="{Binding Aktivitet.AntalPlatser}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"/>
+        <Label x:Name="PlatserTxt" Content="{Binding Mode=OneWay, Path= Aktivitet.AntalPlatser}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="4" Margin="10">Datum:</Label>
-        <Label x:Name="DatumTxt" Content="{Binding Aktivitet.Datum}" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"/>
+        <Label x:Name="DatumTxt" Content="{Binding Mode=OneWay, Path= Aktivitet.Datum}" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="5" Margin="10">Tid:</Label>
-        <Label x:Name="TidTxt" Content="{Binding Aktivitet.Tid}" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"/>
+        <Label x:Name="TidTxt" Content="{Binding Mode=OneWay, Path= Aktivitet.Tid}" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="6" Margin="10">Plats:</Label>
-        <Label x:Name="PlatsTxt" Content="{Binding Aktivitet.Plats}" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"/>
+        <Label x:Name="PlatsTxt" Content="{Binding Mode=OneWay, Path= Aktivitet.Plats}" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="7" Margin="10">Beskrivning:</Label>
-        <TextBox x:Name="BeskrivningTxt" Text="{Binding Aktivitet.Beskrivning}" Grid.Column="2" 
+        <TextBox x:Name="BeskrivningTxt" Text="{Binding Mode=OneWay, Path= Aktivitet.Beskrivning}" Grid.Column="2" 
                  Grid.Row="7" Grid.ColumnSpan="3" Height="300" Width="200" Margin="10" 
                  TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
                  IsReadOnly="True"/>
 
         <Label Grid.Column="5" Grid.Row="1" Margin="10">Deltagare: </Label>
-        <ListBox  Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="9" Height="600" Margin="10"/>
+        <ListBox x:Name="Deltagare" ItemsSource="{Binding Mode=OneWay,Path=Alumner}" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="9" Height="600" Margin="10"/>
 
         <Button x:Name="TillbakaBtn" Click="Tillbaka" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Tillbaka</Button>
         <Button x:Name="RedigeraBtn" Click="Redigera" Grid.Column="4" Grid.Row="8" Height="28" Width="100" HorizontalAlignment="Right" Margin="10">Redigera</Button>
