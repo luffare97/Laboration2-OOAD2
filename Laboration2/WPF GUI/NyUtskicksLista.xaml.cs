@@ -38,7 +38,9 @@ namespace WPF_GUI
             if (result == MessageBoxResult.Yes)
             {
                 vm.Spara();
+                StartPersonal start = new StartPersonal(BusinessManager);
                 this.Close();
+                start.ShowDialog();
             }
             else
             {
@@ -49,7 +51,9 @@ namespace WPF_GUI
 
         private void Tillbaka(object sender, RoutedEventArgs e)
         {
+            StartPersonal start = new StartPersonal(BusinessManager);
             this.Close();
+            start.ShowDialog();
         }
     }
 }

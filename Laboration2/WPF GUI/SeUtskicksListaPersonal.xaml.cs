@@ -41,7 +41,9 @@ namespace WPF_GUI
             
             if (redigera.DialogResult == true)
             {
+                StartPersonal start = new StartPersonal(BusinessManager);
                 this.Close();
+                start.ShowDialog();
             }
             else if (redigera.DialogResult == false)
             {
@@ -51,7 +53,9 @@ namespace WPF_GUI
 
         private void Tillbaka(object sender, RoutedEventArgs e)
         {
+            StartPersonal start = new StartPersonal(BusinessManager);
             this.Close();
+            start.ShowDialog();
         }
     }
 }

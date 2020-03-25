@@ -32,15 +32,27 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new RedigeraProfilAnnanViewModel(BusinessManager);
             DataContext = vm;
+
+            ProgramCB.ItemsSource = Enum.GetValues(typeof(Utbildning)).Cast<Utbildning>();
+
         }
 
 
 
         private void RedigeraInfo(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara de här ändringarna?","Spara",MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                vm.SparaInfo();
+                MessageBox.Show("Informationen har nu uppdaterats", "Sparat");
+            }
+            else if (result == MessageBoxResult.No)
+            {
 
-            vm.SparaInfo();
-            MessageBox.Show("Informationen har nu uppdaterats","Sparat");
+            }
+            
+
         }
 
         private void RedigeraLösen(object sender, RoutedEventArgs e)

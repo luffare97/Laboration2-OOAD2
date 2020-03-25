@@ -37,7 +37,9 @@ namespace WPF_GUI
             if (result == MessageBoxResult.Yes)
             {
                 vm.SlutaFölja();
+                StartAnnan start = new StartAnnan(BusinessManager);
                 this.Close();
+                start.ShowDialog();
             }
             else
             {
@@ -48,7 +50,10 @@ namespace WPF_GUI
 
         private void Tillbaka(object sender, RoutedEventArgs e)
         {
+            StartAnnan start = new StartAnnan(BusinessManager);
             this.Close();
+            start.ShowDialog();
+
         }
     }
 }

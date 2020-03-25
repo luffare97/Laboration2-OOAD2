@@ -34,7 +34,7 @@ namespace WPF_GUI.ViewModel
 
         public void Spara()
         {   
-            BusinessManager.CreateAlumn(Alumn);
+            BusinessManager.CreateAlumn(alumn);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

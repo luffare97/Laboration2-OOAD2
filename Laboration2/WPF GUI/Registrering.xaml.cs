@@ -26,9 +26,9 @@ namespace WPF_GUI
         public RegistreringViewModel vm { get; set; }
         public Registrering(BusinessManager businessManager)
         {
-            InitializeComponent();
-            vm = new RegistreringViewModel(BusinessManager);
+            InitializeComponent();            
             BusinessManager = businessManager;
+            vm = new RegistreringViewModel(BusinessManager);
             DataContext = vm;
 
             ProgramCB.ItemsSource = Enum.GetValues(typeof(Utbildning)).Cast<Utbildning>();
@@ -91,7 +91,7 @@ namespace WPF_GUI
 
                                         if (gdpr.DialogResult == true)
                                         {
-
+                                            MessageBox.Show($"{vm.Alumn.FNamn}","test");
                                             vm.Spara();
                                             MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: {användarid}", "Sparad");
 

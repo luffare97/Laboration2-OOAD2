@@ -45,12 +45,12 @@ namespace WPF_GUI.ViewModel
 
         public void SparaLösen(string nytt)
         {
-            BusinessManager.RedigeraLösenord(Alumn. AnvändarId, nytt);
+            BusinessManager.RedigeraLösenord(Alumn.AnvändarId, nytt);
         }
 
         public void Tillbaka()
         {
-            Alumn = gammal;
+            BusinessManager.InloggadAlumn = gammal;
         }
 
 

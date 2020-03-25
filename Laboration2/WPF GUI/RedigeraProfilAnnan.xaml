@@ -39,41 +39,41 @@
         <Label Grid.Column="1" Grid.Row="1" Margin="10 10 10 0">Personlig information</Label>
         
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Förnamn: </Label>
-        <TextBox x:Name="FNamnTxt" Text="{Binding Mode=TwoWay, Path=Alumn.FNamn}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="FNamnTxt" Text="{Binding Mode=TwoWay, Path=Alumn.FNamn}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="3" Margin="10">Efternamn: </Label>
-        <TextBox x:Name="ENamnTxt" Text="{Binding Mode=TwoWay, Path=Alumn.ENamn}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="ENamnTxt" Text="{Binding Mode=TwoWay, Path=Alumn.ENamn}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="4" Margin="10">E-Mailardess: </Label>
-        <TextBox x:Name="EMailTxt" Text="{Binding Mode=TwoWay, Path=Alumn.EMail}" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="EMailTxt" Text="{Binding Mode=TwoWay, Path=Alumn.EMail}" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="5" Margin="10">Telefonnummer: </Label>
-        <TextBox x:Name="TeleTxt" Text="{Binding Mode=TwoWay, Path=Alumn.TeleNr}" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="TeleTxt" Text="{Binding Mode=TwoWay, Path=Alumn.TeleNr}" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="6" Margin="10">Ort: </Label>
-        <TextBox x:Name="OrtTxt" Text="{Binding Mode=TwoWay, Path=Alumn.Ort}" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="OrtTxt" Text="{Binding Mode=TwoWay, Path=Alumn.Ort}" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="7" Margin="10">Nuvarande anställning: </Label>
-        <TextBox x:Name="JobbTxt" Text="{Binding Mode=TwoWay, Path=Alumn.Anställning}"  Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="JobbTxt" Text="{Binding Mode=TwoWay, Path=Alumn.Anställning}"  Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="8" Margin="10">Examens år: </Label>
-        <TextBox x:Name="ÅrTxt" Text="{Binding Mode=TwoWay, Path=Alumn.ExamensÅr}" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="ÅrTxt" Text="{Binding Mode=TwoWay, Path=Alumn.ExamensÅr}" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="9" Margin="10">Utbildning: </Label>
-        <ComboBox x:Name="ProgramTxt" Text="{Binding Mode=TwoWay, Path=Alumn.program}" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="3" Margin="10"></ComboBox>
+        <ComboBox x:Name="ProgramCB" Text="{Binding Mode=TwoWay, Path=Alumn.program}" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="3" Margin="10"/>
 
         <Button x:Name="SparaInfoBtn" Click="RedigeraInfo" Grid.Column="4" Grid.Row="10" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Spara</Button>
 
         <Label Grid.Column="1" Grid.Row="11" Margin="10 10 10 0">Lösenord: </Label>
         
         <Label Grid.Column="1" Grid.Row="12" Margin="10">Gammalt lösenord: </Label>
-        <TextBox x:Name="GammaltLösen" Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="GammaltLösen" Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="13" Margin="10">Nytt lösenord: </Label>
-        <TextBox x:Name="NyttLösen" Grid.Column="2" Grid.Row="13" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="NyttLösen" Grid.Column="2" Grid.Row="13" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="14" Margin="10">Upprepa nytt lösenord: </Label>
-        <TextBox x:Name="UpprepaLösen" Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="UpprepaLösen" Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="3" Margin="10"/>
 
         <Button x:Name="SparaLösenBtn" Click="RedigeraLösen" Grid.Column="4" Grid.Row="15" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Spara</Button>
 

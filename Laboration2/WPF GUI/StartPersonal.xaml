@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
         mc:Ignorable="d"
-        Title="StartPersonal" MinHeight="400" Height="400" MinWidth="800" Width="650">
+        Title="StartPersonal" MinHeight="350" Height="350" MinWidth="800" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>

@@ -36,39 +36,39 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="1" Grid.Row="1" Margin="10">AnvändarID:</Label>
-        <TextBox x:Name="AnvändarIdTxt" Text="{Binding Alum.AnvändarId, Mode=TwoWay}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="AnvändarIdTxt" Text="{Binding Mode=OneWayToSource,  Path=Alum.AnvändarId }" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Förnamn: </Label>
-        <TextBox Text="{Binding Alum.FNamn, Mode=TwoWay}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox Text="{Binding Mode=OneWayToSource,  Path=Alum.FNamn }" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="3" Margin="10">Efternamn: </Label>
-        <TextBox Text="{Binding Alum.ENamn, Mode=TwoWay}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox Text="{Binding Mode=OneWayToSource,  Path=Alum.ENamn }" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="4" Margin="10">E-Mailadress: </Label>
-        <TextBox Text="{Binding Alum.EMail, Mode=TwoWay}" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox Text="{Binding Mode=OneWayToSource,  Path=Alum.EMail }" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="5" Margin="10">Telefonnummer: </Label>
-        <TextBox x:Name="TeleNrTxt" Text="{Binding Alum.TeleNr, Mode=TwoWay}" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="TeleNrTxt" Text="{Binding Mode=OneWayToSource, Path= Alum.TeleNr }" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="6" Margin="10">Levnads ort: </Label>
-        <TextBox Text="{Binding Alum.Ort, Mode=TwoWay}" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox Text="{Binding Mode=OneWayToSource,  Path=Alum.Ort }" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="7" Margin="10">Nuvarande anställning: </Label>
-        <TextBox Text="{Binding Alum.Anställning, Mode=TwoWay}" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox Text="{Binding Mode=OneWayToSource,  Path=Alum.Anställning }" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="8" Margin="10">Program: </Label>
-        <ComboBox Name="ProgramCB" Text="{Binding Alum.program, Mode=TwoWay}" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3" Margin="10"></ComboBox>
+        <ComboBox Name="ProgramCB" Text="{Binding Mode=OneWayToSource,  Path=Alum.Program }" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="9" Margin="10">Examens år: </Label>
-        <TextBox x:Name="ÅrTxt" Text="{Binding Alum.ExamensÅr, Mode=TwoWay}" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="3" Margin="10"></TextBox>
+        <TextBox x:Name="ÅrTxt" Text="{Binding Mode=OneWayToSource,  Path=Alum.ExamensÅr }" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="3" Margin="10"/>
 
         <!--Något här kanske bara så de blir ett mellanrum?-->
         
         <Label Grid.Column="1" Grid.Row="10" Margin="10">Lösenord: </Label>
-        <PasswordBox x:Name="Lösen1" Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3" Margin="10"></PasswordBox>
+        <PasswordBox x:Name="Lösen1" Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="3" Margin="10"/>
 
         <Label Grid.Column="1" Grid.Row="11" Margin="10">Upprepa lösenord: </Label>
-        <PasswordBox x:Name="Lösen2" Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="3" Margin="10"></PasswordBox>
+        <PasswordBox x:Name="Lösen2" Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="3" Margin="10"/>
 
         <Button Click="Tillbaka" Grid.Column="1" Grid.Row="12" Margin="10" Width="100">Tillbaka</Button>
         <Button Click="Spara" Grid.Column="4" Grid.Row="12" Margin="10" Width="100" HorizontalAlignment="Right">Spara</Button>
