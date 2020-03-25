@@ -25,12 +25,11 @@ namespace WPF_GUI.ViewModel
            
             UpdateGrids();
             
-
         }
 
         public void UpdateGrids()
         {
-            foreach (UtskicksLista u in BusinessManager.InloggadAlumn.Listor)
+            foreach (UtskicksLista u in Alumn.Listor)
             {
                 UtskicksLista l = BusinessManager.GetUtskicksLista(u.Id);
                 listor.Add(l);

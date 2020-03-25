@@ -60,13 +60,7 @@
                   Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"
                   HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="300">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Titel" Visibility="Visible" Binding="{Binding AktivitetNamn}"/>
-                <DataGridTextColumn Header="Datum" Visibility="Visible" Binding="{Binding Datum}"/>
-                <DataGridTextColumn Header="Tid" Visibility="Visible" Binding="{Binding Tid}"/>
-                <DataGridTextColumn Header="Antal platser" Visibility="Visible" Binding="{Binding AntalPlatser}"/>
-                <DataGridTextColumn Header="Plats" Visibility="Visible" Binding="{Binding Plats}"/>
-                <DataGridTextColumn Header="Beskrivning" Visibility="Visible" Binding="{Binding Beskrivning}"/>
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="SkapaAktivitetBtn" Click="SkapaAktivitet" Grid.Column="5" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa aktivitet</Button>

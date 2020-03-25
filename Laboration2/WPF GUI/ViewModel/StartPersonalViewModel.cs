@@ -15,9 +15,6 @@ namespace WPF_GUI.ViewModel
     public class StartPersonalViewModel : INotifyPropertyChanged
     {
         public BusinessManager BusinessManager { get; }
-
-
-
         public StartPersonalViewModel(BusinessManager businessManager)
         {
             BusinessManager = businessManager;

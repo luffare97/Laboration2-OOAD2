@@ -62,19 +62,35 @@ namespace WPF_GUI
 
         private void VäljLista(object sender, RoutedEventArgs e)
         {
-            UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
-            SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager, Lista);
-            this.Close();
-            seUtskicksLista.ShowDialog();
+            if (dataGridListor.SelectedItem == null)
+            {
+                MessageBox.Show("Du har inte valt en lista", "Error");
+            }
+            else
+            {
+                UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
+                SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager, Lista);
+                this.Close();
+                seUtskicksLista.ShowDialog();
+            }
+
         }
 
         private void VäljAktivitet(object sender, RoutedEventArgs e)
         {
-            Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
-            SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
-            this.Close();
-            
-            seAktivitet.ShowDialog();
+            if (dataGridAktiviteter.SelectedItem == null)
+            {
+                MessageBox.Show("Du har inte valt en aktivitet", "Error");
+            }
+            else
+            {
+                Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
+                SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
+                this.Close();
+
+                seAktivitet.ShowDialog();
+            }
+
         }
 
     }
