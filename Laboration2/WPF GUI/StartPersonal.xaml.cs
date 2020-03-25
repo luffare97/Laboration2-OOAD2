@@ -32,6 +32,8 @@ namespace WPF_GUI
             BusinessManager = businessManager;
 
             StartPersonalViewModel vm = new StartPersonalViewModel(BusinessManager);
+            dataGridAktiviteter.ItemsSource = vm.Aktiviteter;
+            dataGridListor.ItemsSource = vm.Listor;
             DataContext = vm;
         }
 

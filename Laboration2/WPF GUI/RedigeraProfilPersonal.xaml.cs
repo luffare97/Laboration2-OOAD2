@@ -81,7 +81,7 @@ namespace WPF_GUI
             }
         }
 
-        private void TillbakaBtn(object sender, RoutedEventArgs e)
+        private void Tillbaka(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             vm.Tillbaka();

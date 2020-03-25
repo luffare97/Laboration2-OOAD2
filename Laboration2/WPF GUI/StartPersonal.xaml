@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
         mc:Ignorable="d"
-        Title="StartPersonal" MinHeight="400" Height="400" MinWidth="650" Width="650">
+        Title="StartPersonal" MinHeight="400" Height="400" MinWidth="800" Width="650">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -43,14 +43,32 @@
         <Button x:Name="LoggaUtBtn" Click="LoggaUt" Grid.Column="1" Grid.Row="6" Height="28" Width="100" Margin="10">Logga ut</Button>
 
         <Label Grid.Column="2" Grid.Row="1" Margin="10">Alla Utskickslistor</Label>
-        <DataGrid x:Name="dataGridListor" AutoGenerateColumns="False" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10">
-            <DataGrid.Columns></DataGrid.Columns>
+        <DataGrid x:Name="dataGridListor" ItemsSource="{Binding Mode=OneWay, Path=Listor}" AutoGenerateColumns="False" 
+                  Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10" 
+                  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="300">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Titel" Visibility="Visible" Binding="{Binding Titel}"/>
+                <DataGridTextColumn Header="Information" Visibility="Visible" Binding="{Binding Information}" Width="*"/>
+            </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="SkapaNyLista" Click="SkapaLista" Grid.Column="2" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa Utskickslista</Button>
         <Button x:Name="VäljListaBtn" Click="VäljLista" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
 
         <Label Grid.Column="5" Grid.Row="1" Margin="10">Alla Aktiviteter</Label>
-        <DataGrid x:Name="dataGridAktiviteter" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"></DataGrid>
+        <DataGrid x:Name="dataGridAktiviteter" ItemsSource="{Binding Mode=OneWay, Path=Aktiviteter}" 
+                  Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"
+                  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="300">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Titel" Visibility="Visible" Binding="{Binding AktivitetNamn}"/>
+                <DataGridTextColumn Header="Datum" Visibility="Visible" Binding="{Binding Datum}"/>
+                <DataGridTextColumn Header="Tid" Visibility="Visible" Binding="{Binding Tid}"/>
+                <DataGridTextColumn Header="Antal platser" Visibility="Visible" Binding="{Binding AntalPlatser}"/>
+                <DataGridTextColumn Header="Plats" Visibility="Visible" Binding="{Binding Plats}"/>
+                <DataGridTextColumn Header="Beskrivning" Visibility="Visible" Binding="{Binding Beskrivning}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="SkapaAktivitetBtn" Click="SkapaAktivitet" Grid.Column="5" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa aktivitet</Button>
         <Button x:Name="VäljaAktivitetBtn" Click="VäljAktivitet" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
 

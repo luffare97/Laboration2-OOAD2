@@ -32,7 +32,7 @@ namespace WPF_GUI
             DataContext = vm;
         }
 
-        private void SlutaFölja(object sender, RoutedEventArgs e)
+        private void Delta(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Vill du Delta i den här listan?","Är du säker?", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)

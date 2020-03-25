@@ -50,9 +50,6 @@ namespace WPF_GUI
                     this.Close();
                     startPersonal.ShowDialog();
 
-                    //businessManager.InloggadPersonal = null;
-                    //AnvändarIDTxt.Clear();
-                    //LösenordTxt.Clear();
                 }
                 else if ((A as Alumn) != null)
                 {
@@ -61,9 +58,6 @@ namespace WPF_GUI
                     this.Close();
                     startAnnan.ShowDialog();
 
-                    //businessManager.InloggadAlumn = null;
-                    //AnvändarIDTxt.Clear();
-                    //LösenordTxt.Clear();
                 }
             }
         }

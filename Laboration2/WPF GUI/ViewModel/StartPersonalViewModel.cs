@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -23,8 +24,30 @@ namespace WPF_GUI.ViewModel
 
             personal = BusinessManager.InloggadPersonal;
 
-            //Update();
+            
+
+            FyllGrids();
+
+            
         }
+
+        public void FyllGrids()
+        {
+            ICollection<UtskicksLista> L = BusinessManager.GetAllListor();
+
+            foreach (UtskicksLista l in L)
+            {
+                listor.Add(l);
+            }
+
+            ICollection<Aktivitet> A = BusinessManager.GetAllAktiviteter();
+
+            foreach (Aktivitet a in A)
+            {
+                aktiviteter.Add(a);
+            }
+        }
+
 
         private Personal personal = new Personal();
 
@@ -38,13 +61,36 @@ namespace WPF_GUI.ViewModel
             }
         }
 
+        private ObservableCollection<UtskicksLista> listor = new ObservableCollection<UtskicksLista>();
+        public ObservableCollection<UtskicksLista> Listor
+        {
+            get { return listor; }
+            set
+            {
+                listor = value;
+                Changed();
+            }
+        }
+
+
+        private ObservableCollection<Aktivitet> aktiviteter = new ObservableCollection<Aktivitet>();
+        public ObservableCollection<Aktivitet> Aktiviteter
+        {
+            get { return aktiviteter; }
+            set
+            {
+                aktiviteter = value;
+                Changed();
+            }
+        }
+
 
 
 
 
         //public void FillGrids()
         //{
-        
+
         //}
 
         //public void Update()

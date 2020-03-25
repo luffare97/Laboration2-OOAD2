@@ -34,7 +34,7 @@ namespace WPF_GUI
 
 
 
-        private void Redigera(object sender, RoutedEventHandler e)
+        private void Redigera(object sender, RoutedEventArgs e)
         {
             RedigeraLista redigera = new RedigeraLista(BusinessManager, vm.Lista);
             redigera.ShowDialog();
