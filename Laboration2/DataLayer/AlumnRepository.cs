@@ -36,7 +36,7 @@ namespace DataLayer
                 alumn.Ort = A.Ort;
                 alumn.Anställning = A.Anställning;
                 alumn.ExamensÅr = A.ExamensÅr;
-                alumn.program = A.program;
+                alumn.Program = A.Program;
 
             }
 

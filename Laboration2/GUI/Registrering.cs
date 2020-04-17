@@ -85,7 +85,7 @@ namespace GUI
                                             Ort = OrtTxt.Text,
                                             Anställning = AnställningTxt.Text,
                                             ExamensÅr = år,
-                                            program = utbildning,
+                                            Program = utbildning,
                                             Lösenord = textBoxLösenord1.Text
 
                                         };

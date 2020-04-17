@@ -53,6 +53,7 @@ namespace WPF_GUI.ViewModel
             set
             {
                 alumn = value;
+                Changed();
 
             }
         }

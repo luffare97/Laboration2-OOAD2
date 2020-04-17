@@ -46,7 +46,7 @@ namespace DataLayer
 
             foreach (Aktivitet aktivitet in query)
             {
-                aktivitet.deltagare.Add(A);
+                aktivitet.Deltagare.Add(A);
 
                 var query2 =
                     from alumn in Context.Alumner

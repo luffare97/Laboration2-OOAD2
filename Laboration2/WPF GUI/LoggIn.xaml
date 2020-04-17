@@ -32,11 +32,11 @@
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Lösenord: </Label>
         <PasswordBox x:Name="LösenordTxt" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"></PasswordBox>
 
-        <Button x:Name="LoggInBtn" Click="LoggaIn" Grid.Column="3" Grid.Row="3" Margin="10" Width="70" Height="28" HorizontalAlignment="Right">Logga in</Button>
+        <Button x:Name="LoggInBtn" Command="LoggaIn" Grid.Column="3" Grid.Row="3" Margin="10" Width="70" Height="28" HorizontalAlignment="Right">Logga in</Button>
         
         
         <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="10">Eller registrera dig här: </Label>
-        <Button x:Name="RegistreraBtn" Click="Registrering" Grid.Column="3" Grid.Row="4" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Registrering</Button>
+        <Button x:Name="RegistreraBtn" Command="{Binding Registrera}" Grid.Column="3" Grid.Row="4" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Registrering</Button>
         
 
     </Grid>

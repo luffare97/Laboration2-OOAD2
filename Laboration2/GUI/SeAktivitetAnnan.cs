@@ -37,7 +37,7 @@ namespace GUI
 
             int id = int.Parse(IDTxt.Text);
             Aktivitet aktivitet = BusinessManager.GetAktivitet(id);
-            int deltagare = aktivitet.deltagare.Count;
+            int deltagare = aktivitet.Deltagare.Count;
 
             if (deltagare >= aktivitet.AntalPlatser)
             {

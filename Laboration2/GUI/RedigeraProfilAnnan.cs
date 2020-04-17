@@ -93,7 +93,7 @@ namespace GUI
                             Ort = OrtTxt.Text,
                             Anställning = AnställningTxt.Text,
                             ExamensÅr = år,
-                            program = utbildning
+                            Program = utbildning
 
                         };
 

@@ -36,7 +36,7 @@ namespace WPF_GUI
         }
         public void FyllLB(Aktivitet A)
         {
-            foreach (Alumn a in A.deltagare)
+            foreach (Alumn a in A.Deltagare)
             {
                 Alumner.Add(a);
             }

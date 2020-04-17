@@ -27,7 +27,7 @@ namespace GUI
 
 
             InLoggadNamn.Text = BusinessManager.InloggadAlumn.FNamn + " " + BusinessManager.InloggadAlumn.ENamn;
-            InLoggadProgram.Text = BusinessManager.InloggadAlumn.program.ToString();
+            InLoggadProgram.Text = BusinessManager.InloggadAlumn.Program.ToString();
         }
 
         public void UpdateGrid()

@@ -69,7 +69,7 @@ namespace DataLayer
                 Anställning = "Arbetslös",
                 ExamensÅr = 2022,
                 Ort = "Borås",
-                program = Utbildning.Systemarkitekt
+                Program = Utbildning.Systemarkitekt
             };
             Alumner.Add(Olof);
 
@@ -85,7 +85,7 @@ namespace DataLayer
                 Anställning = "Sniffare",
                 ExamensÅr = 2005,
                 Ort = "Göteborg",
-                program = Utbildning.DataEkonom
+                Program = Utbildning.DataEkonom
             };
             Alumner.Add(Nisse);
 
@@ -101,7 +101,7 @@ namespace DataLayer
                 Anställning = "Codare",
                 ExamensÅr = 2012,
                 Ort = "Huddinge",
-                program = Utbildning.Systemarkitekt
+                Program = Utbildning.Systemarkitekt
             });
 
             Alumner.Add(new Alumn()
@@ -115,7 +115,7 @@ namespace DataLayer
                 Anställning = "Bagare",
                 ExamensÅr = 2008,
                 Ort = "Frölunda",
-                program = Utbildning.DataEkonom
+                Program = Utbildning.DataEkonom
             });
 
             Personals.Add(new Personal()
@@ -165,7 +165,7 @@ namespace DataLayer
                 Anställning = "Björn Jägare",
                 ExamensÅr = 2005,
                 Ort = "Mora",
-                program = Utbildning.Systemvetare
+                Program = Utbildning.Systemvetare
             });
 
             Aktiviteter.Add(new Aktivitet()
@@ -190,10 +190,15 @@ namespace DataLayer
 
             UtskicksLista L = new UtskicksLista()
             {
-                Mottagare = A,
+                
                 Information = B,
                 Titel = C
             };
+
+            foreach (Alumn alumn in A)
+            {
+                L.Mottagare.Add(alumn);
+            }
 
             UtskicksListor.Add(L);
 

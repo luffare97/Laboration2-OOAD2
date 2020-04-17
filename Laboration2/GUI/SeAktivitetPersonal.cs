@@ -32,7 +32,7 @@ namespace GUI
             PlatsLabel.Text = A.Plats;
             BeskrivningBox.Text = A.Beskrivning;
 
-            foreach (Alumn a in A.deltagare)
+            foreach (Alumn a in A.Deltagare)
             {
                 DeltagareLB.Items.Add(a);
             }
@@ -52,7 +52,7 @@ namespace GUI
             BeskrivningBox.Text = aktivitet.Beskrivning;
 
 
-            foreach (Alumn a in aktivitet.deltagare)
+            foreach (Alumn a in aktivitet.Deltagare)
             {
                 DeltagareLB.Items.Add(a);
             }

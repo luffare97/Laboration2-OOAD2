@@ -24,48 +24,48 @@ namespace WPF_GUI
     public partial class MainWindow : Window
     {
         LoggInViewModel vm = new LoggInViewModel();
-        public BusinessManager BusinessManager { get; }
+        //public BusinessManager BusinessManager { get; }
 
         public MainWindow()
         {
             InitializeComponent();
-            BusinessManager = new BusinessManager();
+            //BusinessManager = new BusinessManager();
             DataContext = vm;
         }
 
-        private void LoggaIn(object sender, RoutedEventArgs e)
-        {
-            Användare A = vm.LoggaIn(AnvändarIDTxt.Text, LösenordTxt.Password);
+        //private void LoggaIn(object sender, RoutedEventArgs e)
+        //{
+        //    Användare A = vm.LoggaIn(AnvändarIDTxt.Text, LösenordTxt.Password);
 
-            if (A == null)
-            {
-                MessageBox.Show("AnvändarIDt och lösenorder matchar inte","Error");
-            }
-            else if(A.Lösenord == LösenordTxt.Password)
-            {
-                if ((A as Personal) != null)
-                {
-                    BusinessManager.InloggadPersonal = A as Personal;
-                    StartPersonal startPersonal = new StartPersonal(BusinessManager);
-                    this.Close();
-                    startPersonal.ShowDialog();
+        //    if (A == null)
+        //    {
+        //        MessageBox.Show("AnvändarIDt och lösenorder matchar inte","Error");
+        //    }
+        //    else if(A.Lösenord == LösenordTxt.Password)
+        //    {
+        //        if ((A as Personal) != null)
+        //        {
+        //            BusinessManager.InloggadPersonal = A as Personal;
+        //            StartPersonal startPersonal = new StartPersonal(BusinessManager);
+        //            this.Close();
+        //            startPersonal.ShowDialog();
 
-                }
-                else if ((A as Alumn) != null)
-                {
-                    BusinessManager.InloggadAlumn = A as Alumn;
-                    StartAnnan startAnnan = new StartAnnan(BusinessManager);
-                    this.Close();
-                    startAnnan.ShowDialog();
+        //        }
+        //        else if ((A as Alumn) != null)
+        //        {
+        //            BusinessManager.InloggadAlumn = A as Alumn;
+        //            StartAnnan startAnnan = new StartAnnan(BusinessManager);
+        //            this.Close();
+        //            startAnnan.ShowDialog();
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
-        private void Registrering(object sender, RoutedEventArgs e)
-        {
-            Registrering registrering = new Registrering(BusinessManager);
-            registrering.ShowDialog();
-        }
+        //private void Registrering(object sender, RoutedEventArgs e)
+        //{
+        //    Registrering registrering = new Registrering(BusinessManager);
+        //    registrering.ShowDialog();
+        //}
     }
 }
