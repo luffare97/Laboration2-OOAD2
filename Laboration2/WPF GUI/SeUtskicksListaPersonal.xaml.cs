@@ -30,32 +30,35 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new SeUtskicksListaPersonalViewModel(BusinessManager, utskicksLista);
             DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
 
 
-        private void Redigera(object sender, RoutedEventArgs e)
-        {
-            RedigeraLista redigera = new RedigeraLista(BusinessManager, vm.Lista);
-            redigera.ShowDialog();
+        //private void Redigera(object sender, RoutedEventArgs e)
+        //{
+        //    RedigeraLista redigera = new RedigeraLista(BusinessManager, vm.Lista);
+        //    redigera.ShowDialog();
             
-            if (redigera.DialogResult == true)
-            {
-                StartPersonal start = new StartPersonal(BusinessManager);
-                this.Close();
-                start.ShowDialog();
-            }
-            else if (redigera.DialogResult == false)
-            {
+        //    if (redigera.DialogResult == true)
+        //    {
+        //        StartPersonal start = new StartPersonal(BusinessManager);
+        //        this.Close();
+        //        start.ShowDialog();
+        //    }
+        //    else if (redigera.DialogResult == false)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-            StartPersonal start = new StartPersonal(BusinessManager);
-            this.Close();
-            start.ShowDialog();
-        }
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //    StartPersonal start = new StartPersonal(BusinessManager);
+        //    this.Close();
+        //    start.ShowDialog();
+        //}
     }
 }

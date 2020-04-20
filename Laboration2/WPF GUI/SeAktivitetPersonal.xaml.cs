@@ -31,54 +31,59 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new SeAktivitetPersonalViewModel(BusinessManager, A);
             DataContext = vm;
-            FyllLB(A);
-            
-        }
-        public void FyllLB(Aktivitet A)
-        {
-            foreach (Alumn a in A.Deltagare)
-            {
-                Alumner.Add(a);
-            }
+
+            vm.FyllLB(A);
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
+
         }
 
-        public ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
-        private ObservableCollection<Alumn> Alumner
-        {
-            get { return alumner; }
-            set
-            {
-                alumner = value;
+        //public void FyllLB(Aktivitet A)
+        //{
+        //    foreach (Alumn a in A.Deltagare)
+        //    {
+        //        Alumner.Add(a);
+        //    }
+        //}
+
+        //public ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
+        //private ObservableCollection<Alumn> Alumner
+        //{
+        //    get { return alumner; }
+        //    set
+        //    {
+        //        alumner = value;
                 
-            }
-        }
+        //    }
+        //}
 
 
-        private void Redigera(object sender, RoutedEventArgs e)
-        {
-            RedigeraAktivitet redigera = new RedigeraAktivitet(BusinessManager, vm.Aktivitet);
-            redigera.ShowDialog();
+        //private void Redigera(object sender, RoutedEventArgs e)
+        //{
+        //    RedigeraAktivitet redigera = new RedigeraAktivitet(BusinessManager, vm.Aktivitet);
+        //    redigera.ShowDialog();
 
-            if (redigera.DialogResult == true)
-            {
-                StartPersonal start = new StartPersonal(BusinessManager);
-                this.Close();
-                start.ShowDialog();
+        //    if (redigera.DialogResult == true)
+        //    {
+        //        StartPersonal start = new StartPersonal(BusinessManager);
+        //        this.Close();
+        //        start.ShowDialog();
                 
-            }
-            else if (redigera.DialogResult == false)
-            {
+        //    }
+        //    else if (redigera.DialogResult == false)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-           StartPersonal start = new StartPersonal(BusinessManager);
-            this.Close();
-            start.ShowDialog();
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //   StartPersonal start = new StartPersonal(BusinessManager);
+        //    this.Close();
+        //    start.ShowDialog();
             
-        }
+        //}
 
     }
 }

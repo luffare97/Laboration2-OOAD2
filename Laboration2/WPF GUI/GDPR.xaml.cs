@@ -31,24 +31,24 @@ namespace WPF_GUI
             BusinessManager = businessManager;
         }
 
-        private void Godkänner(object sender, RoutedEventArgs e)
-        {
-            if (GodkäntBox.IsChecked == true)
-            {
-                this.DialogResult = true;
-                this.Close();
-            }
-            else
-            {
-                this.DialogResult = false;
-                MessageBox.Show("Du måste godkänna villkoren för att kunna skapa ett konto","Fel");
-            }
-        }
+        //private void Godkänner(object sender, RoutedEventArgs e)
+        //{
+        //    if (GodkäntBox.IsChecked == true)
+        //    {
+        //        this.DialogResult = true;
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        this.DialogResult = false;
+        //        MessageBox.Show("Du måste godkänna villkoren för att kunna skapa ett konto","Fel");
+        //    }
+        //}
 
-        private void GodkännerInte(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = false;
-            this.Close();
-        }
+        //private void GodkännerInte(object sender, RoutedEventArgs e)
+        //{
+        //    this.DialogResult = false;
+        //    this.Close();
+        //}
     }
 }

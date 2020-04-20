@@ -31,39 +31,42 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new NyUtskicksListaViewModel(BusinessManager);
             DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
-        private void Spara(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Vill du spara Utskickslistan såhär?", "Spara?", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
+        //private void Spara(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Vill du spara Utskickslistan såhär?", "Spara?", MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
 
-                foreach (Alumn a in MottagareBox.SelectedItems)
-                {
-                    Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);
-                    A.Add(alumn);
-                }
+        //        foreach (Alumn a in MottagareBox.SelectedItems)
+        //        {
+        //            Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);
+        //            A.Add(alumn);
+        //        }
 
-                vm.Alumner = A;
-                vm.Spara();
-                StartPersonal start = new StartPersonal(BusinessManager);
-                this.Close();
-                start.ShowDialog();
-            }
-            else
-            {
+        //        vm.Alumner = A;
+        //        vm.Spara();
+        //        StartPersonal start = new StartPersonal(BusinessManager);
+        //        this.Close();
+        //        start.ShowDialog();
+        //    }
+        //    else
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-            StartPersonal start = new StartPersonal(BusinessManager);
-            this.Close();
-            start.ShowDialog();
-        }
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //    StartPersonal start = new StartPersonal(BusinessManager);
+        //    this.Close();
+        //    start.ShowDialog();
+        //}
     }
 }

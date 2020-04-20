@@ -30,30 +30,33 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new SeAktivitetAnnanViewModel(BusinessManager, A);
             DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
-        private void Delta(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Vill du Delta i den här aktiviteten?","Är du säker?", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.Delta();
-                MessageBox.Show("Du kommer nu att delta i den här aktiviteten","Yay");
-            }
-            else
-            {
+        //private void Delta(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Vill du Delta i den här aktiviteten?","Är du säker?", MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.Delta();
+        //        MessageBox.Show("Du kommer nu att delta i den här aktiviteten","Yay");
+        //    }
+        //    else
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-            StartAnnan start = new StartAnnan(BusinessManager);
-            this.Close();
-            start.ShowDialog();
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //    StartAnnan start = new StartAnnan(BusinessManager);
+        //    this.Close();
+        //    start.ShowDialog();
 
-        }
+        //}
 
     }
 }

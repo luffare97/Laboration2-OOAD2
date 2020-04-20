@@ -125,7 +125,6 @@
     <Compile Include="ViewModel\SeAktivitetAnnanViewModel.cs" />
     <Compile Include="ViewModel\SeAktivitetPersonalViewModel.cs" />
     <Compile Include="ViewModel\SeUtskicksListaAnnanViewModel.cs" />
-    <Compile Include="ViewModel\SeUtskicksListaPersonal.cs" />
     <Compile Include="ViewModel\SeUtskicksListaPersonalViewModel.cs" />
     <Compile Include="ViewModel\StartAnnanViewModel.cs" />
     <Compile Include="ViewModel\StartPersonalViewModel.cs" />

@@ -44,8 +44,8 @@
         <ListBox Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="300" 
                  Width="200" Margin="10" ItemsSource="{Binding Mode=OneWay, Path=Lista.Mottagare}"/>
 
-        <Button x:Name="TillbakaBtn" Click="Tillbaka" Grid.Column="1" Grid.Row="4" Margin="10" Height="28" Width="100">Tillbaka</Button>
-        <Button x:Name="RedigeraBtn" Click="Redigera" Grid.Column="4" Grid.Row="4" Margin="10" Height="28" Width="100" HorizontalAlignment="Right">Redigera</Button>
+        <Button x:Name="TillbakaBtn" Command="{Binding TillbakaCmd}" Grid.Column="1" Grid.Row="4" Margin="10" Height="28" Width="100">Tillbaka</Button>
+        <Button x:Name="RedigeraBtn" Command="{Binding RedigeraCmd}" Grid.Column="4" Grid.Row="4" Margin="10" Height="28" Width="100" HorizontalAlignment="Right">Redigera</Button>
 
 
 

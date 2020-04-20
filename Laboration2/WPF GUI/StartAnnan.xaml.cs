@@ -32,66 +32,70 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             StartAnnanViewModel vm = new StartAnnanViewModel(BusinessManager);
             dataGridAktiviteter.ItemsSource = vm.Aktiviteter;
-            dataGridListor.ItemsSource = vm.Listor;
-            DataContext = vm;
+            //dataGridListor.ItemsSource = vm.Listor;
+            this.DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
+
         }
 
-        private void RedigeraProfil(object sender, RoutedEventArgs e)
-        {
-            RedigeraProfilAnnan RedigeraProfil = new RedigeraProfilAnnan(BusinessManager);
-            RedigeraProfil.ShowDialog();
+        //private void RedigeraProfil(object sender, RoutedEventArgs e)
+        //{
+        //    RedigeraProfilAnnan RedigeraProfil = new RedigeraProfilAnnan(BusinessManager);
+        //    RedigeraProfil.ShowDialog();
             
-            if (RedigeraProfil.DialogResult == true)
-            {
-                MainWindow loggIn = new MainWindow();
-                this.Close();
-                loggIn.ShowDialog();
-            }
-            else if (RedigeraProfil.DialogResult == false)
-            {
+        //    if (RedigeraProfil.DialogResult == true)
+        //    {
+        //        MainWindow loggIn = new MainWindow();
+        //        this.Close();
+        //        loggIn.ShowDialog();
+        //    }
+        //    else if (RedigeraProfil.DialogResult == false)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
-        private void LoggaUt(object sender, RoutedEventArgs e)
-        {
-            MainWindow loggIn = new MainWindow();
-            this.Close();
-            loggIn.ShowDialog();
-        }
+        //private void LoggaUt(object sender, RoutedEventArgs e)
+        //{
+        //    MainWindow loggIn = new MainWindow();
+        //    this.Close();
+        //    loggIn.ShowDialog();
+        //}
 
-        private void VäljLista(object sender, RoutedEventArgs e)
-        {
-            if (dataGridListor.SelectedItem == null)
-            {
-                MessageBox.Show("Du har inte valt en lista", "Error");
-            }
-            else
-            {
-                UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
-                SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager, Lista);
-                this.Close();
-                seUtskicksLista.ShowDialog();
-            }
+        //private void VäljLista(object sender, RoutedEventArgs e)
+        //{
+        //    if (dataGridListor.SelectedItem == null)
+        //    {
+        //        MessageBox.Show("Du har inte valt en lista", "Error");
+        //    }
+        //    else
+        //    {
+        //        UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
+        //        SeUtskicksListaAnnan seUtskicksLista = new SeUtskicksListaAnnan(BusinessManager, Lista);
+        //        this.Close();
+        //        seUtskicksLista.ShowDialog();
+        //    }
 
-        }
+        //}
 
-        private void VäljAktivitet(object sender, RoutedEventArgs e)
-        {
-            if (dataGridAktiviteter.SelectedItem == null)
-            {
-                MessageBox.Show("Du har inte valt en aktivitet", "Error");
-            }
-            else
-            {
-                Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
-                SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
-                this.Close();
+        //private void VäljAktivitet(object sender, RoutedEventArgs e)
+        //{
+        //    if (dataGridAktiviteter.SelectedItem == null)
+        //    {
+        //        MessageBox.Show("Du har inte valt en aktivitet", "Error");
+        //    }
+        //    else
+        //    {
+        //        Aktivitet aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
+        //        SeAktivitetAnnan seAktivitet = new SeAktivitetAnnan(BusinessManager, aktivitet);
+        //        this.Close();
 
-                seAktivitet.ShowDialog();
-            }
+        //        seAktivitet.ShowDialog();
+        //    }
 
-        }
+        //}
 
     }
 }

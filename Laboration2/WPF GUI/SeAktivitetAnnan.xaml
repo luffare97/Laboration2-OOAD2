@@ -57,8 +57,8 @@
                  IsReadOnly="True"/>
 
 
-        <Button x:Name="TillbakaBtn" Click="Tillbaka" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Tillbaka</Button>
-        <Button x:Name="DeltaBtn" Click="Delta" Grid.Column="4" Grid.Row="8" Height="28" Width="100" HorizontalAlignment="Right" Margin="10">Delta</Button>
+        <Button x:Name="TillbakaBtn" Command="{Binding TillbakaCmd}" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Tillbaka</Button>
+        <Button x:Name="DeltaBtn" Command="{Binding DeltaCmd}" Grid.Column="4" Grid.Row="8" Height="28" Width="100" HorizontalAlignment="Right" Margin="10">Delta</Button>
 
 
     </Grid>

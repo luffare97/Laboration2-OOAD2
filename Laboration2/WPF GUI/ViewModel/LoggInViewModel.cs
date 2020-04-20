@@ -62,7 +62,7 @@ namespace WPF_GUI.ViewModel
         {
             get
             {
-                return this.registreringCommand;
+                return registreringCommand;
             }
             set
             {

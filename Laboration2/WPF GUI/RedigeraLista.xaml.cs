@@ -30,43 +30,46 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new RedigeraListaViewModel(BusinessManager, utskicksLista);
             DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
-        private void Radera(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera den här listan?", "Radera?", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.Radera();
-                MessageBox.Show("Ändringara har blivit Raderad", "Raderad");
-                this.Close();
-            }
-            else if (result == MessageBoxResult.No)
-            {
+        //private void Radera(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera den här listan?", "Radera?", MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.Radera();
+        //        MessageBox.Show("Ändringara har blivit Raderad", "Raderad");
+        //        this.Close();
+        //    }
+        //    else if (result == MessageBoxResult.No)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
-        private void Spara(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara ändringarna?","Spara?",MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.Spara();
-                MessageBox.Show("Ändringara har blivit sparade","Sparat");
-            }
-            else if (result == MessageBoxResult.No)
-            {
+        //private void Spara(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara ändringarna?","Spara?",MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.Spara();
+        //        MessageBox.Show("Ändringara har blivit sparade","Sparat");
+        //    }
+        //    else if (result == MessageBoxResult.No)
+        //    {
 
-            }
+        //    }
             
         
-        }
+        //}
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //    this.Close();
+        //}
 
     }
 }

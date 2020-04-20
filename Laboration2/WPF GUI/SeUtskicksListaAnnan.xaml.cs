@@ -29,31 +29,34 @@ namespace WPF_GUI
             InitializeComponent();
             BusinessManager = businessManager;
             vm = new SeUtskicksListaAnnanViewModel(BusinessManager, L);
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
-        private void SlutaFölja(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Vill du sluta följa listan?", "Är du säker?", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.SlutaFölja();
-                StartAnnan start = new StartAnnan(BusinessManager);
-                this.Close();
-                start.ShowDialog();
-            }
-            else
-            {
+        //private void SlutaFölja(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Vill du sluta följa listan?", "Är du säker?", MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.SlutaFölja();
+        //        StartAnnan start = new StartAnnan(BusinessManager);
+        //        this.Close();
+        //        start.ShowDialog();
+        //    }
+        //    else
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-            StartAnnan start = new StartAnnan(BusinessManager);
-            this.Close();
-            start.ShowDialog();
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //    StartAnnan start = new StartAnnan(BusinessManager);
+        //    this.Close();
+        //    start.ShowDialog();
 
-        }
+        //}
     }
 }

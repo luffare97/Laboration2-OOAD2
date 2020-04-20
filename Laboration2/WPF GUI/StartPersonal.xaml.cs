@@ -35,72 +35,76 @@ namespace WPF_GUI
             dataGridAktiviteter.ItemsSource = vm.Aktiviteter;
             dataGridListor.ItemsSource = vm.Listor;
             DataContext = vm;
-        }
 
-        private void RedigeraProfil(object sender, RoutedEventArgs e)
-        {
-            RedigeraProfilPersonal RedigeraProfil = new RedigeraProfilPersonal(BusinessManager);
-
-            RedigeraProfil.ShowDialog();
-        }
-
-
-        private void LoggaUt(object sender, RoutedEventArgs e)
-        {
-            MainWindow loggIn = new MainWindow();
-            this.Close();
-            loggIn.ShowDialog();
-        }
-
-        private void SkapaLista(object sender, RoutedEventArgs e)
-        {
-            NyUtskicksLista NyLista = new NyUtskicksLista(BusinessManager);
-            this.Close();
-            NyLista.ShowDialog();
-        }
-
-        private void VäljLista(object sender, RoutedEventArgs e)
-        {
-
-            if (dataGridListor.SelectedItem == null)
-            {
-                MessageBox.Show("Du har inte valt en lista", "Error");
-            }
-            else
-            {
-                UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
-
-                SeUtskicksListaPersonal seUtskicksLista = new SeUtskicksListaPersonal(BusinessManager, Lista);
-                this.Close();
-                seUtskicksLista.ShowDialog();
-            }
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
 
         }
 
-        private void SkapaAktivitet(object sender, RoutedEventArgs e)
-        {
-            NyAktivitet nyAktivitet = new NyAktivitet(BusinessManager);
-            this.Close();
-            nyAktivitet.ShowDialog();
-        }
+        //private void RedigeraProfil(object sender, RoutedEventArgs e)
+        //{
+        //    RedigeraProfilPersonal RedigeraProfil = new RedigeraProfilPersonal(BusinessManager);
 
-        private void VäljAktivitet(object sender, RoutedEventArgs e)
-        {
+        //    RedigeraProfil.ShowDialog();
+        //}
 
-            if (dataGridAktiviteter.SelectedItem == null)
-            {
-                MessageBox.Show("Du har inte valt en aktivitet", "Error");
-            }
-            else
-            {
-                Aktivitet Aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
 
-                SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, Aktivitet);
-                this.Close();
-                seAktivitet.ShowDialog();
-            }
+        //private void LoggaUt(object sender, RoutedEventArgs e)
+        //{
+        //    MainWindow loggIn = new MainWindow();
+        //    this.Close();
+        //    loggIn.ShowDialog();
+        //}
 
-        }
+        //private void SkapaLista(object sender, RoutedEventArgs e)
+        //{
+        //    NyUtskicksLista NyLista = new NyUtskicksLista(BusinessManager);
+        //    this.Close();
+        //    NyLista.ShowDialog();
+        //}
+
+        //private void VäljLista(object sender, RoutedEventArgs e)
+        //{
+
+        //    if (dataGridListor.SelectedItem == null)
+        //    {
+        //        MessageBox.Show("Du har inte valt en lista", "Error");
+        //    }
+        //    else
+        //    {
+        //        UtskicksLista Lista = (UtskicksLista)dataGridListor.SelectedItem;
+
+        //        SeUtskicksListaPersonal seUtskicksLista = new SeUtskicksListaPersonal(BusinessManager, Lista);
+        //        this.Close();
+        //        seUtskicksLista.ShowDialog();
+        //    }
+
+        //}
+
+        //private void SkapaAktivitet(object sender, RoutedEventArgs e)
+        //{
+        //    NyAktivitet nyAktivitet = new NyAktivitet(BusinessManager);
+        //    this.Close();
+        //    nyAktivitet.ShowDialog();
+        //}
+
+        //private void VäljAktivitet(object sender, RoutedEventArgs e)
+        //{
+
+        //    if (dataGridAktiviteter.SelectedItem == null)
+        //    {
+        //        MessageBox.Show("Du har inte valt en aktivitet", "Error");
+        //    }
+        //    else
+        //    {
+        //        Aktivitet Aktivitet = (Aktivitet)dataGridAktiviteter.SelectedItem;
+
+        //        SeAktivitetPersonal seAktivitet = new SeAktivitetPersonal(BusinessManager, Aktivitet);
+        //        this.Close();
+        //        seAktivitet.ShowDialog();
+        //    }
+
+        //}
 
     }
 }

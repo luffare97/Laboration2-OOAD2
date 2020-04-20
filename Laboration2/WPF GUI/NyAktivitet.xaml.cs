@@ -30,30 +30,33 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new NyAktivitetViewModel(BusinessManager);
             DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
-        private void Spara(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Vill du spara aktiviteten såhär?","Spara?", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.Spara();
-                StartPersonal start = new StartPersonal(BusinessManager);
-                this.Close();
-                start.ShowDialog();
-            }
-            else
-            {
+        //private void Spara(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Vill du spara aktiviteten såhär?","Spara?", MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.Spara();
+        //        StartPersonal start = new StartPersonal(BusinessManager);
+        //        this.Close();
+        //        start.ShowDialog();
+        //    }
+        //    else
+        //    {
 
-            }
+        //    }
             
-        }
+        //}
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-            StartPersonal start = new StartPersonal(BusinessManager);
-            this.Close();
-            start.ShowDialog();
-        }
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //    StartPersonal start = new StartPersonal(BusinessManager);
+        //    this.Close();
+        //    start.ShowDialog();
+        //}
     }
 }

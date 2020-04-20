@@ -39,21 +39,21 @@
         <Label x:Name="InLoggadFNamn" Content="{Binding Personal.FNamn}" Grid.Column="1" Grid.Row="2" Margin="10"/>
         <Label x:Name="InLoggadENamn" Content="{Binding Personal.ENamn}" Grid.Column="1" Grid.Row="3" Margin="10"/>
         <Label x:Name="InLoggadPosition" Content="{Binding Personal.Possition}" Grid.Column="1" Grid.Row="4" Margin="10"/>
-        <Button x:Name="RedigeraProfilBtn" Click="RedigeraProfil" Grid.Column="1" Grid.Row="5" Height="28" Width="100" Margin="10">Redigera profil</Button>
-        <Button x:Name="LoggaUtBtn" Click="LoggaUt" Grid.Column="1" Grid.Row="6" Height="28" Width="100" Margin="10">Logga ut</Button>
+        <Button x:Name="RedigeraProfilBtn" Command="{Binding RedigeringCommand}" Grid.Column="1" Grid.Row="5" Height="28" Width="100" Margin="10">Redigera profil</Button>
+        <Button x:Name="LoggaUtBtn" Command="{Binding LoggUtCommand}" Grid.Column="1" Grid.Row="6" Height="28" Width="100" Margin="10">Logga ut</Button>
 
         <Label Grid.Column="2" Grid.Row="1" Margin="10">Alla Utskickslistor</Label>
         <DataGrid x:Name="dataGridListor" ItemsSource="{Binding Mode=OneWay, Path=Listor}" AutoGenerateColumns="False" 
                   Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10" 
                   HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="300">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
+                <!--<DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Titel" Visibility="Visible" Binding="{Binding Titel}"/>
-                <DataGridTextColumn Header="Information" Visibility="Visible" Binding="{Binding Information}" Width="*"/>
+                <DataGridTextColumn Header="Information" Visibility="Visible" Binding="{Binding Information}" Width="*"/>-->
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="SkapaNyLista" Click="SkapaLista" Grid.Column="2" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa Utskickslista</Button>
-        <Button x:Name="VäljListaBtn" Click="VäljLista" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
+        <Button x:Name="SkapaNyLista" Command="{Binding NyListaCMD}" Grid.Column="2" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa Utskickslista</Button>
+        <Button x:Name="VäljListaBtn" Command="{Binding VäljListaCMD}" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
 
         <Label Grid.Column="5" Grid.Row="1" Margin="10">Alla Aktiviteter</Label>
         <DataGrid x:Name="dataGridAktiviteter" ItemsSource="{Binding Mode=OneWay, Path=Aktiviteter}" 
@@ -63,8 +63,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="SkapaAktivitetBtn" Click="SkapaAktivitet" Grid.Column="5" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa aktivitet</Button>
-        <Button x:Name="VäljaAktivitetBtn" Click="VäljAktivitet" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
+        <Button x:Name="SkapaAktivitetBtn" Command="{Binding NyAktivitet}" Grid.Column="5" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa aktivitet</Button>
+        <Button x:Name="VäljaAktivitetBtn" Command="{Binding VäljAktivitet}" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
 
     </Grid>
 </Window>

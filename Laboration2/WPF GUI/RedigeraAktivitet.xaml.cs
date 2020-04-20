@@ -30,43 +30,46 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new RedigeraAktivitetViewModel(BusinessManager, A);
             DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
-        private void Spara(Object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara ändringarna?", "Är du säker?", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.Spara();
-                this.DialogResult = false;
-            }
-            else if (result == MessageBoxResult.No)
-            {
-                this.DialogResult = false;
-            }
+        //private void Spara(Object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara ändringarna?", "Är du säker?", MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.Spara();
+        //        this.DialogResult = false;
+        //    }
+        //    else if (result == MessageBoxResult.No)
+        //    {
+        //        this.DialogResult = false;
+        //    }
             
-        }
+        //}
 
-        private void Radera(Object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera den här aktiviteten?","Är du säker?", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.Radera();
-                this.DialogResult = true;
-            }
-            else if (result == MessageBoxResult.No)
-            {
-                this.DialogResult = false;
-            }
+        //private void Radera(Object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Är du säker på att du vill radera den här aktiviteten?","Är du säker?", MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.Radera();
+        //        this.DialogResult = true;
+        //    }
+        //    else if (result == MessageBoxResult.No)
+        //    {
+        //        this.DialogResult = false;
+        //    }
             
 
-        }
+        //}
 
-        private void Tillbaka(Object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = false;
-            this.Close();
-        }
+        //private void Tillbaka(Object sender, RoutedEventArgs e)
+        //{
+        //    this.DialogResult = false;
+        //    this.Close();
+        //}
     }
 }

@@ -42,30 +42,32 @@
         <Label x:Name="InLoggadJobb" Content="{Binding Alumn.Anställning}" Grid.Column="1" Grid.Row="5" Margin="10"/>
         <Label x:Name="InLoggadExamensÅr" Content="{Binding Alumn.ExamensÅr}" Grid.Column="1" Grid.Row="6" Margin="10"/>
         <Label x:Name="InLoggadOrt" Content="{Binding Alumn.Ort}" Grid.Column="1" Grid.Row="7" Margin="10"/>
-        <Button x:Name="RedigeraBtn" Click="RedigeraProfil" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Redigera profil</Button>
-        <Button x:Name="LoggaUtBtn" Click="LoggaUt" Grid.Column="1" Grid.Row="9" Height="28" Width="100" Margin="10">Logga ut</Button>
+        
+        <Button x:Name="RedigeraBtn" Command="{Binding RedigeringCommand}" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Redigera profil</Button>
+        <Button x:Name="LoggaUtBtn" Command="{Binding LoggUtCommand}" Grid.Column="1" Grid.Row="9" Height="28" Width="100" Margin="10">Logga ut</Button>
 
         <Label Grid.Column="2" Grid.Row="1" Margin="10">Mina Utskickslistor</Label>
-        <DataGrid x:Name="dataGridListor" ItemsSource="{Binding Mode=OneWay, Path=Listor}" 
+        <DataGrid x:Name="dataGridListor" ItemsSource="{Binding Listor}" SelectedItem="{Binding Lista, Mode=TwoWay}" 
                   Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" 
-                  Margin="10" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" Width="300">
+                  Margin="10" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" 
+                  Width="300">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Titel" Visibility="Visible" Binding="{Binding Titel}"/>
-                <DataGridTextColumn Header="Information" Visibility="Visible" Binding="{Binding Information}" Width="*"/>
+
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="VäljListaBtn" Click="VäljLista" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
+        <Button x:Name="VäljListaBtn" Command="{Binding VäljListaCMD}" Grid.Column="4" Grid.Row="9" 
+                Height="28" Width="100" Margin="10">Välj lista</Button>
 
         <Label Grid.Column="5" Grid.Row="1" Margin="10">Aktiviteter</Label>
-        <DataGrid x:Name="dataGridAktiviteter" ItemsSource="{Binding Mode=OneWay, Path=Aktiviteter}" 
+        <DataGrid x:Name="dataGridAktiviteter" ItemsSource="{Binding Mode=OneWay, Path=Aktiviteter}" SelectedItem="{Binding Aktivitet, Mode=TwoWay}" 
                   Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"
                    HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" Width="300">
             <DataGrid.Columns>
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="VäljAktivitetBtn" Click="VäljAktivitet" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
+        <Button x:Name="VäljAktivitetBtn" Command="{Binding VäljAktivitetCMD}" Grid.Column="7" Grid.Row="9" 
+                Height="28" Width="100" Margin="10">Välj aktivitet</Button>
 
     </Grid>
 </Window>

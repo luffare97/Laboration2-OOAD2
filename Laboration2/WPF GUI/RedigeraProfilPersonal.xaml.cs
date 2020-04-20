@@ -30,64 +30,67 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             vm = new RedigeraProfilPersonalViewModel(BusinessManager);
             DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
 
-        private void RedigeraInfo(object sender, RoutedEventArgs e)
-        {
+        //private void RedigeraInfo(object sender, RoutedEventArgs e)
+        //{
 
-            vm.SparaInfo();
-            MessageBox.Show("Informationen har nu uppdaterats", "Sparat");
-        }
+        //    vm.SparaInfo();
+        //    MessageBox.Show("Informationen har nu uppdaterats", "Sparat");
+        //}
 
-        private void RedigeraLösen(object sender, RoutedEventArgs e)
-        {
+        //private void RedigeraLösen(object sender, RoutedEventArgs e)
+        //{
 
-            if (BusinessManager.InloggadPersonal.Lösenord == GammaltLösen.Password)
-            {
-                if (NyttLösen.Password == UpprepaLösen.Password)
-                {
-                    string nytt = NyttLösen.Password;
-                    vm.SparaLösen(nytt);
-                    MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
-                    GammaltLösen.Clear();
-                    NyttLösen.Clear();
-                    UpprepaLösen.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Nya lösenord stämmer inte överrens", "Error");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Fel gammalt lösenord", "Error");
-            }
+        //    if (BusinessManager.InloggadPersonal.Lösenord == GammaltLösen)
+        //    {
+        //        if (NyttLösen == UpprepaLösen)
+        //        {
+        //            string nytt = NyttLösen;
+        //            vm.SparaLösen(nytt);
+        //            MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
+        //            GammaltLösen.Clear();
+        //            NyttLösen.Clear();
+        //            UpprepaLösen.Clear();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Nya lösenord stämmer inte överrens", "Error");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Fel gammalt lösenord", "Error");
+        //    }
 
-        }
+        //}
 
-        private void Radera(object sender, RoutedEventArgs e)
-        {
-            RaderaKonto radera = new RaderaKonto(BusinessManager);
-            radera.ShowDialog();
-            if (radera.DialogResult == true)
-            {
-                this.DialogResult = true;
-                this.Close();
-            }
-            else if (radera.DialogResult == false)
-            {
-                this.DialogResult = false;
-            }
-        }
+        //private void Radera(object sender, RoutedEventArgs e)
+        //{
+        //    RaderaKonto radera = new RaderaKonto(BusinessManager);
+        //    radera.ShowDialog();
+        //    if (radera.DialogResult == true)
+        //    {
+        //        this.DialogResult = true;
+        //        this.Close();
+        //    }
+        //    else if (radera.DialogResult == false)
+        //    {
+        //        this.DialogResult = false;
+        //    }
+        //}
 
-        private void Tillbaka(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = false;
-            vm.Tillbaka();
-            this.Close();
+        //private void Tillbaka(object sender, RoutedEventArgs e)
+        //{
+        //    this.DialogResult = false;
+        //    vm.Tillbaka();
+        //    this.Close();
             
-        }
+        //}
 
     }
 }

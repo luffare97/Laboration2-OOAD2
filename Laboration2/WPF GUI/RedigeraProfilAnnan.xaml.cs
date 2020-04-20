@@ -21,9 +21,7 @@ namespace WPF_GUI
     /// Interaction logic for RedigeraProfilAnnan.xaml
     /// </summary>
     public partial class RedigeraProfilAnnan : Window
-    {
-
-        
+    {       
         public BusinessManager BusinessManager { get; }
         public RedigeraProfilAnnanViewModel vm { get; set; }
         public RedigeraProfilAnnan(BusinessManager businessManager)
@@ -35,74 +33,76 @@ namespace WPF_GUI
 
             ProgramCB.ItemsSource = Enum.GetValues(typeof(Utbildning)).Cast<Utbildning>();
 
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
 
 
 
-        private void RedigeraInfo(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara de här ändringarna?","Spara",MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                vm.SparaInfo();
-                MessageBox.Show("Informationen har nu uppdaterats", "Sparat");
-            }
-            else if (result == MessageBoxResult.No)
-            {
+        //private void RedigeraInfo(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Är du säker på att du vill spara de här ändringarna?","Spara",MessageBoxButton.YesNo);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        vm.SparaInfo();
+        //        MessageBox.Show("Informationen har nu uppdaterats", "Sparat");
+        //    }
+        //    else if (result == MessageBoxResult.No)
+        //    {
 
-            }
+        //    }
             
 
-        }
+        //}
 
-        private void RedigeraLösen(object sender, RoutedEventArgs e)
-        {
+        //private void RedigeraLösen(object sender, RoutedEventArgs e)
+        //{
 
-            if (BusinessManager.InloggadAlumn.Lösenord == GammaltLösen.Text)
-            {
-                if (NyttLösen.Text == UpprepaLösen.Text)
-                {
-                    string nytt = NyttLösen.Text;
-                    vm.SparaLösen(nytt);
-                    MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
-                    GammaltLösen.Clear();
-                    NyttLösen.Clear();
-                    UpprepaLösen.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Nya lösenord stämmer inte överrens", "Error");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Fel gammalt lösenord", "Error");
-            }
+        //    if (BusinessManager.InloggadAlumn.Lösenord == GammaltLösen.Text)
+        //    {
+        //        if (NyttLösen.Text == UpprepaLösen.Text)
+        //        {
+        //            string nytt = NyttLösen.Text;
+        //            vm.SparaLösen(nytt);
+        //            MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
+        //            GammaltLösen.Clear();
+        //            NyttLösen.Clear();
+        //            UpprepaLösen.Clear();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Nya lösenord stämmer inte överrens", "Error");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Fel gammalt lösenord", "Error");
+        //    }
             
-        }
+        //}
 
-        private void Radera(object sender, RoutedEventArgs e)
-        {
-            RaderaKonto radera = new RaderaKonto(BusinessManager);
-            radera.ShowDialog();
-            if (radera.DialogResult == true)
-            {
-                this.DialogResult = true;
-                this.Close();
-            }
-            else if (radera.DialogResult == false)
-            {
-                this.DialogResult = false;
-            }
-        }
+        //private void Radera(object sender, RoutedEventArgs e)
+        //{
+        //    RaderaKonto radera = new RaderaKonto(BusinessManager);
+        //    radera.ShowDialog();
+        //    if (radera.DialogResult == true)
+        //    {
+        //        this.DialogResult = true;
+        //        this.Close();
+        //    }
+        //    else if (radera.DialogResult == false)
+        //    {
+        //        this.DialogResult = false;
+        //    }
+        //}
 
 
-        private void TillbakaBtn(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = false;
-            vm.Tillbaka();
-            this.Close();
-        }
+        //private void TillbakaBtn(object sender, RoutedEventArgs e)
+        //{
+        //    this.DialogResult = false;
+        //    vm.Tillbaka();
+        //    this.Close();
+        //}
 
     }
 }
