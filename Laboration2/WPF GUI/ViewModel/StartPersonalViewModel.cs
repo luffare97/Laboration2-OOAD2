@@ -140,14 +140,14 @@ namespace WPF_GUI.ViewModel
 
             foreach (UtskicksLista l in L)
             {
-                listor.Add(l);
+                Listor.Add(l);
             }
 
             ICollection<Aktivitet> A = BusinessManager.GetAllAktiviteter();
 
             foreach (Aktivitet a in A)
             {
-                aktiviteter.Add(a);
+                Aktiviteter.Add(a);
             }
         }
 

@@ -78,7 +78,7 @@ namespace WPF_GUI.ViewModel
 
             foreach (Alumn a in A)
             {
-                alumner.Add(a);
+                Alumner.Add(a);
             }
         }
 
@@ -106,6 +106,17 @@ namespace WPF_GUI.ViewModel
             }
         }
 
+        private ObservableCollection<Alumn> selectListBox = new ObservableCollection<Alumn>();
+        public ObservableCollection<Alumn> SelectListBox
+        {
+            get { return selectListBox; }
+            set
+            {
+                selectListBox = value;
+                Changed();
+            }
+        }
+
         private void Spara(object obj)
         {
             MessageBoxResult result = MessageBox.Show("Vill du spara Utskickslistan såhär?", "Spara?", MessageBoxButton.YesNo);
@@ -113,7 +124,7 @@ namespace WPF_GUI.ViewModel
             {
                 ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
 
-                foreach (Alumn a in MottagareBox.SelectedItems)
+                foreach (Alumn a in SelectListBox)
                 {
                     Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);
                     A.Add(alumn);

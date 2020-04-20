@@ -60,8 +60,8 @@
         <Label Grid.Column="5" Grid.Row="1" Margin="10">Deltagare: </Label>
         <ListBox x:Name="Deltagare" ItemsSource="{Binding Mode=OneWay,Path=Alumner}" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="9" Height="600" Margin="10"/>
 
-        <Button x:Name="TillbakaBtn" Command="{Binding TillbakaCmd}" Click="Tillbaka" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Tillbaka</Button>
-        <Button x:Name="RedigeraBtn" Command="{Binding RedigeraCmd}" Click="Redigera" Grid.Column="4" Grid.Row="8" Height="28" Width="100" HorizontalAlignment="Right" Margin="10">Redigera</Button>
+        <Button x:Name="TillbakaBtn" Command="{Binding TillbakaCmd}" Grid.Column="1" Grid.Row="8" Height="28" Width="100" Margin="10">Tillbaka</Button>
+        <Button x:Name="RedigeraBtn" Command="{Binding RedigeraCmd}" Grid.Column="4" Grid.Row="8" Height="28" Width="100" HorizontalAlignment="Right" Margin="10">Redigera</Button>
 
 
     </Grid>

@@ -63,8 +63,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="SkapaAktivitetBtn" Command="{Binding NyAktivitet}" Grid.Column="5" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa aktivitet</Button>
-        <Button x:Name="VäljaAktivitetBtn" Command="{Binding VäljAktivitet}" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
+        <Button x:Name="SkapaAktivitetBtn" Command="{Binding NyAktivitetCMD}" Grid.Column="5" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa aktivitet</Button>
+        <Button x:Name="VäljaAktivitetBtn" Command="{Binding VäljAktivitetCMD}" Grid.Column="7" Grid.Row="9" Height="28" Width="100" Margin="10">Välj aktivitet</Button>
 
     </Grid>
 </Window>
