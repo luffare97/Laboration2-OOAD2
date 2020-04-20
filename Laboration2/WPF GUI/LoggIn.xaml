@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
+        xmlns:local1="clr-namespace:WPF_GUI.ViewModel"
         mc:Ignorable="d"
         Title="Logga in" MinHeight="250" MinWidth="400" Width="400" Height="250">
+    <Window.DataContext>
+        <local1:LoggInViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -27,16 +32,18 @@
 
 
         <Label Grid.Column="1" Grid.Row="1" Margin="10">Användar ID: </Label>
-        <TextBox x:Name="AnvändarIDTxt" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="10"></TextBox>
+        <TextBox x:Name="AnvändarIDTxt" Text="{Binding Path=AnvändarId, Mode=TwoWay}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="10"></TextBox>
 
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Lösenord: </Label>
-        <PasswordBox x:Name="LösenordTxt" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"></PasswordBox>
+        <TextBox x:Name="LösenordTxt" Text="{Binding Path=Lösen, Mode=TwoWay}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"></TextBox>
 
-        <Button x:Name="LoggInBtn" Command="LoggaIn" Grid.Column="3" Grid.Row="3" Margin="10" Width="70" Height="28" HorizontalAlignment="Right">Logga in</Button>
+        <Button x:Name="LoggInBtn" Command="{Binding LoggInCommand}" 
+                CommandParameter="loggIn" Grid.Column="3" Grid.Row="3" Margin="10" Width="70" Height="28" 
+                HorizontalAlignment="Right">Logga in</Button>
         
         
         <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="10">Eller registrera dig här: </Label>
-        <Button x:Name="RegistreraBtn" Command="{Binding Registrera}" Grid.Column="3" Grid.Row="4" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Registrering</Button>
+        <Button x:Name="RegistreraBtn" Command="{Binding RegistreringCommand}" Grid.Column="3" Grid.Row="4" Margin="10" Width="100" Height="28" HorizontalAlignment="Right">Registrering</Button>
         
 
     </Grid>

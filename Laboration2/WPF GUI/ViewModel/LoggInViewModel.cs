@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using BusinessLayer;
 using BusinessEntites;
 using System.Windows;
+using System.Windows.Input;
 
 namespace WPF_GUI.ViewModel
 {
@@ -19,8 +20,79 @@ namespace WPF_GUI.ViewModel
         {
             //Update();
             businessManager = new BusinessManager();
+            LoggInCommand = new RelayCommand(LoggaIn, param => this.canExecute);
+            RegistreringCommand = new RelayCommand(Registrering, param => this.canExecute);
+            
+        }
+        public Action TillbakaAction { get; set; }
+
+        
+        private bool canExecute = true;
+        public bool CanExecute
+        {
+            get
+            {
+                return this.canExecute;
+            }
+            set
+            {
+                if (this.canExecute == value)
+                {
+                    return;
+                }
+                this.canExecute = value;
+            }
         }
 
+        private ICommand loggInCommand;
+        public ICommand LoggInCommand
+        {
+            get
+            {
+                return loggInCommand;
+            }
+            set
+            {
+                loggInCommand = value;
+            }
+        }
+
+        private ICommand registreringCommand;
+        public ICommand RegistreringCommand
+        {
+            get
+            {
+                return this.registreringCommand;
+            }
+            set
+            {
+                registreringCommand = value;
+            }
+        }
+
+
+
+        private string användarId;
+        public string AnvändarId
+        {
+            get { return användarId; }
+            set
+            {
+                användarId = value;
+                Changed();
+            }
+        }
+
+        private string lösen;
+        public string Lösen
+        {
+            get { return lösen; }
+            set
+            {
+                lösen = value;
+                Changed();
+            }
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -29,10 +101,9 @@ namespace WPF_GUI.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public string användarId { get; set; }
-        public string lösen { get; set; }
+        
 
-        public Användare LoggaIn(string ID, string Lösenord)
+        public Användare loggaIn(string ID, string Lösenord)
         {
 
             Användare A = businessManager.LoggaIn(ID, Lösenord);
@@ -58,21 +129,22 @@ namespace WPF_GUI.ViewModel
         }
 
 
-        public void LoggaIn()
+        public void LoggaIn(object obj)
         {
-            Användare A = LoggaIn(användarId, lösen);
+            
+            Användare A = loggaIn(användarId, Lösen);
 
             if (A == null)
             {
                 MessageBox.Show("AnvändarIDt och lösenorder matchar inte", "Error");
             }
-            else if (A.Lösenord == lösen)
+            else if (A.Lösenord == Lösen)
             {
                 if ((A as Personal) != null)
                 {
                     businessManager.InloggadPersonal = A as Personal;
                     StartPersonal startPersonal = new StartPersonal(businessManager);
-                    //Close();
+                    TillbakaAction();
                     startPersonal.ShowDialog();
 
                 }
@@ -80,14 +152,16 @@ namespace WPF_GUI.ViewModel
                 {
                     businessManager.InloggadAlumn = A as Alumn;
                     StartAnnan startAnnan = new StartAnnan(businessManager);
-                    //this.Close();
+                    TillbakaAction();
                     startAnnan.ShowDialog();
 
                 }
             }
         }
 
-        private void Registrering()
+
+
+        private void Registrering(object obj)
         {
             Registrering registrering = new Registrering(businessManager);
             registrering.ShowDialog();

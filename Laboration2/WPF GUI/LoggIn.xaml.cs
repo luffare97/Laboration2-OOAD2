@@ -29,9 +29,19 @@ namespace WPF_GUI
         public MainWindow()
         {
             InitializeComponent();
+            
+            this.DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
+
             //BusinessManager = new BusinessManager();
-            DataContext = vm;
         }
+
+        //private void BtnClick(object sender, RoutedEventArgs e)
+        //{
+
+        //}
 
         //private void LoggaIn(object sender, RoutedEventArgs e)
         //{

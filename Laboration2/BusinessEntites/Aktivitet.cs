@@ -46,8 +46,8 @@ namespace BusinessEntites
         }
 
 
-        private string antalPlatser;
-        public string AntalPlatser
+        private int antalPlatser;
+        public int AntalPlatser
         {
             get { return antalPlatser; }
             set

@@ -93,6 +93,7 @@
     <Compile Include="Registrering.xaml.cs">
       <DependentUpon>Registrering.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="SeAktivitetAnnan.xaml.cs">
       <DependentUpon>SeAktivitetAnnan.xaml</DependentUpon>
     </Compile>

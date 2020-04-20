@@ -8,7 +8,7 @@ namespace BusinessEntites
     public interface IAktivitet
     {
         string AktivitetNamn { get; set; }
-        string AntalPlatser { get; set; }
+        int AntalPlatser { get; set; }
         string Beskrivning { get; set; }
         DateTime Datum { get; set; }
         ObservableCollection<Alumn> Deltagare { get; set; }

@@ -10,7 +10,7 @@ namespace BusinessEntites
         string ENamn { get; set; }
         string FNamn { get; set; }
         string Lösenord { get; set; }
-        string TeleNr { get; set; }
+        int TeleNr { get; set; }
 
         event PropertyChangedEventHandler PropertyChanged;
 

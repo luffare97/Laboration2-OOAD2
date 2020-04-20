@@ -24,7 +24,7 @@ namespace BusinessEntites
         private string lösenord;
         public string Lösenord
         {
-            get { return Lösenord; }
+            get { return lösenord; }
             set
             {
                 lösenord = value;
@@ -65,8 +65,8 @@ namespace BusinessEntites
             }
         }
 
-        private string teleNr;
-        public string TeleNr
+        private int teleNr;
+        public int TeleNr
         {
             get { return teleNr; }
             set
