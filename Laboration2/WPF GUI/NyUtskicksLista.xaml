@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_GUI"
         mc:Ignorable="d"
-        Title="NyUtskicksLista" Height="460" Width="750">
+        Title="NyUtskicksLista" Height="460" Width="820">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -36,12 +36,18 @@
                  Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" Height="300"/>
 
         <Label Grid.Column="4" Grid.Row="1" Margin="10">Mottagare: </Label>
-        <ListBox x:Name="MottagareBox" ItemsSource="{Binding Alumner, NotifyOnSourceUpdated=True}" 
-                 SelectedItem="{Binding Path=SelectListBox, UpdateSourceTrigger=PropertyChanged}" SelectionMode="Multiple" Grid.Column="4" 
-                 Grid.Row="2" Grid.ColumnSpan="2" Width="250" Height="300" Margin="10"/>
+        <ListBox x:Name="AlumnBox" ItemsSource="{Binding Alumner, NotifyOnSourceUpdated=True}" 
+                 SelectedItem="{Binding ValdAlumn, Mode=TwoWay}" SelectionMode="Single" Grid.Column="4" 
+                 Grid.Row="2" Grid.ColumnSpan="2" Width="150" Height="300" Margin="10"/>
+
+        <Label Grid.Column="6" Grid.Row="1" Margin="10">Tillagda mottagare:</Label>
+        <ListBox x:Name="MottagareBox" ItemsSource="{Binding SelectListBox, NotifyOnSourceUpdated=True}" 
+                 Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2" Width="150" Height="300" Margin="10"
+                 HorizontalAlignment="Left"/>
 
         <Button x:Name="TillbakaBtn" Command="{Binding TillbakaCmd}" Grid.Column="1" Grid.Row="4" Width="80" Height="28" Margin="10">Tillbaka</Button>
-        <Button x:Name="SparaBtn" Command="{Binding SparaCmd}" Grid.Column="5" Grid.Row="4" Width="80" Height="28" Margin="10" HorizontalAlignment="Right">Spara</Button>
+        <Button x:Name="LäggTillBtn" Command="{Binding LäggTillCmd}" Grid.Column="4" Grid.Row="4" Width="80" Height="28" Margin="10">Lägg till</Button>
+        <Button x:Name="SparaBtn" Command="{Binding SparaCmd}" Grid.Column="6" Grid.Row="4" Width="80" Height="28" Margin="10" HorizontalAlignment="Right">Spara</Button>
             
         
     </Grid>

@@ -23,6 +23,7 @@ namespace WPF_GUI.ViewModel
             BusinessManager = businessManager;
             FyllLB();
             TillbakaCmd = new RelayCommand(Tillbaka, param => this.canExecute);
+            LäggTillCmd = new RelayCommand(LäggTill, param => this.canExecute);
             SparaCmd = new RelayCommand(Spara, param => this.canExecute);
         }
 
@@ -71,6 +72,19 @@ namespace WPF_GUI.ViewModel
             }
         }
 
+        private ICommand läggTillCmd;
+        public ICommand LäggTillCmd
+        {
+            get
+            {
+                return this.läggTillCmd;
+            }
+            set
+            {
+                läggTillCmd = value;
+            }
+        }
+
 
         public void FyllLB()
         {
@@ -90,6 +104,17 @@ namespace WPF_GUI.ViewModel
             set
             {
                 alumner = value;
+                Changed();
+            }
+        }
+
+        private Alumn valdAlumn;
+        public Alumn ValdAlumn
+        {
+            get { return valdAlumn; }
+            set
+            {
+                valdAlumn = value;
                 Changed();
             }
         }
@@ -117,6 +142,13 @@ namespace WPF_GUI.ViewModel
             }
         }
 
+        private void LäggTill(object obj)
+        {
+            
+            SelectListBox.Add(BusinessManager.GetAlumn(ValdAlumn.AnvändarId));
+            Alumner.Remove(ValdAlumn);
+        }
+
         private void Spara(object obj)
         {
             MessageBoxResult result = MessageBox.Show("Vill du spara Utskickslistan såhär?", "Spara?", MessageBoxButton.YesNo);
@@ -124,13 +156,13 @@ namespace WPF_GUI.ViewModel
             {
                 ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
 
-                foreach (Alumn a in SelectListBox)
-                {
-                    Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);
-                    A.Add(alumn);
-                }
+                //foreach (Alumn a in SelectListBox)
+                //{
+                //    Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);
+                //    A.Add(alumn);
+                //}
 
-                Alumner = A;
+                //Alumner = A;
                 spara();
 
                 StartPersonal start = new StartPersonal(BusinessManager);
@@ -157,7 +189,8 @@ namespace WPF_GUI.ViewModel
             Lista.Mottagare = SelectListBox;
             foreach (Alumn a in Lista.Mottagare)
             {
-                a.Listor.Add(Lista);
+                BusinessManager.GetAlumn(a.AnvändarId).Listor.Add(Lista);
+                
             }
 
             BusinessManager.CreateList(Lista);

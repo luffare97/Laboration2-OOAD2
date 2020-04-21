@@ -156,5 +156,9 @@ namespace GUI
             
         }
 
+        private void dataGridListor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

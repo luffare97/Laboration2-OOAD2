@@ -158,6 +158,7 @@
             this.dataGridListor.Name = "dataGridListor";
             this.dataGridListor.Size = new System.Drawing.Size(395, 429);
             this.dataGridListor.TabIndex = 0;
+            this.dataGridListor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridListor_CellContentClick);
             // 
             // Aktiviteter
             // 

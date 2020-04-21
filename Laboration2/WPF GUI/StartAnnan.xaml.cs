@@ -31,8 +31,8 @@ namespace WPF_GUI
             InitializeComponent();
             BusinessManager = businessManager;
             StartAnnanViewModel vm = new StartAnnanViewModel(BusinessManager);
-            dataGridAktiviteter.ItemsSource = vm.Aktiviteter;
-            dataGridListor.ItemsSource = vm.Listor;
+            //dataGridAktiviteter.ItemsSource = vm.Aktiviteter;
+            //dataGridListor.ItemsSource = vm.Listor;
             this.DataContext = vm;
 
             if (vm.TillbakaAction == null)

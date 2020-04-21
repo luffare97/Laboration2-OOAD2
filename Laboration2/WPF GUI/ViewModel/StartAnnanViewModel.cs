@@ -30,9 +30,9 @@ namespace WPF_GUI.ViewModel
 
 
 
-            Alumn = BusinessManager.InloggadAlumn;
+            Alumn = BusinessManager.GetAlumn(businessManager.InloggadAlumn.AnvändarId);
 
-            Listor = BusinessManager.InloggadAlumn.Listor;
+            //Listor = Alumn.Listor;
 
             //Aktiviteter = BusinessManager.GetAllAktiviteter();
             
@@ -117,7 +117,7 @@ namespace WPF_GUI.ViewModel
             foreach (UtskicksLista u in Alumn.Listor)
             {
                 //UtskicksLista l = BusinessManager.GetUtskicksLista(u.Id);
-                Listor.Add(u);
+                Listor.Add(BusinessManager.GetUtskicksLista(u.Id));
 
             }
             foreach (Aktivitet a in BusinessManager.GetAllAktiviteter())
