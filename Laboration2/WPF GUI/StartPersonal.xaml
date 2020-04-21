@@ -43,20 +43,20 @@
         <Button x:Name="LoggaUtBtn" Command="{Binding LoggUtCommand}" Grid.Column="1" Grid.Row="6" Height="28" Width="100" Margin="10">Logga ut</Button>
 
         <Label Grid.Column="2" Grid.Row="1" Margin="10">Alla Utskickslistor</Label>
-        <DataGrid x:Name="dataGridListor" ItemsSource="{Binding Mode=OneWay, Path=Listor}" AutoGenerateColumns="False" 
+        <DataGrid x:Name="dataGridListor" ItemsSource="{Binding Mode=OneWay, Path=Listor}" SelectedItem="{Binding Lista, Mode=TwoWay}" AutoGenerateColumns="False" 
                   Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10" 
                   HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="300">
             <DataGrid.Columns>
-                <!--<DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="ID" Visibility="Visible" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Titel" Visibility="Visible" Binding="{Binding Titel}"/>
-                <DataGridTextColumn Header="Information" Visibility="Visible" Binding="{Binding Information}" Width="*"/>-->
+                <DataGridTextColumn Header="Information" Visibility="Visible" Binding="{Binding Information}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="SkapaNyLista" Command="{Binding NyListaCMD}" Grid.Column="2" Grid.Row="9" Height="28" Width="100" Margin="10">Skapa Utskickslista</Button>
         <Button x:Name="VäljListaBtn" Command="{Binding VäljListaCMD}" Grid.Column="4" Grid.Row="9" Height="28" Width="100" Margin="10">Välj lista</Button>
 
         <Label Grid.Column="5" Grid.Row="1" Margin="10">Alla Aktiviteter</Label>
-        <DataGrid x:Name="dataGridAktiviteter" ItemsSource="{Binding Mode=OneWay, Path=Aktiviteter}" 
+        <DataGrid x:Name="dataGridAktiviteter" ItemsSource="{Binding Mode=OneWay, Path=Aktiviteter}" SelectedItem="{Binding Aktivitet, Mode=TwoWay}" 
                   Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="10"
                   HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="300">
             <DataGrid.Columns>

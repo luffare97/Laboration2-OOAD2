@@ -132,6 +132,7 @@ namespace WPF_GUI.ViewModel
 
                 Alumner = A;
                 spara();
+
                 StartPersonal start = new StartPersonal(BusinessManager);
                 TillbakaAction();
                 start.ShowDialog();
@@ -153,7 +154,12 @@ namespace WPF_GUI.ViewModel
 
         public void spara()
         {
-            
+            Lista.Mottagare = SelectListBox;
+            foreach (Alumn a in Lista.Mottagare)
+            {
+                a.Listor.Add(Lista);
+            }
+
             BusinessManager.CreateList(Lista);
         }
 

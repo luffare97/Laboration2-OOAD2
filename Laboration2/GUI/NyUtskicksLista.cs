@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
 using BusinessEntites;
+using System.Collections.ObjectModel;
 
 namespace GUI
 {
@@ -42,7 +43,7 @@ namespace GUI
 
             if (Svar == DialogResult.Yes)
             {
-                List<Alumn> A = new List<Alumn>();
+                ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
                 foreach (Alumn a in MottagareLB.SelectedItems)
                 {
                     Alumn alumn = BusinessManager.GetAlumn(a.AnvändarId);

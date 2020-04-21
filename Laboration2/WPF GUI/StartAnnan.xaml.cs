@@ -32,7 +32,7 @@ namespace WPF_GUI
             BusinessManager = businessManager;
             StartAnnanViewModel vm = new StartAnnanViewModel(BusinessManager);
             dataGridAktiviteter.ItemsSource = vm.Aktiviteter;
-            //dataGridListor.ItemsSource = vm.Listor;
+            dataGridListor.ItemsSource = vm.Listor;
             this.DataContext = vm;
 
             if (vm.TillbakaAction == null)

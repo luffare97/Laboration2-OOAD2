@@ -32,8 +32,9 @@ namespace WPF_GUI.ViewModel
 
             Alumn = BusinessManager.InloggadAlumn;
 
-            //Listor = Alumn.Listor;
-            //Aktiviteter = businessManager.GetAllAktiviteter();
+            Listor = BusinessManager.InloggadAlumn.Listor;
+
+            //Aktiviteter = BusinessManager.GetAllAktiviteter();
             
             UpdateGrids();
             
@@ -117,14 +118,13 @@ namespace WPF_GUI.ViewModel
             {
                 //UtskicksLista l = BusinessManager.GetUtskicksLista(u.Id);
                 Listor.Add(u);
-            
+
             }
             foreach (Aktivitet a in BusinessManager.GetAllAktiviteter())
             {
                 Aktiviteter.Add(a);
 
             }
-
         }
 
         private Alumn alumn;
