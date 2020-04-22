@@ -17,7 +17,7 @@ namespace WPF_GUI.ViewModel
         public SeUtskicksListaPersonalViewModel(BusinessManager businessManager, UtskicksLista utskicksLista)
         {
             BusinessManager = businessManager;
-            lista = utskicksLista;
+            lista = BusinessManager.GetUtskicksLista(utskicksLista.Id);
 
             TillbakaCmd = new RelayCommand(Tillbaka, param => this.canExecute);
             RedigeraCmd = new RelayCommand(Redigera, param => this.canExecute);

@@ -131,21 +131,21 @@ namespace WPF_GUI.ViewModel
             }
         }
 
-        private ObservableCollection<Alumn> selectListBox = new ObservableCollection<Alumn>();
-        public ObservableCollection<Alumn> SelectListBox
-        {
-            get { return selectListBox; }
-            set
-            {
-                selectListBox = value;
-                Changed();
-            }
-        }
+        //private ObservableCollection<Alumn> selectListBox = new ObservableCollection<Alumn>();
+        //public ObservableCollection<Alumn> SelectListBox
+        //{
+        //    get { return selectListBox; }
+        //    set
+        //    {
+        //        selectListBox = value;
+        //        Changed();
+        //    }
+        //}
 
         private void LäggTill(object obj)
         {
             
-            SelectListBox.Add(BusinessManager.GetAlumn(ValdAlumn.AnvändarId));
+            Lista.Mottagare.Add(BusinessManager.GetAlumn(ValdAlumn.AnvändarId));
             Alumner.Remove(ValdAlumn);
         }
 
@@ -186,12 +186,12 @@ namespace WPF_GUI.ViewModel
 
         public void spara()
         {
-            Lista.Mottagare = SelectListBox;
-            foreach (Alumn a in Lista.Mottagare)
-            {
-                BusinessManager.GetAlumn(a.AnvändarId).Listor.Add(Lista);
+            //Lista.Mottagare = SelectListBox;
+            //foreach (Alumn a in Lista.Mottagare)
+            //{
+            //    BusinessManager.GetAlumn(a.AnvändarId).Listor.Add(Lista);
                 
-            }
+            //}
 
             BusinessManager.CreateList(Lista);
         }

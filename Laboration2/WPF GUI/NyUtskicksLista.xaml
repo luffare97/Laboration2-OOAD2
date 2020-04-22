@@ -41,7 +41,7 @@
                  Grid.Row="2" Grid.ColumnSpan="2" Width="150" Height="300" Margin="10"/>
 
         <Label Grid.Column="6" Grid.Row="1" Margin="10">Tillagda mottagare:</Label>
-        <ListBox x:Name="MottagareBox" ItemsSource="{Binding SelectListBox, NotifyOnSourceUpdated=True}" 
+        <ListBox x:Name="MottagareBox" ItemsSource="{Binding Lista.Mottagare, NotifyOnSourceUpdated=True}" 
                  Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2" Width="150" Height="300" Margin="10"
                  HorizontalAlignment="Left"/>
 
