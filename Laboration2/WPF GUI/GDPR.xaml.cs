@@ -27,9 +27,17 @@ namespace WPF_GUI
         public GDPR(BusinessManager businessManager)
         {
             InitializeComponent();
-            vm = new GDPRViewModel();
+            
             BusinessManager = businessManager;
+            vm = new GDPRViewModel(BusinessManager);
+            DataContext = vm;
+
+            if (vm.TillbakaAction == null)
+                vm.TillbakaAction = new Action(this.Close);
         }
+
+
+
 
         //private void Godkänner(object sender, RoutedEventArgs e)
         //{

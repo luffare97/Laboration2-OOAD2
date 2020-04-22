@@ -89,6 +89,17 @@ namespace WPF_GUI.ViewModel
             TillbakaAction();
         }
 
+        private bool godkännd;
+        public bool Godkännd
+        {
+            get { return godkännd; }
+            set
+            {
+                godkännd = value;
+                Changed();
+            }
+        }
+
         private void Spara(object obj)
         {
 
@@ -139,15 +150,15 @@ namespace WPF_GUI.ViewModel
                                         GDPR gdpr = new GDPR(BusinessManager);
                                         gdpr.ShowDialog();
 
-                                        if (gdpr.DialogResult == true)
+                                        if (BusinessManager.OK == true)
                                         {
                                             
                                             Spara();
                                             MessageBox.Show($"Användaren är sparad \n Ditt användar ID är: {användarid}", "Sparad");
 
-                                            //Close();
+                                            TillbakaAction();
                                         }
-                                        else if (gdpr.DialogResult == false)
+                                        else if (BusinessManager.OK == false)
                                         {
                                             MessageBox.Show("Du måste godkänna vilkåren för att få lov att skapa ett konto", "Error");
                                         }

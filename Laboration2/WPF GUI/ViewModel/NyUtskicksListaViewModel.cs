@@ -154,7 +154,7 @@ namespace WPF_GUI.ViewModel
             MessageBoxResult result = MessageBox.Show("Vill du spara Utskickslistan såhär?", "Spara?", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
+                //ObservableCollection<Alumn> A = new ObservableCollection<Alumn>();
 
                 //foreach (Alumn a in SelectListBox)
                 //{

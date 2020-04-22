@@ -114,12 +114,24 @@ namespace WPF_GUI.ViewModel
 
         public void UpdateGrids()
         {
-            foreach (UtskicksLista u in Alumn.Listor)
-            {
-                //UtskicksLista l = BusinessManager.GetUtskicksLista(u.Id);
-                Listor.Add(BusinessManager.GetUtskicksLista(u.Id));
+            //foreach (UtskicksLista u in Alumn.Listor)
+            //{
+            //    //UtskicksLista l = BusinessManager.GetUtskicksLista(u.Id);
+            //    Listor.Add(BusinessManager.GetUtskicksLista(u.Id));
 
+            //}
+
+            foreach (UtskicksLista u in BusinessManager.GetAllListor())
+            {
+                foreach (Alumn a in u.Mottagare)
+                {
+                    if (a.AnvändarId == Alumn.AnvändarId)
+                    {
+                        Listor.Add(u);
+                    }
+                }
             }
+
             foreach (Aktivitet a in BusinessManager.GetAllAktiviteter())
             {
                 Aktiviteter.Add(a);
@@ -194,13 +206,13 @@ namespace WPF_GUI.ViewModel
             RedigeraProfilAnnan RedigeraProfil = new RedigeraProfilAnnan(BusinessManager);
             RedigeraProfil.ShowDialog();
 
-            if (RedigeraProfil.DialogResult == true)
+            if (BusinessManager.OK == true)
             {
                 MainWindow loggIn = new MainWindow();
                 TillbakaAction();
                 loggIn.ShowDialog();
             }
-            else if (RedigeraProfil.DialogResult == false)
+            else if (BusinessManager.OK == false)
             {
 
             }

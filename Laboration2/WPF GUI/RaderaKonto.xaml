@@ -28,11 +28,11 @@
         <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">Om du vill radera ditt konto skriv in ditt lösenord och tryck radera</Label>
 
         <Label Grid.Column="1" Grid.Row="2" Margin="10">Lösenord: </Label>
-        <TextBox x:Name="Lösen1" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"></TextBox>
+        <TextBox x:Name="Lösen1" Text="{Binding Lösen1}" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"></TextBox>
 
 
         <Label Grid.Column="1" Grid.Row="3" Margin="10">Upprepa lösenord: </Label>
-        <TextBox x:Name="Lösen2" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="10"></TextBox>
+        <TextBox x:Name="Lösen2" Text="{Binding Lösen2}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="10"></TextBox>
 
         <Button Command="{Binding TillbakaCmd}" Grid.Column="1" Grid.Row="4" Height="28" Width="100" Margin="10" HorizontalAlignment="Left">Tillbaka</Button>
         <Button Command="{Binding RaderaCmd}" Grid.Column="3" Grid.Row="4" Height="28" Width="100" Margin="10" HorizontalAlignment="Right">Radera konto</Button>

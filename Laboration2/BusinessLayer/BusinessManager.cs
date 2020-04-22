@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
 using BusinessEntites;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace BusinessLayer
 {
@@ -22,6 +24,22 @@ namespace BusinessLayer
         public Personal InloggadPersonal { get; set; }
         public Alumn InloggadAlumn { get; set; }
 
+        private bool ok;
+        public bool OK
+        {
+            get { return ok; }
+            set
+            {
+                ok = value;
+                Changed();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void Changed([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
 
         //calling repos

@@ -50,6 +50,11 @@ namespace BusinessEntites
             Mottagare = new ObservableCollection<Alumn>();
         }
 
+        public UtskicksLista(ObservableCollection<Alumn> mottagare)
+        {
+            Mottagare = mottagare;
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void Changed([CallerMemberName] String propertyName = "")

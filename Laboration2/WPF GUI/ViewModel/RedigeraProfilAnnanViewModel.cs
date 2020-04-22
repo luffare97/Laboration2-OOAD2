@@ -159,9 +159,7 @@ namespace WPF_GUI.ViewModel
                     string nytt = NyttLösen;
                     SparaLösen(nytt);
                     MessageBox.Show("Ditt nya löseord har nu sparats", "Sparat");
-                    //GammaltLösen.Clear();
-                    //NyttLösen.Clear();
-                    //UpprepaLösen.Clear();
+                    
                 }
                 else
                 {
@@ -179,21 +177,20 @@ namespace WPF_GUI.ViewModel
         {
             RaderaKonto radera = new RaderaKonto(BusinessManager);
             radera.ShowDialog();
-            if (radera.DialogResult == true)
-            {
-                //this.DialogResult = true;
+            if (BusinessManager.OK == true)
+            {                
                 TillbakaAction();
             }
-            else if (radera.DialogResult == false)
+            else if (BusinessManager.OK == false)
             {
-                //this.DialogResult = false;
+                
             }
         }
 
 
         private void Tillbaka(object obj)
         {
-            //this.DialogResult = false;
+            BusinessManager.OK = false;
             BusinessManager.InloggadAlumn = gammal;
             TillbakaAction();
             

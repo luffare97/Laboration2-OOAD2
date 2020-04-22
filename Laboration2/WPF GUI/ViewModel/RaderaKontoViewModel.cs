@@ -104,7 +104,7 @@ namespace WPF_GUI.ViewModel
                     }
                     else if (result == MessageBoxResult.No)
                     {
-                        //this.DialogResult = false;
+                        BusinessManager.OK = false;
                     }
 
                 }
@@ -122,12 +122,13 @@ namespace WPF_GUI.ViewModel
 
         private void Tillbaka(object obj)
         {
-            //this.DialogResult = false;
+            BusinessManager.OK = false;
             TillbakaAction();
         }
 
         public void radera()
         {
+            BusinessManager.OK = true;
             BusinessManager.DeleteAlumn(BusinessManager.InloggadAlumn.AnvändarId);
         }
 

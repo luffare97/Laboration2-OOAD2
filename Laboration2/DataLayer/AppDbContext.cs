@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BusinessEntites;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Collections.ObjectModel;
 //using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer
@@ -178,7 +179,7 @@ namespace DataLayer
                 Beskrivning = "Här ska ni få ett 24timmars seminarium där ni kommer lära er en massa om stolar och andra sittvänliga saker!"
             });
 
-            List<Alumn> A = new List<Alumn>
+            ObservableCollection<Alumn> A = new ObservableCollection<Alumn>
             {
                 Olof,
                 Nisse
@@ -188,17 +189,17 @@ namespace DataLayer
 
             string C = "officiell tierlist";
 
-            UtskicksLista L = new UtskicksLista()
+            UtskicksLista L = new UtskicksLista(A)
             {
                 
                 Information = B,
                 Titel = C
             };
 
-            foreach (Alumn alumn in A)
-            {
-                L.Mottagare.Add(alumn);
-            }
+            //foreach (Alumn alumn in A)
+            //{
+            //    L.Mottagare.Add(alumn);
+            //}
 
             UtskicksListor.Add(L);
 

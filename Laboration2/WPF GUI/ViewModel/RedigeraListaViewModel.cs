@@ -121,7 +121,7 @@ namespace WPF_GUI.ViewModel
             TillbakaAction();
         }
 
-        private UtskicksLista lista = new UtskicksLista();
+        private UtskicksLista lista;
         public UtskicksLista Lista
         {
             get { return lista; }
