@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
 using BusinessEntites;
+using System.Collections.ObjectModel;
 
 namespace DataLayer
 {
@@ -16,7 +17,28 @@ namespace DataLayer
         }
 
         private AppDbContext Context { get; }
-        
+
+
+        public ObservableCollection<Alumn> GetAlumnForAktivitet(int id)
+        {
+            ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
+
+            var query =
+                from aktivitet in Context.Aktiviteter
+                where aktivitet.Id == id
+                select aktivitet;
+
+            foreach (Aktivitet aktivitet in query)
+            {
+                foreach (Alumn a in aktivitet.Deltagare)
+                {
+                    alumner.Add(a);
+                }
+            }
+
+            return alumner;
+        }
+
         public List<Aktivitet> GetAllAktiviteter()
         {
             using (var db = new AppDbContext())

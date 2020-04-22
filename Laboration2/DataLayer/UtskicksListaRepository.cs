@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
 using BusinessEntites;
-
+using System.Collections.ObjectModel;
 
 namespace DataLayer
 {
@@ -26,6 +26,27 @@ namespace DataLayer
                 return db.UtskicksListor.ToList();
             }
         }
+
+        public ObservableCollection<Alumn> GetAlumnForList(int id)
+        {
+            ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
+
+            var query =
+                from lista in Context.UtskicksListor
+                where lista.Id == id
+                select lista;
+
+            foreach (UtskicksLista lista in query)
+            {
+                foreach (Alumn a in lista.Mottagare)
+                {
+                    alumner.Add(a);
+                }
+            }
+
+            return alumner;
+        }
+
 
         public UtskicksLista GetLista(int id)
         {
@@ -52,36 +73,36 @@ namespace DataLayer
             //Context.UtskicksListor.Add(L);
 
             Context.SaveChanges();
-            
+
         }
 
         public void AddMottagare(Alumn A, UtskicksLista L)
         {
 
-                var query =
-                    from lista in Context.UtskicksListor
-                    where lista.Id == L.Id
-                    select lista;
+            var query =
+                from lista in Context.UtskicksListor
+                where lista.Id == L.Id
+                select lista;
 
-                foreach (UtskicksLista lista in query)
-                {
-                    A.Listor.Add(lista);
+            foreach (UtskicksLista lista in query)
+            {
+                A.Listor.Add(lista);
 
-                    //var query2 =
-                    //    from alumn in Context.Alumner
-                    //    where alumn.AnvändarId == A.AnvändarId
-                    //    select alumn;
+                //var query2 =
+                //    from alumn in Context.Alumner
+                //    where alumn.AnvändarId == A.AnvändarId
+                //    select alumn;
 
-                    //foreach (Alumn alumn in query2)
-                    //{
-                    //    alumn.Listor.Add(lista);
-                    //}
+                //foreach (Alumn alumn in query2)
+                //{
+                //    alumn.Listor.Add(lista);
+                //}
 
-                }
+            }
 
-                Context.SaveChanges();
+            Context.SaveChanges();
 
-            
+
             //A.Listor.Add(L);
             //L.Mottagare.Add(A);
 
@@ -135,7 +156,7 @@ namespace DataLayer
 
         }
 
-        
+
 
     }
 }

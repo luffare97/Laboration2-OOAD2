@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -19,9 +20,21 @@ namespace WPF_GUI.ViewModel
             BusinessManager = businessManager;
             lista = BusinessManager.GetUtskicksLista(utskicksLista.Id);
 
+            Alumner = UppdateLB(utskicksLista.Id);
+
             TillbakaCmd = new RelayCommand(Tillbaka, param => this.canExecute);
             RedigeraCmd = new RelayCommand(Redigera, param => this.canExecute);
 
+        }
+
+        public ObservableCollection<Alumn> UppdateLB(int id)
+        {
+            return BusinessManager.GetAlumnForList(id);
+
+            //foreach (Alumn a in Lista.Mottagare)
+            //{
+            //    Alumner.Add(BusinessManager.GetAlumn(a.AnvändarId));
+            //}
         }
 
         public Action TillbakaAction { get; set; }
@@ -105,6 +118,18 @@ namespace WPF_GUI.ViewModel
                 Changed();
             }
         }
+
+        private ObservableCollection<Alumn> alumner;
+        public ObservableCollection<Alumn> Alumner
+        {
+            get { return alumner; }
+            set
+            {
+                alumner = value;
+                Changed();
+            }
+        }
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;

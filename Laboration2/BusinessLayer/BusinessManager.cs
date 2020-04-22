@@ -7,6 +7,7 @@ using DataLayer;
 using BusinessEntites;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
 
 namespace BusinessLayer
 {
@@ -66,6 +67,11 @@ namespace BusinessLayer
         public List<Aktivitet> GetAllAktiviteter()
         {
             return UnitOfWork.AktivitetRepository.GetAll().ToList();
+        }
+
+        public ObservableCollection<Alumn> GetAlumnForAktivitet(int id)
+        {
+            return UnitOfWork.AktivitetRepository.GetAlumnForAktivitet(id);
         }
 
         public void CreateAktivitet(Aktivitet A)
@@ -144,6 +150,11 @@ namespace BusinessLayer
         public List<UtskicksLista> GetAllListor()
         {
             return UnitOfWork.UtskicksListaRepository.GetAllListor();
+        }
+
+        public ObservableCollection<Alumn> GetAlumnForList(int id)
+        {
+            return UnitOfWork.UtskicksListaRepository.GetAlumnForList(id);
         }
 
         public UtskicksLista GetUtskicksLista(int ID)

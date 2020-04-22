@@ -19,11 +19,13 @@ namespace WPF_GUI.ViewModel
         {
             BusinessManager = businessManager;
             Aktivitet = A;
+            Alumner = FyllLB(A);
 
             TillbakaCmd = new RelayCommand(Tillbaka, param => this.canExecute);
             RedigeraCmd = new RelayCommand(Redigera, param => this.canExecute);
 
         }
+
 
         public Action TillbakaAction { get; set; }
 
@@ -71,12 +73,9 @@ namespace WPF_GUI.ViewModel
         }
 
 
-        public void FyllLB(Aktivitet A)
+        public ObservableCollection<Alumn> FyllLB(Aktivitet A)
         {
-            foreach (Alumn a in A.Deltagare)
-            {
-                Alumner.Add(a);
-            }
+            return BusinessManager.GetAlumnForAktivitet(A.Id);
         }
 
         public ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
