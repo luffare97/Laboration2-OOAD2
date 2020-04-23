@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using BusinessEntites;
 using BusinessLayer;
@@ -24,7 +25,30 @@ namespace WPF_GUI.ViewModel
             TillbakaCmd = new RelayCommand(Tillbaka, param => this.canExecute);
             RedigeraCmd = new RelayCommand(Redigera, param => this.canExecute);
 
+
+
+            CheckCmd = new RelayCommand(Check, param => this.canExecute);
+
         }
+
+        public void Check(object obj)
+        {
+            MessageBox.Show($"Aktiviteten har {Aktivitet.Deltagare.Count} deltagare","check");
+        }
+
+        private ICommand checkCmd;
+        public ICommand CheckCmd
+        {
+            get
+            {
+                return checkCmd;
+            }
+            set
+            {
+                checkCmd = value;
+            }
+        }
+
 
 
         public Action TillbakaAction { get; set; }
