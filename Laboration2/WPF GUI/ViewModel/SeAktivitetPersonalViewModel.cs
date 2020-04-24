@@ -32,8 +32,6 @@ namespace WPF_GUI.ViewModel
 
 
 
-            CheckCmd = new RelayCommand(Check, param => this.canExecute);
-
         }
 
 
@@ -48,34 +46,6 @@ namespace WPF_GUI.ViewModel
             }
         }
 
-        public void TEST()
-        {
-
-            
-            
-            //foreach (Alumn a in Hämtade)
-            //{
-            //    Alumner.Add(a);
-            //}
-        }
-
-        public void Check(object obj)
-        {
-            MessageBox.Show($"Aktiviteten har {Aktivitet.Deltagare.Count} deltagare","check");
-        }
-
-        private ICommand checkCmd;
-        public ICommand CheckCmd
-        {
-            get
-            {
-                return checkCmd;
-            }
-            set
-            {
-                checkCmd = value;
-            }
-        }
 
 
 

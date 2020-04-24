@@ -29,6 +29,7 @@ namespace WPF_GUI
             InitializeComponent();
             BusinessManager = businessManager;
             vm = new SeUtskicksListaAnnanViewModel(BusinessManager, L);
+            DataContext = vm;
 
             if (vm.TillbakaAction == null)
                 vm.TillbakaAction = new Action(this.Close);
