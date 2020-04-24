@@ -13,5 +13,8 @@ namespace DataLayer
         UtskicksLista GetLista(int id);
         void RedigeraLista(int id, string titel, string info);
         void RemoveMottagare(int ID, Alumn A);
+
+
+        List<Alumn> HämtaTillgängligaAlumner(UtskicksLista lista);
     }
 }

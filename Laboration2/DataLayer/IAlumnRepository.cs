@@ -9,5 +9,9 @@ namespace DataLayer
         List<Alumn> GetAllAlumn();
         Alumn GetAlumn(string ID);
         void RedigeraAlumn(Alumn A);
+
+
+        List<UtskicksLista> GetListorForAlumn(Alumn alumn);
+
     }
 }

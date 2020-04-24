@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Input;
 using BusinessEntites;
 using BusinessLayer;
+using System.Data.Entity;
 
 namespace WPF_GUI.ViewModel
 {
@@ -19,8 +20,12 @@ namespace WPF_GUI.ViewModel
         public SeAktivitetPersonalViewModel(BusinessManager businessManager, Aktivitet A)
         {
             BusinessManager = businessManager;
-            Aktivitet = A;
-            Alumner = FyllLB(A);
+            Aktivitet = BusinessManager.GetAktivitet(A.Id);
+
+
+            FyllLB();
+            //Hämtade = businessManager.GetAlumnForAktivitet(A);
+            //TEST();
 
             TillbakaCmd = new RelayCommand(Tillbaka, param => this.canExecute);
             RedigeraCmd = new RelayCommand(Redigera, param => this.canExecute);
@@ -29,6 +34,29 @@ namespace WPF_GUI.ViewModel
 
             CheckCmd = new RelayCommand(Check, param => this.canExecute);
 
+        }
+
+
+        public void FyllLB()
+        {
+            //Alumner = BusinessManager.GetAlumnForAktivitet(Aktivitet);
+
+            ICollection<Alumn> Hämtade = BusinessManager.GetAlumnForAktivitet(Aktivitet);
+            foreach (Alumn a in Hämtade)
+            {
+                Alumner.Add(a);
+            }
+        }
+
+        public void TEST()
+        {
+
+            
+            
+            //foreach (Alumn a in Hämtade)
+            //{
+            //    Alumner.Add(a);
+            //}
         }
 
         public void Check(object obj)
@@ -96,11 +124,18 @@ namespace WPF_GUI.ViewModel
             }
         }
 
+        private ICollection<Alumn> hämtade;
 
-        public ObservableCollection<Alumn> FyllLB(Aktivitet A)
+        public ICollection<Alumn> Hämtade
         {
-            return BusinessManager.GetAlumnForAktivitet(A.Id);
+            get { return hämtade; }
+            set { hämtade = value;
+                Changed();
+            }
         }
+
+
+
 
         public ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
         private ObservableCollection<Alumn> Alumner
@@ -109,7 +144,7 @@ namespace WPF_GUI.ViewModel
             set
             {
                 alumner = value;
-
+                Changed();
             }
         }
 

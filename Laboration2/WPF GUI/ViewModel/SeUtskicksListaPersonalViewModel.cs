@@ -20,16 +20,23 @@ namespace WPF_GUI.ViewModel
             BusinessManager = businessManager;
             lista = BusinessManager.GetUtskicksLista(utskicksLista.Id);
 
-            Alumner = UppdateLB(utskicksLista.Id);
+            UppdateLB();
 
             TillbakaCmd = new RelayCommand(Tillbaka, param => this.canExecute);
             RedigeraCmd = new RelayCommand(Redigera, param => this.canExecute);
 
         }
 
-        public ObservableCollection<Alumn> UppdateLB(int id)
+        public void UppdateLB()
         {
-            return BusinessManager.GetAlumnForList(id);
+            ICollection<Alumn> stuff = BusinessManager.HämtaTillgängligaAlumner(Lista);
+
+            foreach (Alumn a in stuff)
+            {
+                Alumner.Add(a);
+            }
+            
+            //return BusinessManager.GetAlumnForList(id);
 
             //foreach (Alumn a in Lista.Mottagare)
             //{
@@ -83,6 +90,17 @@ namespace WPF_GUI.ViewModel
         }
 
 
+        private ICollection<Alumn> hämtaderAlumner;
+        public ICollection<Alumn> HämtadeAlumner
+        {
+            get { return hämtaderAlumner; }
+            set { hämtaderAlumner = value;
+                Changed();
+            }
+        }
+
+
+
         private void Redigera(object obj)
         {
             RedigeraLista redigera = new RedigeraLista(BusinessManager, Lista);
@@ -119,7 +137,7 @@ namespace WPF_GUI.ViewModel
             }
         }
 
-        private ObservableCollection<Alumn> alumner;
+        private ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
         public ObservableCollection<Alumn> Alumner
         {
             get { return alumner; }

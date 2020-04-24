@@ -18,6 +18,18 @@ namespace DataLayer
         private AppDbContext Context { get; }
 
 
+        public List<UtskicksLista> GetListorForAlumn(Alumn alumn)
+        {
+            using (var db = new AppDbContext())
+            {
+                var listor = db.UtskicksListor.Where(a => a.Mottagare.Any(mm => mm.Id == alumn.Id));
+                return listor.ToList();
+            }
+
+        }
+
+
+
         //Metod för att redigera en alumn
         public void RedigeraAlumn(Alumn A)
         {

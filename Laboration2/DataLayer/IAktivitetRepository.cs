@@ -10,7 +10,10 @@ namespace DataLayer
         void DeltaAktivitet(int ID, Alumn A);
         Aktivitet GetAktivitet(int ID);
         List<Aktivitet> GetAllAktiviteter();
-        ObservableCollection<Alumn> GetAlumnForAktivitet(int id);
+        List<Alumn> GetAlumnForAktivitet(Aktivitet aktivitet);
         void RedigeraAktivitet(int ID, Aktivitet A);
+
+
+
     }
 }

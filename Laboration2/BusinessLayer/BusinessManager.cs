@@ -36,6 +36,22 @@ namespace BusinessLayer
             }
         }
 
+
+        public List<Alumn> HämtaTillgängligaAlumner(UtskicksLista lista)
+        {
+            return UnitOfWork.UtskicksListaRepository.HämtaTillgängligaAlumner(lista);
+        }
+
+        public List<UtskicksLista> GetListorForAlumn(Alumn a)
+        {
+            return UnitOfWork.AlumnRepository.GetListorForAlumn(a);
+        }
+
+
+
+
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void Changed([CallerMemberName] String propertyName = "")
         {
@@ -69,9 +85,9 @@ namespace BusinessLayer
             return UnitOfWork.AktivitetRepository.GetAll().ToList();
         }
 
-        public ObservableCollection<Alumn> GetAlumnForAktivitet(int id)
+        public List<Alumn> GetAlumnForAktivitet(Aktivitet aktivitet)
         {
-            return UnitOfWork.AktivitetRepository.GetAlumnForAktivitet(id);
+            return UnitOfWork.AktivitetRepository.GetAlumnForAktivitet(aktivitet);
         }
 
         public void CreateAktivitet(Aktivitet A)

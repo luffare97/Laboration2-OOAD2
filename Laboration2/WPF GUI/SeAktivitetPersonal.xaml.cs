@@ -32,7 +32,7 @@ namespace WPF_GUI
             vm = new SeAktivitetPersonalViewModel(BusinessManager, A);
             DataContext = vm;
 
-            vm.FyllLB(A);
+            //vm.FyllLB(A);
 
             if (vm.TillbakaAction == null)
                 vm.TillbakaAction = new Action(this.Close);

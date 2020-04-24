@@ -17,6 +17,21 @@ namespace DataLayer
             Context = context;
         }
 
+        // SAKER
+        public List<Alumn> HämtaTillgängligaAlumner(UtskicksLista lista)
+        {
+            using (var db = new AppDbContext())
+            {
+                var alumn = db.Alumner.Where(a => a.Listor.Any(mm => mm.Id == lista.Id));
+                return alumn.ToList();
+            }
+        }
+
+
+        /// <summary>
+      
+        /// </summary>
+
         private AppDbContext Context { get; }
 
         public List<UtskicksLista> GetAllListor()

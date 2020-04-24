@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DataLayer;
 using BusinessEntites;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 
 namespace DataLayer
 {
@@ -19,25 +20,45 @@ namespace DataLayer
         private AppDbContext Context { get; }
 
 
-        public ObservableCollection<Alumn> GetAlumnForAktivitet(int id)
+        public List<Alumn> GetAlumnForAktivitet(Aktivitet aktivitet)
         {
-            ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
 
-            var query =
-                from aktivitet in Context.Aktiviteter
-                where aktivitet.Id == id
-                select aktivitet;
-
-            foreach (Aktivitet aktivitet in query)
+            using (var db = new AppDbContext())
             {
-                foreach (Alumn a in aktivitet.Deltagare)
-                {
-                    alumner.Add(a);
-                }
+
+                //var alumner = db.Alumner
+                //                .Include(a => a.Aktiviteter == aktivitet.Id)
+
+                var alumn = db.Alumner.Where(a => a.Aktiviteter.Any(mm => mm.Id == aktivitet.Id));
+                return alumn.ToList();
             }
 
-            return alumner;
+            //ObservableCollection<Alumn> alumner = new ObservableCollection<Alumn>();
+
+            //var query =
+            //    from aktivitet in Context.Aktiviteter
+            //    where aktivitet.Id == id
+            //    select aktivitet;
+
+            //foreach (Aktivitet aktivitet in query)
+            //{
+            //    foreach (Alumn a in aktivitet.Deltagare)
+            //    {
+            //        alumner.Add(a);
+            //    }
+            //}
+
+            //return alumner;
         }
+
+        //public List<Alumn> HämtaTillgängligaAlumner(Aktivitet aktivitet)
+        //{
+        //    using (var db = new AppDbContext())
+        //    {
+        //        var alumn = db.Alumner.Where(a => a.Listor.Any(mm => mm.Id == aktivitet.Id));
+        //        return alumn.ToList();
+        //    }
+        //}
 
         public List<Aktivitet> GetAllAktiviteter()
         {

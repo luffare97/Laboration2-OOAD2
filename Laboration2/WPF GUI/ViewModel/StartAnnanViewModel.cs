@@ -114,7 +114,10 @@ namespace WPF_GUI.ViewModel
 
         public void UpdateGrids()
         {
-            foreach (UtskicksLista u in Alumn.Listor)
+
+            ICollection<UtskicksLista> saker = BusinessManager.GetListorForAlumn(BusinessManager.InloggadAlumn);
+
+            foreach (UtskicksLista u in saker)
             {
                 //UtskicksLista l = BusinessManager.GetUtskicksLista(u.Id);
                 Listor.Add(BusinessManager.GetUtskicksLista(u.Id));
